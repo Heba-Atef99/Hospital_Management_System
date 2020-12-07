@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ain_Shams_Hospital.Models.Entities
+namespace Ain_Shams_Hospital.Data.Entities
 {
     public class Follow_Up
     {
