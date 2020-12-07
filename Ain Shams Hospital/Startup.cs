@@ -1,6 +1,8 @@
+using HospitalManagementSystem.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +25,10 @@ namespace Ain_Shams_Hospital
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<HospitalDbContext>(cfg=>
+            {
+                cfg.UseSqlServer(Configuration.GetConnectionString("HospitalConnectionString"));
+            });
             services.AddControllersWithViews();
         }
 
