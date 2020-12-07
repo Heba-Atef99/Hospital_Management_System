@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[User] (
+    [Id]          INT           NOT NULL,
+    [FirstName]   VARCHAR (50)  NOT NULL,
+    [LastName]    VARCHAR (50)  NOT NULL,
+    [EmailID]     VARCHAR (MAX) NOT NULL,
+    [Password]    VARCHAR (MAX) NOT NULL,
+    [PhoneNumber] INT           NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
