@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ain_Shams_Hospital.Models
+namespace Ain_Shams_Hospital.Models.Entities
 {
 	public class Blood_Unit
 	{

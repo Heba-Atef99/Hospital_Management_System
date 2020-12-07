@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ain_Shams_Hospital.Models
+namespace Ain_Shams_Hospital.Models.Entities
 {
 	public class Patient
 	{
