@@ -1,0 +1,50 @@
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.exe
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.deps.json
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.runtimeconfig.json
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.runtimeconfig.dev.json
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csprojAssemblyReference.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.AssemblyInfoInputs.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.AssemblyInfo.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CoreCompileInputs.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.MvcApplicationPartsAssemblyInfo.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorAssemblyInfo.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorAssemblyInfo.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\staticwebassets\Ain Shams Hospital.StaticWebAssets.Manifest.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\staticwebassets\Ain Shams Hospital.StaticWebAssets.xml
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\scopedcss\bundle\Ain Shams Hospital.styles.css
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.TagHelpers.input.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.TagHelpers.output.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorCoreGenerate.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorTargetAssemblyInfo.cache
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorTargetAssemblyInfo.cs
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CopyComplete
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.dll
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
+D:\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
