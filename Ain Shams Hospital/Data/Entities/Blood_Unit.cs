@@ -9,6 +9,6 @@ namespace Ain_Shams_Hospital.Data.Entities
 	{
 		public int Id { get; set; }
 	    public string Type { get; set; }
-	    public int amount { get; set; }
+	    public int Amount { get; set; }
     }
 }

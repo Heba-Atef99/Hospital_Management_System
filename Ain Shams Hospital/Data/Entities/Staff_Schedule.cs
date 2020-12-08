@@ -9,7 +9,7 @@ namespace Ain_Shams_Hospital.Data.Entities
     [Keyless]
     public class Staff_Schedule
     {
-        public Staff Staff_Id { get; set; }
+        public Specialization Specialization_ { get; set; }
         public string Working_Day { get; set; }
 
     }
