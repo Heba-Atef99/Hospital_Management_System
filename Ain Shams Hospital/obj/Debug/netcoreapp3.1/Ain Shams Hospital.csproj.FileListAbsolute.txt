@@ -128,3 +128,83 @@ E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netc
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CopyComplete
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\config.json
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.Development.json
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.json
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\config.json
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.exe
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.deps.json
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.runtimeconfig.json
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.runtimeconfig.dev.json
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Humanizer.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csprojAssemblyReference.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.AssemblyInfoInputs.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.AssemblyInfo.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CoreCompileInputs.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.MvcApplicationPartsAssemblyInfo.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorAssemblyInfo.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorAssemblyInfo.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.TagHelpers.input.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.TagHelpers.output.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorCoreGenerate.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorTargetAssemblyInfo.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorTargetAssemblyInfo.cs
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CopyComplete
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\staticwebassets\Ain Shams Hospital.StaticWebAssets.Manifest.cache
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\staticwebassets\Ain Shams Hospital.StaticWebAssets.xml
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.dll
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
+E:\git_tut_edited\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
