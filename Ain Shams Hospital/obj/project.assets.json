@@ -5714,19 +5714,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hp\\.nuget\\packages\\": {}
+    "C:\\Users\\Dell\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\git_tut_edited\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+      "projectUniqueName": "F:\\FOE-ASU\\3rd\\SW\\Hotel_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
       "projectName": "Ain Shams Hospital",
-      "projectPath": "E:\\git_tut_edited\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
-      "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-      "outputPath": "E:\\git_tut_edited\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
+      "projectPath": "F:\\FOE-ASU\\3rd\\SW\\Hotel_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+      "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+      "outputPath": "F:\\FOE-ASU\\3rd\\SW\\Hotel_Management_System\\Ain Shams Hospital\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5734,7 +5734,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://packages.nuget.org/v1/FeedService.svc": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
