@@ -23,6 +23,21 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+#logo {
+    /*float:left;
+    margin:50px;*/
+    height: 300px;
+}
+input {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+#main {
+    /*border: 1px solid grey;*/
+    /*display: inline-block;*/
+    height: 400px;
+    width: 500px;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
