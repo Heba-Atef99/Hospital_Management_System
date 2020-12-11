@@ -8,7 +8,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-
+using System.Data;
+using System.Configuration;
+using System.Data.SqlClient;
 namespace Ain_Shams_Hospital.Controllers
 {
     public class HomeController : Controller
@@ -69,5 +71,41 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        ///login
+        SqlConnection con = new SqlConnection();
+        SqlCommand co = new SqlCommand();
+        SqlDataReader dr;
+        [HttpGet]
+        public ActionResult login()
+        {
+            return View();
+        }
+        //that is for connection to sql server
+        void connectionSting()
+        {
+            con.ConnectionString = "data soutce =(localdb)ProjectsV13 ; database=HospitalDb; integrated securty =SSPI;";
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult verify(Account acc)
+        {
+            connectionSting();
+            con.Open();
+            co.Connection = con;
+            co.CommandText = "select * form Registrations where Email='"+acc.Email+"' and Password='"+acc.Password+"' ";
+            dr = co.ExecuteReader();
+            if (dr.Read())
+            {
+                con.Close();
+                return View();
+            }
+            else
+            {
+                con.Close();
+                return View();
+            }
+            
+        }
+
     }
 }

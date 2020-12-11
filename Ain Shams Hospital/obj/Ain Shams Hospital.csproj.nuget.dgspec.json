@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dell\\Documents\\GitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {}
+    "D:\\software project\\gitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dell\\Documents\\GitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {
+    "D:\\software project\\gitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dell\\Documents\\GitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+        "projectUniqueName": "D:\\software project\\gitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
         "projectName": "Ain Shams Hospital",
-        "projectPath": "C:\\Users\\dell\\Documents\\GitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
-        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dell\\Documents\\GitHub\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
+        "projectPath": "D:\\software project\\gitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+        "packagesPath": "C:\\Users\\RENAD\\.nuget\\packages\\",
+        "outputPath": "D:\\software project\\gitHub\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\RENAD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -55,11 +56,25 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.0, )"
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.10, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.4, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
             }
           },
           "imports": [
@@ -80,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
