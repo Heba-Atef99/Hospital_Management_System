@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HospitalDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blood_Units">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Amount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Donations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Phone_Number" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Day" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'D:\SOFTWARE PROJECT\GITHUB\HOSPITAL_MANAGEMENT_SYSTEM\LOGGINSYSTEM\APP_DATA\HOSPITALDB.MDF.dbo.Facility_Reservations' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Facility_Reservations">
+          <Property Name="Hospital_Facility_Id" Type="int" />
+          <Property Name="Start_Hour" Type="nvarchar(max)" />
+          <Property Name="End_Hour" Type="nvarchar(max)" />
+          <Property Name="Staff_Id" Type="int" />
+          <Property Name="Patient_Id" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Follow_Ups">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Staff_Id" Type="int" />
+          <Property Name="Patient_Id" Type="int" />
+          <Property Name="Status" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'D:\SOFTWARE PROJECT\GITHUB\HOSPITAL_MANAGEMENT_SYSTEM\LOGGINSYSTEM\APP_DATA\HOSPITALDB.MDF.dbo.Follow_Ups_History' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Follow_Ups_History">
+          <Property Name="Follow_Up_Id" Type="int" />
+          <Property Name="Start_Hour" Type="nvarchar(max)" />
+          <Property Name="End_Hour" Type="nvarchar(max)" />
+          <Property Name="Follow_Up_Type_Id" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Follow_Ups_Types">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Price" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hospital_Facilities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar(max)" />
+          <Property Name="Available" Type="bit" Nullable="false" />
+          <Property Name="Start_Working_Hour" Type="nvarchar(max)" />
+          <Property Name="End_Working_Hour" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Patients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Registration_Id" Type="int" />
+          <Property Name="Hospital_Id" Type="int" />
+          <Property Name="Medical_Record" Type="nvarchar(max)" />
+          <Property Name="Health_Progress" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_Id" Type="int" />
+          <Property Name="Money" Type="int" Nullable="false" />
+          <Property Name="Payed" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Registrations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Specializations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Code" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Starting_Day" Type="nvarchar(max)" />
+          <Property Name="Specialization_Id" Type="int" />
+          <Property Name="Registration_Id" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'D:\SOFTWARE PROJECT\GITHUB\HOSPITAL_MANAGEMENT_SYSTEM\LOGGINSYSTEM\APP_DATA\HOSPITALDB.MDF.dbo.Staff_Schedules' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Staff_Schedules">
+          <Property Name="Specialization_Id" Type="int" />
+          <Property Name="Working_Day" Type="nvarchar(max)" />
+        </EntityType>-->
+        <EntityType Name="Transfer_Hospitals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+error 6004: The table 'D:\SOFTWARE PROJECT\GITHUB\HOSPITAL_MANAGEMENT_SYSTEM\LOGGINSYSTEM\APP_DATA\HOSPITALDB.MDF.dbo.Facility_Reservations' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Facility_Reservations_Hospital_Facilities_Hospital_Facility_Id" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'D:\SOFTWARE PROJECT\GITHUB\HOSPITAL_MANAGEMENT_SYSTEM\LOGGINSYSTEM\APP_DATA\HOSPITALDB.MDF.dbo.Facility_Reservations' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Facility_Reservations_Patients_Patient_Id" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'D:\SOFTWARE PROJECT\GITHUB\HOSPITAL_MANAGEMENT_SYSTEM\LOGGINSYSTEM\APP_DATA\HOSPITALDB.MDF.dbo.Facility_Reservations' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Facility_Reservations_Staff_Staff_Id" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'D:\SOFTWARE PROJECT\GITHUB\HOSPITAL_MANAGEMENT_SYSTEM\LOGGINSYSTEM\APP_DATA\HOSPITALDB.MDF.dbo.Follow_Ups_History' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Follow_Ups_History_Follow_Ups_Follow_Up_Id" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'D:\SOFTWARE PROJECT\GITHUB\HOSPITAL_MANAGEMENT_SYSTEM\LOGGINSYSTEM\APP_DATA\HOSPITALDB.MDF.dbo.Follow_Ups_History' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Follow_Ups_History_Follow_Ups_Types_Follow_Up_Type_Id" />-->
+        <Association Name="FK_Follow_Ups_Patients_Patient_Id">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+          <End Role="Follow_Ups" Type="Self.Follow_Ups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Follow_Ups">
+              <PropertyRef Name="Patient_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Follow_Ups_Staff_Staff_Id">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Follow_Ups" Type="Self.Follow_Ups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Follow_Ups">
+              <PropertyRef Name="Staff_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Registrations_Registration_Id">
+          <End Role="Registrations" Type="Self.Registrations" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registrations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="Registration_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Transfer_Hospitals_Hospital_Id">
+          <End Role="Transfer_Hospitals" Type="Self.Transfer_Hospitals" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transfer_Hospitals">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="Hospital_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Patients_Patient_Id">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="0..1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="Patient_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Registrations_Registration_Id">
+          <End Role="Registrations" Type="Self.Registrations" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registrations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="Registration_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'D:\SOFTWARE PROJECT\GITHUB\HOSPITAL_MANAGEMENT_SYSTEM\LOGGINSYSTEM\APP_DATA\HOSPITALDB.MDF.dbo.Staff_Schedules' is referenced by a relationship, but cannot be found.
+        <Association Name="FK_Staff_Schedules_Specializations_Specialization_Id" />-->
+        <Association Name="FK_Staff_Specializations_Specialization_Id">
+          <End Role="Specializations" Type="Self.Specializations" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specializations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="Specialization_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HospitalDbModelStoreContainer">
+          <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blood_Units" EntityType="Self.Blood_Units" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donations" EntityType="Self.Donations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Follow_Ups" EntityType="Self.Follow_Ups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Follow_Ups_Types" EntityType="Self.Follow_Ups_Types" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hospital_Facilities" EntityType="Self.Hospital_Facilities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registrations" EntityType="Self.Registrations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Specializations" EntityType="Self.Specializations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transfer_Hospitals" EntityType="Self.Transfer_Hospitals" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Follow_Ups_Patients_Patient_Id" Association="Self.FK_Follow_Ups_Patients_Patient_Id">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Follow_Ups" EntitySet="Follow_Ups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follow_Ups_Staff_Staff_Id" Association="Self.FK_Follow_Ups_Staff_Staff_Id">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Follow_Ups" EntitySet="Follow_Ups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Registrations_Registration_Id" Association="Self.FK_Patients_Registrations_Registration_Id">
+            <End Role="Registrations" EntitySet="Registrations" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Transfer_Hospitals_Hospital_Id" Association="Self.FK_Patients_Transfer_Hospitals_Hospital_Id">
+            <End Role="Transfer_Hospitals" EntitySet="Transfer_Hospitals" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Patients_Patient_Id" Association="Self.FK_Payments_Patients_Patient_Id">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Registrations_Registration_Id" Association="Self.FK_Staff_Registrations_Registration_Id">
+            <End Role="Registrations" EntitySet="Registrations" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Specializations_Specialization_Id" Association="Self.FK_Staff_Specializations_Specialization_Id">
+            <End Role="Specializations" EntitySet="Specializations" />
+            <End Role="Staff" EntitySet="Staff" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HospitalDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Blood_Units">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Donation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Phone_Number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Day" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Follow_Ups">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Staff_Id" Type="Int32" />
+          <Property Name="Patient_Id" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Follow_Ups_Patients_Patient_Id" FromRole="Follow_Ups" ToRole="Patients" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK_Follow_Ups_Staff_Staff_Id" FromRole="Follow_Ups" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Follow_Ups_Types">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hospital_Facilities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Available" Type="Boolean" Nullable="false" />
+          <Property Name="Start_Working_Hour" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="End_Working_Hour" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Registration_Id" Type="Int32" />
+          <Property Name="Hospital_Id" Type="Int32" />
+          <Property Name="Medical_Record" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Health_Progress" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Follow_Ups" Relationship="Self.FK_Follow_Ups_Patients_Patient_Id" FromRole="Patients" ToRole="Follow_Ups" />
+          <NavigationProperty Name="Registration" Relationship="Self.FK_Patients_Registrations_Registration_Id" FromRole="Patients" ToRole="Registrations" />
+          <NavigationProperty Name="Transfer_Hospitals" Relationship="Self.FK_Patients_Transfer_Hospitals_Hospital_Id" FromRole="Patients" ToRole="Transfer_Hospitals" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_Patients_Patient_Id" FromRole="Patients" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_Id" Type="Int32" />
+          <Property Name="Money" Type="Int32" Nullable="false" />
+          <Property Name="Payed" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Payments_Patients_Patient_Id" FromRole="Payments" ToRole="Patients" />
+        </EntityType>
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Registrations_Registration_Id" FromRole="Registrations" ToRole="Patients" />
+          <NavigationProperty Name="Staffs" Relationship="Self.FK_Staff_Registrations_Registration_Id" FromRole="Registrations" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Specialization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Staffs" Relationship="Self.FK_Staff_Specializations_Specialization_Id" FromRole="Specializations" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Starting_Day" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Specialization_Id" Type="Int32" />
+          <Property Name="Registration_Id" Type="Int32" />
+          <NavigationProperty Name="Follow_Ups" Relationship="Self.FK_Follow_Ups_Staff_Staff_Id" FromRole="Staff" ToRole="Follow_Ups" />
+          <NavigationProperty Name="Registration" Relationship="Self.FK_Staff_Registrations_Registration_Id" FromRole="Staff" ToRole="Registrations" />
+          <NavigationProperty Name="Specialization" Relationship="Self.FK_Staff_Specializations_Specialization_Id" FromRole="Staff" ToRole="Specializations" />
+        </EntityType>
+        <EntityType Name="Transfer_Hospitals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK_Patients_Transfer_Hospitals_Hospital_Id" FromRole="Transfer_Hospitals" ToRole="Patients" />
+        </EntityType>
+        <Association Name="FK_Follow_Ups_Patients_Patient_Id">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Follow_Ups" Type="Self.Follow_Ups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Follow_Ups">
+              <PropertyRef Name="Patient_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Follow_Ups_Staff_Staff_Id">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Follow_Ups" Type="Self.Follow_Ups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Follow_Ups">
+              <PropertyRef Name="Staff_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Registrations_Registration_Id">
+          <End Role="Registrations" Type="Self.Registration" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registrations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="Registration_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Patients_Transfer_Hospitals_Hospital_Id">
+          <End Role="Transfer_Hospitals" Type="Self.Transfer_Hospitals" Multiplicity="0..1" />
+          <End Role="Patients" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transfer_Hospitals">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="Hospital_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Patients_Patient_Id">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="Patient_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Registrations_Registration_Id">
+          <End Role="Registrations" Type="Self.Registration" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Registrations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="Registration_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Specializations_Specialization_Id">
+          <End Role="Specializations" Type="Self.Specialization" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Specializations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Staff">
+              <PropertyRef Name="Specialization_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HospitalDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__EFMigrationsHistory" EntityType="Self.C__EFMigrationsHistory" />
+          <EntitySet Name="Blood_Units" EntityType="Self.Blood_Units" />
+          <EntitySet Name="Donations" EntityType="Self.Donation" />
+          <EntitySet Name="Follow_Ups" EntityType="Self.Follow_Ups" />
+          <EntitySet Name="Follow_Ups_Types" EntityType="Self.Follow_Ups_Types" />
+          <EntitySet Name="Hospital_Facilities" EntityType="Self.Hospital_Facilities" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="Registrations" EntityType="Self.Registration" />
+          <EntitySet Name="Specializations" EntityType="Self.Specialization" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="Transfer_Hospitals" EntityType="Self.Transfer_Hospitals" />
+          <AssociationSet Name="FK_Follow_Ups_Patients_Patient_Id" Association="Self.FK_Follow_Ups_Patients_Patient_Id">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Follow_Ups" EntitySet="Follow_Ups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Follow_Ups_Staff_Staff_Id" Association="Self.FK_Follow_Ups_Staff_Staff_Id">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Follow_Ups" EntitySet="Follow_Ups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Registrations_Registration_Id" Association="Self.FK_Patients_Registrations_Registration_Id">
+            <End Role="Registrations" EntitySet="Registrations" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Patients_Transfer_Hospitals_Hospital_Id" Association="Self.FK_Patients_Transfer_Hospitals_Hospital_Id">
+            <End Role="Transfer_Hospitals" EntitySet="Transfer_Hospitals" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Patients_Patient_Id" Association="Self.FK_Payments_Patients_Patient_Id">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Registrations_Registration_Id" Association="Self.FK_Staff_Registrations_Registration_Id">
+            <End Role="Registrations" EntitySet="Registrations" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Specializations_Specialization_Id" Association="Self.FK_Staff_Specializations_Specialization_Id">
+            <End Role="Specializations" EntitySet="Specializations" />
+            <End Role="Staff" EntitySet="Staffs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HospitalDbModelStoreContainer" CdmEntityContainer="HospitalDbEntities">
+          <EntitySetMapping Name="C__EFMigrationsHistory">
+            <EntityTypeMapping TypeName="HospitalDbModel.C__EFMigrationsHistory">
+              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blood_Units">
+            <EntityTypeMapping TypeName="HospitalDbModel.Blood_Units">
+              <MappingFragment StoreEntitySet="Blood_Units">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donations">
+            <EntityTypeMapping TypeName="HospitalDbModel.Donation">
+              <MappingFragment StoreEntitySet="Donations">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Follow_Ups">
+            <EntityTypeMapping TypeName="HospitalDbModel.Follow_Ups">
+              <MappingFragment StoreEntitySet="Follow_Ups">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Staff_Id" ColumnName="Staff_Id" />
+                <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Follow_Ups_Types">
+            <EntityTypeMapping TypeName="HospitalDbModel.Follow_Ups_Types">
+              <MappingFragment StoreEntitySet="Follow_Ups_Types">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hospital_Facilities">
+            <EntityTypeMapping TypeName="HospitalDbModel.Hospital_Facilities">
+              <MappingFragment StoreEntitySet="Hospital_Facilities">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="Start_Working_Hour" ColumnName="Start_Working_Hour" />
+                <ScalarProperty Name="End_Working_Hour" ColumnName="End_Working_Hour" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="HospitalDbModel.Patient">
+              <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Registration_Id" ColumnName="Registration_Id" />
+                <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+                <ScalarProperty Name="Medical_Record" ColumnName="Medical_Record" />
+                <ScalarProperty Name="Health_Progress" ColumnName="Health_Progress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="HospitalDbModel.Payment">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+                <ScalarProperty Name="Money" ColumnName="Money" />
+                <ScalarProperty Name="Payed" ColumnName="Payed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="HospitalDbModel.Registration">
+              <MappingFragment StoreEntitySet="Registrations">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Specializations">
+            <EntityTypeMapping TypeName="HospitalDbModel.Specialization">
+              <MappingFragment StoreEntitySet="Specializations">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="HospitalDbModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Starting_Day" ColumnName="Starting_Day" />
+                <ScalarProperty Name="Specialization_Id" ColumnName="Specialization_Id" />
+                <ScalarProperty Name="Registration_Id" ColumnName="Registration_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transfer_Hospitals">
+            <EntityTypeMapping TypeName="HospitalDbModel.Transfer_Hospitals">
+              <MappingFragment StoreEntitySet="Transfer_Hospitals">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

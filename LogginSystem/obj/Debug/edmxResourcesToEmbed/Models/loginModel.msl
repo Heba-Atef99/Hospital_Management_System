@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HospitalDbModelStoreContainer" CdmEntityContainer="HospitalDbEntities">
+    <EntitySetMapping Name="C__EFMigrationsHistory">
+      <EntityTypeMapping TypeName="HospitalDbModel.C__EFMigrationsHistory">
+        <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blood_Units">
+      <EntityTypeMapping TypeName="HospitalDbModel.Blood_Units">
+        <MappingFragment StoreEntitySet="Blood_Units">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donations">
+      <EntityTypeMapping TypeName="HospitalDbModel.Donation">
+        <MappingFragment StoreEntitySet="Donations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Phone_Number" ColumnName="Phone_Number" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Follow_Ups">
+      <EntityTypeMapping TypeName="HospitalDbModel.Follow_Ups">
+        <MappingFragment StoreEntitySet="Follow_Ups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Staff_Id" ColumnName="Staff_Id" />
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Follow_Ups_Types">
+      <EntityTypeMapping TypeName="HospitalDbModel.Follow_Ups_Types">
+        <MappingFragment StoreEntitySet="Follow_Ups_Types">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hospital_Facilities">
+      <EntityTypeMapping TypeName="HospitalDbModel.Hospital_Facilities">
+        <MappingFragment StoreEntitySet="Hospital_Facilities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Available" ColumnName="Available" />
+          <ScalarProperty Name="Start_Working_Hour" ColumnName="Start_Working_Hour" />
+          <ScalarProperty Name="End_Working_Hour" ColumnName="End_Working_Hour" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="HospitalDbModel.Patient">
+        <MappingFragment StoreEntitySet="Patients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Registration_Id" ColumnName="Registration_Id" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="Medical_Record" ColumnName="Medical_Record" />
+          <ScalarProperty Name="Health_Progress" ColumnName="Health_Progress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="HospitalDbModel.Payment">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Patient_Id" ColumnName="Patient_Id" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="Payed" ColumnName="Payed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="HospitalDbModel.Registration">
+        <MappingFragment StoreEntitySet="Registrations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specializations">
+      <EntityTypeMapping TypeName="HospitalDbModel.Specialization">
+        <MappingFragment StoreEntitySet="Specializations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="HospitalDbModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Starting_Day" ColumnName="Starting_Day" />
+          <ScalarProperty Name="Specialization_Id" ColumnName="Specialization_Id" />
+          <ScalarProperty Name="Registration_Id" ColumnName="Registration_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transfer_Hospitals">
+      <EntityTypeMapping TypeName="HospitalDbModel.Transfer_Hospitals">
+        <MappingFragment StoreEntitySet="Transfer_Hospitals">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

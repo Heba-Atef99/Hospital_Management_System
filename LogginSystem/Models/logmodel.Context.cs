@@ -13,9 +13,9 @@ namespace LogginSystem.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MyDatabaseEntities : DbContext
+    public partial class HospitalDbEntities : DbContext
     {
-        public MyDatabaseEntities()
+        public HospitalDbEntities()
             : base("name=MyDatabaseEntities")
         {
         }

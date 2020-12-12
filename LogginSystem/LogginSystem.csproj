@@ -99,6 +99,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\HospitalDb.mdf" />
+    <Content Include="App_Data\HospitalDb_log.ldf">
+      <DependentUpon>HospitalDb.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\MyDatabase.mdf" />
     <Content Include="App_Data\MyDatabase_log.ldf">
       <DependentUpon>MyDatabase.mdf</DependentUpon>
@@ -106,6 +110,16 @@
     <Content Include="Global.asax" />
     <Content Include="images\banner1.jpg" />
     <Content Include="images\icon.png" />
+    <Content Include="Models\loginModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>loginModel.edmx</DependentUpon>
+      <LastGenOutput>loginModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\loginModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>loginModel.edmx</DependentUpon>
+      <LastGenOutput>loginModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\logmodel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>logmodel.Context.cs</LastGenOutput>
@@ -123,10 +137,26 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\loginModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loginModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\loginModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loginModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\loginModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>loginModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\logmodel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -161,6 +191,13 @@
     <Content Include="Models\logmodel.edmx.diagram">
       <DependentUpon>logmodel.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\loginModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>loginModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\loginModel.edmx.diagram">
+      <DependentUpon>loginModel.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\_LayoutPage1.cshtml" />
     <Content Include="Views\Account\login.cshtml" />
@@ -173,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
