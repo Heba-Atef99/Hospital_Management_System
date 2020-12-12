@@ -102,7 +102,7 @@ namespace Ain_Shams_Hospital.Controllers
             else
             {
                 con.Close();
-                return View("error");
+                return View();
             }
             
         }

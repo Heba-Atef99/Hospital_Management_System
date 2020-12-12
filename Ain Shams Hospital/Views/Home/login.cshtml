@@ -1,63 +1,43 @@
-﻿
+﻿@model Ain_Shams_Hospital.Models.Account
+
 @{
     ViewData["Title"] = "login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <h1>login Form </h1>
-    <div class="col-md-6 col-md-offset-3">
-        <!-- form starts here -->
-        <form action="verify" method="post">
-            <img src="images/icon.png" alt="" />
-            <div class="agile-field-txt">
-                <label>
-                    <i class="fa fa-user" aria-hidden="true"></i> Email
-                </label>
-                <input type="email" name="email" placeholder="Enter Your Email " required="" />
-            </div>
-            <div>
+<h1>login</h1>
 
+<h4>Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="agile-field-txt">
-                <label>
-                    <i class="fa fa-lock" aria-hidden="true"></i> Password
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="remmeberme" /> @Html.DisplayNameFor(model => model.remmeberme)
                 </label>
-                <input type="password" name="Password" placeholder=" Enter Your Password" required="" id="myInput" />
-                <div class="agile_label">
-                    <input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
-                    <label class="check" for="check3">Show password</label>
-                </div>
-                <div>
-
-                </div>
-                <div class="agile-right">
-                    <a href="#">forgot password?</a>
-                </div>
             </div>
-            <!-- script for show password -->
-            <script>
-				function myFunction() {
-					var x = document.getElementById("myInput");
-					if (x.type === "password") {
-						x.type = "text";
-					} else {
-						x.type = "password";
-					}
-				}
-            </script>
-            <!-- //end script -->
-            <div class="w3ls-bot">
-                <div class="switch-agileits">
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="slider round"></span>
-                        keep me signed in
-                    </label>
-                </div>
-                <input type="submit" value="LOGIN">
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
+</div>
 
+<div>
+    <a asp-action="Index">Regestration</a>
+</div>
 
-
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
