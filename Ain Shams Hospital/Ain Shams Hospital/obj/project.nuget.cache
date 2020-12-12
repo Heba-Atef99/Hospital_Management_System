@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "60v+4jp7qIzfm69jsd/5l1xvDhE+59eHVlFtXtJMOXfS4/Gcth44w+tv7VzvWO1g7ocqMRDKi4VMbVIhlSaZXQ==",
+  "dgSpecHash": "bicuCekcXTZIiMJ3WXxOYDcAVvSdRUfXNvCnNIdpgbCXiFXEgKR4MhgDbirfT3mfYnTPYdRgmaw4iWkvIeOUkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dell\\Documents\\GitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+  "projectFilePath": "C:\\Users\\dell\\Documents\\GitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dell\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\dell\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

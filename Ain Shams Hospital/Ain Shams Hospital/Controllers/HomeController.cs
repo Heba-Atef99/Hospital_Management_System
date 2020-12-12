@@ -29,6 +29,14 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
+        public IActionResult Patient()
+        {
+            return View();
+        }
+        public IActionResult Staff()
+        {
+            return View();
+        }
 
 
         [HttpGet]
@@ -51,7 +59,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             _auc.Add(P);
             _auc.SaveChanges();
-            return View();
+            return Redirect("/Home/Ptient");
         }
         [HttpGet]
         public IActionResult RegistrationStaff()
@@ -74,7 +82,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             _auc.Add(S);
             _auc.SaveChanges();
-            return View();
+            return Redirect("/Home/Staff");
         }
 
 
