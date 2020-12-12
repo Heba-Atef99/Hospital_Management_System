@@ -9,9 +9,7 @@ namespace Ain_Shams_Hospital.Data.Entities
     public class Registration
     {
         public int Id { get; set; }
-        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }

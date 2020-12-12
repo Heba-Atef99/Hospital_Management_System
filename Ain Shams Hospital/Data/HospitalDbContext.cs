@@ -1,11 +1,7 @@
 ﻿using Ain_Shams_Hospital.Data.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,17 +9,10 @@ namespace HospitalManagementSystem.Data
 {
     public class HospitalDbContext:DbContext
     {
-        
-        
-
         public HospitalDbContext(DbContextOptions<HospitalDbContext> options):base(options)
         {
 
         }
-
-      
-
-
         public DbSet<Blood_Unit> Blood_Units { get; set; }
         public DbSet<Donation> Donations { get; set; }
         public DbSet<Facility_Reservation> Facility_Reservations { get; set; }
@@ -38,6 +27,5 @@ namespace HospitalManagementSystem.Data
         public DbSet<Staff> Staff { get; set; }
         public DbSet<Staff_Schedule> Staff_Schedules { get; set; }
         public DbSet<Transfer_Hospital> Transfer_Hospitals { get; set; }
-        
     }
 }

@@ -1,6 +1,4 @@
-﻿using Ain_Shams_Hospital.Data.Entities;
-using Ain_Shams_Hospital.Models;
-using HospitalManagementSystem.Data;
+﻿using Ain_Shams_Hospital.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,52 +11,18 @@ namespace Ain_Shams_Hospital.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly HospitalDbContext _auc;
-        public HomeController(HospitalDbContext auc)
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
         {
-            _auc = auc;
+            _logger = logger;
         }
 
-      
-        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(Registration user)
-        {
-            _auc.Add(user);
-            _auc.SaveChanges();
-            return View();
-        }
-        [HttpGet]
-        public IActionResult Patient()
-        {
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Patient(Patient pat)
-        {
-            _auc.Add(pat);
-            _auc.SaveChanges();
-            return View();
-        }
-        [HttpGet]
-        public IActionResult Staff()
-        {
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Staff(Staff doc)
-        {
-            _auc.Add(doc);
-            _auc.SaveChanges();
-            return View();
-        }
+
         public IActionResult Privacy()
         {
             return View();
