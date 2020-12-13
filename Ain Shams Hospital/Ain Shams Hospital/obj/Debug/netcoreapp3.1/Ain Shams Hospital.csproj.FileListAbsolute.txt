@@ -762,8 +762,6 @@ C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_Layout.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
-C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\error.cshtml.g.cs
-C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\login.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Patient.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\RegistrationPatient.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\RegistrationStaff.cshtml.g.cs
@@ -973,6 +971,8 @@ F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\
 F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.dll
 F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
 F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
-C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
+C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\loggin.cshtml.g.cs
+C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\NotLog.cshtml.g.cs

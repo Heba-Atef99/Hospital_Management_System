@@ -33,18 +33,19 @@ namespace Ain_Shams_Hospital.Controllers
             var CodeExist = _auc.Specializations.ToList().Any(z => z.Code == ch.Activation);
             if (CodeExist)
             {
-                if (ch.Activation == "0000" )
+                if (ch.Activation == "0000")
                 {
                     return Redirect("/Home/RegistrationPatient");
                 }
                 else
                 { return Redirect("/Home/RegistrationStaff"); }
             }
-            else { 
+            else
+            {
                 return Redirect("/Home/Index");
             }
 
-            
+
         }
         public IActionResult Patient()
         {
@@ -71,9 +72,9 @@ namespace Ain_Shams_Hospital.Controllers
             Registration r = new Registration();
             r.Email = obj.Email;
             r.Password = obj.Password;
-            
+
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == r.Email);
-            if(EmailExist)
+            if (EmailExist)
             {
                 //throw error
                 ViewBag.EmailExistError = "You have already signed up";
@@ -108,7 +109,7 @@ namespace Ain_Shams_Hospital.Controllers
             */
 
         }
-     
+
         [HttpGet]
         public IActionResult RegistrationStaff()
         {
@@ -153,41 +154,39 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        ///login
-        SqlConnection con = new SqlConnection();
-        SqlCommand co = new SqlCommand();
-        SqlDataReader dr;
-        [HttpGet]
-        public ActionResult login()
+        public IActionResult Loggin()
         {
             return View();
         }
-        //that is for connection to sql server
-        void connectionSting()
+        public IActionResult NotLog()
         {
-            con.ConnectionString = "data soutce =(localdb)ProjectsV13 ; database=HospitalDb; integrated securty =SSPI;";
+            return View();
+        }
+        ///login
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult verify(Account acc)
+        public ActionResult Login(RegistrationStaffVM objc)
         {
-            connectionSting();
-            con.Open();
-            co.Connection = con;
-            co.CommandText = "select * form Registrations where Email='"+acc.Email+"' and Password='"+acc.Password+"' ";
-            dr = co.ExecuteReader();
-            if (dr.Read())
+            Registration R = new Registration();
+            R.Email = objc.Email;
+            R.Password = objc.Password;
+            var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == R.Email);
+            var PasswordExist = _auc.Registrations.ToList().Any(q => q.Password == R.Password);
+            if (EmailExist)
             {
-                con.Close();
-                return View();
+                if (PasswordExist)
+                {
+                    return Redirect("/Home/Loggin");
+                }
+                else { return Redirect("/Home/NotLog"); }
             }
-            else
-            {
-                con.Close();
-                return View("error");
-            }
-            
-        }
 
+            else { return Redirect("/Home/Login"); }
+        }
     }
 }
