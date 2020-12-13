@@ -56,6 +56,7 @@ namespace Ain_Shams_Hospital.Controllers
             Patient P = new Patient();
             P.Name = obj.Name;
             P.Phone = obj.Phone;
+            P.Registration_Id = r.Id;
 
             _auc.Add(P);
             _auc.SaveChanges();

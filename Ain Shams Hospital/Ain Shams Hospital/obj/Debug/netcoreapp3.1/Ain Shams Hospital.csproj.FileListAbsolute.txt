@@ -782,3 +782,195 @@ C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.dll
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.Development.json
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.json
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\bundleconfig.json
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\config.json
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.exe
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.deps.json
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.runtimeconfig.json
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.runtimeconfig.dev.json
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Humanizer.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-mips64\native\libe_sqlite3.so
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csprojAssemblyReference.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.AssemblyInfoInputs.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.AssemblyInfo.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CoreCompileInputs.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.MvcApplicationPartsAssemblyInfo.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorAssemblyInfo.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorAssemblyInfo.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.TagHelpers.input.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.TagHelpers.output.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorCoreGenerate.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_Layout.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\error.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\login.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Patient.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\RegistrationPatient.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\RegistrationStaff.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Staff.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\_Layout.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorTargetAssemblyInfo.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorTargetAssemblyInfo.cs
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CopyComplete
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\staticwebassets\Ain Shams Hospital.StaticWebAssets.Manifest.cache
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\staticwebassets\Ain Shams Hospital.StaticWebAssets.xml
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.dll
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
+F:\FOE-ASU\3rd\SW\Hotel_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache

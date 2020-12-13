@@ -4,14 +4,16 @@ using HospitalManagementSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ain_Shams_Hospital.Migrations
 {
     [DbContext(typeof(HospitalDbContext))]
-    partial class HospitalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201213093937_new")]
+    partial class @new
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -185,9 +187,6 @@ namespace Ain_Shams_Hospital.Migrations
                     b.Property<int>("Health_Progress")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Hospital_Id")
-                        .HasColumnType("int");
-
                     b.Property<string>("Medical_Record")
                         .HasColumnType("nvarchar(max)");
 
@@ -197,12 +196,15 @@ namespace Ain_Shams_Hospital.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("RegistrationId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Registration_Id")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Hospital_Id");
+                    b.HasIndex("RegistrationId");
 
                     b.HasIndex("Registration_Id");
 
@@ -380,12 +382,12 @@ namespace Ain_Shams_Hospital.Migrations
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Patient", b =>
                 {
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Registration", "Registration")
+                        .WithMany()
+                        .HasForeignKey("RegistrationId");
+
                     b.HasOne("Ain_Shams_Hospital.Data.Entities.Transfer_Hospital", "Hospital_")
                         .WithMany()
-                        .HasForeignKey("Hospital_Id");
-
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Registration", "Registration")
-                        .WithMany("Patients")
                         .HasForeignKey("Registration_Id");
 
                     b.Navigation("Hospital_");
@@ -424,11 +426,6 @@ namespace Ain_Shams_Hospital.Migrations
                         .HasForeignKey("Specialization_Id");
 
                     b.Navigation("Specialization_");
-                });
-
-            modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Registration", b =>
-                {
-                    b.Navigation("Patients");
                 });
 #pragma warning restore 612, 618
         }
