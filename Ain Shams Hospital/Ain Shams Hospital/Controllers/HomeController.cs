@@ -23,8 +23,6 @@ namespace Ain_Shams_Hospital.Controllers
             _auc = auc;
         }
 
-
-
         public IActionResult Index()
         {
             return View();
@@ -51,6 +49,28 @@ namespace Ain_Shams_Hospital.Controllers
             Registration r = new Registration();
             r.Email = obj.Email;
             r.Password = obj.Password;
+            /*
+            var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == r.Email);
+            if(EmailExist)
+            {
+                //throw error
+                ViewBag.UserMessage = "You have already signed up";
+            }
+
+            else
+            {
+                _auc.Add(r);
+                _auc.SaveChanges();
+                Patient P = new Patient();
+                P.Name = obj.Name;
+                P.Phone = obj.Phone;
+                P.Registration_Id = r.Id;
+
+                _auc.Add(P);
+                _auc.SaveChanges();
+            }
+            */
+
             _auc.Add(r);
             _auc.SaveChanges();
             Patient P = new Patient();
@@ -60,7 +80,9 @@ namespace Ain_Shams_Hospital.Controllers
 
             _auc.Add(P);
             _auc.SaveChanges();
+
             return Redirect("/Home/Patient");
+
         }
         [HttpGet]
         public IActionResult RegistrationStaff()
