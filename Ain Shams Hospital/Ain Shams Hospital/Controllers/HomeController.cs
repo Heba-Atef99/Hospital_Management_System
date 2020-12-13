@@ -54,7 +54,8 @@ namespace Ain_Shams_Hospital.Controllers
             if(EmailExist)
             {
                 //throw error
-                ViewBag.UserMessage = "You have already signed up";
+                ViewBag.EmailExistError = "You have already signed up";
+                //go to error page
                 return View();
             }
 
