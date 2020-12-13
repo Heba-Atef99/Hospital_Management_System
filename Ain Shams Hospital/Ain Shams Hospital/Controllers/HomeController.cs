@@ -60,7 +60,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             _auc.Add(P);
             _auc.SaveChanges();
-            return Redirect("/Home/Ptient");
+            return Redirect("/Home/Patient");
         }
         [HttpGet]
         public IActionResult RegistrationStaff()
@@ -80,6 +80,7 @@ namespace Ain_Shams_Hospital.Controllers
             S.Name = objc.Name;
             S.Phone = objc.Phone;
             S.Starting_Day = objc.Starting_Day;
+            S.Registration_Id = R.Id;
 
             _auc.Add(S);
             _auc.SaveChanges();

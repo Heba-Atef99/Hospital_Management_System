@@ -14,6 +14,6 @@ namespace Ain_Shams_Hospital.Data.Entities
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        public ICollection<Patient> Patients { get; set; }
+        
     }
 }
