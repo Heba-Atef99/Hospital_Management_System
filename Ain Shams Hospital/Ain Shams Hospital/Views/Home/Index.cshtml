@@ -1,56 +1,32 @@
-﻿@model Ain_Shams_Hospital.Data.Entities.Registration
+﻿@model Ain_Shams_Hospital.ViewModels.actVM
 
 @{
-    ViewData["Title"] = "SignUp";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 
-<h2>Registration</h2>
+<h2>Please enter your Activation Code</h2>
+<p>Hint:if you are a patient enter "0000"</p>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Index">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
-        
-            <div>
-                <label> Activation Code </label>
-                <input type="text" id="idd" />
-
+            <div class="form-group">
+                <label asp-for="Activation" class="control-label"></label>
+                <input asp-for="Activation" class="form-control" />
+                <span asp-validation-for="Activation" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <button type="button" onclick="myFunction()">SignUp</button>
-                <script>
-                function myFunction() {
-                    let i = document.querySelector('#idd').value;
-                    if (i == 0) //patient code
-                       location.href='@Url.Action("RegistrationPatient","Home")';
-                    else if (i[0] == 1)  //Doctor code
-                        location.href='@Url.Action("RegistrationStaff", "Home")';
-                    else if (i[0] == 3)   //lab code
-                       location.href='@Url.Action("RegistrationStaff", "Home")';
-                    else if (i[0] == 4)   //finance code
-                       location.href='@Url.Action("RegistrationStaff", "Home")';
-                    else if (i[0] == 5)   //frontdesk code
-                        location.href='@Url.Action("RegistrationStaff", "Home")';
-                    else if (i[0] == 2)   //manger code
-                     location.href='@Url.Action("RegistrationStaff", "Home")';
-
-                }
-                </script>
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-   
-    <form action="https://localhost:44305/Home/login">
-        <input type="submit" value="login" />
-    </form>
+    <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

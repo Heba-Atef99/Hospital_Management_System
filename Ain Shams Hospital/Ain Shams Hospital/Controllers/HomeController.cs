@@ -22,10 +22,29 @@ namespace Ain_Shams_Hospital.Controllers
         {
             _auc = auc;
         }
-
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult Index(actVM ch)
+        {
+            var CodeExist = _auc.Specializations.ToList().Any(z => z.Code == ch.Activation);
+            if (CodeExist)
+            {
+                if (ch.Activation == "0000" )
+                {
+                    return Redirect("/Home/RegistrationPatient");
+                }
+                else
+                { return Redirect("/Home/RegistrationStaff"); }
+            }
+            else { 
+                return Redirect("/Home/Index");
+            }
+
+            
         }
         public IActionResult Patient()
         {
@@ -36,7 +55,10 @@ namespace Ain_Shams_Hospital.Controllers
             return View();
         }
 
-
+        public IActionResult About()
+        {
+            return View();
+        }
         [HttpGet]
         public IActionResult RegistrationPatient()
         {
@@ -56,7 +78,7 @@ namespace Ain_Shams_Hospital.Controllers
                 //throw error
                 ViewBag.EmailExistError = "You have already signed up";
                 //go to error page
-                return View();
+                return Redirect("/Home/About");
             }
 
             else
@@ -86,6 +108,7 @@ namespace Ain_Shams_Hospital.Controllers
             */
 
         }
+     
         [HttpGet]
         public IActionResult RegistrationStaff()
         {
@@ -98,17 +121,30 @@ namespace Ain_Shams_Hospital.Controllers
             Registration R = new Registration();
             R.Email = objc.Email;
             R.Password = objc.Password;
-            _auc.Add(R);
-            _auc.SaveChanges();
-            Staff S = new Staff();
-            S.Name = objc.Name;
-            S.Phone = objc.Phone;
-            S.Starting_Day = objc.Starting_Day;
-            S.Registration_Id = R.Id;
+            var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == R.Email);
+            if (EmailExist)
+            {
+                //throw error
+                ViewBag.EmailExistError = "You have already signed up";
+                //go to error page
+                return Redirect("/Home/About");
+            }
 
-            _auc.Add(S);
-            _auc.SaveChanges();
-            return Redirect("/Home/Staff");
+            else
+            {
+                _auc.Add(R);
+                _auc.SaveChanges();
+                Staff S = new Staff();
+                S.Name = objc.Name;
+                S.Phone = objc.Phone;
+                S.Starting_Day = objc.Starting_Day;
+                S.Registration_Id = R.Id;
+
+
+                _auc.Add(S);
+                _auc.SaveChanges();
+                return Redirect("/Home/Staff");
+            }
         }
 
 
