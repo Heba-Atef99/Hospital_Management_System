@@ -174,16 +174,23 @@ namespace Ain_Shams_Hospital.Controllers
             R.Password = objc.Password;
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == R.Email);
             var PasswordExist = _auc.Registrations.ToList().Any(q => q.Password == R.Password);
+            var ID1 = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Id).FirstOrDefault();
+            var ID2 = _auc.Registrations.Where(y => y.Password == R.Password).Select(k => k.Id).FirstOrDefault();
             if (EmailExist)
             {
                 if (PasswordExist)
                 {
-                    return Redirect("/Home/Loggin");
+                    if (ID1 == ID2)
+                    {
+                        return Redirect("/Home/Loggin");
+                    }
+                    else { return Redirect("/Home/NotLog"); }
+                    
                 }
                 else { return Redirect("/Home/NotLog"); }
             }
 
-            else { return Redirect("/Home/Login"); }
+            else { return Redirect("/Home/NotLog"); }
         }
     }
 }
