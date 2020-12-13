@@ -13,7 +13,10 @@ namespace Ain_Shams_Hospital.Data.Entities
 		public string Name { get; set; }
 		public string Phone { get; set; }
 		public string Starting_Day { get; set; }
-		public Specialization Specialization_ { get; set; }
+		public int? Specialization_Id { get; set; }
+		[ForeignKey("Specialization_Id")]
+		public virtual Specialization Specialization { get; set; }
+
 		public int? Registration_Id { get; set; }
 		[ForeignKey("Registration_Id")]
 		public virtual Registration Registration { get; set; }

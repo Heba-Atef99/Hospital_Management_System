@@ -12,6 +12,7 @@ using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
 using Ain_Shams_Hospital.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -38,7 +39,15 @@ namespace Ain_Shams_Hospital.Controllers
                     return Redirect("/Home/RegistrationPatient");
                 }
                 else
-                { return Redirect("/Home/RegistrationStaff"); }
+                {
+
+                    TempData["Specialization_Id"] = _auc.Specializations
+                        .Where(i => i.Code == ch.Activation)
+                        .Select(c => c.Id)
+                        .Single();
+
+                   return Redirect("/Home/RegistrationStaff");
+                }
             }
             else
             {
@@ -95,19 +104,6 @@ namespace Ain_Shams_Hospital.Controllers
                 _auc.SaveChanges();
                 return Redirect("/Home/Patient");
             }
-
-
-            /*_auc.Add(r);
-            _auc.SaveChanges();
-            Patient P = new Patient();
-            P.Name = obj.Name;
-            P.Phone = obj.Phone;
-            P.Registration_Id = r.Id;
-
-            _auc.Add(P);
-            _auc.SaveChanges();
-            */
-
         }
 
         [HttpGet]
@@ -140,6 +136,7 @@ namespace Ain_Shams_Hospital.Controllers
                 S.Phone = objc.Phone;
                 S.Starting_Day = objc.Starting_Day;
                 S.Registration_Id = R.Id;
+                S.Specialization_Id = (int)TempData["Specialization_Id"];
 
 
                 _auc.Add(S);
