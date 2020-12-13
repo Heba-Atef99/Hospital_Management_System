@@ -44,17 +44,18 @@ namespace Ain_Shams_Hospital.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RegistrationPatient(RegistrationPatientVM obj)
+        public IActionResult RegistrationPatient(RegistrationPatientVM obj)
         {
             Registration r = new Registration();
             r.Email = obj.Email;
             r.Password = obj.Password;
-            /*
+            
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == r.Email);
             if(EmailExist)
             {
                 //throw error
                 ViewBag.UserMessage = "You have already signed up";
+                return View();
             }
 
             else
@@ -68,10 +69,11 @@ namespace Ain_Shams_Hospital.Controllers
 
                 _auc.Add(P);
                 _auc.SaveChanges();
+                return Redirect("/Home/Patient");
             }
-            */
 
-            _auc.Add(r);
+
+            /*_auc.Add(r);
             _auc.SaveChanges();
             Patient P = new Patient();
             P.Name = obj.Name;
@@ -80,8 +82,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             _auc.Add(P);
             _auc.SaveChanges();
-
-            return Redirect("/Home/Patient");
+            */
 
         }
         [HttpGet]
