@@ -116,39 +116,28 @@ namespace Ain_Shams_Hospital.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         ///login
-        SqlConnection con = new SqlConnection();
-        SqlCommand co = new SqlCommand();
-        SqlDataReader dr;
+        login dbop = new login();
         [HttpGet]
         public ActionResult login()
         {
             return View();
         }
         //that is for connection to sql server
-        void connectionSting()
-        {
-            con.ConnectionString = "data soutce =(localdb)ProjectsV13 ; database=HospitalDb; integrated securty =SSPI;";
-        }
+         
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult verify(Account acc)
+        
+        public ActionResult verify([Bind] Account ad)
         {
-            connectionSting();
-            con.Open();
-            co.Connection = con;
-            co.CommandText = "select * form Registrations where Email='"+acc.Email+"' and Password='"+acc.Password+"' ";
-            dr = co.ExecuteReader();
-            if (dr.Read())
+            int res = dbop.LoginCheck(ad);
+            if (res == 1)
             {
-                con.Close();
-                return View();
+                TempData["msg"] = "You are welcome to Admin Section";
             }
             else
             {
-                con.Close();
-                return View("error");
+                TempData["msg"] = "Admin id or Password is wrong.!";
             }
-            
+            return View();
         }
 
     }

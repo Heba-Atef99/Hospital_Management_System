@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\software project\\Login\\Login.csproj": {}
+    "D:\\software project\\gitHub\\Hospital_Management_System\\Login\\Login.csproj": {}
   },
   "projects": {
-    "D:\\software project\\Login\\Login.csproj": {
+    "D:\\software project\\gitHub\\Hospital_Management_System\\Login\\Login.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\software project\\Login\\Login.csproj",
+        "projectUniqueName": "D:\\software project\\gitHub\\Hospital_Management_System\\Login\\Login.csproj",
         "projectName": "Login",
-        "projectPath": "D:\\software project\\Login\\Login.csproj",
+        "projectPath": "D:\\software project\\gitHub\\Hospital_Management_System\\Login\\Login.csproj",
         "packagesPath": "C:\\Users\\RENAD\\.nuget\\packages\\",
-        "outputPath": "D:\\software project\\Login\\obj\\",
+        "outputPath": "D:\\software project\\gitHub\\Hospital_Management_System\\Login\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

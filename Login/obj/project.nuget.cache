@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TFvUdQucFwDxB/izlP/Yp2lfuVgmiJUgOc8wWdEbo3sqVY9RxNiOoEvExCBkiDrJK7HFS+wKGQXNxLw35OzUEg==",
+  "dgSpecHash": "AsCVa6zmXiDBxuNVfRioo+Y8yN2BOUgjf0C+RlsdtH5+AY8p4IzFDcc1w94KJW8uRhw0wi9fXVCAG9Vvuq2B4Q==",
   "success": true,
-  "projectFilePath": "D:\\software project\\Login\\Login.csproj",
+  "projectFilePath": "D:\\software project\\gitHub\\Hospital_Management_System\\Login\\Login.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\RENAD\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\RENAD\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
