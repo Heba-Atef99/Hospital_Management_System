@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "P3ipkSvsRs3XCNenc3gL89xo3HmtJUKtskkWQW3tlMxeEZ5Nj7+CVwrrbtqW+E0z7UiEnjrFhgLxmnuPjmxB4g==",
   "success": true,
   "projectFilePath": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
@@ -178,5 +179,11 @@
     "C:\\Users\\Dell\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Dell\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
+=======
+  "dgSpecHash": "ZQ90lpDzR9Uo/pMDXrgs1Cu9lVs0kVpwLM/p9NKI/1GyzaZDwVFIeHhq7YxxrJldTeF2m9YFUPFyu3i2vaNb0g==",
+  "success": true,
+  "projectFilePath": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+  "expectedPackageFiles": [],
+>>>>>>> origin/Layout,Main-page
   "logs": []
 }

@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
 <<<<<<< HEAD:Ain Shams Hospital/obj/Ain Shams Hospital.csproj.nuget.dgspec.json
     "C:\\Users\\dell\\Documents\\GitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {}
   },
@@ -26,12 +27,29 @@
         "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
         "outputPath": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
 >>>>>>> Signup:Ain Shams Hospital/Ain Shams Hospital/obj/Ain Shams Hospital.csproj.nuget.dgspec.json
+=======
+    "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {}
+  },
+  "projects": {
+    "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+        "projectName": "Ain Shams Hospital",
+        "projectPath": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
+>>>>>>> origin/Layout,Main-page
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> origin/Layout,Main-page
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,7 +61,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -55,6 +72,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+<<<<<<< HEAD
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "BCrypt.Net-Next": {
@@ -94,6 +112,8 @@
               "version": "[4.8.2, )"
             }
           },
+=======
+>>>>>>> origin/Layout,Main-page
           "imports": [
             "net461",
             "net462",
@@ -112,7 +132,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+>>>>>>> origin/Layout,Main-page
         }
       }
     }
