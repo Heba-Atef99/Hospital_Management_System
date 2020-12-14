@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "2X7iTdL6kapxv3yRN/CNVpHi25TmLA/IysCtyrTIjMzJ3QrnPBpAlBFYqDEvbUTElnTYZP3vid8CKIGAHB5Qxw==",
+  "dgSpecHash": "mrS45FpbkAcogqW1G6RPMlCZQi3S6PpC8sV/Q72wryi/6pvRrPEHbf+B1hn3PLr+9SW14tm1fHmkqpcOUny9aw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Documents\\GitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
+  ],
   "logs": []
 }
