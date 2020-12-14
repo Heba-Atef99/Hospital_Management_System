@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 using Microsoft.AspNetCore;
-=======
->>>>>>> origin/Layout,Main-page
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -11,17 +8,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-<<<<<<< HEAD
 namespace Ain_Shams_Hospital
-=======
-namespace Project
->>>>>>> origin/Layout,Main-page
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-<<<<<<< HEAD
             BuildWebHost(args).Run();
         }
 
@@ -39,16 +31,5 @@ namespace Project
             builder.AddJsonFile("config.json", false, true)
                 .AddEnvironmentVariables();
         }
-=======
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
->>>>>>> origin/Layout,Main-page
     }
 }

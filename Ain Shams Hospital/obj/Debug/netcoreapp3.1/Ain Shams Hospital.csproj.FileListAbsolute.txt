@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.json
 D:\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.exe
@@ -1365,44 +1364,3 @@ F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debu
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationPatient.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationStaff.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Staff.cshtml.g.cs
-=======
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.Development.json
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.exe
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.deps.json
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.runtimeconfig.json
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.runtimeconfig.dev.json
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.dll
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.dll
-D:\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csprojAssemblyReference.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.AssemblyInfoInputs.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.AssemblyInfo.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CoreCompileInputs.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.MvcApplicationPartsAssemblyInfo.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorAssemblyInfo.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorAssemblyInfo.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\staticwebassets\Ain Shams Hospital.StaticWebAssets.Manifest.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\staticwebassets\Ain Shams Hospital.StaticWebAssets.xml
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\scopedcss\bundle\Ain Shams Hospital.styles.css
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.TagHelpers.input.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.TagHelpers.output.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorCoreGenerate.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Covid.cshtml.g.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorTargetAssemblyInfo.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorTargetAssemblyInfo.cs
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.dll
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
-D:\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CopyComplete
->>>>>>> origin/Layout,Main-page
