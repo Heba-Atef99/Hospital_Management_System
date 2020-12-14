@@ -172,32 +172,13 @@ namespace Ain_Shams_Hospital.Controllers
             Registration R = new Registration();
             R.Email = objc.Email;
             R.Password = objc.Password;
-            var EmailExist = _auc.Registrations.ToList();
-            var PasswordExist = _auc.Registrations.ToList();
-            for (int i = 0; i < EmailExist.Count(); i++)
+            var Password = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Password).Single();
+            if (BCrypt.Net.BCrypt.Verify(R.Password, Password))
             {
-                //BCrypt.Net.BCrypt.Verify("Pa$$w0rd", passwordHash);
-                var e = EmailExist.Select(k => k.Email).ElementAt(i).ToString();
-                if (e == R.Email)
-                {
-<<<<<<< HEAD:Ain Shams Hospital/Controllers/RegistrationController.cs
-                    return Redirect("/Registration/Loggin");
-                }
-                else { return Redirect("/Registration/NotLog"); }
-            }
-
-            else { return Redirect("/Registration/Loggin"); }
-=======
-                    if (BCrypt.Net.BCrypt.Verify(R.Password, PasswordExist.Select(k => k.Password).ElementAt(i).ToString()))
-                    {
-                        return Redirect("/Registration/Loggin");
-
-                    }
-                }
+                return Redirect("/Home/Loggin");
 
             }
-            return Redirect("/Registration/NotLog");
->>>>>>> Signup:Ain Shams Hospital/Ain Shams Hospital/Controllers/HomeController.cs
+            return Redirect("/Home/NotLog");
         }
     }
 }

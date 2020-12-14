@@ -1375,10 +1375,7 @@ F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debu
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.dll
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
-<<<<<<< HEAD:Ain Shams Hospital/obj/Debug/netcoreapp3.1/Ain Shams Hospital.csproj.FileListAbsolute.txt
-=======
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
->>>>>>> Signup:Ain Shams Hospital/Ain Shams Hospital/obj/Debug/netcoreapp3.1/Ain Shams Hospital.csproj.FileListAbsolute.txt
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Humanizer.dll
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
@@ -1536,8 +1533,6 @@ F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debu
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_Layout.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
-<<<<<<< HEAD:Ain Shams Hospital/obj/Debug/netcoreapp3.1/Ain Shams Hospital.csproj.FileListAbsolute.txt
-=======
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\About.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Index.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\loggin.cshtml.g.cs
@@ -1547,7 +1542,6 @@ F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debu
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationPatient.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationStaff.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Staff.cshtml.g.cs
->>>>>>> Signup:Ain Shams Hospital/Ain Shams Hospital/obj/Debug/netcoreapp3.1/Ain Shams Hospital.csproj.FileListAbsolute.txt
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -1563,16 +1557,6 @@ F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debu
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.dll
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
-<<<<<<< HEAD:Ain Shams Hospital/obj/Debug/netcoreapp3.1/Ain Shams Hospital.csproj.FileListAbsolute.txt
-F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\About.cshtml.g.cs
-F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Index.cshtml.g.cs
-F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\loggin.cshtml.g.cs
-F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\login.cshtml.g.cs
-F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\NotLog.cshtml.g.cs
-F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Patient.cshtml.g.cs
-F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationPatient.cshtml.g.cs
-F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationStaff.cshtml.g.cs
-F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Staff.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\About.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Index.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\loggin.cshtml.g.cs
@@ -1582,5 +1566,3 @@ C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationPatient.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationStaff.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Staff.cshtml.g.cs
-=======
->>>>>>> Signup:Ain Shams Hospital/Ain Shams Hospital/obj/Debug/netcoreapp3.1/Ain Shams Hospital.csproj.FileListAbsolute.txt
