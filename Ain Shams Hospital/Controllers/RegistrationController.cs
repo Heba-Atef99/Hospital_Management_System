@@ -16,10 +16,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ain_Shams_Hospital.Controllers
 {
-    public class HomeController : Controller
+    public class RegistrationController : Controller
     {
         private readonly HospitalDbContext _auc;
-        public HomeController(HospitalDbContext auc)
+        public RegistrationController(HospitalDbContext auc)
         {
             _auc = auc;
         }
@@ -36,7 +36,7 @@ namespace Ain_Shams_Hospital.Controllers
             {
                 if (ch.Activation == "0000")
                 {
-                    return Redirect("/Home/RegistrationPatient");
+                    return Redirect("/Registration/RegistrationPatient");
                 }
                 else
                 {
@@ -46,12 +46,12 @@ namespace Ain_Shams_Hospital.Controllers
                         .Select(c => c.Id)
                         .Single();
 
-                   return Redirect("/Home/RegistrationStaff");
+                   return Redirect("/Registration/RegistrationStaff");
                 }
             }
             else
             {
-                return Redirect("/Home/Index");
+                return Redirect("/Registration/Index");
             }
 
 
@@ -88,7 +88,7 @@ namespace Ain_Shams_Hospital.Controllers
                 //throw error
                 ViewBag.EmailExistError = "You have already signed up";
                 //go to error page
-                return Redirect("/Home/About");
+                return Redirect("/Registration/About");
             }
 
             else
@@ -102,7 +102,7 @@ namespace Ain_Shams_Hospital.Controllers
 
                 _auc.Add(P);
                 _auc.SaveChanges();
-                return Redirect("/Home/Patient");
+                return Redirect("/Registration/Patient");
             }
         }
 
@@ -124,7 +124,7 @@ namespace Ain_Shams_Hospital.Controllers
                 //throw error
                 ViewBag.EmailExistError = "You have already signed up";
                 //go to error page
-                return Redirect("/Home/About");
+                return Redirect("/Registration/About");
             }
 
             else
@@ -141,7 +141,7 @@ namespace Ain_Shams_Hospital.Controllers
 
                 _auc.Add(S);
                 _auc.SaveChanges();
-                return Redirect("/Home/Staff");
+                return Redirect("/Registration/Staff");
             }
         }
 
@@ -178,12 +178,12 @@ namespace Ain_Shams_Hospital.Controllers
             {
                 if (PasswordExist)
                 {
-                    return Redirect("/Home/Loggin");
+                    return Redirect("/Registration/Loggin");
                 }
-                else { return Redirect("/Home/NotLog"); }
+                else { return Redirect("/Registration/NotLog"); }
             }
 
-            else { return Redirect("/Home/Login"); }
+            else { return Redirect("/Registration/Login"); }
         }
     }
 }
