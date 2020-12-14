@@ -183,7 +183,7 @@ namespace Ain_Shams_Hospital.Controllers
                 else { return Redirect("/Registration/NotLog"); }
             }
 
-            else { return Redirect("/Registration/Login"); }
+            else { return Redirect("/Registration/Loggin"); }
         }
     }
 }

@@ -4,13 +4,19 @@
     ViewData["Title"] = "RegistrationStaff";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
 
 <h1>RegistrationStaff</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        
+
         <form asp-action="RegistrationStaff">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
