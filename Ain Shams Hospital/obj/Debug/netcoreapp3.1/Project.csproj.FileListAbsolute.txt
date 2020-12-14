@@ -1,0 +1,116 @@
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\Project.exe
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\Project.deps.json
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\Project.runtimeconfig.json
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\Project.runtimeconfig.dev.json
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\Project.dll
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\Project.pdb
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\Project.Views.dll
+D:\Visual Studio\Examples TUTORIAL\Project\bin\Debug\netcoreapp3.1\Project.Views.pdb
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.csprojAssemblyReference.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfoInputs.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfo.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.csproj.CoreCompileInputs.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.MvcApplicationPartsAssemblyInfo.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.RazorAssemblyInfo.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.RazorAssemblyInfo.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\staticwebassets\Project.StaticWebAssets.Manifest.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\staticwebassets\Project.StaticWebAssets.xml
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\scopedcss\bundle\Project.styles.css
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.TagHelpers.input.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.TagHelpers.output.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.RazorCoreGenerate.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.RazorTargetAssemblyInfo.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.RazorTargetAssemblyInfo.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.Views.pdb
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.dll
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.pdb
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.genruntimeconfig.cache
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Project.csproj.CopyComplete
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Visual Studio\Examples TUTORIAL\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.dll
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.pdb
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.exe
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.deps.json
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.runtimeconfig.json
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.runtimeconfig.dev.json
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.dll
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.pdb
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.Views.dll
+D:\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.Views.pdb
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.csprojAssemblyReference.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfoInputs.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfo.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.csproj.CoreCompileInputs.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.MvcApplicationPartsAssemblyInfo.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorAssemblyInfo.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorAssemblyInfo.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\staticwebassets\Project.StaticWebAssets.Manifest.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\staticwebassets\Project.StaticWebAssets.xml
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\scopedcss\bundle\Project.styles.css
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.TagHelpers.input.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.TagHelpers.output.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorCoreGenerate.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Covid.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorTargetAssemblyInfo.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorTargetAssemblyInfo.cs
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.Views.pdb
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.genruntimeconfig.cache
+D:\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.csproj.CopyComplete
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.exe
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.deps.json
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.runtimeconfig.json
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.runtimeconfig.dev.json
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.dll
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.pdb
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.Views.dll
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\bin\Debug\netcoreapp3.1\Project.Views.pdb
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.csprojAssemblyReference.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfoInputs.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.AssemblyInfo.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorAssemblyInfo.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorAssemblyInfo.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.TagHelpers.input.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.TagHelpers.output.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorCoreGenerate.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Covid.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorTargetAssemblyInfo.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.RazorTargetAssemblyInfo.cs
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.Views.pdb
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\staticwebassets\Project.StaticWebAssets.Manifest.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\staticwebassets\Project.StaticWebAssets.xml
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.dll
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.pdb
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.genruntimeconfig.cache
+C:\Users\HP\Documents\GitHub\Hospital_Management_System\Project\obj\Debug\netcoreapp3.1\Project.csproj.CopyComplete

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
@@ -53,4 +54,12 @@
     <None Include="wwwroot\images\icon.png" />
   </ItemGroup>
 
+=======
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+>>>>>>> origin/Layout,Main-page
 </Project>

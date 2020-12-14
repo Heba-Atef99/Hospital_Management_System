@@ -1,6 +1,7 @@
 {
   "version": 3,
   "targets": {
+<<<<<<< HEAD
     ".NETCoreApp,Version=v3.1": {
       "Humanizer.Core/2.8.26": {
         "type": "package",
@@ -9094,10 +9095,21 @@
   },
   "packageFolders": {
     "C:\\Users\\Dell\\.nuget\\packages\\": {}
+=======
+    ".NETCoreApp,Version=v3.1": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": []
+  },
+  "packageFolders": {
+    "C:\\Users\\hp\\.nuget\\packages\\": {}
+>>>>>>> origin/Layout,Main-page
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
       "projectName": "Ain Shams Hospital",
       "projectPath": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
@@ -9106,6 +9118,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "D:\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+      "projectName": "Ain Shams Hospital",
+      "projectPath": "D:\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+      "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+      "outputPath": "D:\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> origin/Layout,Main-page
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9117,6 +9139,10 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+<<<<<<< HEAD
+=======
+          "targetAlias": "netcoreapp3.1",
+>>>>>>> origin/Layout,Main-page
           "projectReferences": {}
         }
       },
@@ -9128,6 +9154,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+<<<<<<< HEAD
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -9162,6 +9189,9 @@
             "version": "[4.8.2, )"
           }
         },
+=======
+        "targetAlias": "netcoreapp3.1",
+>>>>>>> origin/Layout,Main-page
         "imports": [
           "net461",
           "net462",
@@ -9172,6 +9202,19 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+<<<<<<< HEAD
+=======
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.10, 3.1.10]"
+          }
+        ],
+>>>>>>> origin/Layout,Main-page
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -9180,7 +9223,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+>>>>>>> origin/Layout,Main-page
       }
     }
   }
