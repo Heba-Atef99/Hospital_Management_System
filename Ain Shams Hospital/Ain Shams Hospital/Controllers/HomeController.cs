@@ -80,7 +80,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             Registration r = new Registration();
             r.Email = obj.Email;
-            r.Password = obj.Password;
+            r.Password = BCrypt.Net.BCrypt.HashPassword(obj.Password);
 
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == r.Email);
             if (EmailExist)
@@ -117,7 +117,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             Registration R = new Registration();
             R.Email = objc.Email;
-            R.Password = objc.Password;
+            R.Password = BCrypt.Net.BCrypt.HashPassword(objc.Password);
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == R.Email);
             if (EmailExist)
             {
@@ -172,25 +172,23 @@ namespace Ain_Shams_Hospital.Controllers
             Registration R = new Registration();
             R.Email = objc.Email;
             R.Password = objc.Password;
-            var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == R.Email);
-            var PasswordExist = _auc.Registrations.ToList().Any(q => q.Password == R.Password);
-            var ID1 = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Id).FirstOrDefault();
-            var ID2 = _auc.Registrations.Where(y => y.Password == R.Password).Select(k => k.Id).FirstOrDefault();
-            if (EmailExist)
+            var EmailExist = _auc.Registrations.ToList();
+            var PasswordExist = _auc.Registrations.ToList();
+            for (int i = 0; i < EmailExist.Count(); i++)
             {
-                if (PasswordExist)
+                //BCrypt.Net.BCrypt.Verify("Pa$$w0rd", passwordHash);
+                var e = EmailExist.Select(k => k.Email).ElementAt(i).ToString();
+                if (e == R.Email)
                 {
-                    if (ID1 == ID2)
+                    if (BCrypt.Net.BCrypt.Verify(R.Password, PasswordExist.Select(k => k.Password).ElementAt(i).ToString()))
                     {
                         return Redirect("/Home/Loggin");
-                    }
-                    else { return Redirect("/Home/NotLog"); }
-                    
-                }
-                else { return Redirect("/Home/NotLog"); }
-            }
 
-            else { return Redirect("/Home/NotLog"); }
+                    }
+                }
+
+            }
+            return Redirect("/Home/NotLog");
         }
     }
 }
