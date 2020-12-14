@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "TVvMq4IpzxNfbahCAKUV6657kJKZoJ3Mo7zuuTCTk9us0afQxVQNEmdaP+lhremo3AtpX6FJU9NMzuPM5ATFbQ==",
+  "dgSpecHash": "ktbmnYv2FC4Vwl3RL9Y89MqMyhHVt0sU6xNUZaKte9a8Ti8K7MS8vLLXE28GHCVypWjtKCHBWrlH+1xHz4QGxQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\HP\\Documents\\GitHub\\Hospital_Management_System\\Project\\Project.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Hospital_Management_System\\Project\\Project.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.10\\microsoft.netcore.app.host.win-x64.3.1.10.nupkg.sha512"
+  ],
   "logs": []
 }
