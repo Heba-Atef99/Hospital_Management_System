@@ -24,12 +24,12 @@ namespace Ain_Shams_Hospital.Controllers
             _auc = auc;
         }
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Activation()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Index(actVM ch)
+        public IActionResult Activation(actVM ch)
         {
             var CodeExist = _auc.Specializations.ToList().Any(z => z.Code == ch.Activation);
             if (CodeExist)
@@ -51,7 +51,7 @@ namespace Ain_Shams_Hospital.Controllers
             }
             else
             {
-                return Redirect("/Registration/Index");
+                return Redirect("/Registration/Activation");
             }
 
 
@@ -175,10 +175,10 @@ namespace Ain_Shams_Hospital.Controllers
             var Password = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Password).Single();
             if (BCrypt.Net.BCrypt.Verify(R.Password, Password))
             {
-                return Redirect("/Home/Loggin");
+                return Redirect("/Registration/Loggin");
 
             }
-            return Redirect("/Home/NotLog");
+            return Redirect("/Registration/NotLog");
         }
     }
 }

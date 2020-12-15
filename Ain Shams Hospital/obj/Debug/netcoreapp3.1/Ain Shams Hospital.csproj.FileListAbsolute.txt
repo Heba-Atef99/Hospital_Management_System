@@ -1765,3 +1765,9 @@ H:\New folder\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.Razo
 H:\New folder\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.Views.pdb
 H:\New folder\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.csproj.CopyComplete
 H:\New folder\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
+C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Covid.cshtml.g.cs
+C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Activation.cshtml.g.cs
