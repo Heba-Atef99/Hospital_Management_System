@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {}
+    "H:\\New folder\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {}
   },
   "projects": {
-    "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {
+    "H:\\New folder\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+        "projectUniqueName": "H:\\New folder\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
         "projectName": "Ain Shams Hospital",
-        "projectPath": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "F:\\FOE-ASU\\3rd\\SW\\project\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
+        "projectPath": "H:\\New folder\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "H:\\New folder\\Ain Shams Hospital\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,45 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -47,6 +87,16 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.10, 3.1.10]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -55,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

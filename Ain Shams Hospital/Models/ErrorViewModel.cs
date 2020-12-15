@@ -1,6 +1,6 @@
 using System;
 
-namespace Project.Models
+namespace Ain_Shams_Hospital.Models
 {
     public class ErrorViewModel
     {

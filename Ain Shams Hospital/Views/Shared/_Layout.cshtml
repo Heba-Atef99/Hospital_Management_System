@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Project</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link href="~/css/Home.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -15,8 +16,8 @@
 
                     <div class="col-sm-9"><img id="Headimg" src="~/Images/ASH 4.png" /></div>
                 </div>
-               <div class="row align-items-center"><div class="col-sm-3"><p style="margin-right:20px;margin-top:5px;color:#0094ff;font-size:30px;font-weight:bold">19056</p></div></div>
-                
+                <div class="row align-items-center"><div class="col-sm-3"><p style="margin-right:20px;margin-top:5px;color:#0094ff;font-size:30px;font-weight:bold">19056</p></div></div>
+
             </div>
         </div>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -41,18 +42,18 @@
 
     </header>
     @*<div id="watermarkcont">
-      <img id="watermark"src="~/Images/ASH B.png" />
-    </div>*@
+          <img id="watermark"src="~/Images/ASH B.png" />
+        </div>*@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-   
+
 
     <footer class="border-top footer text-muted" style="background-color:#6da6cf">
         <div class="text-center">
-            &copy; 2020 - Ain Shams Hospital - Since 1980 
+            &copy; 2020 - Ain Shams Hospital - Since 1980
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
