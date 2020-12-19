@@ -9217,19 +9217,36 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Dell\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Nouran Ahmed\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+>>>>>>> 72d6b380d1c6c1f76c8b5cf458fa1f2d897745f8
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "F:\\FOE-ASU\\3rd\\SW\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
       "projectName": "Ain Shams Hospital",
       "projectPath": "F:\\FOE-ASU\\3rd\\SW\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
       "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
       "outputPath": "F:\\FOE-ASU\\3rd\\SW\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
+=======
+      "projectUniqueName": "E:\\Software Project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+      "projectName": "Ain Shams Hospital",
+      "projectPath": "E:\\Software Project\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+      "packagesPath": "C:\\Users\\Nouran Ahmed\\.nuget\\packages\\",
+      "outputPath": "E:\\Software Project\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
+>>>>>>> 72d6b380d1c6c1f76c8b5cf458fa1f2d897745f8
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Nouran Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 72d6b380d1c6c1f76c8b5cf458fa1f2d897745f8
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

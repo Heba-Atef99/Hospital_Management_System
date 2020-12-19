@@ -172,7 +172,7 @@ namespace Ain_Shams_Hospital.Controllers
             Registration R = new Registration();
             R.Email = objc.Email;
             R.Password = objc.Password;
-            var Password = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Password).Single();
+            var Password = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Password).SingleOrDefault();
             if (BCrypt.Net.BCrypt.Verify(R.Password, Password))
             {
                 return Redirect("/Registration/Loggin");
