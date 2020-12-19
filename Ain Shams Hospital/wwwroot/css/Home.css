@@ -126,3 +126,23 @@ body {
 .covidh{
     color:#d10000
 }
+.box {
+    width: 500px;
+    height: 400px;
+    box-shadow: 0 0 15px 2px #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    margin:auto;
+   
+}
+
+    .box img {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        transition: all 0.5s ease-in-out;
+    }
+
+.box:hover img{
+    transform: scale(1.2);
+}

@@ -116,7 +116,6 @@ E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netc
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.TagHelpers.output.cache
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.RazorCoreGenerate.cache
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -1164,8 +1163,6 @@ F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\Ain Sham
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.dll
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
-<<<<<<< HEAD:Ain Shams Hospital/obj/Debug/netcoreapp3.1/Ain Shams Hospital.csproj.FileListAbsolute.txt
-=======
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.Development.json
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.json
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\bundleconfig.json
@@ -1361,7 +1358,6 @@ E:\Software Project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hosp
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.pdb
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Ain Shams Hospital.genruntimeconfig.cache
 E:\Software Project\Hospital_Management_System\Ain Shams Hospital\Ain Shams Hospital\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
->>>>>>> Signup:Ain Shams Hospital/Ain Shams Hospital/obj/Debug/netcoreapp3.1/Ain Shams Hospital.csproj.FileListAbsolute.txt
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.Development.json
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\appsettings.json
 F:\FOE-ASU\3rd\SW\project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -1771,3 +1767,122 @@ C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Covid.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\dell\Documents\GitHub\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Activation.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\bundleconfig.json
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-mips64\native\libe_sqlite3.so
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_Layout.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Covid.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\About.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Activation.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\loggin.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\login.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\NotLog.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Patient.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationPatient.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\RegistrationStaff.cshtml.g.cs
+E:\Software Project\Hospital_Management_System\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Staff.cshtml.g.cs
