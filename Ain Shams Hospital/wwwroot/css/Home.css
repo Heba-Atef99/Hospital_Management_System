@@ -1,4 +1,11 @@
-﻿a.navbar-brand {
+﻿*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+
+
+a.navbar-brand {
     white-space: normal;
     text-align: center;
     word-break: break-all;
@@ -162,4 +169,22 @@ body {
     font-size: 30px;
     font-weight: bold;
     padding-right: 20px;
+}
+
+/*patient pages style*/
+
+.img_bg_p {
+    background-image: url('../images/we care about your health.PNG');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+}
+.icon {
+    margin-left: 2px;
+    padding: 10px;
+    border-radius: 0px 7px 7px 0px;
+    line-height: 20px;
+    height: 40px;
 }

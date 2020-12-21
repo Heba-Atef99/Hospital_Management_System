@@ -170,13 +170,32 @@ namespace Ain_Shams_Hospital.Controllers
         public ActionResult Login(RegistrationStaffVM objc)
         {
             Registration R = new Registration();
+            Staff Z = new Staff();
             R.Email = objc.Email;
             R.Password = objc.Password;
+            var IDP = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).SingleOrDefault();
+            var IDS = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).SingleOrDefault();
+            var SID = _auc.Staff.Where(F => F.Registration_Id == IDS).Select(S => S.Specialization_Id).SingleOrDefault();
+            var IDExist = _auc.Patients.ToList().Any(u => u.Registration_Id == IDP);
             var Password = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Password).SingleOrDefault();
             if (BCrypt.Net.BCrypt.Verify(R.Password, Password))
             {
-                return Redirect("/Registration/Loggin");
+                if (IDExist)
+                {
+                    return Redirect("/Registration/Patient");
+                }
+                else
+                {
+                    if (SID == 25)
+                    {
 
+                        return Redirect("/Front_desk/Roomreservation");
+                    }
+                    else
+                    {
+                        return Redirect("/Registration/DOCLog");
+                    }
+                }
             }
             return Redirect("/Registration/NotLog");
         }
