@@ -32,9 +32,11 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult Activation(actVM ch)
         {
             var CodeExist = _auc.Specializations.ToList().Any(z => z.Code == ch.Activation);
+            TempData["x"] = ch.Activation;
+
             if (CodeExist)
             {
-                if (ch.Activation == "0000")
+                if (ch.Activation== "0000")
                 {
                     return Redirect("/Registration/RegistrationPatient");
                 }
@@ -141,7 +143,15 @@ namespace Ain_Shams_Hospital.Controllers
 
                 _auc.Add(S);
                 _auc.SaveChanges();
-                return Redirect("/Registration/Staff");
+                if (S.Specialization_Id == 25)
+                {
+                    return Redirect("/Front_desk/Roomreservation");
+                }
+                else
+                {
+                    return Redirect("/Registration/Staff");
+                }
+               
             }
         }
 
@@ -159,6 +169,10 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
+        public IActionResult DOCLog()
+        {
+            return View();
+        }
         ///login
         [HttpGet]
         public IActionResult Login()
@@ -170,13 +184,32 @@ namespace Ain_Shams_Hospital.Controllers
         public ActionResult Login(RegistrationStaffVM objc)
         {
             Registration R = new Registration();
+            Staff Z = new Staff();
             R.Email = objc.Email;
             R.Password = objc.Password;
+            var IDP = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).Single();
+            var IDS = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).Single();
+            var SID = _auc.Staff.Where(F => F.Registration_Id == IDS).Select(S => S.Specialization_Id).Single();
+            var IDExist = _auc.Patients.ToList().Any(u => u.Registration_Id == IDP);
             var Password = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Password).SingleOrDefault();
             if (BCrypt.Net.BCrypt.Verify(R.Password, Password))
             {
-                return Redirect("/Registration/Loggin");
+                if (IDExist)
+                {
+                    return Redirect("/Registration/Loggin");
+                }
+                else
+                {
+                    if (SID == 25)
+                    {
 
+                        return Redirect("/Front_desk/Roomreservation");
+                    }
+                    else
+                    {
+                        return Redirect("/Registration/DOCLog");
+                    }
+                }
             }
             return Redirect("/Registration/NotLog");
         }
