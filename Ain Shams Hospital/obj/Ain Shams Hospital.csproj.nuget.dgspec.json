@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Software Project\\Ain Shams Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {}
+    "E:\\Software Project\\Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {}
   },
   "projects": {
-    "E:\\Software Project\\Ain Shams Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {
+    "E:\\Software Project\\Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Software Project\\Ain Shams Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+        "projectUniqueName": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
         "projectName": "Ain Shams Hospital",
-        "projectPath": "E:\\Software Project\\Ain Shams Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+        "projectPath": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
         "packagesPath": "C:\\Users\\Nouran Ahmed\\.nuget\\packages\\",
-        "outputPath": "E:\\Software Project\\Ain Shams Hospital\\Ain Shams Hospital\\obj\\",
+        "outputPath": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rDSMdXfi8ij3Gce902UuKS7JyzqU4urH6tf+ulZ8QZAC4kp/SO4b5kVAc2gpki9XC28Tcw7JPbY/XnXWw4TtZA==",
+  "dgSpecHash": "ZugiNW6MGeNCyImKY3H3Ao/ekzUzfkDtceDN7TqCab4tMs58+jCfJlN1PK4AeBaeJPD2x8kD+9O4/NEXZEEn4g==",
   "success": true,
-  "projectFilePath": "E:\\Software Project\\Ain Shams Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+  "projectFilePath": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nouran Ahmed\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\Nouran Ahmed\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
