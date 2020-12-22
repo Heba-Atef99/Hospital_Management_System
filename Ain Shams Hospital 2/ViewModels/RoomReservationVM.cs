@@ -18,11 +18,7 @@ namespace WebApplication10.ViewModels
         public string From  { get; set; }
         [DataType(DataType.DateTime)]
         public string To { get; set; }
-        public String SurgeryRoom { get; set; }
-        [DataType(DataType.DateTime)]
-        public string Start_Hour { get; set; }
-        [DataType(DataType.DateTime)]
-        public string End_Hour { get; set; }
+   
 
     }
 }

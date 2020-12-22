@@ -5,8 +5,6 @@
 }
 
 <h1>Roomreservation</h1>
-
-
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,7 +22,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="Room" class="control-label"></label>
-                <input asp-for="Room" class="form-control" />
+
+                <select name="Room" id="Room" class="form-control">
+                    
+                    <option value="Room 1">Room 1</option>
+                    <option value="Room 2">Room 2</option>
+                    <option value="Room 3">Room 3</option>
+                    <option value="Room 4">Room 4</option>
+                    <option value="Room 5">Room 5</option>
+                </select>
                 <span asp-validation-for="Room" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -36,21 +42,6 @@
                 <label asp-for="To" class="control-label"></label>
                 <input asp-for="To" class="form-control" />
                 <span asp-validation-for="To" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SurgeryRoom" class="control-label"></label>
-                <input asp-for="SurgeryRoom" class="form-control" />
-                <span asp-validation-for="SurgeryRoom" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Start_Hour" class="control-label"></label>
-                <input asp-for="Start_Hour" class="form-control" />
-                <span asp-validation-for="Start_Hour" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="End_Hour" class="control-label"></label>
-                <input asp-for="End_Hour" class="form-control" />
-                <span asp-validation-for="End_Hour" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

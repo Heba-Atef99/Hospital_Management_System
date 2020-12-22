@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ain_Shams_Hospital.Migrations
 {
     [DbContext(typeof(HospitalDbContext))]
-    [Migration("20201213105015_edit")]
-    partial class edit
+    [Migration("20201220205220_ed")]
+    partial class ed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -65,6 +65,11 @@ namespace Ain_Shams_Hospital.Migrations
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Facility_Reservation", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
                     b.Property<string>("End_Hour")
                         .HasColumnType("nvarchar(max)");
 
@@ -79,6 +84,8 @@ namespace Ain_Shams_Hospital.Migrations
 
                     b.Property<string>("Start_Hour")
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("Hospital_Facility_Id");
 
@@ -242,9 +249,11 @@ namespace Ain_Shams_Hospital.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -331,23 +340,23 @@ namespace Ain_Shams_Hospital.Migrations
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Facility_Reservation", b =>
                 {
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Hospital_Facility", "Hospital_Facility_")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Hospital_Facility", "Hospital_Facility")
                         .WithMany()
                         .HasForeignKey("Hospital_Facility_Id");
 
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Patient", "Patient_")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Patient", "Patient")
                         .WithMany()
                         .HasForeignKey("Patient_Id");
 
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Staff", "Staff_")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Staff", "Staff")
                         .WithMany()
                         .HasForeignKey("Staff_Id");
 
-                    b.Navigation("Hospital_Facility_");
+                    b.Navigation("Hospital_Facility");
 
-                    b.Navigation("Patient_");
+                    b.Navigation("Patient");
 
-                    b.Navigation("Staff_");
+                    b.Navigation("Staff");
                 });
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Follow_Up", b =>
@@ -410,13 +419,13 @@ namespace Ain_Shams_Hospital.Migrations
                         .WithMany()
                         .HasForeignKey("Registration_Id");
 
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Specialization", "Specialization_")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Specialization", "Specialization")
                         .WithMany()
                         .HasForeignKey("Specialization_Id");
 
                     b.Navigation("Registration");
 
-                    b.Navigation("Specialization_");
+                    b.Navigation("Specialization");
                 });
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Staff_Schedule", b =>

@@ -1,0 +1,51 @@
+﻿@model AinShamsHospital.ViewModels.SRoomReservationVM
+
+@{
+    ViewData["Title"] = "SRoomreservation";
+}
+
+<h1>SRoomreservation</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SRoomreservation">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SurgeryRoom" class="control-label"></label>
+
+                <select name="SurgeryRoom" id="SurgeryRoom" class="form-control">
+                    <option value="No Surgery">No Surgery</option>
+                    <option value="Surgery 1">SurgeryRoom 1</option>
+                    <option value="Surgery 2">SurgeryRoom 2</option>
+                    <option value="Surgery 3">SurgeryRoom 3</option>
+                    <option value="Surgery 4">SurgeryRoom 4</option>
+                    <option value="Surgery 5">SurgeryRoom 5</option>
+                </select>
+                <span asp-validation-for="SurgeryRoom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Start_Hour" class="control-label"></label>
+                <input asp-for="Start_Hour" class="form-control" />
+                <span asp-validation-for="Start_Hour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="End_Hour" class="control-label"></label>
+                <input asp-for="End_Hour" class="form-control" />
+                <span asp-validation-for="End_Hour" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
