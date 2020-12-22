@@ -189,7 +189,7 @@ namespace Ain_Shams_Hospital.Controllers
             R.Password = objc.Password;
             var IDP = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).Single();
             var IDS = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).Single();
-            var SID = _auc.Staff.Where(F => F.Registration_Id == IDS).Select(S => S.Specialization_Id).Single();
+            
             var IDExist = _auc.Patients.ToList().Any(u => u.Registration_Id == IDP);
             var Password = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Password).SingleOrDefault();
             if (BCrypt.Net.BCrypt.Verify(R.Password, Password))
@@ -200,6 +200,7 @@ namespace Ain_Shams_Hospital.Controllers
                 }
                 else
                 {
+                    var SID = _auc.Staff.Where(F => F.Registration_Id == IDS).Select(S => S.Specialization_Id).Single();
                     if (SID == 25)
                     {
 
