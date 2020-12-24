@@ -57,5 +57,71 @@ namespace Ain_Shams_Hospital.Controllers
             ViewBag.follow_ups = patient_join_follow_up;
             return View();
         }
+        [HttpGet]
+        public IActionResult PatientFollowUp()
+        {
+            int patient_id = 1;
+            //var Patient = _auc.Patients.Where(i => i.Id == patient_id);
+            //var Patient_Name = Patient.Select(i => i.Name).Single();
+            var result = _auc.Patients
+                .Where(O => O.Id == patient_id)
+                .Select(I => I.Name)
+                .Single();
+
+            var two = _auc.Patients
+                .Where(O => O.Id == 1)
+                .Select(I => I.Phone)
+                .Single();
+            var regestration_id = _auc.Patients
+                .Where(O => O.Id == 1)
+                 .Select(I => I.Registration_Id)
+                 .Single();
+            var mail = _auc.Registrations
+                .Where(O => O.Id == regestration_id)
+                 .Select(I => I.Email)
+                 .Single();
+            var Medical_Record = _auc.Patients
+                  .Where(O => O.Id == patient_id)
+                  .Select(I => I.Medical_Record)
+                  .Single();
+            ViewBag.data1 = result;
+            ViewBag.data2 = two;
+            ViewBag.data3 = mail;
+            ViewBag.data4 = Medical_Record;
+            /*var result = _auc.Patients
+                 .Where(O => O.Id == patient_id)
+                 .Select(I => new {I.Name,I.Phone})
+                 .ToList();
+            ViewBag.data1 = result;*/
+
+            return View();
+
+        }
+        [HttpPost]
+        public IActionResult PatientFollowUp(PatientFollowUpVM obj)
+        {
+            int patient_id = 1;
+
+            Patient patient;
+            patient = _auc.Patients
+                       .Where(i => i.Id == 1).FirstOrDefault();
+            patient.Medical_Record = patient.Medical_Record + " " + obj.Medical_Record;
+            ViewBag.UserMessage = "edit send";
+            //_auc.Add(patient);
+            _auc.SaveChanges();
+            ModelState.Clear();
+            var Medical_Record = _auc.Patients
+                  .Where(O => O.Id == patient_id)
+                  .Select(I => I.Medical_Record)
+                  .Single();
+            ViewBag.data4 = Medical_Record;
+
+            return View();
+
+        }
+        public IActionResult Transfer()
+        {
+            return View();
+        }
     }
 }
