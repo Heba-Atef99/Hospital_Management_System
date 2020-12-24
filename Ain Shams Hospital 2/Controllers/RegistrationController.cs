@@ -205,46 +205,46 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(RegistrationStaffVM objc)
         {
-            Registration R = new Registration();
-            R.Email = objc.Email;
-            R.Password = objc.Password;
-            var Data = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => new { s.Password, s.Id }).ToList();
-            var SID = _auc.Staff.Where(F => F.Registration_Id == Data[0].Id).Select(S => S.Specialization_Id).Single();
-            var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == R.Email);
-            if (BCrypt.Net.BCrypt.Verify(R.Password, Data[0].Password) && EmailExist)
+            var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == objc.Email);
+            if (EmailExist)
             {
-                var code = _auc.Specializations
-                        .Where(s => s.Id == SID)
-                        .Select(s => s.Code)
-                        .Single();
-
-                int _Index = (int)code[0] - 48;
-
-                TempData["User_Reg_Id"] = Data[0].Id;
-
-                switch (_Index)
+                var Data = _auc.Registrations.Where(f => f.Email == objc.Email).Select(s => new { s.Password, s.Id }).ToList();
+                if (BCrypt.Net.BCrypt.Verify(objc.Password, Data[0].Password))
                 {
-                    case 0:
+                    var SID = _auc.Staff.Where(F => F.Registration_Id == Data[0].Id).Select(S => S.Specialization_Id).Single();
+                    var code = _auc.Specializations
+                            .Where(s => s.Id == SID)
+                            .Select(s => s.Code)
+                            .Single();
+
+                    int _Index = (int)code[0] - 48;
+
+                    TempData["User_Reg_Id"] = Data[0].Id;
+
+                    switch (_Index)
+                    {
+                        case 0:
                         //go to patient
 
-                    case 1:
-                        return Redirect("/Doctor/Home");
+                        case 1:
+                            return Redirect("/Doctor/Home");
 
-                    case 2:
-                    //go to manager
+                        case 2:
+                        //go to manager
 
-                    case 3:
-                    //go to lap
+                        case 3:
+                        //go to lap
 
-                    case 4:
-                    //go to finance
+                        case 4:
+                        //go to finance
 
 
-                    case 5:
-                        return Redirect("/Front_desk/Roomreservation");
+                        case 5:
+                            return Redirect("/Front_desk/Roomreservation");
 
-                    default:
-                        return Redirect("/Registration/Staff");
+                        default:
+                            return Redirect("/Registration/Staff");
+                    }
                 }
             }
             return Redirect("/Registration/NotLog");
