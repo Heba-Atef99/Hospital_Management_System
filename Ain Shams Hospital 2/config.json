@@ -1,0 +1,5 @@
+{
+	"ConnectionStrings": {
+		"HospitalConnectionString": "server=(localdb)\\ProjectsV13;Database=HospitalDb;Integrated Security=true;MultipleActiveResultSets=true;"
+	}
+}
