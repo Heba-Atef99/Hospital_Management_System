@@ -1,0 +1,45 @@
+body{
+    background-color: darkgrey;
+}
+
+img{
+    border-radius: inherit;
+}
+
+.card{
+    width: 400px;
+}
+
+.row{
+    justify-content: center;
+}
+
+.card{
+    transition: transform 0.5s;
+}
+
+.card:hover{
+    -ms-transform: scale(1.06); /* IE 9 */
+    -webkit-transform: scale(1.06); /* Safari 3-8 */
+    transform: scale(1.06);   
+    box-shadow: 5px 3px #888888c4;
+    z-index: 2;
+}
+
+button{
+    display: contents;
+}
+
+footer.footer {
+    background-color: #6da6cf;
+    position: absolute;
+    bottom: 0;
+    width: -webkit-fill-available;
+}
+/* a{
+    color: black;
+}
+a:hover{
+    text-decoration: none;
+    color: black;
+} */

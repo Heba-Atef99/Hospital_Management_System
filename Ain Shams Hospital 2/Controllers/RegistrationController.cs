@@ -152,7 +152,6 @@ namespace Ain_Shams_Hospital.Controllers
                 _auc.SaveChanges();
 
                 TempData["User_Reg_Id"] = S.Registration_Id;
-
                 switch (_Index)
                 {
                     case 0:
