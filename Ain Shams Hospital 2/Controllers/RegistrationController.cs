@@ -211,7 +211,7 @@ namespace Ain_Shams_Hospital.Controllers
             if (BCrypt.Net.BCrypt.Verify(R.Password, Data[0].Password) && EmailExist)
             {
                 var code = _auc.Specializations
-                        .Where(s => s.Id == Specialization_Id)
+                        .Where(s => s.Id == SID)
                         .Select(s => s.Code)
                         .Single();
 
