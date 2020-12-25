@@ -32,11 +32,10 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult Activation(actVM ch)
         {
             var CodeExist = _auc.Specializations.ToList().Any(z => z.Code == ch.Activation);
-            TempData["x"] = ch.Activation;
 
             if (CodeExist)
             {
-                if (ch.Activation== "0000")
+                if (ch.Activation == "0000")
                 {
                     return Redirect("/Registration/RegistrationPatient");
                 }
@@ -138,20 +137,46 @@ namespace Ain_Shams_Hospital.Controllers
                 S.Phone = objc.Phone;
                 S.Starting_Day = objc.Starting_Day;
                 S.Registration_Id = R.Id;
+
                 S.Specialization_Id = (int)TempData["Specialization_Id"];
 
+                //recently added
+                var code = _auc.Specializations
+                           .Where(s => s.Id == S.Specialization_Id)
+                           .Select(s => s.Code)
+                           .Single();
+
+                int _Index = (int)code[0] - 48; //the first number in the activation code
 
                 _auc.Add(S);
                 _auc.SaveChanges();
-                if (S.Specialization_Id == 25)
+
+                TempData["User_Reg_Id"] = S.Registration_Id;
+
+                switch (_Index)
                 {
-                    return Redirect("/Front_desk/Roomreservation");
+                    case 0:
+                    //go to patient
+
+                    case 1:
+                        return Redirect("/Doctor/Home");
+
+                    case 2:
+                    //go to manager
+
+                    case 3:
+                    //go to lap
+
+                    case 4:
+                    //go to finance
+
+                    case 5:
+                        return Redirect("/Front_desk/Roomreservation");
+
+                    default:
+                        return Redirect("/Registration/Staff");
                 }
-                else
-                {
-                    return Redirect("/Registration/Staff");
-                }
-               
+
             }
         }
 
@@ -169,10 +194,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
-        public IActionResult DOCLog()
-        {
-            return View();
-        }
+
         ///login
         [HttpGet]
         public IActionResult Login()
@@ -183,32 +205,45 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(RegistrationStaffVM objc)
         {
-            Registration R = new Registration();
-            Staff Z = new Staff();
-            R.Email = objc.Email;
-            R.Password = objc.Password;
-            var IDP = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).Single();
-            var IDS = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).Single();
-            
-            var IDExist = _auc.Patients.ToList().Any(u => u.Registration_Id == IDP);
-            var Password = _auc.Registrations.Where(f => f.Email == R.Email).Select(s => s.Password).SingleOrDefault();
-            if (BCrypt.Net.BCrypt.Verify(R.Password, Password))
+            var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == objc.Email);
+            if (EmailExist)
             {
-                if (IDExist)
+                var Data = _auc.Registrations.Where(f => f.Email == objc.Email).Select(s => new { s.Password, s.Id }).ToList();
+                if (BCrypt.Net.BCrypt.Verify(objc.Password, Data[0].Password))
                 {
-                    return Redirect("/Registration/Loggin");
-                }
-                else
-                {
-                    var SID = _auc.Staff.Where(F => F.Registration_Id == IDS).Select(S => S.Specialization_Id).Single();
-                    if (SID == 25)
-                    {
+                    var SID = _auc.Staff.Where(F => F.Registration_Id == Data[0].Id).Select(S => S.Specialization_Id).Single();
+                    var code = _auc.Specializations
+                            .Where(s => s.Id == SID)
+                            .Select(s => s.Code)
+                            .Single();
 
-                        return Redirect("/Front_desk/Roomreservation");
-                    }
-                    else
+                    int _Index = (int)code[0] - 48;
+
+                    TempData["User_Reg_Id"] = Data[0].Id;
+
+                    switch (_Index)
                     {
-                        return Redirect("/Registration/DOCLog");
+                        case 0:
+                        //go to patient
+
+                        case 1:
+                            return Redirect("/Doctor/Home");
+
+                        case 2:
+                        //go to manager
+
+                        case 3:
+                        //go to lap
+
+                        case 4:
+                        //go to finance
+
+
+                        case 5:
+                            return Redirect("/Front_desk/Event");
+
+                        default:
+                            return Redirect("/Registration/Staff");
                     }
                 }
             }

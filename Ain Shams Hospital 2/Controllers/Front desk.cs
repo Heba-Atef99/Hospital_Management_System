@@ -30,6 +30,16 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
+        public IActionResult Event()
+        {
+            Facility_Reservation FR = new Facility_Reservation();
+            Hospital_Facility H = new Hospital_Facility();
+            var h = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id ==5 ).Select(s =>  s.End_Hour);
+            var h1 = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id == 5).Select(s => s.Start_Hour);
+            ViewBag.D1 =h;
+            ViewBag.D2 = h1;
+            return View();
+        }
         IList<Hospital_Facility> roomtype = new List<Hospital_Facility>();
         public IActionResult Roomavailabilty()
         {
@@ -56,9 +66,9 @@ namespace Ain_Shams_Hospital.Controllers
             var NameSexist = _asu.Staff.ToList().Any(F => F.Name == ob.DoctorName);
             var Availabilty = _asu.Hospital_Facilities.Where(f => f.Type == ob.Room).Select(s => s.Available).Single();
             var HID = _asu.Hospital_Facilities.Where(f => f.Type == ob.Room).Select(s => s.Id).Single();
-            var availableroom = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id == HID).Select(s => new { date = s.End_Hour, date1 = s.Start_Hour }).ToList();
+            var availableroom = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id == HID)
+                .Select(s => new { date = s.End_Hour, date1 = s.Start_Hour }).ToList();
             bool av;
-
 
             if (availableroom == null)
             {
@@ -137,6 +147,66 @@ namespace Ain_Shams_Hospital.Controllers
                 }
             }
 
+        }
+        public IActionResult NotAvailable()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Search()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Search(SearchVm ob)
+        {
+            Facility_Reservation FR = new Facility_Reservation();
+            var ID = _asu.Patients.Where(f => f.Name == ob.patientName).Select(s => s.Id).Single();
+            var NamePexist = _asu.Facility_Reservations.ToList().Any(f => f.Patient_Id == ID);
+            if (NamePexist)
+            {
+               
+                /*
+                                var Startavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
+                                    .Select(s => s.Start_Hour).Single();
+                                var Endavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
+                                  .Select(s => s.End_Hour).Single();
+               
+                var Endavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
+                                .Select(s =>new { s.End_Hour ,s.Start_Hour}).ToList();
+                DateTime parse1 = DateTime.Parse(Startavailable);
+                DateTime parse2 = DateTime.Parse(Endavailable);
+ */
+                var Endavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
+                                          .Select(s => new { dates = s.Start_Hour, dateE = s.End_Hour,name=s.Id }).ToList();
+                foreach (var V in Endavailable)
+                {
+                    DateTime parse3 = DateTime.Parse(V.dates);
+                    DateTime parse4 = DateTime.Parse(V.dateE);
+                    int i = V.name;
+                    if ((ob.Today <= parse3))
+                    {
+                        var roomnumber = _asu.Facility_Reservations
+                        .Where(F => F.Id==i )
+                        .Select(s => s.Hospital_Facility_Id).Single();
+                        TempData["room"] = _asu.Hospital_Facilities.Where(t => t.Id == roomnumber)
+                            .Select(S => S.Type).Single();
+                        return Redirect("/Front_desk/Searchresult");
+                    }
+                    else {
+                        return Redirect("/Front_desk/NotAvailable");
+                    }
+                }
+            }
+            return Redirect("/Front_desk/NotAvailable");
+        }
+        public IActionResult SearchResult()
+        {
+            ViewBag.D = TempData["Endavailable"];
+            ViewBag.DD = TempData["room"];
+            return View();
         }
         [HttpGet]
         public IActionResult SRoomreservation()

@@ -1,3 +1,15 @@
-﻿@{
-    Layout = "_Layout";
-}
+﻿@{  
+    var controller = @ViewContext.RouteData.Values["Controller"].ToString();
+    //string layout = "";
+
+    switch (controller)
+    {
+        case "Doctor":
+            Layout = "~/Views/Shared/_DoctorLayout.cshtml";
+            break;
+        default:
+            //Admin layout  
+            Layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+    }
+}  
