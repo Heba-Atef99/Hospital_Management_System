@@ -1,6 +1,6 @@
-﻿using Ain_Shams_Hospital.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Ain_Shams_Hospital.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,7 +23,15 @@ namespace Ain_Shams_Hospital.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
+        {
+            return View();
+        }
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult Covid()
         {
             return View();
         }
