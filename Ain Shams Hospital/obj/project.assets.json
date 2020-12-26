@@ -5757,25 +5757,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\RENAD\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Nouran Ahmed\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\software project\\gitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+      "projectUniqueName": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
       "projectName": "Ain Shams Hospital",
-      "projectPath": "D:\\software project\\gitHub\\Hospital_Management_System\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
-      "packagesPath": "C:\\Users\\RENAD\\.nuget\\packages\\",
-      "outputPath": "D:\\software project\\gitHub\\Hospital_Management_System\\Ain Shams Hospital\\obj\\",
+      "projectPath": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+      "packagesPath": "C:\\Users\\Nouran Ahmed\\.nuget\\packages\\",
+      "outputPath": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\RENAD\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Nouran Ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -5837,7 +5836,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
