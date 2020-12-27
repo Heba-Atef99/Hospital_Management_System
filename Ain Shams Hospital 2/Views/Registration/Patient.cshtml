@@ -4,4 +4,87 @@
 @{
 
 }
-<h1>Hello Patient</h1>
+
+<section>
+    <div class="img_bg_p">
+        <div class="container">
+            
+            <div style="display: inline-block;" class="text-white pt-5 mt-5">
+                <h3 style="width: 270px;" class="bg-danger p-2 ">Ain Shams Hospital</h3>
+
+                <h1 class="bg-dark p-3 ">
+                    PERFECT STAFF IS AVAILABLE
+                </h1>
+                <h3 class="bg-dark p-2 ">BEST CHOICE FOR YOU</h3>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="superdoctors" >
+   
+    <div class="doctors pt-5">
+        <div class="container-fluid">
+            <h2 class="h1 text-white text-center" style="font-family: Dancing Script", cursive;">Pick A Doctor</h2>
+            <hr>
+            <div class="row text-center">
+
+
+                
+                <div class="card-group p-5">
+                    
+                    <div class="col-lg-3 col-sm-6 ">
+                        <a asp-action="labSpecialist" asp-controller="Patient" role="button">
+                            <div class="card shadow mt-3">
+
+                                <img class="card-img-top" src="~/images/lab.jpg" alt="lab">
+                                <div class="card-body">
+                                    <h5 class="card-title">Lab Specialists</h5>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-3 col-sm-6">
+                        <a asp-action="EyesDoctor" asp-controller="Patient">
+                            <div class="card shadow mt-3">
+
+                                <img class="card-img-top" src="~/images/eyes1.jpg" alt="Eyes Doctor">
+                                <div class="card-body">
+                                    <h5 class="card-title">Eye's Doctor</h5>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <a asp-action="BabyDoctor" asp-controller="Patient">
+                            <div class="card shadow mt-3">
+
+                                <img class="card-img-top" src="~/images/baby.jpg" alt="Baby's Doctor">
+                                <div class="card-body">
+                                    <h5 class="card-title">Baby's Doctor</h5>
+
+                                </div>
+                            </div>
+                            </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <a asp-action="Surgeon" asp-controller="Patient">
+                            <div class="card shadow mt-3">
+
+                                <img class="card-img-top" src="~/images/Surgeon.jpg" alt="Surgeon">
+                                <div class="card-body">
+                                    <h5 class="card-title">Surgeon</h5>
+                                </div>
+                            </div>
+                            </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

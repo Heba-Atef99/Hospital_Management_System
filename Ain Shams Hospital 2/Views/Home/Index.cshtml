@@ -1,9 +1,13 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Home Page";
 }
 
+
+
+
 <div class="text-center">
-   <h1 class="display-4"> <b>Welcome to Ain Shams Hospital</b></h1>
+    <h1 class="display-4"> <b>Welcome to Ain Shams Hospital</b></h1>
     @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
 </div>
 
@@ -29,12 +33,12 @@
 
 <div class="container mb-5">
     <div class="row">
-        <div class="col">
+        <div class="col-lg-6 col-sm-12">
             <div class="box mb-5">
                 <img src="~/images/M_carilion-roanoke-memorial-hospital.jpg" id="main" />
             </div>
         </div>
-        <div class="col">
+        <div class="col-lg-6 col-sm-12">
             <div class="box">
                 <img src="~/images/5a5ea5033865b.image.jpg" id="main" />
                 @*<img src="~/images/we care about your health.PNG" id="main"/>*@
@@ -44,24 +48,25 @@
 </div>
 
 <br />
-<div class="container mt-2">
-    <div class="row">
-        <div class="col-md-4 offset-4">
-            <h6 class="text-center">We are happy to serve you. </h6>
-            <form class="card card-body">
-                @*<label>Email or Username:</label>
-                <input class="form-control" placeholder="Email or Username" />
-                <br />
-                <label>Password:</label>
-                <input type="password" placeholder="Password" class="form-control" />
-                <br />*@
-                @*<input class="btn btn-dark w-auto text-center" type="submit" value="" />*@
-                <a class="btn btn-dark w-auto text-center" href="Registration/login" role="button">Login</a>
-                <hr />
-                @*<input class="btn btn-success" type="submit" value="Create New Account" />*@
-                <a class="btn btn-success" href="Registration/Activation" role="button">Create New Account</a>
-            </form>
+<div class=" login">
+    <div class="container mt-2">
+        <div class="row">
+            <div style="margin:auto;" class="col-lg-6  ">
+                <h6 class="text-center">We are happy to serve you. </h6>
+                <form class="card card-body">
+                    @*<label>Email or Username:</label>
+                        <input class="form-control" placeholder="Email or Username" />
+                        <br />
+                        <label>Password:</label>
+                        <input type="password" placeholder="Password" class="form-control" />
+                        <br />*@
+                    @*<input class="btn btn-dark w-auto text-center" type="submit" value="" />*@
+                    <a class="btn btn-dark w-auto text-center" href="Registration/login" role="button">Login</a>
+                    <hr />
+                    @*<input class="btn btn-success" type="submit" value="Create New Account" />*@
+                    <a class="btn btn-success" href="Registration/Activation" role="button">Create New Account</a>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-

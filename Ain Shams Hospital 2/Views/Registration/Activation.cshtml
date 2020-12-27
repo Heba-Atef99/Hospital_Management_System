@@ -12,26 +12,28 @@
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 }
 
-<h2>Please enter your Activation Code</h2>
-<p>Hint:if you are a patient enter "0000"</p>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Activation">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Activation" class="control-label"></label>
-                <input asp-for="Activation" class="form-control" />
-                <span asp-validation-for="Activation" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+<div class="container">
+    <h2>Please enter your Activation Code</h2>
+    <p>Hint:if you are a patient enter "0000"</p>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Activation">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Activation" class="control-label"></label>
+                    <input asp-for="Activation" class="form-control" />
+                    <span asp-validation-for="Activation" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Login">Login</a>
     </div>
 </div>
-
-<div>
-    <a asp-action="Login">Login</a>
-</div>
-

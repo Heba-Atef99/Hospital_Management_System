@@ -211,21 +211,24 @@ namespace Ain_Shams_Hospital.Controllers
                 var Data = _auc.Registrations.Where(f => f.Email == objc.Email).Select(s => new { s.Password, s.Id }).ToList();
                 if (BCrypt.Net.BCrypt.Verify(objc.Password, Data[0].Password))
                 {
-                    var SID = _auc.Staff.Where(F => F.Registration_Id == Data[0].Id).Select(S => S.Specialization_Id).Single();
+                    Registration R = new Registration();
+                    var SID = _auc.Staff.Where(F => F.Registration_Id == Data[0].Id).Select(S => S.Specialization_Id).SingleOrDefault();
+                    var PID = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).SingleOrDefault();
+                    var Patient= _auc.Patients.ToList().Any(u => u.Registration_Id == PID);
                     var code = _auc.Specializations
                             .Where(s => s.Id == SID)
                             .Select(s => s.Code)
-                            .Single();
-
+                            .SingleOrDefault();
+                    if (code == null)
+                    {
+                        return Redirect("/Registration/Patient");
+                    }
                     int _Index = (int)code[0] - 48;
 
                     TempData["User_Reg_Id"] = Data[0].Id;
 
                     switch (_Index)
                     {
-                        case 0:
-                        //go to patient
-
                         case 1:
                             return Redirect("/Doctor/Home");
 
