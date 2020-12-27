@@ -8,6 +8,7 @@ namespace Ain_Shams_Hospital.Controllers
 {
     public class PatientController : Controller
     {
+        
         public IActionResult labSpecialist()
         {
             return View();

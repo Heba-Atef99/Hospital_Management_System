@@ -13,6 +13,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Ain_Shams_Hospital.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using Ain_Shams_Hospital.Classes;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -82,6 +83,8 @@ namespace Ain_Shams_Hospital.Controllers
             Registration r = new Registration();
             r.Email = obj.Email;
             r.Password = BCrypt.Net.BCrypt.HashPassword(obj.Password);
+            string email = obj.Name;
+            ClassDisplayUserName.getusername(email);
 
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == r.Email);
             if (EmailExist)
@@ -94,6 +97,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             else
             {
+               
                 _auc.Add(r);
                 _auc.SaveChanges();
                 Patient P = new Patient();
@@ -105,6 +109,9 @@ namespace Ain_Shams_Hospital.Controllers
                 _auc.SaveChanges();
                 return Redirect("/Registration/Patient");
             }
+             
+
+
         }
 
         [HttpGet]
@@ -205,6 +212,9 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(RegistrationStaffVM objc)
         {
+   
+            string email = objc.Email;
+            ClassDisplayUserName.getusername(email);
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == objc.Email);
             if (EmailExist)
             {
@@ -229,6 +239,8 @@ namespace Ain_Shams_Hospital.Controllers
 
                     switch (_Index)
                     {
+                        case 0:
+                        //go to patient
                         case 1:
                             return Redirect("/Doctor/Home");
 
