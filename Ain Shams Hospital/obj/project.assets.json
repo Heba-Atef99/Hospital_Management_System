@@ -5763,11 +5763,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
-      "projectName": "Ain Shams Hospital",
-      "projectPath": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\Ain Shams Hospital.csproj",
+      "projectUniqueName": "E:\\Software Project\\My Local Project\\Ain Shams University\\Ain Shams University.csproj",
+      "projectName": "Ain Shams University",
+      "projectPath": "E:\\Software Project\\My Local Project\\Ain Shams University\\Ain Shams University.csproj",
       "packagesPath": "C:\\Users\\Nouran Ahmed\\.nuget\\packages\\",
-      "outputPath": "E:\\Software Project\\Hospital\\Ain Shams Hospital\\obj\\",
+      "outputPath": "E:\\Software Project\\My Local Project\\Ain Shams University\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

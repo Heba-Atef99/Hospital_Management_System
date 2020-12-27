@@ -1,0 +1,47 @@
+﻿.img_bg_p {
+    background-attachment: fixed;
+    background-image: url('../images/we care about your health.PNG');
+    background-size: cover;
+    height: 700px;
+}
+
+/*doctors*/
+
+.doctors {
+    background-image: url('../images/bg.jpg'), linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9));
+    background-size: cover;
+    background-color: #1A1919;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+.superdoctors .card {
+    overflow: hidden;
+    height: 300px;
+    cursor: pointer;
+}
+
+.doctors {
+    background-color: #343A40;
+}
+
+.superdoctors hr {
+    width: 80px;
+    border: 1px solid white;
+}
+
+.card-img-top {
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    height: 72%;
+}
+
+.card-title {
+    font-family: "Dancing Script", cursive;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
+}
