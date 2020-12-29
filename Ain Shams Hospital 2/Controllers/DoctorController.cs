@@ -24,129 +24,49 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult PatientFollowUp( MainVM m)
         {
             int patient_id = m.P_Id;
-            //int patient_id = 1;
-            //var Patient = _auc.Patients.Where(i => i.Id == patient_id);
-            //var Patient_Name = Patient.Select(i => i.Name).Single();
-            /* var result = _auc.Patients
+             var result = _auc.Patients
                  .Where(O => O.Id == patient_id)
-                 .Select(I =>new {I.Name,I.Phone,I.Medical_Record })
-                 .ToList();*/
-
-            /*var two = _auc.Patients
-                .Where(O => O.Id == 1)
-                .Select(I => I.Phone)
-                .Single();*/
-            /*var regestration_id = _auc.Patients.Include(o => o.Registration)
-                .Where(O => O.Id == patient_id)
-                 .ToList();*/
-            // regestration_id[0].Registration.Email.Single();
-            // var mail = regestration_id[0].Registration.Email;
-            /*var Medical_Record = _auc.Patients
-                  .Where(O => O.Id == patient_id)
-                  .Select(I => I.Medical_Record)
-                  .Single();*/
-            var result = _auc.Patients
-                .Where(O => O.Id == patient_id)
-                .Select(I => I.Name)
-                .Single();
-
-            var two = _auc.Patients
-                .Where(O => O.Id == patient_id)
-                .Select(I => I.Phone)
-                .Single();
-            var regestration_id = _auc.Patients
-                .Where(O => O.Id == patient_id)
-                 .Select(I => I.Registration_Id)
-                 .Single();
-            var mail = _auc.Registrations
-                .Where(O => O.Id == regestration_id)
-                 .Select(I => I.Email)
-                 .Single();
-            var Medical_Record = _auc.Patients
-                  .Where(O => O.Id == patient_id)
-                  .Select(I => I.Medical_Record)
-                  .Single();
-            ViewBag.data1 = result;
-            ViewBag.data2 = two;
-            ViewBag.data3 = mail;
-            ViewBag.data4 = Medical_Record;
-           
-             
-            
-            
-            /*var result = _auc.Patients
-                 .Where(O => O.Id == patient_id)
-                 .Select(I => new {I.Name,I.Phone})
+                 .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record })
                  .ToList();
-            ViewBag.data1 = result;*/
 
-            return View();
-            
+            var regestration_id = _auc.Patients.Include(o => o.Registration)
+                .Where(O => O.Id == patient_id)
+                .ToList();
+            var mail = regestration_id[0].Registration.Email;
+         
+            ViewBag.data1 = result;
+            ViewBag.data3 = mail;
+           
+            return View(); 
         }
+
         [HttpPost]
         public IActionResult PatientFollowUp(PatientFollowUpVM obj, MainVM m)
         {
             int patient_id = m.P_Id;
-            //int patient_id = 1;
             Patient patient ;
-            patient = _auc.Patients
-                       .Where(i => i.Id == patient_id).FirstOrDefault();
+            patient = _auc.Patients.Where(i => i.Id == patient_id).FirstOrDefault();
             patient.Medical_Record = patient.Medical_Record + " " + obj.Medical_Record;
             ViewBag.UserMessage = "edit send";
             //_auc.Add(patient);
             _auc.SaveChanges();
             ModelState.Clear();
 
+            //List<Patient> result = new List<Patient>;
 
-            /*var result = _auc.Patients
+            var result = _auc.Patients
                  .Where(O => O.Id == patient_id)
-                 .Select(I => new { I.Name, I.Phone, I.Medical_Record })
+                 .Select(I => new Patient { Name = I.Name, Phone = I.Phone,Medical_Record = I.Medical_Record })
                  .ToList();
 
-            /*var two = _auc.Patients
-                .Where(O => O.Id == 1)
-                .Select(I => I.Phone)
-                .Single();
+
             var regestration_id = _auc.Patients.Include(o => o.Registration)
                 .Where(O => O.Id == patient_id)
                  .ToList();
-            // regestration_id[0].Registration.Email.Single();
             var mail = regestration_id[0].Registration.Email;
-            /*var Medical_Record = _auc.Patients
-                  .Where(O => O.Id == patient_id)
-                  .Select(I => I.Medical_Record)
-                  .Single();
             ViewBag.data1 = result;
-
-            ViewBag.data3 = mail;*/
-            var result = _auc.Patients
-                .Where(O => O.Id == patient_id)
-                .Select(I => I.Name)
-                .Single();
-
-            var two = _auc.Patients
-                .Where(O => O.Id == patient_id)
-                .Select(I => I.Phone)
-                .Single();
-            var regestration_id = _auc.Patients
-                .Where(O => O.Id == patient_id)
-                 .Select(I => I.Registration_Id)
-                 .Single();
-            var mail = _auc.Registrations
-                .Where(O => O.Id == regestration_id)
-                 .Select(I => I.Email)
-                 .Single();
-            var Medical_Record = _auc.Patients
-                  .Where(O => O.Id == patient_id)
-                  .Select(I => I.Medical_Record)
-                  .Single();
-            ViewBag.data1 = result;
-            ViewBag.data2 = two;
             ViewBag.data3 = mail;
-            ViewBag.data4 = Medical_Record;
-
             return View();
-
         }
         public IActionResult Transfer()
         {
@@ -166,10 +86,6 @@ namespace Ain_Shams_Hospital.Controllers
                 .Select(p => new { p.Patient_Id, p.Id })
                 .ToList();
 
-            /*var Details = _auc.Follow_Ups_History
-                .Include(f => f.Follow_Up_Type)
-                .ToList();
-            */
             List<Patient> patient = new List<Patient>();
             List<Follow_Up_History> follow_up = new List<Follow_Up_History>();
             var patient_join_follow_up = new List<Tuple<Patient, Follow_Up_History>>();

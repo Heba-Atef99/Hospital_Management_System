@@ -1,5 +1,9 @@
-﻿
+﻿@page
 @model Ain_Shams_Hospital.ViewModels.DoctorVM.PatientFollowUpVM
+@{ 
+    var patientData = ViewBag.data1;
+}
+
 @section scripts{
 
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
@@ -8,50 +12,44 @@
 }
 
 <div class="col-md-9 offset-md-2">
-    <form class="card card-body">
-        <h1>Patient personal informations </h1>
-        <hr />
-        <h3>name :</h3>
-        <h3>@ViewBag.data1</h3>
-        <hr />
-        <h3>phone :</h3>
-        <h3>@ViewBag.data2</h3>
-        <hr />
-        <h3>mail :</h3>
-        <h3>@ViewBag.data3</h3>
-    </form>
+    @foreach (var p in patientData)
+    {
+        <div class="card card-body">
 
-
-    <form class="card card-body">
-        <h1>Patient Medical_Record </h1>
-        <hr />
-        <h3>@ViewBag.data4</h3>
-    </form>
-    <form method="post">
-        <div asp-validation-summary="ModelOnly"></div>
-
-
-        <div class="form-group">
-            <label asp-for="Medical_Record">Add Medical_Record:</label>
-            <textarea asp-for="Medical_Record" class="form-control">hello writer</textarea>
-
+            <h1>Patient personal informations </h1>
+            <hr />
+            <h3>name :</h3>
+            <h3>@p.Name</h3>
+            <hr />
+            <h3>phone :</h3>
+            <h3>@p.Phone</h3>
+            <hr />
+            <h3>mail :</h3>
+            <h3>@ViewBag.data3</h3>
         </div>
 
-        <div class="form-group">
-            <input type="submit" value="edit Medical_Record" class="btn btn-primary" />
-            <div class="text-success">@ViewBag.UserMessage</div>
+        <div class="card card-body">
+            <h1>Patient Medical_Record </h1>
+            <hr />
+            <h3>@p.Medical_Record</h3>
         </div>
+        <form asp-action="PatientFollowUp" method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label name="Medical_Record">Add Medical_Record:</label>
+                <textarea name="Medical_Record" class="form-control">hello writer</textarea>
+            </div>
 
+            <div class="form-group">
+                <input type="submit" value="edit Medical_Record" class="btn btn-primary" />
+                <div class="text-success">@ViewBag.UserMessage</div>
+            </div>
+        </form>
 
-    </form>
-    <form class="card card-body">
-        <h2 class="text-center">If you need to trasfer patient. </h2>
-        <hr />
-        <a class="btn btn-dark w-auto text-center" href="Transfer" role="button">Transfer</a>
-    </form>
-
-
-
-
-
+        <form class="card card-body">
+            <h2 class="text-center">If you need to trasfer patient. </h2>
+            <hr />
+            <a class="btn btn-dark w-auto text-center" href="Transfer" role="button">Transfer</a>
+        </form>
+    }
 </div>

@@ -158,7 +158,7 @@ namespace Ain_Shams_Hospital.Controllers
                     //go to patient
 
                     case 1:
-                        return Redirect("/Doctor/Home");
+                        return Redirect("/Doctor/Main");
 
                     case 2:
                     //go to manager
@@ -226,7 +226,7 @@ namespace Ain_Shams_Hospital.Controllers
                         //go to patient
 
                         case 1:
-                            return Redirect("/Doctor/Home");
+                            return Redirect("/Doctor/Main");
 
                         case 2:
                         //go to manager
