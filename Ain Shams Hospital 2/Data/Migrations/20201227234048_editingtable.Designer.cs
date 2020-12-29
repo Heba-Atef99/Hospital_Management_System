@@ -4,14 +4,16 @@ using HospitalManagementSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ain_Shams_Hospital.Migrations
 {
     [DbContext(typeof(HospitalDbContext))]
-    partial class HospitalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201227234048_editingtable")]
+    partial class editingtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -114,18 +116,24 @@ namespace Ain_Shams_Hospital.Migrations
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Follow_Up_History", b =>
                 {
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Date")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Follow_UpId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("Follow_Up_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Follow_Up_TypeId")
                         .HasColumnType("int");
 
                     b.Property<int?>("Follow_Up_Type_Id")
                         .HasColumnType("int");
 
-                    b.HasIndex("Follow_Up_Id");
+                    b.HasIndex("Follow_UpId");
 
-                    b.HasIndex("Follow_Up_Type_Id");
+                    b.HasIndex("Follow_Up_TypeId");
 
                     b.ToTable("Follow_Ups_History");
                 });
@@ -194,14 +202,20 @@ namespace Ain_Shams_Hospital.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("RegistrationId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Registration_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Transfer_HospitalId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Hospital_Id");
+                    b.HasIndex("RegistrationId");
 
-                    b.HasIndex("Registration_Id");
+                    b.HasIndex("Transfer_HospitalId");
 
                     b.ToTable("Patients");
                 });
@@ -278,7 +292,13 @@ namespace Ain_Shams_Hospital.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("RegistrationId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Registration_Id")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SpecializationId")
                         .HasColumnType("int");
 
                     b.Property<int?>("Specialization_Id")
@@ -289,22 +309,25 @@ namespace Ain_Shams_Hospital.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Registration_Id");
+                    b.HasIndex("RegistrationId");
 
-                    b.HasIndex("Specialization_Id");
+                    b.HasIndex("SpecializationId");
 
                     b.ToTable("Staff");
                 });
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Staff_Schedule", b =>
                 {
+                    b.Property<int?>("SpecializationId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Specialization_Id")
                         .HasColumnType("int");
 
                     b.Property<string>("Working_Day")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("Specialization_Id");
+                    b.HasIndex("SpecializationId");
 
                     b.ToTable("Staff_Schedules");
                 });
@@ -364,11 +387,11 @@ namespace Ain_Shams_Hospital.Migrations
                 {
                     b.HasOne("Ain_Shams_Hospital.Data.Entities.Follow_Up", "Follow_Up")
                         .WithMany()
-                        .HasForeignKey("Follow_Up_Id");
+                        .HasForeignKey("Follow_UpId");
 
                     b.HasOne("Ain_Shams_Hospital.Data.Entities.Follow_Up_Type", "Follow_Up_Type")
                         .WithMany()
-                        .HasForeignKey("Follow_Up_Type_Id");
+                        .HasForeignKey("Follow_Up_TypeId");
 
                     b.Navigation("Follow_Up");
 
@@ -377,13 +400,13 @@ namespace Ain_Shams_Hospital.Migrations
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Patient", b =>
                 {
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Transfer_Hospital", "Transfer_Hospital")
-                        .WithMany()
-                        .HasForeignKey("Hospital_Id");
-
                     b.HasOne("Ain_Shams_Hospital.Data.Entities.Registration", "Registration")
                         .WithMany()
-                        .HasForeignKey("Registration_Id");
+                        .HasForeignKey("RegistrationId");
+
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Transfer_Hospital", "Transfer_Hospital")
+                        .WithMany()
+                        .HasForeignKey("Transfer_HospitalId");
 
                     b.Navigation("Registration");
 
@@ -394,11 +417,11 @@ namespace Ain_Shams_Hospital.Migrations
                 {
                     b.HasOne("Ain_Shams_Hospital.Data.Entities.Registration", "Registration")
                         .WithMany()
-                        .HasForeignKey("Registration_Id");
+                        .HasForeignKey("RegistrationId");
 
                     b.HasOne("Ain_Shams_Hospital.Data.Entities.Specialization", "Specialization")
                         .WithMany()
-                        .HasForeignKey("Specialization_Id");
+                        .HasForeignKey("SpecializationId");
 
                     b.Navigation("Registration");
 
@@ -409,7 +432,7 @@ namespace Ain_Shams_Hospital.Migrations
                 {
                     b.HasOne("Ain_Shams_Hospital.Data.Entities.Specialization", "Specialization")
                         .WithMany()
-                        .HasForeignKey("Specialization_Id");
+                        .HasForeignKey("SpecializationId");
 
                     b.Navigation("Specialization");
                 });
