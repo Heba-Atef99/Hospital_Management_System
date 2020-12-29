@@ -1,36 +1,46 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Ain_Shams_University.ViewModels.BabyDoctorVM
+
 @{
+    ViewData["Title"] = "BabyDoctor";
 }
-
 <div class="container">
-    <p class="pb-3 pt-4"><b style="font-size:30px;">Baby's Doctor</b></p>
-    <form>
+    <h1>BabyDoctor</h1>
 
-        <div class="form-group">
-            <label for="doctors">Choose A Doctor</label>
-            <select class="form-control" id="doctors">
-                <option>Dr Renaad</option>
-                <option>Dr Nouran</option>
-                <option>Dr Noha</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="date">Choose A Date</label>
-            <select class="form-control" id="date">
-                <option>Tuesday 11:am</option>
-                <option>Tuesday 1:am</option>
-                <option>Tuesday 3:am</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="record">Please Enter Your Medical Record</label>
-            <textarea class="form-control" id="record" rows="5" placeholder="eg: What medications do the Baby take at home?
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="BabyDoctor">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="DoctorName" for="doctors">Choose A Doctor</label>
+                    <select asp-for="DoctorName" class="form-control" id="doctors">
+                        <option>Dr Renaad</option>
+                        <option>Dr Nouran</option>
+                        <option>Dr Noha</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date" class="control-label"></label>
+                    <input asp-for="Date" class="form-control" type="datetime-local" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MedicalRecord" for="record">Please Enter Your Medical Record</label>
+                    <textarea asp-for="MedicalRecord" class="form-control" id="record" rows="5" placeholder="eg: What medications do the Baby take at home?
 What is each medicine for?
 What is the dose?"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Pick" class="btn btn-primary" />
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
 </div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
