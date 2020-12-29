@@ -37,13 +37,41 @@ namespace Ain_Shams_Hospital.Controllers
 
             if (NameExist)
             {
-                var member = _auc.Staff
+                TempData["member"] = _auc.Staff
                 .Where(i => i.Name == m.Name)
-                .Select(m => new Staff{ Name=m.Name, Phone=m.Phone,  Starting_Day=m.Starting_Day })
-                .ToList();
-                ViewBag.Member = member;
+                .Select(m => m.Name)
+                .Single();
+                TempData["member1"] = _auc.Staff
+              .Where(i => i.Name == m.Name)
+              .Select(m => m.Phone)
+              .Single();
+                TempData["member2"] = _auc.Staff
+              .Where(i => i.Name == m.Name)
+              .Select(m => m.Starting_Day)
+              .Single();
+                var x = _auc.Staff.Where(i => i.Name == m.Name).Select(m => m.Specialization_Id).Single();
+                TempData["member3"] = _auc.Specializations
+           .Where(i => i.Id == x)
+           .Select(m => m.Name)
+           .Single();
+                var regestration_id = _auc.Staff.
+            Where(i => i.Name == m.Name)
+             .Select(I => I.Registration_Id)
+             .Single();
+                TempData[" mail"] = _auc.Registrations
+                    .Where(O => O.Id == regestration_id)
+                     .Select(I => I.Email)
+                     .Single();
+                ViewBag.DD1 = TempData["member"];
+                ViewBag.DD2 = TempData["member1"];
+                ViewBag.DD3 = TempData["member2"];
+                ViewBag.DD4 = TempData["member3"];
+                ViewBag.DD5 = TempData[" mail"];
                 return View();
+          
+               // return Redirect("/Manager/exist");
             }
+
             else
             {
                 ViewBag.NameDoesntExist = "Staff Member Doesn't Exist";
@@ -54,6 +82,17 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
+        /*public IActionResult Exist()
+        {
+            ViewBag.DD1 = TempData["member"];
+            ViewBag.DD2 = TempData["member1"];
+            ViewBag.DD3 = TempData["member2"];
+            ViewBag.DD4 = TempData["member3"];
+            ViewBag.DD5 = TempData[" mail"];
+           
+            return View();
+        }
+        */
         //[HttpGet]
         //public IActionResult Activation()
         //{

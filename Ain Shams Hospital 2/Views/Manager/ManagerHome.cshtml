@@ -14,7 +14,7 @@
 
 <h1>ManagerHome</h1>
 
-<h4>ManagerSrch</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -32,20 +32,25 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+
+<div class="col-md-9 ">
+    <form class="card card-body">
+        <h1>Staff personal informations </h1>
+        <hr />
+        <h4>name :</h4>
+        <h4>@ViewBag.DD1</h4>
+        <hr />
+        <h3>phone :</h3>
+        <h3>@ViewBag.DD2</h3>
+        <hr />
+        <h3>Starting Day :</h3>
+        <h3>@ViewBag.DD3</h3>
+        <hr />
+        <h3>Spatialization :</h3>
+        <h3>@ViewBag.DD4</h3>
+        <hr />
+        <h3>mail :</h3>
+        <h3>@ViewBag.DD5</h3>
+    </form>
 </div>
-<div>
-    <form>
-    <ul>
-     @foreach (var m in ViewBag.Member )
-     {
-      
-        <li>Name: @m.Name</li>
-        <li>Phone Number: @m.Phone</li>
-        <li>Starting Day: @m.Starting_Day</li>
-      
-     }
-    </ul>
-        </form>
-</div>
+
