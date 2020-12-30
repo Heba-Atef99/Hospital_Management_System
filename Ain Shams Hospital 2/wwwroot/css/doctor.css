@@ -1,5 +1,6 @@
 body{
     background-color: darkgrey;
+    position:relative;
 }
 
 #doctor-main .card{
@@ -26,13 +27,13 @@ body{
     display: contents;
 }
 
-#doctor-main .footer {
+.footer {
     background-color: #6da6cf;
     position: absolute;
     bottom: 0;
     width: -webkit-fill-available;
 }
 
-.footer {
+/*.footer {
     background-color: #6da6cf;
-}
+}*/

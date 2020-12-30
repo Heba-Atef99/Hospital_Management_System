@@ -13,8 +13,8 @@ namespace Ain_Shams_Hospital.Data.Entities
         public int? Follow_Up_Id { get; set; }
         [ForeignKey("Follow_Up_Id")]
         public virtual Follow_Up Follow_Up { get; set; }
-        public string Start_Hour { get; set; }
-        public string End_Hour { get; set; }
+        public String Start_Hour { get; set; }
+        public String End_Hour { get; set; }
         public int? Follow_Up_Type_Id { get; set; }
         [ForeignKey("Follow_Up_Type_Id")]
         public virtual Follow_Up_Type Follow_Up_Type { get; set; }

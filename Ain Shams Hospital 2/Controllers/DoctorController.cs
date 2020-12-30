@@ -2,6 +2,7 @@
 using Ain_Shams_Hospital.Data.Entities;
 using Ain_Shams_Hospital.ViewModels.DoctorVM;
 using HospitalManagementSystem.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -14,37 +15,39 @@ namespace Ain_Shams_Hospital.Controllers
     public class DoctorController : Controller
     {
         private readonly HospitalDbContext _auc;
-       // private readonly IHospitalRepository _repository;
+        // private readonly IHospitalRepository _repository;
         public DoctorController(HospitalDbContext auc)
         {
-           _auc = auc;
-           //_repository = repository;
+            _auc = auc;
+            //_repository = repository;
         }
         [HttpGet]
-        public IActionResult PatientFollowUp( MainVM m)
+        public IActionResult PatientFollowUp()
         {
-            int patient_id = m.P_Id;
-             var result = _auc.Patients
-                 .Where(O => O.Id == patient_id)
-                 .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record })
-                 .ToList();
+            // int patient_id =(int) TempData["p_id"];
+            int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
+            var result = _auc.Patients
+                .Where(O => O.Id == patient_id)
+                .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record })
+                .ToList();
 
             var regestration_id = _auc.Patients.Include(o => o.Registration)
                 .Where(O => O.Id == patient_id)
                 .ToList();
             var mail = regestration_id[0].Registration.Email;
-         
+
             ViewBag.data1 = result;
             ViewBag.data3 = mail;
-           
-            return View(); 
+
+            return View();
         }
 
         [HttpPost]
-        public IActionResult PatientFollowUp(PatientFollowUpVM obj, MainVM m)
+        public IActionResult PatientFollowUp(PatientFollowUpVM obj)
         {
-            int patient_id = m.P_Id;
-            Patient patient ;
+            int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
+            //TempData["p_id"] = patient_id;
+            Patient patient;
             patient = _auc.Patients.Where(i => i.Id == patient_id).FirstOrDefault();
             patient.Medical_Record = patient.Medical_Record + " " + obj.Medical_Record;
             ViewBag.UserMessage = "edit send";
@@ -56,7 +59,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             var result = _auc.Patients
                  .Where(O => O.Id == patient_id)
-                 .Select(I => new Patient { Name = I.Name, Phone = I.Phone,Medical_Record = I.Medical_Record })
+                 .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record })
                  .ToList();
 
 
@@ -72,10 +75,20 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Main(MainVM m)
+        {
+            HttpContext.Session.SetInt32("Patient_Id", m.P_Id);
+            return Redirect("/Doctor/PatientFollowUp");
+        }
+
         [HttpGet]
         public IActionResult Main()
         {
-            int Doctor_Reg_Id = (int)TempData["User_Reg_Id"];
+            //HttpContext.Session.SetInt32("Patient_Id", m.P_Id);
+            //int Doctor_Reg_Id = (int)TempData["User_Reg_Id"];
+            int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Doctor_Id = _auc.Staff
                 .Where(d => d.Registration_Id == Doctor_Reg_Id)
                 .Select(d => d.Id)
