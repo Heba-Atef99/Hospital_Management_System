@@ -13,6 +13,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Ain_Shams_Hospital.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using AinShamsHospital.ViewModels;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -81,6 +82,38 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult NotExist()
         {
             return View();
+        }
+        [HttpGet]
+        public IActionResult Deletemanager()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Deletemanager(deletvm vm)
+        {
+            var NameExist = _auc.Staff.ToList().Any(u => u.Name == vm.StaffName);
+            if (NameExist)
+            {
+                var StaffName = _auc.Staff.Where(f => f.Name == vm.StaffName)
+                   .Select(s => s.Id).Single();
+                //var RoomID = _asu.Facility_Reservations.Where(f => f.Patient_Id == PatientName)
+                //.OrderByDescending(d=>d);
+
+
+
+                var model = _auc.Staff.Find(StaffName);
+                _auc.Remove(model);
+                _auc.SaveChanges();
+                ViewBag.UserMessage4 = "Deleted successfully";
+                return View();
+            }
+            else
+            {
+                ViewBag.UserMessage5 = "This doctor isnot from our staff";
+                return View();
+            }
+
+           
         }
         /*public IActionResult Exist()
         {
