@@ -22,8 +22,19 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
-        public IActionResult EyesDoctor()
+        public IActionResult EyesDoctor(Staff objc)
         {
+            Staff name = new Staff();
+            var EmailExist = _HDB.Staff.ToList().Any(u => u.Specialization_Id == 12);
+            if (EmailExist)
+            {
+                List<Staff> s1 = new List<Staff>();
+                s1 = (from s in _HDB.Staff select s).ToList();
+                s1.Insert(0, new Staff { Id = 0, Name = "--selsct your doctor--" });
+                ViewBag.massege = s1;
+                return View();
+
+            }
             return View();
         }
         public IActionResult  BabyDoctor()

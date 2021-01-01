@@ -3,23 +3,22 @@
 *@
 @{
 }
-
+@model Ain_Shams_Hospital.Models.Account
+@using Ain_Shams_Hospital.Models;
 <div class="container">
     <p class="pb-3 pt-4"><b style="font-size:30px;">Eyes Doctor</b></p>
     <form>
 
         <div class="form-group">
             <label for="doctors">Choose A Doctor</label>
-            <select class="form-control" id="doctors">
-                <option>Dr Omar</option>
-                <option>Dr Nouran</option>
-                <option>Dr Abd El Rahman</option>
+            <select class="form-control" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege ,"Id","Name"))">
             </select>
         </div>
 
         <div class="form-group">
             <label for="date">Choose A Date</label>
             <select class="form-control" id="date">
+
                 <option>Tuesday 11:am</option>
                 <option>Tuesday 1:am</option>
                 <option>Tuesday 3:am</option>
