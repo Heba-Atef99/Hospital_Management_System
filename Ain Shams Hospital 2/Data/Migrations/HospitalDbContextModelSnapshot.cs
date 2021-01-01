@@ -114,14 +114,17 @@ namespace Ain_Shams_Hospital.Migrations
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Follow_Up_History", b =>
                 {
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("End_Hour")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Follow_Up_Id")
                         .HasColumnType("int");
 
                     b.Property<int?>("Follow_Up_Type_Id")
                         .HasColumnType("int");
+
+                    b.Property<string>("Start_Hour")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasIndex("Follow_Up_Id");
 
@@ -224,6 +227,8 @@ namespace Ain_Shams_Hospital.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Patient_Id");
+
                     b.ToTable("Payments");
                 });
 
@@ -235,11 +240,9 @@ namespace Ain_Shams_Hospital.Migrations
                         .UseIdentityColumn();
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -326,58 +329,58 @@ namespace Ain_Shams_Hospital.Migrations
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Facility_Reservation", b =>
                 {
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Hospital_Facility", "Hospital_Facility")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Hospital_Facility", "Hospital_Facility_")
                         .WithMany()
                         .HasForeignKey("Hospital_Facility_Id");
 
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Patient", "Patient")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Patient", "Patient_")
                         .WithMany()
                         .HasForeignKey("Patient_Id");
 
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Staff", "Staff")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Staff", "Staff_")
                         .WithMany()
                         .HasForeignKey("Staff_Id");
 
-                    b.Navigation("Hospital_Facility");
+                    b.Navigation("Hospital_Facility_");
 
-                    b.Navigation("Patient");
+                    b.Navigation("Patient_");
 
-                    b.Navigation("Staff");
+                    b.Navigation("Staff_");
                 });
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Follow_Up", b =>
                 {
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Patient", "Patient")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Patient", "Patient_")
                         .WithMany()
                         .HasForeignKey("Patient_Id");
 
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Staff", "Staff")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Staff", "Staff_")
                         .WithMany()
                         .HasForeignKey("Staff_Id");
 
-                    b.Navigation("Patient");
+                    b.Navigation("Patient_");
 
-                    b.Navigation("Staff");
+                    b.Navigation("Staff_");
                 });
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Follow_Up_History", b =>
                 {
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Follow_Up", "Follow_Up")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Follow_Up", "Follow_Up_")
                         .WithMany()
                         .HasForeignKey("Follow_Up_Id");
 
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Follow_Up_Type", "Follow_Up_Type")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Follow_Up_Type", "Follow_Up_Type_")
                         .WithMany()
                         .HasForeignKey("Follow_Up_Type_Id");
 
-                    b.Navigation("Follow_Up");
+                    b.Navigation("Follow_Up_");
 
-                    b.Navigation("Follow_Up_Type");
+                    b.Navigation("Follow_Up_Type_");
                 });
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Patient", b =>
                 {
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Transfer_Hospital", "Transfer_Hospital")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Transfer_Hospital", "Hospital_")
                         .WithMany()
                         .HasForeignKey("Hospital_Id");
 
@@ -385,9 +388,18 @@ namespace Ain_Shams_Hospital.Migrations
                         .WithMany()
                         .HasForeignKey("Registration_Id");
 
-                    b.Navigation("Registration");
+                    b.Navigation("Hospital_");
 
-                    b.Navigation("Transfer_Hospital");
+                    b.Navigation("Registration");
+                });
+
+            modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Payment", b =>
+                {
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Patient", "Patient_")
+                        .WithMany()
+                        .HasForeignKey("Patient_Id");
+
+                    b.Navigation("Patient_");
                 });
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Staff", b =>
@@ -396,22 +408,22 @@ namespace Ain_Shams_Hospital.Migrations
                         .WithMany()
                         .HasForeignKey("Registration_Id");
 
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Specialization", "Specialization")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Specialization", "Specialization_")
                         .WithMany()
                         .HasForeignKey("Specialization_Id");
 
                     b.Navigation("Registration");
 
-                    b.Navigation("Specialization");
+                    b.Navigation("Specialization_");
                 });
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Staff_Schedule", b =>
                 {
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Specialization", "Specialization")
+                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Specialization", "Specialization_")
                         .WithMany()
                         .HasForeignKey("Specialization_Id");
 
-                    b.Navigation("Specialization");
+                    b.Navigation("Specialization_");
                 });
 #pragma warning restore 612, 618
         }
