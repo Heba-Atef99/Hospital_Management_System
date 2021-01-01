@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ain_Shams_Hospital.Data.Entities
 {
-    [Keyless]
+   
     public class Follow_Up_History
     {
         public int Id { get; set; }

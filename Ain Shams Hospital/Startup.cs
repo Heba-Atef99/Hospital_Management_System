@@ -31,6 +31,13 @@ namespace Ain_Shams_Hospital
                 options.UseSqlServer(Configuration.GetConnectionString("HospitalConnectionString"));
             });
             services.AddControllersWithViews();
+
+            //session configs
+            services.AddDistributedMemoryCache();
+            services.AddSession(options => {
+                options.IdleTimeout = TimeSpan.FromMinutes(240);//You can set Time (4hrs)   
+            });
+            //services.AddMvc();
         }
 
 
@@ -49,7 +56,7 @@ namespace Ain_Shams_Hospital
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession(); //for session configs
             app.UseRouting();
 
             app.UseAuthorization();

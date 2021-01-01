@@ -466,5 +466,3 @@ D:\software project\gitHub\Ain Shams Hospital\bin\Debug\netcoreapp3.1\ru\Microso
 D:\software project\gitHub\Ain Shams Hospital\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\software project\gitHub\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\software project\gitHub\Ain Shams Hospital\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\software project\gitHub\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Patient\BabyDoctor22.cshtml.g.cs
-D:\software project\gitHub\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Patient\BabyDoctor33.cshtml.g.cs

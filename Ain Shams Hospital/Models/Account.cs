@@ -8,9 +8,13 @@ namespace Ain_Shams_Hospital.Models
 {
     public class Account
     {
-        [Key]
-        public int Id { get; set; }
-        public int Name { get; set; }
-
+        [Display(Name = "Email ID")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Email ID required")]
+        public string Email { get; set; }
+        [Required(AllowEmptyStrings = false, ErrorMessage = "password required")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
+        [Display(Name = "Remmeber me")]
+        public bool remmeberme { get; set; }
     }
 }

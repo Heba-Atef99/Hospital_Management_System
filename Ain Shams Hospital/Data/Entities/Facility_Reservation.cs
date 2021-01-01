@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Ain_Shams_Hospital.Data.Entities
 {
-    [Keyless]
+    
     public class Facility_Reservation
     {
+        public int Id { get; set; }
         public int? Hospital_Facility_Id { get; set; }
         [ForeignKey("Hospital_Facility_Id")]
         public virtual Hospital_Facility Hospital_Facility { get; set; }
