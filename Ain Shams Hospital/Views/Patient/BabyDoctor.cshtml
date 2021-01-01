@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "BabyDoctor";
 }
+@using Ain_Shams_Hospital.Models;
 <div class="container">
     <h1>BabyDoctor</h1>
 
@@ -13,10 +14,7 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="DoctorName" for="doctors">Choose A Doctor</label>
-                    <select asp-for="DoctorName" class="form-control" id="doctors">
-                        <option>Dr Renaad</option>
-                        <option>Dr Nouran</option>
-                        <option>Dr Noha</option>
+                    <select class="form-control" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege ,"Id","Name"))">
                     </select>
                 </div>
                 <div class="form-group">
