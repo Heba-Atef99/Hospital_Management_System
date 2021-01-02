@@ -1,33 +1,47 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Ain_Shams_University.ViewModels.labSpecialistVM
+
 @{
+    ViewData["Title"] = "labSpecialist";
 }
-@model Ain_Shams_Hospital.Models.Account
-@using Ain_Shams_Hospital.Models;
 <div class="container">
-    <p class="pb-3 pt-4"><b style="font-size:30px;">Eyes Doctor</b></p>
-    <form>
+    <h1>labSpecialist</h1>
+    <hr />
 
-        <div class="form-group">
-            <label for="doctors">Choose A Doctor</label>
-            <select class="form-control" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege ,"Id","Name"))">
-            </select>
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="labSpecialist">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="DoctorName" for="doctors">Choose A Doctor</label>
+                    <select class="form-control" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege ,"Id","Name"))">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Date" class="control-label"></label>
+                    <input asp-for="Date" class="form-control" type="datetime-local" />
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MedicalRecord" for="record">Please Enter Your Medical Record</label>
+                    <textarea asp-for="MedicalRecord" class="form-control" id="record" rows="5" placeholder="eg: What medications do you take at home?
+What is each medicine for?
+What is the dose?"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Pick" class="btn btn-primary" />
+                </div>
+            </form>
         </div>
+    </div>
 
+    <div>
+        <a asp-action="Index">Back</a>
+    </div>
 
-        <div class="form-group">
-            <label for="date">Choose A Date</label>
-            <select class="form-control" id="date">
-                <option>Tuesday 11:am</option>
-                <option>Tuesday 1:am</option>
-                <option>Tuesday 3:am</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="comments">Any Comments</label>
-            <textarea class="form-control" id="comments" rows="3"></textarea>
-        </div>
-    </form>
 </div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
