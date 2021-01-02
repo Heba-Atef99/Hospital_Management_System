@@ -116,5 +116,13 @@ namespace Ain_Shams_Hospital.Controllers
             ViewBag.message = "Your Time has been recorded";
             return View();
         }
+        public IActionResult Services()
+        {
+            return View();
+        }
+        public IActionResult FollowedDoctors()
+        {
+            return View();
+        }
     }
 }

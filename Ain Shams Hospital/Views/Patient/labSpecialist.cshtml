@@ -12,7 +12,7 @@
             <form asp-action="Laboratory">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="DoctorName" for="doctors">Choose A Doctor</label>
+                    <label asp-for="DoctorName" for="doctors">Choose Your Test</label>
                     <select class="form-control" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege ,"Id","Name"))">
                     </select>
                 </div>

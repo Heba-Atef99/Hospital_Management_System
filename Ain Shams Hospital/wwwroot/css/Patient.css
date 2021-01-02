@@ -12,17 +12,18 @@
     background-size: cover;
     background-color: #1A1919;
     background-repeat: no-repeat;
-    height: 700px;
+    
 }
 
 .superdoctors .card {
     overflow: hidden;
-    height: 300px;
+    height: 350px;
     cursor: pointer;
 }
 
 .doctors {
     background-color: #343A40;
+    height:auto;
 }
 
 .superdoctors hr {
@@ -44,4 +45,44 @@
 
 .card-img-top:hover {
     transform: scale(1.1);
+}
+
+
+/*services*/
+
+.pricing {
+    background-color: #fff;
+}
+
+.pricing .row h5 {
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+.pricing .row p {
+    font-size: 34px;
+}
+
+.price {
+    margin-bottom: 30px;
+}
+
+.left {
+    border-right: 1px solid white;
+}
+
+.left,
+.right ul {
+    padding-top: 20px;
+    
+}
+
+.right,
+.left {
+    background-color: #d24443;
+    height: 130px;
+}
+.pricing hr {
+    width: 80px;
+    border: 1px solid black;
 }
