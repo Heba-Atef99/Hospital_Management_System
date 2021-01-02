@@ -19,6 +19,12 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB = HDB;
         }
 
+        public IActionResult All()
+        {
+
+            return View();
+        }
+
         public IActionResult labSpecialist()
         {
 
@@ -34,9 +40,24 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult labSpecialist(laboratoryVM bd)
         {
 
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
+
+
+            Follow_Up fup = new Follow_Up();
+            fup.Patient_Id = Patient_Id;
+            fup.Staff_Id = bd.Id;
+            fup.Status = "Pending";
+
+            _HDB.Add(fup);
+            _HDB.SaveChanges();
+
             Follow_Up_History fuph = new Follow_Up_History();
             fuph.Date = bd.Date;
-            fuph.Follow_Up_Type_Id = 2;
+            fuph.Follow_Up_Type_Id = 2;            ////Need To Be Edited To Selevt the correct Test
+            fuph.Follow_Up_Id = fup.Id;
+
+
 
             _HDB.Add(fuph);
             _HDB.SaveChanges();
@@ -57,20 +78,34 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult EyesDoctor(EyesDoctorVM ed)
         {
-            Staff st = new Staff();
-            
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
+
+
+            Follow_Up fup = new Follow_Up();
+            fup.Patient_Id = Patient_Id;
+            fup.Staff_Id = ed.Id;
+            fup.Status = "Pending";
+
+            _HDB.Add(fup);
+            _HDB.SaveChanges();
+
             Follow_Up_History fuph = new Follow_Up_History();
             fuph.Date = ed.Date;
-            fuph.Follow_Up_Type_Id = 2;    //m7tageen n5aleeh y5tar anhy test hy3mlo
+            fuph.Follow_Up_Type_Id = 2;
+            fuph.Follow_Up_Id = fup.Id;
+
+
 
             _HDB.Add(fuph);
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
             return View();
         }
+        [HttpGet]
         public IActionResult  BabyDoctor()
         {
-
+           
             List<Staff> s1 = new List<Staff>();
             s1 = (from s in _HDB.Staff select s).Where(f => f.Specialization_Id == 10).ToList();
             s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
@@ -78,15 +113,30 @@ namespace Ain_Shams_Hospital.Controllers
            
             return View();
         }
-        [HttpPost]
+         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult BabyDoctor(BabyDoctorVM bd)
         {
             
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
+            
+
+            Follow_Up fup = new Follow_Up();
+            fup.Patient_Id = Patient_Id;
+            fup.Staff_Id = bd.Id;
+            fup.Status = "Pending";
+
+            _HDB.Add(fup);
+            _HDB.SaveChanges();
+
             Follow_Up_History fuph = new Follow_Up_History();
             fuph.Date = bd.Date;
             fuph.Follow_Up_Type_Id = 2;
+            fuph.Follow_Up_Id = fup.Id;
 
+
+            
             _HDB.Add(fuph);
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
@@ -107,9 +157,24 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult Surgeon(SurgeonVM bd)
         {
 
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
+
+
+            Follow_Up fup = new Follow_Up();
+            fup.Patient_Id = Patient_Id;
+            fup.Staff_Id = bd.Id;
+            fup.Status = "Pending";
+
+            _HDB.Add(fup);
+            _HDB.SaveChanges();
+
             Follow_Up_History fuph = new Follow_Up_History();
             fuph.Date = bd.Date;
             fuph.Follow_Up_Type_Id = 1;
+            fuph.Follow_Up_Id = fup.Id;
+
+
 
             _HDB.Add(fuph);
             _HDB.SaveChanges();

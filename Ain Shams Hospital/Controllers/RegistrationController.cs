@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using Ain_Shams_Hospital.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Ain_Shams_Hospital.Classes;
+using Microsoft.AspNetCore.Http;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -158,7 +159,9 @@ namespace Ain_Shams_Hospital.Controllers
                 _auc.Add(S);
                 _auc.SaveChanges();
 
-                TempData["User_Reg_Id"] = S.Registration_Id;
+                //TempData["User_Reg_Id"] = S.Registration_Id;
+                HttpContext.Session.SetInt32("User_Reg_Id", (int)S.Registration_Id);
+
 
                 switch (_Index)
                 {
@@ -231,11 +234,13 @@ namespace Ain_Shams_Hospital.Controllers
                             .SingleOrDefault();
                     if (code == null)
                     {
+                        HttpContext.Session.SetInt32("User_Reg_Id", Data[0].Id);
                         return Redirect("/Registration/Patient");
                     }
                     int _Index = (int)code[0] - 48;
 
-                    TempData["User_Reg_Id"] = Data[0].Id;
+                    //TempData["User_Reg_Id"] = Data[0].Id;
+                    HttpContext.Session.SetInt32("User_Reg_Id", Data[0].Id);
 
                     switch (_Index)
                     {
