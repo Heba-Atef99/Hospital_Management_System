@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ain_Shams_University.ViewModels
 {
-    public class labSpecialistVM
+    public class laboratoryVM
     {
         [Required]
         public string DoctorName { get; set; }

@@ -1,15 +1,15 @@
-﻿@model Ain_Shams_University.ViewModels.labSpecialistVM
+﻿@model Ain_Shams_University.ViewModels.laboratoryVM
 
 @{
-    ViewData["Title"] = "labSpecialist";
+    ViewData["Title"] = "laboratory";
 }
 <div class="container">
-    <h1>labSpecialist</h1>
+    <h1>laboratory</h1>
     <hr />
 
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="labSpecialist">
+            <form asp-action="Laboratory">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="DoctorName" for="doctors">Choose A Doctor</label>

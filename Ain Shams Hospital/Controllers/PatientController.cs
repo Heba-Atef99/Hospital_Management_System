@@ -22,16 +22,16 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult labSpecialist()
         {
 
-            List<Staff> s1 = new List<Staff>();
-            s1 = (from s in _HDB.Staff select s).Where(f => f.Specialization_Id == 22).ToList();
-            s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
+            List<Follow_Up_Type> s1 = new List<Follow_Up_Type>();
+            s1 = (from s in _HDB.Follow_Ups_Types select s).ToList();
+            s1.Insert(0, new Follow_Up_Type { Id = 0, Name = "--Select Your Test--" });
             ViewBag.massege = s1;
             return View();
            
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult labSpecialist(labSpecialistVM bd)
+        public IActionResult labSpecialist(laboratoryVM bd)
         {
 
             Follow_Up_History fuph = new Follow_Up_History();
@@ -50,13 +50,15 @@ namespace Ain_Shams_Hospital.Controllers
                 s1 = (from s in _HDB.Staff select s).Where(f=>f.Specialization_Id==12).ToList();
                 s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
                 ViewBag.massege = s1;
+
                 return View();
        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult EyesDoctor(EyesDoctorVM ed)
         {
-
+            Staff st = new Staff();
+            
             Follow_Up_History fuph = new Follow_Up_History();
             fuph.Date = ed.Date;
             fuph.Follow_Up_Type_Id = 2;    //m7tageen n5aleeh y5tar anhy test hy3mlo
