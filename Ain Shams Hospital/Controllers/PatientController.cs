@@ -61,7 +61,67 @@ namespace Ain_Shams_Hospital.Controllers
             ViewBag.message = "Your Time has been recorded";
             return View();
         }
-        public IActionResult EyesDoctor(Specialization obj)
+        public IActionResult SelectDoctor()
+        {
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            ViewBag.patientname = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Name).SingleOrDefault();
+
+
+            List<Specialization> s1 = new List<Specialization>();
+            s1 = (from s in _HDB.Specializations select s).Where(n=>n.Id>=2 && n.Id<=12).ToList();
+            s1.Insert(0, new Specialization { Id = 0, Name = "--select your doctor--"}) ;
+            
+            ViewBag.massege = s1;
+            
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SelectDoctor(SelectDoctorVM sd)
+        {
+            HttpContext.Session.SetInt32("Doctor_Sp_Id", (int)sd.Id);
+            return RedirectToAction("Doctor","Patient");
+        }
+
+        public IActionResult Doctor(Specialization obj)
+        {
+
+            int Doctor_sp_Id = (int)HttpContext.Session.GetInt32("Doctor_Sp_Id");
+            ViewBag.sp_Id = (int)HttpContext.Session.GetInt32("Doctor_Sp_Id");
+            List<Staff> s1 = new List<Staff>();
+            s1 = (from s in _HDB.Staff select s).Where(f => f.Specialization_Id == Doctor_sp_Id).ToList();
+            s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
+            ViewBag.massege = s1;
+
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Doctor(DoctorVM doc)
+        {
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
+
+
+            Follow_Up fup = new Follow_Up();
+            fup.Patient_Id = Patient_Id;
+            fup.Staff_Id = doc.Id;
+            fup.Status = "Pending";
+
+            _HDB.Add(fup);
+            _HDB.SaveChanges();
+
+            Follow_Up_History fuph = new Follow_Up_History();
+            fuph.Date = doc.Date;
+            fuph.Follow_Up_Type_Id = 2;
+            fuph.Follow_Up_Id = fup.Id;
+
+            _HDB.Add(fuph);
+            _HDB.SaveChanges();
+            ViewBag.message = "Your Time has been recorded";
+            return View();
+        }
+/*        public IActionResult EyesDoctor(Specialization obj)
         {
            
                 List<Staff> s1 = new List<Staff>();
@@ -138,7 +198,7 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
             return View();
-        }
+        }*/
         public IActionResult Surgeon()
         {
 

@@ -13,7 +13,6 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Ain_Shams_Hospital.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using Ain_Shams_Hospital.Classes;
 using Microsoft.AspNetCore.Http;
 
 namespace Ain_Shams_Hospital.Controllers
@@ -85,7 +84,7 @@ namespace Ain_Shams_Hospital.Controllers
             r.Email = obj.Email;
             r.Password = BCrypt.Net.BCrypt.HashPassword(obj.Password);
             string email = obj.Name;
-            ClassDisplayUserName.getusername(email);
+            
 
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == r.Email);
             if (EmailExist)
@@ -217,7 +216,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
    
             string email = objc.Email;
-            ClassDisplayUserName.getusername(email);
+           
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == objc.Email);
             if (EmailExist)
             {

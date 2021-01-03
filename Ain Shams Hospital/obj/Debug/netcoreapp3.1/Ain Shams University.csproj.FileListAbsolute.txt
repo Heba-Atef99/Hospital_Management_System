@@ -176,3 +176,6 @@ E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DoctorLayout.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\labSpecialist.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Home.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Payment.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Doctor.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\SelectDoctor.cshtml.g.cs
