@@ -108,7 +108,7 @@ namespace Ain_Shams_Hospital.Controllers
 
                 _auc.Add(P);
                 _auc.SaveChanges();
-                return Redirect("/Registration/Patient");
+                return Redirect("/Patient/Home");
             }
              
 
@@ -235,7 +235,7 @@ namespace Ain_Shams_Hospital.Controllers
                     if (code == null)
                     {
                         HttpContext.Session.SetInt32("User_Reg_Id", Data[0].Id);
-                        return Redirect("/Registration/Patient");
+                        return Redirect("/Patient/Home");
                     }
                     int _Index = (int)code[0] - 48;
 

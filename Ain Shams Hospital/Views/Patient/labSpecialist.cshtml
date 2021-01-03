@@ -1,18 +1,19 @@
-﻿@model Ain_Shams_University.ViewModels.laboratoryVM
+﻿@model Ain_Shams_University.ViewModels.labSpecialistVM
 
 @{
-    ViewData["Title"] = "laboratory";
+    ViewData["Title"] = "labSpecialist";
 }
+
 <div class="container">
     <h1>laboratory</h1>
     <hr />
 
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="Laboratory">
+            <form asp-action="LabSpecialist">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="DoctorName" for="doctors">Choose Your Test</label>
+                    <label asp-for="Id" for="doctors">Choose Your Test</label>
                     <select class="form-control" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege ,"Id","Name"))">
                     </select>
                 </div>
@@ -45,3 +46,7 @@ What is the dose?"></textarea>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+
+
+

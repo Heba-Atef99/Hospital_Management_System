@@ -19,13 +19,15 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB = HDB;
         }
 
-        public IActionResult All()
+        public IActionResult Home()
         {
-
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            ViewBag.patientname = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Name).SingleOrDefault();
+            
             return View();
         }
 
-        public IActionResult labSpecialist()
+        public IActionResult LabSpecialist()
         {
 
             List<Follow_Up_Type> s1 = new List<Follow_Up_Type>();
@@ -37,28 +39,23 @@ namespace Ain_Shams_Hospital.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult labSpecialist(laboratoryVM bd)
+        public IActionResult LabSpecialist(labSpecialistVM bd)
         {
-
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
 
-
             Follow_Up fup = new Follow_Up();
             fup.Patient_Id = Patient_Id;
-            fup.Staff_Id = bd.Id;
             fup.Status = "Pending";
-
+            fup.Staff_Id = 7;
             _HDB.Add(fup);
             _HDB.SaveChanges();
 
             Follow_Up_History fuph = new Follow_Up_History();
             fuph.Date = bd.Date;
-            fuph.Follow_Up_Type_Id = 2;            ////Need To Be Edited To Selevt the correct Test
+            fuph.Follow_Up_Type_Id = bd.Id;            ////Done
             fuph.Follow_Up_Id = fup.Id;
-
-
-
+           
             _HDB.Add(fuph);
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
@@ -160,7 +157,6 @@ namespace Ain_Shams_Hospital.Controllers
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
 
-
             Follow_Up fup = new Follow_Up();
             fup.Patient_Id = Patient_Id;
             fup.Staff_Id = bd.Id;
@@ -173,8 +169,6 @@ namespace Ain_Shams_Hospital.Controllers
             fuph.Date = bd.Date;
             fuph.Follow_Up_Type_Id = 1;
             fuph.Follow_Up_Id = fup.Id;
-
-
 
             _HDB.Add(fuph);
             _HDB.SaveChanges();

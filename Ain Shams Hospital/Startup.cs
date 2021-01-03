@@ -37,6 +37,9 @@ namespace Ain_Shams_Hospital
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(240);//You can set Time (4hrs)   
             });
+
+
+
             //services.AddMvc();
         }
 
