@@ -16,7 +16,10 @@ namespace Ain_Shams_Hospital.Data.Entities
 		[ForeignKey("Registration_Id")]
 		public virtual Registration Registration { get; set; }
 
-		public Transfer_Hospital Hospital_ { get; set; }
+		public int? Hospital_Id { get; set; }
+		[ForeignKey("Hospital_Id")]
+		public virtual Transfer_Hospital Transfer_Hospital { get; set; }
+
 		public string Medical_Record { get; set; }
 		//Statistics
 		public int Health_Progress { get; set; }
