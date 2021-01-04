@@ -162,7 +162,8 @@ namespace Ain_Shams_Hospital.Controllers
                         return Redirect("/Doctor/Home");
 
                     case 2:
-                    //go to manager
+                        //go to manager
+                        return Redirect("/Manager/ManagerHome");
 
                     case 3:
                     //go to lap
@@ -171,7 +172,7 @@ namespace Ain_Shams_Hospital.Controllers
                     //go to finance
 
                     case 5:
-                        return Redirect("/Front_desk/Roomreservation");
+                        return Redirect("/Front_desk/main");
 
                     default:
                         return Redirect("/Registration/Staff");
@@ -230,7 +231,8 @@ namespace Ain_Shams_Hospital.Controllers
                             return Redirect("/Doctor/Home");
 
                         case 2:
-                        //go to manager
+                            //go to manager
+                            return Redirect("/Manager/ManagerHome");
 
                         case 3:
                         //go to lap
@@ -240,7 +242,7 @@ namespace Ain_Shams_Hospital.Controllers
 
 
                         case 5:
-                            return Redirect("/Front_desk/Event");
+                            return Redirect("/Front_desk/main");
 
                         default:
                             return Redirect("/Registration/Staff");

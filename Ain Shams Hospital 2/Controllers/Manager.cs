@@ -95,10 +95,7 @@ namespace Ain_Shams_Hospital.Controllers
             if (NameExist)
             {
                 var StaffName = _auc.Staff.Where(f => f.Name == vm.StaffName)
-                   .Select(s => s.Id).Single();
-                //var RoomID = _asu.Facility_Reservations.Where(f => f.Patient_Id == PatientName)
-                //.OrderByDescending(d=>d);
-
+                   .Select(s => s.Id).Single();     
 
 
                 var model = _auc.Staff.Find(StaffName);
