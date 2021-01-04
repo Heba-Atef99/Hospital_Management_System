@@ -14,6 +14,6 @@ namespace Ain_Shams_University.ViewModels
         [Key]
         public int Id { get; set; }
         public int Name { get; set; }
-        public int Disabled { get; set; }
+       
     }
 }

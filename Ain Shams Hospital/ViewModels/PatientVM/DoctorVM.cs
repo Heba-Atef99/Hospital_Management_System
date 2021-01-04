@@ -8,7 +8,7 @@ namespace Ain_Shams_University.ViewModels
 {
     public class DoctorVM
     {
-        [Required]
+        [Required(ErrorMessage ="Please Choose Your Doctor")]
         public string DoctorName { get; set; }
         [Required]
         [DataType(DataType.DateTime)]
@@ -17,5 +17,6 @@ namespace Ain_Shams_University.ViewModels
         [Key]
         public int Id { get; set; }
         public int Name { get; set; }
+        
     }
 }

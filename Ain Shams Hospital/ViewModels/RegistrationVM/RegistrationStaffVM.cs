@@ -29,7 +29,9 @@ namespace Ain_Shams_Hospital.ViewModels
         [Compare("Password")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
-
+        
 
     }
 }
+
+

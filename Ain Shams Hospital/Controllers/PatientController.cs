@@ -87,7 +87,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
 
             int Doctor_sp_Id = (int)HttpContext.Session.GetInt32("Doctor_Sp_Id");
-            ViewBag.sp_Id = (int)HttpContext.Session.GetInt32("Doctor_Sp_Id");
+            
             List<Staff> s1 = new List<Staff>();
             s1 = (from s in _HDB.Staff select s).Where(f => f.Specialization_Id == Doctor_sp_Id).ToList();
             s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
@@ -119,7 +119,8 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.Add(fuph);
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
-            return View();
+
+            return RedirectToAction("Payment", "Patient");
         }
 /*        public IActionResult EyesDoctor(Specialization obj)
         {
@@ -240,6 +241,16 @@ namespace Ain_Shams_Hospital.Controllers
             return View();
         }
         public IActionResult FollowedDoctors()
+        {
+            return View();
+        }
+        public IActionResult Payment()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Payment(PaymentVM p)
         {
             return View();
         }
