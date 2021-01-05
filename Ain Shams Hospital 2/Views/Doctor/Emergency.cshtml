@@ -5,47 +5,58 @@
 @{
     var facility = ViewBag.Hospital_Facility;
 }
-<h1>Blood_Unit</h1>
-<br />
 <div class="row">
-    @foreach (var p in Blood_Unit)
-    {
+    <div class="col-md-6">
+        <h1>Blood_Unit</h1>
+        <br />
+        <table>
+            <tr>
 
-        <div class="card card-body">
+                <th>Type : </th>
+                <th>Amount : </th>
+            </tr>
 
-            <h1>Type :@p.Type</h1>
-            <hr />
+            @foreach (var p in Blood_Unit)
+            {
 
 
-            <h3>Amount :</h3>
-            <h3>@p.Amount</h3>
-            <hr />
 
+                <tr>
+
+                    <th>@p.Type</th>
+                    <th>@p.Amount</th>
+                </tr>
+
+            }
+        </table>
+    </div>
+            <div class="col-md-6">
+                <h1>Emergency bed</h1>
+                <br />
+                <table>
+                    <tr>
+
+                        <th>Type : </th>
+                        <th>Available : </th>
+                        <th>Start_Working : </th>
+                        <th>End_Working : </th>
+                    </tr>
+
+                    @foreach (var n in facility)
+                    {
+
+
+
+                        <tr>
+
+                            <th>@n.Type</th>
+                            <th>@n.Available</th>
+                            <th>@n.Start_Working_Hour</th>
+                            <th>@n.End_Working_Hour</th>
+
+                        </tr>
+
+                    }
+                </table>
+            </div>
         </div>
-
-    }
-</div>
-<h1>Emergency bed</h1>
-<br />
-<div class="row">
-    @foreach (var n in facility)
-    {
-
-        <div class="card card-body">
-
-            <h1>Type :@n.Type</h1>
-            <hr />
-            <h3>Available :</h3>
-            <h3>@n.Available</h3>
-            <hr />
-            <h3> Start_Working :</h3>
-            <h3>@n.Start_Working_Hour</h3>
-            <hr />
-            <h3>End_Working :</h3>
-            <h3>@n.End_Working_Hour</h3>
-            <hr />
-
-        </div>
-
-    }
-</div>
