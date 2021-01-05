@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Ain_Shams_Hospital.ViewModels;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -122,84 +123,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             return RedirectToAction("Payment", "Patient");
         }
-/*        public IActionResult EyesDoctor(Specialization obj)
-        {
-           
-                List<Staff> s1 = new List<Staff>();
-                s1 = (from s in _HDB.Staff select s).Where(f=>f.Specialization_Id==12).ToList();
-                s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
-                ViewBag.massege = s1;
-
-                return View();
-       }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult EyesDoctor(EyesDoctorVM ed)
-        {
-            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
-            int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
-
-
-            Follow_Up fup = new Follow_Up();
-            fup.Patient_Id = Patient_Id;
-            fup.Staff_Id = ed.Id;
-            fup.Status = "Pending";
-
-            _HDB.Add(fup);
-            _HDB.SaveChanges();
-
-            Follow_Up_History fuph = new Follow_Up_History();
-            fuph.Date = ed.Date;
-            fuph.Follow_Up_Type_Id = 2;
-            fuph.Follow_Up_Id = fup.Id;
-
-
-
-            _HDB.Add(fuph);
-            _HDB.SaveChanges();
-            ViewBag.message = "Your Time has been recorded";
-            return View();
-        }
-        [HttpGet]
-        public IActionResult  BabyDoctor()
-        {
-           
-            List<Staff> s1 = new List<Staff>();
-            s1 = (from s in _HDB.Staff select s).Where(f => f.Specialization_Id == 10).ToList();
-            s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
-            ViewBag.massege = s1;
-           
-            return View();
-        }
-         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult BabyDoctor(BabyDoctorVM bd)
-        {
-            
-            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
-            int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
-            
-
-            Follow_Up fup = new Follow_Up();
-            fup.Patient_Id = Patient_Id;
-            fup.Staff_Id = bd.Id;
-            fup.Status = "Pending";
-
-            _HDB.Add(fup);
-            _HDB.SaveChanges();
-
-            Follow_Up_History fuph = new Follow_Up_History();
-            fuph.Date = bd.Date;
-            fuph.Follow_Up_Type_Id = 2;
-            fuph.Follow_Up_Id = fup.Id;
-
-
-            
-            _HDB.Add(fuph);
-            _HDB.SaveChanges();
-            ViewBag.message = "Your Time has been recorded";
-            return View();
-        }*/
+ 
         public IActionResult Surgeon()
         {
 
@@ -240,11 +164,49 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
+         
         public IActionResult FollowedDoctors()
+        {
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
+            var id = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(f => f.Staff_Id).ToList();
+            foreach (var i in id)
+            {
+
+                List<Staff> s1 = new List<Staff>();
+                s1 = (from s in _HDB.Staff select s).Where(o => o.Id == i).ToList();
+                s1.Insert(0, new Staff { Id = 0, Name = "--show your doctor--" });
+                ViewBag.massege2 = s1;
+                View();
+            }
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult FollowedDoctors(FollowClass fc)
+        {
+            HttpContext.Session.SetInt32("Doctor_sel_Id", (int)fc.Id);
+            return RedirectToAction("DoctorSchedules", "Patient");
+        }
+
+        public IActionResult DoctorSchedules()
+        {
+            int Doctor_sel_Id = (int)HttpContext.Session.GetInt32("Doctor_sel_Id");
+
+            List<Staff_Schedule> s1 = new List<Staff_Schedule>();
+            s1 = (from s in _HDB.Staff_Schedules select s).Where(f => f.Specialization_Id == Doctor_sel_Id).ToList();
+            s1.Insert(0, new Staff_Schedule { Id = 0, Working_Day = "--show Doctor Schedules--" });
+            ViewBag.masseg3 = s1;
+
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DoctorSchedules(DoctorSchedule ds)
         {
             return View();
         }
-        public IActionResult Payment()
+            public IActionResult Payment()
         {
             return View();
         }
