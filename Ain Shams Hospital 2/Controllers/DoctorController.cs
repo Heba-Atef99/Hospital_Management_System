@@ -73,6 +73,22 @@ namespace Ain_Shams_Hospital.Controllers
         }
         public IActionResult Transfer()
         {
+            
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Emergency()
+        {
+            var result = _auc.Blood_Units
+                .Select(I => new Blood_Unit { Type = I.Type, Amount = I.Amount})
+                .ToList();
+            ViewBag.Blood_Units = result;
+            var facility = _auc.Hospital_Facilities
+                .Where(i=>i.Id >=15 )
+                .Select(n => new Hospital_Facility { Type = n.Type, Available = n.Available,
+                    Start_Working_Hour =n.Start_Working_Hour, End_Working_Hour=n.End_Working_Hour   })
+                .ToList();
+            ViewBag.Hospital_Facility = facility;
             return View();
         }
 
