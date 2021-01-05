@@ -4,14 +4,16 @@ using HospitalManagementSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ain_Shams_Hospital.Migrations
 {
     [DbContext(typeof(HospitalDbContext))]
-    partial class HospitalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210105190253_paymentonline")]
+    partial class paymentonline
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -235,9 +237,6 @@ namespace Ain_Shams_Hospital.Migrations
 
                     b.Property<int>("Money")
                         .HasColumnType("int");
-
-                    b.Property<bool>("Online")
-                        .HasColumnType("bit");
 
                     b.Property<int?>("Patient_Id")
                         .HasColumnType("int");
