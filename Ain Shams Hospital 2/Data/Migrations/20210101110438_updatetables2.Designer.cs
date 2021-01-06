@@ -4,14 +4,16 @@ using HospitalManagementSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Ain_Shams_Hospital.Migrations
 {
     [DbContext(typeof(HospitalDbContext))]
-    partial class HospitalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210101110438_updatetables2")]
+    partial class updatetables2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -227,17 +229,8 @@ namespace Ain_Shams_Hospital.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<string>("Date")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Follow_Up_Type_Id")
-                        .HasColumnType("int");
-
                     b.Property<int>("Money")
                         .HasColumnType("int");
-
-                    b.Property<bool>("Online")
-                        .HasColumnType("bit");
 
                     b.Property<int?>("Patient_Id")
                         .HasColumnType("int");
@@ -246,10 +239,6 @@ namespace Ain_Shams_Hospital.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Follow_Up_Type_Id");
-
-                    b.HasIndex("Patient_Id");
 
                     b.ToTable("Payments");
                 });
@@ -422,21 +411,6 @@ namespace Ain_Shams_Hospital.Migrations
                     b.Navigation("Registration");
 
                     b.Navigation("Transfer_Hospital");
-                });
-
-            modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Payment", b =>
-                {
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Follow_Up_Type", "Follow_Up_Type")
-                        .WithMany()
-                        .HasForeignKey("Follow_Up_Type_Id");
-
-                    b.HasOne("Ain_Shams_Hospital.Data.Entities.Patient", "Patient")
-                        .WithMany()
-                        .HasForeignKey("Patient_Id");
-
-                    b.Navigation("Follow_Up_Type");
-
-                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("Ain_Shams_Hospital.Data.Entities.Staff", b =>

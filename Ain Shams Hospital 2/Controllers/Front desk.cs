@@ -95,21 +95,32 @@ namespace Ain_Shams_Hospital.Controllers
        
         public IActionResult main()
         {
-            var NameRexist = _asu.Hospital_Facilities.Where(f => f.Type.Substring(0,4)=="Room")
+            var NameRexist = _asu.Hospital_Facilities
+                .Where(f => f.Type.Substring(0,4)=="Room")
                 .Select(s=>new Hospital_Facility { Type = s.Type })
                 . ToList();
+            var SurgeryNameRexist = _asu.Hospital_Facilities
+                .Where(f => f.Type.Substring(0, 7) == "Surgery")
+                .Select(s => new Hospital_Facility { Type = s.Type })
+                .ToList();
+            ViewBag.h1 = SurgeryNameRexist;
             ViewBag.h = NameRexist;
             return View();
         }
         [HttpGet]
         public IActionResult checkavalabilty()
         {
-           
+            String SURGERYROOMName = HttpContext.Session.GetString("SRoomname");
+            String surgerystart = HttpContext.Session.GetString("STARTSurgery");
+            String surgeryend = HttpContext.Session.GetString("ENDSurgery");
+
             return View();
         }
         [HttpPost]
             public IActionResult checkavalabilty(checkVM ch)
         {
+            String SURGERYROOMName = HttpContext.Session.GetString("SRoomname");
+            ViewBag.surgeryroom = SURGERYROOMName;
             var NameRexist = _asu.Hospital_Facilities.Where(f => f.Type.Substring(0, 4) == "Room")
                    .Select(s => new Hospital_Facility { Type = s.Type })
                    .ToList();
@@ -145,7 +156,7 @@ namespace Ain_Shams_Hospital.Controllers
                         
                     }
                 }
-                if (y==1) 
+                if (y==1 ||y==0) 
                 {
                     // TempData["roomname"] = _asu.Hospital_Facilities.Where(f => f.Id == HID).Select(s => s.Type).Single();
                     var roomname = _asu.Hospital_Facilities.Where(f => f.Id == HID).Select(s => s.Type).Single();
@@ -171,17 +182,20 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View(); 
         }
-        [HttpPost]
+        //[HttpPost]
         /*public IActionResult Transfer(delete ch)
         { 
             return View();
         }*/
         [HttpGet]
-        public IActionResult Roomreservation(checkVM ch)
+        public IActionResult Roomreservation()
         {
             String ROOMName= HttpContext.Session.GetString("Roomname");
             String start=HttpContext.Session.GetString("START");
            String end= HttpContext.Session.GetString("END");
+            String SURGERYROOMName = HttpContext.Session.GetString("SRoomname");
+            String surgerystart = HttpContext.Session.GetString("STARTSurgery");
+            String surgeryend=HttpContext.Session.GetString("ENDSurgery");
             //var ROOMNAME = TempData["roomname"];
 
             //TempData["ROOMNAME"] = TempData["roomname"].ToString();
@@ -195,7 +209,11 @@ namespace Ain_Shams_Hospital.Controllers
             String ROOMName = HttpContext.Session.GetString("Roomname");
             String start = HttpContext.Session.GetString("START");
           String end= HttpContext.Session.GetString("END");
+            String SURGERYROOMName = HttpContext.Session.GetString("SRoomname");
+            String surgerystart = HttpContext.Session.GetString("STARTSurgery");
+            String surgeryend = HttpContext.Session.GetString("ENDSurgery");
             Facility_Reservation FR = new Facility_Reservation();
+            Facility_Reservation F = new Facility_Reservation();
             var NamePexist = _asu.Patients.ToList().Any(f => f.Name == ob.PatientName);
             var NameSexist = _asu.Staff.ToList().Any(F => F.Name == ob.DoctorName);
             // var ROOMNAME = TempData["roomname"];
@@ -211,17 +229,39 @@ namespace Ain_Shams_Hospital.Controllers
                     //string end = TempData["end"].ToString();
                     //int no = (int)TempData["HID"];
                     TempData["Staff_Id"] = _asu.Staff.Where(f => f.Name == ob.DoctorName).Select(s => s.Id).Single();
-                    
-                    FR.Start_Hour = start;  //ob.From;
-                    FR.End_Hour = end;
-                    FR.Hospital_Facility_Id = HID;
-                    //FR.Hospital_Facility_Id =no ;
-                    FR.Patient_Id = (int)TempData["Patient_Id"];
-                    FR.Staff_Id = (int)TempData["Staff_Id"];
-                    _asu.Add(FR);
-                    _asu.SaveChanges();
-                    ViewBag.UserMessage2 = "Done";
-                    return View();
+                    if (SURGERYROOMName == null) {
+                        FR.Start_Hour = start;  //ob.From;
+                        FR.End_Hour = end;
+                        FR.Hospital_Facility_Id = HID;
+                        //FR.Hospital_Facility_Id =no ;
+                        FR.Patient_Id = (int)TempData["Patient_Id"];
+                        FR.Staff_Id = (int)TempData["Staff_Id"];
+                        _asu.Add(FR);
+                        _asu.SaveChanges();
+                        ViewBag.UserMessage2 = "Done";
+                        return View();
+                    }
+                    else {
+                        var SHID = _asu.Hospital_Facilities.Where(f => f.Type == SURGERYROOMName).Select(s => s.Id).Single();
+                        FR.Start_Hour = start;  //ob.From;
+                        FR.End_Hour = end;
+                        FR.Hospital_Facility_Id = HID;
+                        //FR.Hospital_Facility_Id =no ;
+                        FR.Patient_Id = (int)TempData["Patient_Id"];
+                        FR.Staff_Id = (int)TempData["Staff_Id"];
+                        _asu.Add(FR);
+                        F.Start_Hour = surgerystart;  //ob.From;
+                        F.End_Hour = surgeryend;
+                        F.Hospital_Facility_Id = SHID;
+                        //FR.Hospital_Facility_Id =no ;
+                        F.Patient_Id = (int)TempData["Patient_Id"];
+                        F.Staff_Id = (int)TempData["Staff_Id"];
+                        _asu.Add(F);
+                        _asu.SaveChanges();
+                        ViewBag.UserMessage2 = "Done";
+                        return View();
+                    }
+                   
                 }
                 else
                 {
@@ -409,64 +449,113 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult SRoomreservation(SRoomReservationVM ob)
         {
-            if (ob.SurgeryRoom == "No Surgery")
+            var NameSurgeryRexist = _asu.Hospital_Facilities.Where(f => f.Type.Substring(0, 7) == "Surgery")
+          .Select(s => new Hospital_Facility { Type = s.Type })
+          .ToList();
+
+            int f = 0;
+            foreach (var x in NameSurgeryRexist)
             {
-                return Redirect("/Front_desk/done");
-            }
-            else
-            {
-                Facility_Reservation F = new Facility_Reservation();
-                var SHID = _asu.Hospital_Facilities.Where(f => f.Type == ob.SurgeryRoom).Select(s => s.Id).Single();
+                var SHID = _asu.Hospital_Facilities.Where(f => f.Type == x.Type).Select(s => s.Id).Single();
                 var Savailableroom = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id == SHID)
-                    .Select(s => new { date = s.End_Hour, date1 = s.Start_Hour }).ToList();
-                bool av;
-                F.Patient_Id = (int)TempData["Patient_Id"];
-                F.Staff_Id = (int)TempData["Staff_Id"];
-                if (Savailableroom == null)
+                   .Select(s => new { date = s.End_Hour, date1 = s.Start_Hour }).ToList();
+                foreach (var V in Savailableroom)
                 {
-                    F.Start_Hour = ob.Start_Hour;
-                    F.End_Hour = ob.End_Hour;
-                    F.Hospital_Facility_Id = SHID;
+                    DateTime parse1 = DateTime.Parse(ob.Start_Hour);
+                    DateTime parse2 = DateTime.Parse(ob.End_Hour);
+                    DateTime parse3 = DateTime.Parse(V.date);
+                    DateTime parse4 = DateTime.Parse(V.date1);
+                    if ((parse1 > parse3) || (parse2 < parse4))
+                    {
+                        f = 1;
+                    }
+                    else
+                    {
+                        f = 2;
+                        break;
 
-                    _asu.Add(F);
-                    _asu.SaveChanges();
+                    }
 
-                    return Redirect("/Front_desk/done");
                 }
-                else
+                if (f == 1 || f == 0)
                 {
-
-                    foreach (var V in Savailableroom)
-                    {
-                        DateTime parse1 = DateTime.Parse(ob.Start_Hour);
-                        DateTime parse2 = DateTime.Parse(ob.End_Hour);
-                        DateTime parse3 = DateTime.Parse(V.date);
-                        DateTime parse4 = DateTime.Parse(V.date1);
-                        if ((parse1 > parse3) || (parse2 < parse3))
-                        {
-                            av = true;
-                        }
-                        else
-                        {
-                            av = false;
-                            return Redirect("/Front_desk/Roomavailabilty");
-                        }
-
-                    }
-                    if (av = true)
-                    {
-                        F.Start_Hour = ob.Start_Hour;
-                        F.End_Hour = ob.End_Hour;
-                        F.Hospital_Facility_Id = SHID;
-                        _asu.Add(F);
-                        _asu.SaveChanges();
-                        return Redirect("/Front_desk/done");
-                    }
+                    var Sroomname = _asu.Hospital_Facilities.Where(f => f.Id == SHID).Select(s => s.Type).Single();
+                    // ViewBag.SurgaryRoomname = Sroomname;
+                    HttpContext.Session.SetString("SRoomname", Sroomname);
+                    HttpContext.Session.SetString("STARTSurgery", ob.Start_Hour);
+                    HttpContext.Session.SetString("ENDSurgery", ob.End_Hour);
+                    return Redirect("/Front_desk/checkavalabilty");
+                    /* F.Start_Hour = ob.Start_Hour;
+                     F.End_Hour = ob.End_Hour;
+                     F.Hospital_Facility_Id = SHID;
+                     _asu.Add(F);
+                     _asu.SaveChanges();
+                     return Redirect("/Front_desk/done");*/
                 }
             }
-                return View();
+            //}
+            ViewBag.UserMessage1 = "this Surgary room is not available";
+            return View();
         }
     }
+    /* if (ob.SurgeryRoom == "No Surgery")
+     {
+         return Redirect("/Front_desk/done");
+     }
+     else
+     {
+         Facility_Reservation F = new Facility_Reservation();
+         var SHID = _asu.Hospital_Facilities.Where(f => f.Type == ob.SurgeryRoom).Select(s => s.Id).Single();
+         var Savailableroom = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id == SHID)
+             .Select(s => new { date = s.End_Hour, date1 = s.Start_Hour }).ToList();
+         bool av;
+         F.Patient_Id = (int)TempData["Patient_Id"];
+         F.Staff_Id = (int)TempData["Staff_Id"];
+         if (Savailableroom == null)
+         {
+             F.Start_Hour = ob.Start_Hour;
+             F.End_Hour = ob.End_Hour;
+             F.Hospital_Facility_Id = SHID;
+
+             _asu.Add(F);
+             _asu.SaveChanges();
+
+             return Redirect("/Front_desk/done");
+         }
+         else
+         {
+
+             foreach (var V in Savailableroom)
+             {
+                 DateTime parse1 = DateTime.Parse(ob.Start_Hour);
+                 DateTime parse2 = DateTime.Parse(ob.End_Hour);
+                 DateTime parse3 = DateTime.Parse(V.date);
+                 DateTime parse4 = DateTime.Parse(V.date1);
+                 if ((parse1 > parse3) || (parse2 < parse3))
+                 {
+                     av = true;
+                 }
+                 else
+                 {
+                     av = false;
+                     return Redirect("/Front_desk/Roomavailabilty");
+                 }
+
+             }
+             if (av = true)
+             {
+                 F.Start_Hour = ob.Start_Hour;
+                 F.End_Hour = ob.End_Hour;
+                 F.Hospital_Facility_Id = SHID;
+                 _asu.Add(F);
+                 _asu.SaveChanges();
+                 return Redirect("/Front_desk/done");
+             }
+         }
+     }
+         return View();
+ }
+}*/
 }
 
 
