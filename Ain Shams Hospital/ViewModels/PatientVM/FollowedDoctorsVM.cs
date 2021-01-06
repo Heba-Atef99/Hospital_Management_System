@@ -1,13 +1,12 @@
-﻿using Ain_Shams_Hospital.Data.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ain_Shams_Hospital.ViewModels 
+namespace Ain_Shams_University.ViewModels
 {
-    public class FollowClass
+    public class FollowedDoctorsVM
     {
         [Key]
         public int Id { get; set; }

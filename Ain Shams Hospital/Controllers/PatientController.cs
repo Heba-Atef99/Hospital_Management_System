@@ -166,26 +166,26 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
-         
+
         public IActionResult FollowedDoctors()
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
-            var id = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(f => f.Staff_Id).ToList();
+
+            var ids = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Staff_Id).ToList();
             List<Staff> s1 = new List<Staff>();
-             s1.Insert(0, new Staff { Id = 0, Name = "--show your doctor--" });
-           
-            foreach (var i in id)
+            s1.Insert(0, new Staff { Id = 0, Name = "--show your doctor--" });
+            foreach (var i in ids)
             {
+                /*s1 = (from s in _HDB.Staff select s).Where(o => o.Id == i).ToList();*/
                 s1.Add(_HDB.Staff.Where(o => o.Id == i).SingleOrDefault());
-                 
             }
-            ViewBag.massege2 = s1;
+            ViewBag.massege2 = s1.Distinct();
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult FollowedDoctors(FollowClass fc)
+        public IActionResult FollowedDoctors(FollowedDoctorsVM fc)
         {
             HttpContext.Session.SetInt32("Doctor_sel_Id", (int)fc.Id);
             return RedirectToAction("DoctorSchedules", "Patient");
@@ -193,22 +193,25 @@ namespace Ain_Shams_Hospital.Controllers
 
         public IActionResult DoctorSchedules()
         {
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            ViewBag.patientname = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Name).SingleOrDefault();
             int Doctor_sel_Id = (int)HttpContext.Session.GetInt32("Doctor_sel_Id");
-
-            List<Staff_Schedule> s1 = new List<Staff_Schedule>();
-            s1 = (from s in _HDB.Staff_Schedules select s).Where(f => f.Specialization_Id == Doctor_sel_Id).ToList();
-            s1.Insert(0, new Staff_Schedule { Id = 0, Working_Day = "--show Doctor Schedules--" });
-            ViewBag.masseg3 = s1;
+            ViewBag.Test = Doctor_sel_Id;
+            /*var sp_Id =_HDB.Staff.Where(s=>s.Id==Doctor_sel_Id).Select(a=>a.Specialization_Id).SingleOrDefault();
+            
+            var s1 = _HDB.Staff_Schedules.Where(f => f.Specialization_Id == sp_Id).Select(u=>u.Working_Day).SingleOrDefault();
+            
+            ViewBag.masseg3 = s1;*/
 
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DoctorSchedules(DoctorSchedule ds)
+        public IActionResult DoctorSchedules(DoctorScheduleVM ds)
         {
             return View();
         }
-            public IActionResult Payment()
+        public IActionResult Payment()
         {
             int test_Id = (int)HttpContext.Session.GetInt32("choose_test") ;
             int pay = _HDB.Follow_Ups_Types.Where(i => i.Id == test_Id).Select(l => l.Price).SingleOrDefault();

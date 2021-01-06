@@ -1,7 +1,7 @@
-﻿@model  Ain_Shams_Hospital.ViewModels.FollowClass
+﻿@model Ain_Shams_University.ViewModels.FollowedDoctorsVM
 
 @{
-    ViewData["Title"] = "FollowClass";
+    ViewData["Title"] = "FollowedDoctors";
 }
 
 <div class="container mt-5">
@@ -13,7 +13,7 @@
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="FollowClass">
+            <form asp-action="FollowedDoctors">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="DoctorsName" for="selectdoctors">Show Your Doctors list</label>
@@ -21,7 +21,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Show doctor Schedule" class="btn btn-primary" />
+                    <input type="submit" value="Show doctor Schedule" asp-action="DoctorSchedules" asp-controller="Patient" class="btn btn-primary" />
                 </div>
             </form>
         </div>

@@ -167,7 +167,6 @@ E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.
 E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Surgeon.cshtml.g.cs
-E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\FollowedDoctors.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Services.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DoctorLayout.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\labSpecialist.cshtml.g.cs
@@ -175,3 +174,8 @@ E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Doctor.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\SelectDoctor.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Payment.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\BabyDoctor.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\DoctorSchedules.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\EyesDoctor.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Patient.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\FollowedDoctors.cshtml.g.cs
