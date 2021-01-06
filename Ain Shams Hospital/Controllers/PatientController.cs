@@ -48,7 +48,7 @@ namespace Ain_Shams_Hospital.Controllers
             Follow_Up fup = new Follow_Up();
             fup.Patient_Id = Patient_Id;
             fup.Status = "Pending";
-            fup.Staff_Id = 7;
+            //fup.Staff_Id = bd.;
             _HDB.Add(fup);
             _HDB.SaveChanges();
 
@@ -60,7 +60,8 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.Add(fuph);
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
-            return View();
+            HttpContext.Session.SetInt32("choose_test", (int)bd.Id);
+            return RedirectToAction("Payment", "Patient");
         }
         public IActionResult SelectDoctor()
         {
@@ -93,7 +94,7 @@ namespace Ain_Shams_Hospital.Controllers
             s1 = (from s in _HDB.Staff select s).Where(f => f.Specialization_Id == Doctor_sp_Id).ToList();
             s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
             ViewBag.massege = s1;
-
+            HttpContext.Session.SetInt32("choose_test", (int)obj.Id);
             return View();
         }
         [HttpPost]
@@ -120,7 +121,7 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.Add(fuph);
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
-
+            HttpContext.Session.SetInt32("choose_test",2);
             return RedirectToAction("Payment", "Patient");
         }
  
@@ -158,7 +159,8 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.Add(fuph);
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
-            return View();
+            HttpContext.Session.SetInt32("choose_test", 1);
+            return RedirectToAction("Payment", "Patient");
         }
         public IActionResult Services()
         {
@@ -170,15 +172,15 @@ namespace Ain_Shams_Hospital.Controllers
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
             var id = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(f => f.Staff_Id).ToList();
+            List<Staff> s1 = new List<Staff>();
+             s1.Insert(0, new Staff { Id = 0, Name = "--show your doctor--" });
+           
             foreach (var i in id)
             {
-
-                List<Staff> s1 = new List<Staff>();
-                s1 = (from s in _HDB.Staff select s).Where(o => o.Id == i).ToList();
-                s1.Insert(0, new Staff { Id = 0, Name = "--show your doctor--" });
-                ViewBag.massege2 = s1;
-                View();
+                s1.Add(_HDB.Staff.Where(o => o.Id == i).SingleOrDefault());
+                 
             }
+            ViewBag.massege2 = s1;
             return View();
         }
         [HttpPost]
@@ -208,6 +210,9 @@ namespace Ain_Shams_Hospital.Controllers
         }
             public IActionResult Payment()
         {
+            int test_Id = (int)HttpContext.Session.GetInt32("choose_test") ;
+            int pay = _HDB.Follow_Ups_Types.Where(i => i.Id == test_Id).Select(l => l.Price).SingleOrDefault();
+            ViewBag.massage = pay;
             return View();
         }
         [HttpPost]
