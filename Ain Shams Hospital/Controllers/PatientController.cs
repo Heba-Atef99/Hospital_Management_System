@@ -201,12 +201,31 @@ namespace Ain_Shams_Hospital.Controllers
 
         public IActionResult DoctorSchedules()
         {
-
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             ViewBag.patientname = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Name).SingleOrDefault();
             int selId = (int)HttpContext.Session.GetInt32("sel_Id");
-
-
+            var dr = _HDB.Staff.Where(s => s.Id == selId).Select(d => d.Name).SingleOrDefault();
+            ViewBag.dr = dr;
+            var sp_Id = _HDB.Staff.Where(e => e.Id == selId).Select(y => y.Specialization_Id).SingleOrDefault();
+            var Working_Day = _HDB.Staff_Schedules.Where(s => s.Specialization_Id == sp_Id).Select(r=>r.Working_Day).SingleOrDefault();
+            List<string> list1 = new List<string>();
+            //random
+            if (sp_Id == 10 || sp_Id == 12 || sp_Id == 14)
+            {
+                list1.Add("Sunday");
+                list1.Add("Monday");
+                list1.Add("Wednesday");
+                list1.Add("Thursday");
+            }
+            else
+            {
+                list1.Add("Sunday");
+                list1.Add("Monday");
+                list1.Add("Tuesday");
+                list1.Add("Thursday"); 
+            }
+            ViewBag.listdays = list1;
+            ViewBag.workingday = Working_Day;
             return View();
         }
         [HttpPost]
@@ -215,7 +234,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
-        [HttpGet]
+        
         public IActionResult Payment()
         {
             int test_Id = (int)HttpContext.Session.GetInt32("choose_test");
@@ -224,6 +243,7 @@ namespace Ain_Shams_Hospital.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Payment(PaymentVM p)
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");

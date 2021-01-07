@@ -8,22 +8,32 @@
 <div class="container mt-5">
 
     <h1 class="mt-5">Hello! <span style="font-size :34px;" class="text-danger">@ViewBag.patientname</span></h1>
-    <h2>  Doctor Schedule </h2>
-    <h2>@ViewBag.Test</h2>
-
+    <h2> <span>@ViewBag.dr</span>'s Schedule </h2>
     <hr />
     <div class="row">
-        <div class="col-md-4">
-            <form asp-action="DoctorSchedules">
+        <div class="col-md-8">
+            <table class="table">
+                <tr>
+                    <th>
+                        Working Day
+                    </th>
+                    <th>
+                        Duration
+                    </th>
+                </tr>
 
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="DoctorName" for="selectdoctors">Choose A Doctor Type</label>
-                    <select class="form-control" id="disablefirst" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege3 ,"Id","Name"))">
-                    </select>
-                </div>
+                @foreach (var item in ViewBag.listdays)
+                {
+                    <tr>
+                        <td>@item</td>
+                        <td>9AM-4PM</td>
+                    </tr>
+                }
 
-            </form>
+            </table>
+        </div>
+        <div  class="col-md-4">
+            <img style=" width:190px;height:190px; margin:35px; border:2px solid black;border-radius:50%" src="~/images/user.png" />
         </div>
     </div>
 
