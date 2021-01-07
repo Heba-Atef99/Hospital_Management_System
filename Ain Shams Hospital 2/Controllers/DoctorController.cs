@@ -186,6 +186,45 @@ namespace Ain_Shams_Hospital.Controllers
 
             return View();
         }
+        [HttpGet]
+        public IActionResult AnotherHospital()
+        {
+            var Transfer_Hospitals = _auc.Transfer_Hospitals.ToList();
+            ViewBag.Transfer_Hospitals = Transfer_Hospitals;
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AnotherHospital(TransferAnotherHospitalVM obj)
+        {
+            //Patient r = new Patient();
+            var patient_id = 1;
+            Patient patient;
+            patient = _auc.Patients
+                       .Where(i => i.Id == patient_id).FirstOrDefault();
+            //r.Id = 1;
 
+            //var HID = _auc.Transfer_Hospitals.Where(f => f.Name == obj.HospitalName).Select(s => s.Id).Single();
+            patient.Hospital_Id = obj.HospitalId;
+            _auc.SaveChanges();
+            var Transfer_Hospitals = _auc.Transfer_Hospitals.ToList();
+            ViewBag.Transfer_Hospitals = Transfer_Hospitals;
+
+            //_auc.Add(r);
+
+
+            return View();
+        }
+        [HttpGet]
+        public IActionResult AnotherDepartment()
+        {
+
+            var OtherDep = _auc.Specializations.Where(j => j.Code.Substring(0, 1) == "1")
+                .Select(s => new Specialization { Name = s.Name, Id = s.Id }).ToList();
+            ViewBag.OtherDep = OtherDep;
+            var OtherDoc = _auc.Staff.Select(n => new Staff { Name = n.Name, Specialization_Id = n.Specialization_Id, Id = n.Id }).ToList();
+            ViewBag.OtherDoc = OtherDoc;
+            return View();
+        }
     }
 }
