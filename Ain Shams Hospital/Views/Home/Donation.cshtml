@@ -8,29 +8,29 @@
 <div class="container mb-5 mt-5">
     <h1>Donation Form</h1>
     <form asp-action="Donation">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="Name" class="alert-danger">Name</label>
-            <input asp-for="Name" id="Name" class="null card-image form-control" type="text">
+            <label asp-for="Name" class="control-label">Name</label>
+            <input asp-for="Name" id="name" class="null card-image form-control" type="text">
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="Email" class="alert-danger">Email</label>
-            <input asp-for="Email" id="Email" class="null card-image form-control" type="text">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input asp-for="Email" id="email" class="null card-image form-control" type="text">
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="PhoneNumber" class="alert-danger">PhoneNumber</label>
-            <input asp-for="PhoneNumber" id="Email" class="null card-image form-control" type="text">
+            <label asp-for="PhoneNumber" class="control-label">PhoneNumber</label>
+            <input asp-for="PhoneNumber" class="null card-image form-control" type="text">
             <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
         <div class="expiry-date-group form-group">
             <label asp-for="Day">Choose Day</label>
-            <input asp-for="Day" id="ExpiryDate" class="form-control" type="date">
+            <input asp-for="Day" id="dateInput" class="form-control" type="date">
             <span asp-validation-for="Day" class="text-danger"></span>
         </div>
-        <div class="card card-body" >
-            <a asp-action="Save_Donation" asp-controller="Home" type="submit" role="button" class="btn btn-success">Send</a>
-
+        <div class="card card-body">
+            <input href="Home/saveDonation" type="submit" value="Send" class="btn btn-primary" />
         </div>
     </form>
     <div class="card card-body">

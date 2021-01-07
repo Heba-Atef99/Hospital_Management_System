@@ -8,10 +8,9 @@ namespace Ain_Shams_University.ViewModels
 {
     public class DonationsVM
     {
-        [Required(ErrorMessage = "Please Choose Your Doctor")]
+        [Required(ErrorMessage = "Please Enter Your Name")]
         public string  Name { get; set; }
         [Required]
-        [DataType(DataType.DateTime)]
         public string Day { get; set; }
         [EmailAddress ]
         public string Email { get; set; }

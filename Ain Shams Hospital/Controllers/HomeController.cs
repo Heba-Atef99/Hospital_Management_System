@@ -54,9 +54,9 @@ namespace Ain_Shams_Hospital.Controllers
             return View();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Donation(DonationsVM don)
+        public ActionResult Donation(DonationsVM don)
         {
+             
             Donation dona = new Donation();
             dona.Name = don.Name;
             dona.Email = don.Email;
@@ -64,10 +64,18 @@ namespace Ain_Shams_Hospital.Controllers
             dona.Phone_Number = don.PhoneNumber;
             _HDB.Add(dona);
             _HDB.SaveChanges();
-
-            return RedirectToAction("save","Home");
+            return RedirectToAction("saveDonation", "Home");
         }
-        public IActionResult save()
+        [HttpGet]
+        public IActionResult saveDonation()
+        {
+            int visitor_Id = _HDB.Donations.Select(o => o.Id).FirstOrDefault();
+            ViewBag.visitorname = _HDB.Donations.Where(f => f.Id == visitor_Id).Select(h => h.Name).SingleOrDefault();
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult saveDonation(Donation d)
         {
             return View();
         }
