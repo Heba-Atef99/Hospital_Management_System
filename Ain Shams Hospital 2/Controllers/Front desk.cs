@@ -110,6 +110,70 @@ namespace Ain_Shams_Hospital.Controllers
             return View();
         }
         [HttpGet]
+        public IActionResult Cancel()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Cancel(delete vm)
+        {
+            var NameExist = _asu.Patients.ToList().Any(u => u.Name == vm.PatientName);
+         
+            if (NameExist)
+            {
+                var patientId = _asu.Patients.Where(f => f.Name == vm.PatientName)
+                   .Select(s => s.Id).Single();
+                var nameIdexist = _asu.Facility_Reservations.ToList().Any(u => u.Patient_Id == patientId);
+                if (nameIdexist)
+                {
+                    var faciltyreservationId = _asu.Facility_Reservations.Where(f => f.Patient_Id == patientId)
+                      .OrderByDescending(s => s.Id)
+                      .Select(s => s.Id).FirstOrDefault();
+                    var surgeryId = _asu.Follow_Ups_Types.Where(f => f.Name == "Surgery").Select(s => s.Id).Single();
+                    var surgeryfollowuptypeId = _asu.Payments
+                        .Where(f => (f.Follow_Up_Type_Id == surgeryId)&&(f.Patient_Id==patientId))
+                        .OrderByDescending(o => o.Id)
+                        .Select(s => s.Id).FirstOrDefault();
+                    var model3 = _asu.Payments.Find(surgeryfollowuptypeId);
+
+                    var model1 = _asu.Facility_Reservations.Find(faciltyreservationId);
+                    _asu.Remove(model1);
+                    _asu.Remove(model3);
+                    _asu.SaveChanges();
+
+                    var FaciltyreservationId = _asu.Facility_Reservations.Where(f => f.Patient_Id == patientId)
+                        .OrderByDescending(s => s.Id)
+                      .Select(s => s.Id).FirstOrDefault();
+                    var RoompriceId = _asu.Follow_Ups_Types.Where(f => f.Name == "Room").Select(s => s.Id).Single();
+                    var followuptypeId = _asu.Payments
+                        .Where(f => (f.Follow_Up_Type_Id == RoompriceId) && (f.Patient_Id == patientId))
+                        .OrderByDescending(o => o.Id)
+                        .Select(s => s.Id).FirstOrDefault();
+                    var model2 = _asu.Payments.Find(followuptypeId);
+                    var model = _asu.Facility_Reservations.Find(FaciltyreservationId);
+                    _asu.Remove(model);
+                    _asu.Remove(model2);
+                    _asu.SaveChanges();
+
+
+                    ViewBag.UserMessage4 = "Cancelation finished successfully";
+                    return View();
+                }
+                else {
+                    ViewBag.UserMessage5 = "This patient donot have reservation";
+                     return View()  ;
+                     }
+              
+            }
+            else
+            {
+                ViewBag.UserMessage5 = "This patient isnot in our hospital ";
+                return View();
+            }
+
+
+        }
+        [HttpGet]
        
         public IActionResult main()
         {
@@ -271,6 +335,13 @@ namespace Ain_Shams_Hospital.Controllers
                     }
                     else {
                         var SHID = _asu.Hospital_Facilities.Where(f => f.Type == SURGERYROOMName).Select(s => s.Id).Single();
+                        F.Start_Hour = surgerystart;  //ob.From;
+                        F.End_Hour = surgeryend;
+                        F.Hospital_Facility_Id = SHID;
+                        //FR.Hospital_Facility_Id =no ;
+                        F.Patient_Id = (int)TempData["Patient_Id"];
+                        F.Staff_Id = (int)TempData["Staff_Id"];
+                        _asu.Add(F);
                         FR.Start_Hour = start;  //ob.From;
                         FR.End_Hour = end;
                         FR.Hospital_Facility_Id = HID;
@@ -279,13 +350,7 @@ namespace Ain_Shams_Hospital.Controllers
                         FR.Staff_Id = (int)TempData["Staff_Id"];
 
                         _asu.Add(FR);
-                        F.Start_Hour = surgerystart;  //ob.From;
-                        F.End_Hour = surgeryend;
-                        F.Hospital_Facility_Id = SHID;
-                        //FR.Hospital_Facility_Id =no ;
-                        F.Patient_Id = (int)TempData["Patient_Id"];
-                        F.Staff_Id = (int)TempData["Staff_Id"];
-                        _asu.Add(F);
+                       
                         P.Patient_Id = (int)TempData["Patient_Id"];
                         P.Money = surgeryprice;
                         P.Follow_Up_Type_Id = surgeryId;
