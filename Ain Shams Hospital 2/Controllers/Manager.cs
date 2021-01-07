@@ -69,8 +69,8 @@ namespace Ain_Shams_Hospital.Controllers
                 ViewBag.DD4 = TempData["member3"];
                 ViewBag.DD5 = TempData[" mail"];
                 return View();
-          
-               // return Redirect("/Manager/exist");
+
+                // return Redirect("/Manager/exist");
             }
 
             else
@@ -112,19 +112,53 @@ namespace Ain_Shams_Hospital.Controllers
                 return View();
             }
 
-           
+
         }
-        
+
         public IActionResult ViewPrices()
         {
-            var s = _auc.Follow_Ups_Types.Select(s => new Follow_Up_Type{Name=s.Name,Price=s.Price }).ToList();
-            
+            var s = _auc.Follow_Ups_Types.Select(s => new Follow_Up_Type { Name = s.Name, Price = s.Price }).ToList();
+
             ViewBag.C1 = s;
-            
+
             return View();
         }
 
-        
+        [HttpGet]
+        public IActionResult ManagerEdit()
+        { 
+            return View();
+        }
+        [HttpPost]
+        public IActionResult ManagerEdit(ManagerEdit obj)
+        {
+            Follow_Up_Type v = new Follow_Up_Type();
+            v.Name = obj.Name;
+            v.Price = obj.Price;
+            var NameExist = _auc.Follow_Ups_Types.ToList().Any(u => u.Name == v.Name);
+            if (NameExist)
+            {
+                var m = _auc.Follow_Ups_Types.Where(i => i.Name == obj.Name).Select(c => c.Id).Single();
+                //code from internet
+                
+                var entityItem = _auc.Follow_Ups_Types.FirstOrDefault(s => s.Id == m);
+                if (entityItem != null)
+                {
+                    
+                    entityItem.Price = v.Price;
+
+                    _auc.Entry(entityItem).State = EntityState.Modified;
+                    _auc.SaveChanges();
+                    
+                }
+                ViewBag.Success = "The price is edited successfully.";
+                return View();
+            }
+            else {
+                ViewBag.Fail = "This name doesn't exist.";
+                return View();
+            }
+        }
         /*public IActionResult Exist()
         {
             ViewBag.DD1 = TempData["member"];
