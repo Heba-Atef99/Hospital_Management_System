@@ -35,6 +35,10 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
+        public IActionResult Donation()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

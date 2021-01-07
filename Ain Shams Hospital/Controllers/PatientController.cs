@@ -226,6 +226,7 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Payment(PaymentVM p)
         {
+
             return View();
         }
     }
