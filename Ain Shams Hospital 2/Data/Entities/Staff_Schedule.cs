@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Ain_Shams_Hospital.Data.Entities
 {
-    [Keyless]
+    
     public class Staff_Schedule
     {
+        public int Id { get; set; }
         public int? Specialization_Id { get; set; }
         [ForeignKey("Specialization_Id")]
         public virtual Specialization Specialization { get; set; }
