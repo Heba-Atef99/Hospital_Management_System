@@ -198,7 +198,8 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult AnotherHospital(TransferAnotherHospitalVM obj)
         {
             //Patient r = new Patient();
-            var patient_id = 1;
+            int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
+            //var patient_id = 1;
             Patient patient;
             patient = _auc.Patients
                        .Where(i => i.Id == patient_id).FirstOrDefault();
