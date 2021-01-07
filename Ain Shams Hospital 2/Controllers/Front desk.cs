@@ -32,7 +32,11 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
-      
+        public IActionResult Homepage()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult Delete()
         {
@@ -66,7 +70,7 @@ namespace Ain_Shams_Hospital.Controllers
             var model = _asu.Facility_Reservations.Find(x);
             _asu.Remove(model);
             _asu.SaveChanges();
-            ViewBag.UserMessage3 = "Deleted successfully";
+            ViewBag.UserMessage3 = "Patient transfered successfully";
 
             return View();
         }
@@ -89,6 +93,20 @@ namespace Ain_Shams_Hospital.Controllers
            
    
 
+            return View();
+        }
+      
+        [HttpGet]
+
+        public IActionResult main2()
+        {
+            
+            var SurgeryNameRexist = _asu.Hospital_Facilities
+                .Where(f => f.Type.Substring(0, 7) == "Surgery")
+                .Select(s => new Hospital_Facility { Type = s.Type })
+                .ToList();
+            ViewBag.h1 = SurgeryNameRexist;
+          
             return View();
         }
         [HttpGet]
@@ -137,7 +155,7 @@ namespace Ain_Shams_Hospital.Controllers
                 var HID = _asu.Hospital_Facilities.Where(f => f.Type == x.Type).Select(s => s.Id).Single();
                 var availableroom = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id == HID)
                     .Select(s => new { date = s.End_Hour, date1 = s.Start_Hour }).ToList();
-                
+                //if(availableroom ==)
                 foreach (var V in availableroom)
                 {
                     DateTime parse1 = DateTime.Parse(ch.From);
@@ -160,12 +178,16 @@ namespace Ain_Shams_Hospital.Controllers
                 {
                     // TempData["roomname"] = _asu.Hospital_Facilities.Where(f => f.Id == HID).Select(s => s.Type).Single();
                     var roomname = _asu.Hospital_Facilities.Where(f => f.Id == HID).Select(s => s.Type).Single();
+                
                     ViewBag.Roomname = roomname;
+                  
                     HttpContext.Session.SetString("Roomname",roomname );
                     HttpContext.Session.SetString("START", ch.From);
                     HttpContext.Session.SetString("END", ch.To);
+
                     return View();
                 }
+                y = 0;
             }
            
                 ViewBag.UserMessage = "this room is not available";
@@ -177,16 +199,7 @@ namespace Ain_Shams_Hospital.Controllers
              
             return View();
         }
-        [HttpGet]
-        public IActionResult Transfer(delete ch)
-        {
-            return View(); 
-        }
-        //[HttpPost]
-        /*public IActionResult Transfer(delete ch)
-        { 
-            return View();
-        }*/
+    
         [HttpGet]
         public IActionResult Roomreservation()
         {
@@ -214,10 +227,21 @@ namespace Ain_Shams_Hospital.Controllers
             String surgeryend = HttpContext.Session.GetString("ENDSurgery");
             Facility_Reservation FR = new Facility_Reservation();
             Facility_Reservation F = new Facility_Reservation();
+            Payment P = new Payment();
+            Payment P1 = new Payment();
             var NamePexist = _asu.Patients.ToList().Any(f => f.Name == ob.PatientName);
             var NameSexist = _asu.Staff.ToList().Any(F => F.Name == ob.DoctorName);
-            // var ROOMNAME = TempData["roomname"];
-           
+            
+            var surgeryprice = _asu.Follow_Ups_Types.Where(f => f.Name == "Surgery").Select(s => s.Price).Single();
+            var roomprice = _asu.Follow_Ups_Types.Where(f => f.Name == "Room").Select(s => s.Price).Single();
+            var RoompriceId = _asu.Follow_Ups_Types.Where(f => f.Name == "Room").Select(s => s.Id).Single();
+            var surgeryId = _asu.Follow_Ups_Types.Where(f => f.Name == "Surgery").Select(s => s.Id).Single();
+            DateTime parse1 = DateTime.Parse(start);
+            DateTime parse2 = DateTime.Parse(end);
+            var Duration = parse2 - parse1;
+            int days = Duration.Days+1;
+            int Totalroomprice = days * roomprice;
+
             var HID = _asu.Hospital_Facilities.Where(f => f.Type == ROOMName).Select(s => s.Id).Single();
             
             if (NamePexist)
@@ -237,7 +261,11 @@ namespace Ain_Shams_Hospital.Controllers
                         FR.Patient_Id = (int)TempData["Patient_Id"];
                         FR.Staff_Id = (int)TempData["Staff_Id"];
                         _asu.Add(FR);
-                        _asu.SaveChanges();
+                        P1.Patient_Id = (int)TempData["Patient_Id"];
+                        P1.Money = Totalroomprice;
+                        P1.Follow_Up_Type_Id = RoompriceId;
+                        _asu.Add(P1);
+                       _asu.SaveChanges();
                         ViewBag.UserMessage2 = "Done";
                         return View();
                     }
@@ -249,6 +277,7 @@ namespace Ain_Shams_Hospital.Controllers
                         //FR.Hospital_Facility_Id =no ;
                         FR.Patient_Id = (int)TempData["Patient_Id"];
                         FR.Staff_Id = (int)TempData["Staff_Id"];
+
                         _asu.Add(FR);
                         F.Start_Hour = surgerystart;  //ob.From;
                         F.End_Hour = surgeryend;
@@ -257,6 +286,14 @@ namespace Ain_Shams_Hospital.Controllers
                         F.Patient_Id = (int)TempData["Patient_Id"];
                         F.Staff_Id = (int)TempData["Staff_Id"];
                         _asu.Add(F);
+                        P.Patient_Id = (int)TempData["Patient_Id"];
+                        P.Money = surgeryprice;
+                        P.Follow_Up_Type_Id = surgeryId;
+                        _asu.Add(P);
+                        P1.Patient_Id = (int)TempData["Patient_Id"];
+                        P1.Money = Totalroomprice;
+                        P1.Follow_Up_Type_Id = RoompriceId;
+                        _asu.Add(P1);
                         _asu.SaveChanges();
                         ViewBag.UserMessage2 = "Done";
                         return View();
@@ -492,6 +529,7 @@ namespace Ain_Shams_Hospital.Controllers
                      _asu.SaveChanges();
                      return Redirect("/Front_desk/done");*/
                 }
+                f = 0;
             }
             //}
             ViewBag.UserMessage1 = "this Surgary room is not available";
