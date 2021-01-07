@@ -64,14 +64,13 @@ namespace Ain_Shams_Hospital.Controllers
             dona.Phone_Number = don.PhoneNumber;
             _HDB.Add(dona);
             _HDB.SaveChanges();
+            String visitor_name = dona.Name;
+            ViewBag.visitorname = visitor_name;
             return RedirectToAction("saveDonation", "Home");
         }
         [HttpGet]
         public IActionResult saveDonation()
         {
-            int visitor_Id = _HDB.Donations.Select(o => o.Id).FirstOrDefault();
-            ViewBag.visitorname = _HDB.Donations.Where(f => f.Id == visitor_Id).Select(h => h.Name).SingleOrDefault();
-
             return View();
         }
         [HttpPost]
