@@ -9,5 +9,6 @@ namespace Ain_Shams_Hospital.ViewModels.DoctorVM
     public class MainVM
     {
         public int P_Id { get; set; }
+        public string Search_Item { get; set; }
     }
 }

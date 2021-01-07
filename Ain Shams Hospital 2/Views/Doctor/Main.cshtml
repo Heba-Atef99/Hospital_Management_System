@@ -6,8 +6,13 @@
 
 <!-- Cards Section -->
 <form asp-action="Main" id="doctor-main">
+    <div class="row form-group no-color">
+        <label class="control-label col-1" name="Search_Item">Search:</label> 
+        <input class="form-control col-3" name="Search_Item" type="text"/>
+        <input type="submit" value="Go" class="ml-2 btn btn-success d-inline" /> 
+    </div>
+    
     <div class="row">
-
         @foreach (var fp in follow_up)
         {
             <div class="card col-md-3 mx-2 mb-3 p-0">
@@ -23,9 +28,9 @@
             </div>
         }
     </div>
-    <div class="card-body">
+    <!--<div class="card-body text-center">
         <h2 class="text-center">If you need to trasfer to emergency. </h2>
         <hr />
         <a class="btn btn-dark w-auto text-center" href="Emergency" role="button">Emergency</a>
-    </div>
+    </div>-->
 </form>

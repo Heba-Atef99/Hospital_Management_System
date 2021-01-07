@@ -9,12 +9,13 @@
     <div class="col-md-6">
         <h1>Blood_Unit</h1>
         <br />
-        <table>
-            <tr>
-
-                <th>Type : </th>
-                <th>Amount : </th>
-            </tr>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Type : </th>
+                    <th>Amount : </th>
+                </tr>
+            </thead>
 
             @foreach (var p in Blood_Unit)
             {
@@ -30,33 +31,28 @@
             }
         </table>
     </div>
-            <div class="col-md-6">
-                <h1>Emergency bed</h1>
-                <br />
-                <table>
-                    <tr>
+    <div class="col-md-6">
+        <h1>Emergency bed</h1>
+        <br />
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Type : </th>
+                    <th>Available : </th>
+                    <th>Start_Working : </th>
+                    <th>End_Working : </th>
+                </tr>
+            </thead>
 
-                        <th>Type : </th>
-                        <th>Available : </th>
-                        <th>Start_Working : </th>
-                        <th>End_Working : </th>
-                    </tr>
-
-                    @foreach (var n in facility)
-                    {
-
-
-
-                        <tr>
-
-                            <th>@n.Type</th>
-                            <th>@n.Available</th>
-                            <th>@n.Start_Working_Hour</th>
-                            <th>@n.End_Working_Hour</th>
-
-                        </tr>
-
-                    }
-                </table>
-            </div>
-        </div>
+            @foreach (var n in facility)
+            {
+                <tr>
+                    <th>@n.Type</th>
+                    <th>@n.Available</th>
+                    <th>@n.Start_Working_Hour</th>
+                    <th>@n.End_Working_Hour</th>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

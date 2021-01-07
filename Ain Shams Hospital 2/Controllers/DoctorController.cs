@@ -5,6 +5,7 @@ using HospitalManagementSystem.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,24 @@ using System.Threading.Tasks;
 
 namespace Ain_Shams_Hospital.Controllers
 {
+    /*public static class SessionExtensions
+    {
+        public static T GetComplexData<T>(this ISession session, string key)
+        {
+            var data = session.GetString(key);
+            if (data == null)
+            {
+                return default(T);
+            }
+            return JsonConvert.DeserializeObject<T>(data);
+        }
+
+        public static void SetComplexData(this ISession session, string key, object value)
+        {
+            session.SetString(key, JsonConvert.SerializeObject(value));
+        }
+    }*/
+
     public class DoctorController : Controller
     {
         private readonly HospitalDbContext _auc;
@@ -21,6 +40,8 @@ namespace Ain_Shams_Hospital.Controllers
             _auc = auc;
             //_repository = repository;
         }
+
+
         [HttpGet]
         public IActionResult PatientFollowUp()
         {
@@ -46,22 +67,17 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult PatientFollowUp(PatientFollowUpVM obj)
         {
             int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
-            //TempData["p_id"] = patient_id;
             Patient patient;
             patient = _auc.Patients.Where(i => i.Id == patient_id).FirstOrDefault();
             patient.Medical_Record = patient.Medical_Record + " " + obj.Medical_Record;
             ViewBag.UserMessage = "edit send";
-            //_auc.Add(patient);
             _auc.SaveChanges();
             ModelState.Clear();
-
-            //List<Patient> result = new List<Patient>;
 
             var result = _auc.Patients
                  .Where(O => O.Id == patient_id)
                  .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record })
                  .ToList();
-
 
             var regestration_id = _auc.Patients.Include(o => o.Registration)
                 .Where(O => O.Id == patient_id)
@@ -84,7 +100,7 @@ namespace Ain_Shams_Hospital.Controllers
                 .ToList();
             ViewBag.Blood_Units = result;
             var facility = _auc.Hospital_Facilities
-                .Where(i=>i.Id >=15 )
+                .Where(i => i.Type.Substring(0, 13) == "Emergency bed")
                 .Select(n => new Hospital_Facility { Type = n.Type, Available = n.Available,
                     Start_Working_Hour =n.Start_Working_Hour, End_Working_Hour=n.End_Working_Hour   })
                 .ToList();
@@ -95,15 +111,37 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpPost]
         public IActionResult Main(MainVM m)
         {
-            HttpContext.Session.SetInt32("Patient_Id", m.P_Id);
-            return Redirect("/Doctor/PatientFollowUp");
+            if (m.P_Id != 0)
+            {
+                HttpContext.Session.SetInt32("Patient_Id", m.P_Id);
+                return Redirect("/Doctor/PatientFollowUp");
+            }
+
+            //HttpContext.Session.SetString("SearchItem", m.Search_Item);
+
+            TempData["SearchItem"] = m.Search_Item;
+
+            /*
+            List<Tuple<Patient, Follow_Up_History>> MainView = HttpContext.Session.GetComplexData<List<Tuple<Patient, Follow_Up_History>>>("MainViewList");
+            var searchString = m.Search_Item;
+            if (searchString == null)
+            {
+                ViewBag.follow_ups = MainView;
+                return View();
+            }
+
+            ViewBag.follow_ups = (List<Tuple<Patient, Follow_Up_History>>)MainView.Where(s => s.Item1.Id.ToString().Contains(searchString) || s.Item1.Name.Contains(searchString) 
+            || s.Item2.Follow_Up_Type.Name.Contains(searchString))
+                .ToList();
+            this.ModelState.Clear();
+            m.Search_Item = null;*/
+            return Redirect("/Doctor/Main");
+            //return View();
         }
 
         [HttpGet]
         public IActionResult Main()
         {
-            //HttpContext.Session.SetInt32("Patient_Id", m.P_Id);
-            //int Doctor_Reg_Id = (int)TempData["User_Reg_Id"];
             int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Doctor_Id = _auc.Staff
                 .Where(d => d.Registration_Id == Doctor_Reg_Id)
@@ -134,7 +172,18 @@ namespace Ain_Shams_Hospital.Controllers
                 ++i;
             }
 
+            //HttpContext.Session.SetComplexData("MainViewList", patient_join_follow_up);
+
+            var searchString = TempData["SearchItem"] == null ? null : TempData["SearchItem"].ToString();
+            if (searchString != null)
+            {
+                ViewBag.follow_ups = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up.Where(s => s.Item1.Id.ToString().Contains(searchString) || s.Item1.Name.Contains(searchString)
+                || s.Item2.Follow_Up_Type.Name.Contains(searchString))
+                    .ToList();
+                return View();
+            }
             ViewBag.follow_ups = patient_join_follow_up;
+
             return View();
         }
 
