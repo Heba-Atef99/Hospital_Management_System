@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "DoctorSchedules";
+    Layout = "_PatientLayout";
 }
 
 <div class="container mt-5">
@@ -17,8 +18,9 @@
 
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-
-                    <div>@ViewBag.masseg3</div>
+                    <label asp-for="DoctorName" for="selectdoctors">Choose A Doctor Type</label>
+                    <select class="form-control" id="disablefirst" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege3 ,"Id","Name"))">
+                    </select>
                 </div>
 
             </form>
