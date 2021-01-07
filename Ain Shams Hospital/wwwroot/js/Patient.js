@@ -4,20 +4,12 @@ $(document).ready(function () {
 
     $("#disablefirst option:first-child").attr("disabled", "disabled");
 
-
-    $(".price").click(function () {
-        $(".price").css("border", "none");
-        $(this).css("border", "4px solid black");
-    });
-
     //date time cannot submit with date before today
 
     var elem = document.getElementById("dateInput");
     var iso = new Date().toISOString();          // Gets today's date
     var minDate = iso.substring(0, iso.length - 8);
     elem.min = minDate;
-
-   
     
 });
 

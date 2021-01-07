@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "FollowedDoctors";
-    Layout = "_PatientLayout";
 }
 
 <div class="container mt-5">
@@ -17,12 +16,12 @@
             <form asp-action="FollowedDoctors">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="DoctorsName" >Show Your Doctors list</label>
+                    <label asp-for="DoctorsName" for="selectdoctors">Show Your Doctors list</label>
                     <select class="form-control" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege2 ,"Id","Name"))">
                     </select>
                 </div>
                 <div class="form-group">
-                    <a type="submit" asp-action="DoctorSchedules" asp-controller="Patient" role="button" class="btn btn-primary">Show doctor Schedule</a>
+                    <input type="submit" value="Show doctor Schedule" asp-action="DoctorSchedules" asp-controller="Patient" class="btn btn-primary" />
                 </div>
             </form>
         </div>

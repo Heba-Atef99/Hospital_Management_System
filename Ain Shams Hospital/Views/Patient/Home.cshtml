@@ -1,30 +1,27 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-    
 *@
-@{
-    Layout = "_PatientLayout";
-}
+
 
 <section>
     <div class="img_bg_p">
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
-                    <div style="display: inline-block;" class="text-white pt-5 mt-5">
-                        <h3 style="width: 270px;" class="bg-danger p-2 ">Ain Shams Hospital</h3>
+                <div style="display: inline-block;" class="text-white pt-5 mt-5">
+                    <h3 style="width: 270px;" class="bg-danger p-2 ">Ain Shams Hospital</h3>
 
-                        <h1 class="bg-dark p-3 ">
-                            PERFECT STAFF IS AVAILABLE
-                        </h1>
-                        <h3 class="bg-dark p-2 ">BEST CHOICE FOR YOU</h3>
-                        <h3 class="bg-primary p-3">Welcome! @ViewBag.patientname</h3>
-                    </div>
+                    <h1 class="bg-dark p-3 ">
+                        PERFECT STAFF IS AVAILABLE
+                    </h1>
+                    <h3 class="bg-dark p-2 ">BEST CHOICE FOR YOU</h3>
+                    <h3 class="bg-primary p-3">Welcome! @ViewBag.patientname</h3>
                 </div>
-
+                </div>
+              
             </div>
         </div>
-
+        
     </div>
 </section>
 
@@ -90,7 +87,7 @@
                             </div>
                         </a>
                     </div>
-
+                    
                     <div class="col-lg-4 col-sm-12">
                         <a asp-action="Surgeon" asp-controller="Patient">
                             <div class="card shadow mt-3">

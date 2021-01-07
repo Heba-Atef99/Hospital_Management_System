@@ -162,18 +162,10 @@ namespace Ain_Shams_Hospital.Controllers
             HttpContext.Session.SetInt32("choose_test", 1);
             return RedirectToAction("Payment", "Patient");
         }
-        public IActionResult services()
+        public IActionResult Services()
         {
             return View();
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Services(servicesVM s)
-        {
-            return RedirectToAction("Payment", "Patient");
-            
-        }
-        
 
         public IActionResult FollowedDoctors()
         {
@@ -195,17 +187,21 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult FollowedDoctors(FollowedDoctorsVM fc)
         {
-            HttpContext.Session.SetInt32("sel_Id", (int)fc.Id);
+            HttpContext.Session.SetInt32("Doctor_sel_Id", (int)fc.Id);
             return RedirectToAction("DoctorSchedules", "Patient");
         }
 
         public IActionResult DoctorSchedules()
         {
-
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             ViewBag.patientname = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Name).SingleOrDefault();
-            int sel_Id = (int)HttpContext.Session.GetInt32("sel_Id");
-
+            int Doctor_sel_Id = (int)HttpContext.Session.GetInt32("Doctor_sel_Id");
+            ViewBag.Test = Doctor_sel_Id;
+            /*var sp_Id =_HDB.Staff.Where(s=>s.Id==Doctor_sel_Id).Select(a=>a.Specialization_Id).SingleOrDefault();
+            
+            var s1 = _HDB.Staff_Schedules.Where(f => f.Specialization_Id == sp_Id).Select(u=>u.Working_Day).SingleOrDefault();
+            
+            ViewBag.masseg3 = s1;*/
 
             return View();
         }
