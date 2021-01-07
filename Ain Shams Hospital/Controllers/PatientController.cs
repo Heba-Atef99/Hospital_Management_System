@@ -24,7 +24,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             ViewBag.patientname = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Name).SingleOrDefault();
-            
+
             return View();
         }
 
@@ -36,7 +36,7 @@ namespace Ain_Shams_Hospital.Controllers
             s1.Insert(0, new Follow_Up_Type { Id = 0, Name = "--Select Your Test--" });
             ViewBag.massege = s1;
             return View();
-           
+
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -56,7 +56,7 @@ namespace Ain_Shams_Hospital.Controllers
             fuph.Date = bd.Date;
             fuph.Follow_Up_Type_Id = bd.Id;            ////Done
             fuph.Follow_Up_Id = fup.Id;
-           
+
             _HDB.Add(fuph);
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
@@ -70,11 +70,11 @@ namespace Ain_Shams_Hospital.Controllers
 
 
             List<Specialization> s1 = new List<Specialization>();
-            s1 = (from s in _HDB.Specializations select s).Where(n=>n.Id>=2 && n.Id<=12).ToList();
-            s1.Insert(0, new Specialization { Id = 0, Name = "--select your doctor--"}) ;
-            
+            s1 = (from s in _HDB.Specializations select s).Where(n => n.Id >= 2 && n.Id <= 12).ToList();
+            s1.Insert(0, new Specialization { Id = 0, Name = "--select your doctor--" });
+
             ViewBag.massege = s1;
-            
+
             return View();
         }
         [HttpPost]
@@ -82,14 +82,14 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult SelectDoctor(SelectDoctorVM sd)
         {
             HttpContext.Session.SetInt32("Doctor_Sp_Id", (int)sd.Id);
-            return RedirectToAction("Doctor","Patient");
+            return RedirectToAction("Doctor", "Patient");
         }
 
         public IActionResult Doctor(Specialization obj)
         {
 
             int Doctor_sp_Id = (int)HttpContext.Session.GetInt32("Doctor_Sp_Id");
-            
+
             List<Staff> s1 = new List<Staff>();
             s1 = (from s in _HDB.Staff select s).Where(f => f.Specialization_Id == Doctor_sp_Id).ToList();
             s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
@@ -121,10 +121,10 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.Add(fuph);
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
-            HttpContext.Session.SetInt32("choose_test",2);
+            HttpContext.Session.SetInt32("choose_test", 2);
             return RedirectToAction("Payment", "Patient");
         }
- 
+
         public IActionResult Surgeon()
         {
 
@@ -133,7 +133,7 @@ namespace Ain_Shams_Hospital.Controllers
             s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
             ViewBag.massege = s1;
             return View();
-            
+
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -171,9 +171,9 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult Services(servicesVM s)
         {
             return RedirectToAction("Payment", "Patient");
-            
+
         }
-        
+
 
         public IActionResult FollowedDoctors()
         {
@@ -204,7 +204,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             ViewBag.patientname = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Name).SingleOrDefault();
-            int sel_Id = (int)HttpContext.Session.GetInt32("sel_Id");
+            int selId = (int)HttpContext.Session.GetInt32("sel_Id");
 
 
             return View();
@@ -215,18 +215,45 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
+        [HttpGet]
         public IActionResult Payment()
         {
-            int test_Id = (int)HttpContext.Session.GetInt32("choose_test") ;
+            int test_Id = (int)HttpContext.Session.GetInt32("choose_test");
             int pay = _HDB.Follow_Ups_Types.Where(i => i.Id == test_Id).Select(l => l.Price).SingleOrDefault();
             ViewBag.massage = pay;
             return View();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Payment(PaymentVM p)
+        public ActionResult Payment(PaymentVM p)
         {
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
 
+            int test_Id = (int)HttpContext.Session.GetInt32("choose_test");
+            int pay = _HDB.Follow_Ups_Types.Where(i => i.Id == test_Id).Select(l => l.Price).SingleOrDefault();
+
+            Payment pa = new Payment();
+            pa.Patient_Id = Patient_Id;
+            pa.Online = true;
+            pa.Money = pay;
+            pa.Follow_Up_Type_Id = test_Id;
+            pa.Date = p.ExpDate;
+            if (pa.Money == pay)
+            {
+                pa.Payed = true;
+            }
+            else
+            {
+                pa.Payed = false;
+            }
+            _HDB.Add(pa);
+            _HDB.SaveChanges();
+
+
+            return RedirectToAction("savepay", "Patient") ;
+        }
+        public ActionResult savepay()
+        {
             return View();
         }
     }
