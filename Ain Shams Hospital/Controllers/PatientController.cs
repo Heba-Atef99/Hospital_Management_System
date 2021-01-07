@@ -48,7 +48,7 @@ namespace Ain_Shams_Hospital.Controllers
             Follow_Up fup = new Follow_Up();
             fup.Patient_Id = Patient_Id;
             fup.Status = "Pending";
-            //fup.Staff_Id = bd.;
+            fup.Staff_Id = 13;
             _HDB.Add(fup);
             _HDB.SaveChanges();
 
