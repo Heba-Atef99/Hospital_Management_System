@@ -159,6 +159,16 @@ namespace Ain_Shams_Hospital.Controllers
                 return View();
             }
         }
+        
+        public IActionResult ViewSpecializations()
+        {
+            var s = _auc.Specializations.Select(s => new Specialization { Name = s.Name, Code = s.Code }).ToList();
+
+            ViewBag.C1 = s;
+            return View();
+        }
+        
+       
         /*public IActionResult Exist()
         {
             ViewBag.DD1 = TempData["member"];
