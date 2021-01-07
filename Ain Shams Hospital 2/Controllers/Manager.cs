@@ -95,11 +95,14 @@ namespace Ain_Shams_Hospital.Controllers
             if (NameExist)
             {
                 var StaffName = _auc.Staff.Where(f => f.Name == vm.StaffName)
-                   .Select(s => s.Id).Single();     
+                   .Select(s => s.Id).Single();
+                var regestrationId = _auc.Staff.Where(f => f.Name == vm.StaffName)
+                  .Select(s => s.Registration_Id).Single();
 
-
+                var model1 = _auc.Registrations.Find(regestrationId);
                 var model = _auc.Staff.Find(StaffName);
                 _auc.Remove(model);
+                _auc.Remove(model1);
                 _auc.SaveChanges();
                 ViewBag.UserMessage4 = "Deleted successfully";
                 return View();
