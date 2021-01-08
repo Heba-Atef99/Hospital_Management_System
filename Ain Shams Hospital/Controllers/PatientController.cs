@@ -266,11 +266,15 @@ namespace Ain_Shams_Hospital.Controllers
             int pay = _HDB.Follow_Ups_Types.Where(i => i.Id == test_Id).Select(l => l.Price).SingleOrDefault();
             ViewBag.massage = pay;
 
+            string dat = _HDB.Follow_Ups_History.Where(o => o.Follow_Up_Type_Id == test_Id).Select(i => i.Date).FirstOrDefault();
+
+
             Payment pa = new Payment();
             pa.Patient_Id = Patient_Id;
             pa.Online = true;
             pa.Money = pay;
             pa.Follow_Up_Type_Id = test_Id;
+            pa.Date = dat;
             if (pa.Money == pay)
             {
                 pa.Payed = true;
@@ -288,12 +292,6 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpPost]
         public IActionResult Payment(PaymentVM p)
         {
-            Payment pa = new Payment();
-            pa.Date = p.ExpDate;
-            _HDB.Add(pa);
-            _HDB.SaveChanges();
-
-
             return RedirectToAction("savepay", "Patient") ;
         }
         public ActionResult savepay()
