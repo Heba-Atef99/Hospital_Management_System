@@ -2,10 +2,8 @@
 
 @{
     ViewData["Title"] = "Deletemanager";
+    Layout = "~/Views/Manager_Layout.cshtml";
 }
-
-<h1>Deletemanager</h1>
-
 
 <hr />
 <div class="row">
@@ -18,16 +16,16 @@
                 <span asp-validation-for="StaffName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Delete Staff Member" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 <div class="text-success">@ViewBag.UserMessage4</div>
-<div class="text-success">@ViewBag.UserMessage5</div>
-<div>
+<div class="text-danger">@ViewBag.UserMessage5</div>
+@*<div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

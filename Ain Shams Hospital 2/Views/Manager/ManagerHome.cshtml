@@ -2,8 +2,8 @@
 
 @{
     ViewData["Title"] = "ManagerHome";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    Layout = "~/Views/Manager_Layout.cshtml";
+    }
 
 @section Scripts {
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
@@ -12,10 +12,7 @@
 }
 
 
-<h1>ManagerHome</h1>
 
-
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="ManagerHome">
@@ -26,31 +23,30 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Search" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 
-<div class="col-md-9 ">
-    <form class="card card-body">
-        <h1>Staff personal informations </h1>
-        <hr />
-        <h4>name :</h4>
-        <h4>@ViewBag.DD1</h4>
-        <hr />
-        <h3>phone :</h3>
-        <h3>@ViewBag.DD2</h3>
-        <hr />
-        <h3>Starting Day :</h3>
-        <h3>@ViewBag.DD3</h3>
-        <hr />
-        <h3>Spatialization :</h3>
-        <h3>@ViewBag.DD4</h3>
-        <hr />
-        <h3>mail :</h3>
-        <h3>@ViewBag.DD5</h3>
-    </form>
+
+<div class="card">
+        <div class="card-header">
+            <h3>Staff Personal Information </h3>
+        </div>
+       
+
+        <div class="card-body">
+            <h4>Name:</h4><h6>@ViewBag.DD1</h6>
+            <hr/>
+            <h4>Phone:</h4><h6>@ViewBag.DD2</h6>
+            <hr/>
+            <h4>Starting Day:</h4><h6>@ViewBag.DD3</h6>
+            <hr/>
+            <h4>Specialization:</h4><h6>@ViewBag.DD4</h6>
+            <hr/>
+           <h4>Email:</h4><h6>@ViewBag.DD5</h6>
+        </div>
 </div>
 

@@ -103,12 +103,12 @@ namespace Ain_Shams_Hospital.Controllers
                 _auc.Remove(model);
                 _auc.Remove(model1);
                 _auc.SaveChanges();
-                ViewBag.UserMessage4 = "Deleted successfully";
+                ViewBag.UserMessage4 = "Staff member is deleted successfully";
                 return View();
             }
             else
             {
-                ViewBag.UserMessage5 = "This doctor isnot from our staff";
+                ViewBag.UserMessage5 = "This staff member doesn't exist";
                 return View();
             }
 
