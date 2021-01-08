@@ -18,6 +18,8 @@ namespace AinShamsHospital.Controllers
         {
             _asu = asu;
         }
+    
+      
         [HttpGet]
         public IActionResult Billresult()
         {
@@ -27,62 +29,21 @@ namespace AinShamsHospital.Controllers
         [HttpPost]
         public IActionResult Billresult(payed m)
         {
-            var NameExist = _asu.Patients.ToList().Any(u => u.Name == m.PatientName);
-
-            if (NameExist)
+          
+            foreach (var mn in m.isactive)
             {
-                var patientid = _asu.Patients
-                .Where(i => i.Name == m.PatientName)
-                .Select(m => m.Id)
-                .Single();
-
-                // TempData["patientbill"]
-
-
-                var patientbill = _asu.Payments.Include(p => p.Patient).Include(f => f.Follow_Up_Type)
-              .Where(i => (i.Patient_Id == patientid) && (i.Payed == false))
-              .ToList();
-               
-
-                ViewBag.p_bill = patientbill;
-                int total = 0;
-                foreach (var y in patientbill)
-                {
-                   
-
-                    total = total + y.Money;
-                }
-                ViewBag.Total = total;
-                foreach (var y in patientbill)
-                {
-                    var payed = _asu.Payments.Where(f => f.Id == y.Id).Select(s => s.Payed).Single();
-                    if (m.isactive == true)
-                    {  }
-
-                    total = total + y.Money;
-                }
-
-                return View();
-
-                // return Redirect("/finance/Billresult");
+                var payed = _asu.Payments.Where(f => f.Id == mn).Single();
+                payed.Payed = true;
+                _asu.SaveChanges();
+                ViewBag.d = "done";
             }
-
-            else
-            {
-                ViewBag.NameDoesntExist = "Patient Doesn't Exist";
-                return View();
-            }
-            
-        /*  ViewBag.select = m.isactive;
-            Payment P = new Payment();
-            P.Payed = m.isactive;
-            _asu.Add(P);
-            _asu.SaveChanges();
-            return View();*/
+            return View();
+           
         }
         [HttpGet]
         public IActionResult Bill()
         {
+         
             return View();
         }
         [HttpPost]
@@ -90,7 +51,8 @@ namespace AinShamsHospital.Controllers
         {
             ViewBag.name = m.PatientName;
 
-             /*Payment P = new Payment();
+             Payment P = new Payment();
+            
              var NameExist = _asu.Patients.ToList().Any(u => u.Name == m.PatientName);
 
              if (NameExist)
@@ -112,23 +74,25 @@ namespace AinShamsHospital.Controllers
                  int total = 0;
                  foreach(var y in patientbill) 
                  {
-                     total = total+y.Money;
+               
+                    total = total+y.Money;
                  }
                  ViewBag.Total = total;
-
-                 return View();
-
+           
+                HttpContext.Session.SetString("END", m.PatientName);
+                return View();
+            
                 // return Redirect("/finance/Billresult");
-             }
+            }
 
              else
              {
                  ViewBag.NameDoesntExist = "Patient Doesn't Exist";
                  return View();
-            }*/
+            }
 
-            //return View();
-            return Redirect("/finance/Billresult");
+            return View();
+            //return Redirect("/finance/Billresult");
         }
 
     }

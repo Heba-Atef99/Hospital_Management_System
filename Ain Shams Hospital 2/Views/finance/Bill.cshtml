@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Bill";
     var isnull = ViewBag.p_bill == null ? null : ViewBag.p_bill;
-    
+
 
 }
 
@@ -13,7 +13,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Billresult">
+        <form asp-action="Bill">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="PatientName" class="control-label"></label>
@@ -21,18 +21,58 @@
                 <span asp-validation-for="PatientName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <button name="PatientName" value="@ViewBag.name" type="submit" class="stretched-link">Show bill</button>
-               
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-            <div>
-
-            </div>
+            
+            
         </form>
 
     </div>
 </div>
+@if (isnull != null)
+{
+<div>
+    <form asp-action="Billresult">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+
+                    <th scope="col">Type</th>
+                    <th scope="col">Price</th>
 
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var x in ViewBag.p_bill)
+
+                {
+
+                    <tr>
+
+
+                        <td>@x.Follow_Up_Type.Name</td>
+                        <td>@x.Money</td>
+                        <td>
+                            <input type="checkbox" name="isactive" value="@x.Id" />
+                        </td>
+
+                    </tr>
+
+                }
+                <tr><td>Total=@ViewBag.Total</td></tr>
+            </tbody>
+
+        </table>
+
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+
+</div>
 }
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

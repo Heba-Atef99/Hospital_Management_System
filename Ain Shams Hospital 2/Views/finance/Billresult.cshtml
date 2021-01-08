@@ -5,37 +5,5 @@
 }
 
 @model AinShamsHospital.ViewModels.payed
-<div>
-    <table class="table table-bordered table-hover">
-        <thead class="thead-dark">
-            <tr>
 
-                <th scope="col">Type</th>
-                <th scope="col">Price</th>
-
-
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var x in ViewBag.p_bill)
-
-            {
-
-                <tr>
-
-
-                    <td>@x.Follow_Up_Type.Name</td>
-                    <td>@x.Money</td>
-                    <td>
-                        @Html.CheckBoxFor(m => m.isactive)
-
-                    </td>
-
-                </tr>
-
-            }
-        <td>Total=@ViewBag.Total</td>
-        </tbody>
-
-    </table>
-   
+    <div>@ViewBag.d</div>

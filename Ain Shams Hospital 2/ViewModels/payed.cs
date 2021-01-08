@@ -10,6 +10,6 @@ namespace AinShamsHospital.ViewModels
     {
         [Required]
         public string PatientName { get; set; }
-        public bool isactive { get; set; }
+        public List<int> isactive { get; set; }
     }
 }
