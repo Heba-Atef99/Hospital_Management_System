@@ -1,5 +1,5 @@
 ﻿@model Ain_Shams_Hospital.ViewModels.DoctorVM.TransferAnotherDepVM
-
+<!--
 @{
     //ViewData["Title"] = "AnotherDepartment";
     var AnotherDep = ViewBag.OtherDep;
@@ -26,18 +26,18 @@
                 </select>
                 <span asp-validation-for="SpecializationId" class="text-danger"></span>
             </div>
-            
+
             <div class="form-group">
                 <label class="control-label">Doctor:</label>
                 <select class="form-control"  >
-                   
+
                     <option selected disabled hidden></option>
                     @foreach (var c in AnotherDoc)
                     {
                         <option class="hide" id="s-@c.Specialization_Id"  value="@c.Id"> @c.Name</option>
                     }
-                    
-                   
+
+
                 </select>
                 <span asp-validation-for="SpecializationId" class="text-danger"></span>
             </div>
@@ -59,7 +59,7 @@
         display: none;
     }
     */
-    
+
 </style>
 <script>
     var y = document.querySelectorAll(".hide");
@@ -75,7 +75,7 @@
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "inline";
             //x[i].style.background - color: red;
-        }    
+        }
     }
 </script>
 <div><a href="#">content</a>
@@ -85,3 +85,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+    -->

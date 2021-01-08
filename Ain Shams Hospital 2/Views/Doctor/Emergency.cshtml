@@ -1,10 +1,5 @@
 ﻿@page
-@{
-    var Blood_Unit = ViewBag.Blood_Units;
-}
-@{
-    var facility = ViewBag.Hospital_Facility;
-}
+
 <div class="row">
     <div class="col-md-6">
         <h1>Blood_Unit</h1>
@@ -17,17 +12,13 @@
                 </tr>
             </thead>
 
-            @foreach (var p in Blood_Unit)
+            @foreach (var p in ViewBag.Blood_Units)
             {
-
-
-
                 <tr>
 
                     <th>@p.Type</th>
                     <th>@p.Amount</th>
                 </tr>
-
             }
         </table>
     </div>
@@ -44,7 +35,7 @@
                 </tr>
             </thead>
 
-            @foreach (var n in facility)
+            @foreach (var n in ViewBag.Hospital_Facility)
             {
                 <tr>
                     <th>@n.Type</th>

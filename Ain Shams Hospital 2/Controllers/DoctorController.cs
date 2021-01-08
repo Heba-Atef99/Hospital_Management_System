@@ -160,6 +160,7 @@ namespace Ain_Shams_Hospital.Controllers
             foreach (var _P in Patients_FollowUps)
             {
                 patient.Add(_auc.Patients
+                    .Include(p => p.Transfer_Hospital)
                     .Where(p => p.Id == _P.Patient_Id)
                     .Single());
 
@@ -174,7 +175,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             //HttpContext.Session.SetComplexData("MainViewList", patient_join_follow_up);
 
-            var searchString = TempData["SearchItem"] == null ? null : TempData["SearchItem"].ToString();
+            var searchString = TempData["SearchItem"]?.ToString();
             if (searchString != null)
             {
                 ViewBag.follow_ups = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up.Where(s => s.Item1.Id.ToString().Contains(searchString) || s.Item1.Name.Contains(searchString)

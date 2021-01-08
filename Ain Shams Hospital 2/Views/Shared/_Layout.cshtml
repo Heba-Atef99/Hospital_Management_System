@@ -3,15 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Project</title>
+    <title>@ViewData["Title"]</title>
     <link rel="icon" href="~/favicon.png">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="~/css/Home.css" rel="stylesheet" />
 </head>
+
 <body>
     <header>
-        <div style="background-color:#e7e7e7"  class="container-fluid">
+        <div style="background-color:#e7e7e7" class="container-fluid">
             <div class="row">
                 <div class="container">
                     <div class="col-sm-9 float-left">
@@ -60,5 +61,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
+    @RenderSection("LabScripts", required: false)
+
 </body>
 </html>

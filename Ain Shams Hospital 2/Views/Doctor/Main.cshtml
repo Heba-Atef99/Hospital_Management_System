@@ -1,5 +1,4 @@
-﻿@page
-@model Ain_Shams_Hospital.ViewModels.DoctorVM.MainVM
+﻿@model Ain_Shams_Hospital.ViewModels.DoctorVM.MainVM
 @{
     var follow_up = ViewBag.follow_ups;
 }
@@ -21,12 +20,28 @@
                     <div class="card-text">
                         <h6>Name: @fp.Item1.Name</h6>
                         <h6>Follow Up: @fp.Item2.Follow_Up_Type.Name</h6>
-                        <h6>Date: @fp.Item2.Date</h6>
+                        @if (fp.Item2.Date != null)
+                        {
+                            <h6>Date: @fp.Item2.Date</h6>
+                        }
+                        else if(fp.Item1.Hospital_Id == null)
+                        {
+                            <h6 class="text-danger">Recently Transfered to You</h6>
+                        }
+                        @if (fp.Item1.Hospital_Id != null)
+                        {
+                            <h6 class="text-danger">Transfered to: @fp.Item1.Transfer_Hospital.Name </h6>
+                        }
                     </div>
-                    <button name="P_Id" value="@fp.Item1.Id" type="submit" class="stretched-link"></button>
+                    @if (fp.Item1.Hospital_Id == null)
+
+                    {
+                        <button name="P_Id" value="@fp.Item1.Id" type="submit" class="stretched-link"></button>
+                    }
                 </div>
             </div>
         }
+        
     </div>
     <!--<div class="card-body text-center">
         <h2 class="text-center">If you need to trasfer to emergency. </h2>
