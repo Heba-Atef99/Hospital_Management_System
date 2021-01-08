@@ -19,10 +19,10 @@ namespace Ain_Shams_University.ViewModels
         //[DataType(DataType.Date)]
         public string ExpDate { get; set; }
         [Required(ErrorMessage ="Required")]
-        
+        [StringLength(3)]
         public int CVcode { get; set; }
         [Required(ErrorMessage ="Please Enter Your ZIP Code")]
-        
+        [StringLength(5)]
         public int ZipCode { get; set; }
     }
 }
