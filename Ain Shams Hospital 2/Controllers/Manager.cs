@@ -167,8 +167,49 @@ namespace Ain_Shams_Hospital.Controllers
             ViewBag.C1 = s;
             return View();
         }
-        
-       
+        [HttpGet]
+        public IActionResult AddSpecialization()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddSpecialization(AddSpecialization obj)
+        {
+            Specialization b = new Specialization();
+            b.Name = obj.Specialization;
+            b.Code = obj.Code;
+            var NameExist = _auc.Specializations.ToList().Any(u => u.Name == b.Name);
+            var CodeExist = _auc.Specializations.ToList().Any(u => u.Code == b.Code);
+            if (CodeExist)
+            {
+                ViewBag.Fail = "This code is already taken.";
+                return View();
+            }
+            else if (NameExist)
+            {
+                ViewBag.Fail2 = "This specialization already exists.";
+                return View();
+            }
+            else
+            {
+                var code = b.Code;
+                int _Index = (int)code[0] - 48;
+                if (_Index == 1)
+                {
+                    _auc.Add(b);
+                    _auc.SaveChanges();
+                    ViewBag.Success = "Specialization is added successfully";
+                    
+                }
+                else
+                {
+                    ViewBag.Fail3 = "Your code must start with 1";
+                }
+                return View();
+            }
+            
+        }
+
         /*public IActionResult Exist()
         {
             ViewBag.DD1 = TempData["member"];
