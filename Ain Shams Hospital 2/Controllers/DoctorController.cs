@@ -49,17 +49,27 @@ namespace Ain_Shams_Hospital.Controllers
             int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
             var result = _auc.Patients
                 .Where(O => O.Id == patient_id)
-                .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record })
+                .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record, Health_Progress = I.Health_Progress })
                 .ToList();
 
-            var regestration_id = _auc.Patients.Include(o => o.Registration)
+           var regestration_id = _auc.Patients.Include(o => o.Registration)
                 .Where(O => O.Id == patient_id)
                 .ToList();
             var mail = regestration_id[0].Registration.Email;
-
+            int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Doctor_Id = _auc.Staff
+                .Where(d => d.Registration_Id == Doctor_Reg_Id)
+                .Select(d => d.Id)
+                .Single();
+            //&& d => d.Staff_Id == Doctor_Id
+            var status = _auc.Follow_Ups
+                .Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id)
+                .Select(d => d.Status)
+                .Single();
+            //var status  
             ViewBag.data1 = result;
             ViewBag.data3 = mail;
-
+            ViewBag.status = status;
             return View();
         }
 
@@ -67,24 +77,51 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult PatientFollowUp(PatientFollowUpVM obj)
         {
             int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
+            int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Doctor_Id = _auc.Staff
+                .Where(d => d.Registration_Id == Doctor_Reg_Id)
+                .Select(d => d.Id)
+                .Single();
+            //TempData["p_id"] = patient_id;
             Patient patient;
+            Follow_Up follow_Up;
+            follow_Up = _auc.Follow_Ups.Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id).FirstOrDefault();
             patient = _auc.Patients.Where(i => i.Id == patient_id).FirstOrDefault();
             patient.Medical_Record = patient.Medical_Record + " " + obj.Medical_Record;
-            ViewBag.UserMessage = "edit send";
+            if (obj.Health_Progress != 0)
+                patient.Health_Progress = obj.Health_Progress;
+            if (obj.Status!="binding")
+                follow_Up.Status = obj.Status;
+            //_auc.Add(patient);
             _auc.SaveChanges();
             ModelState.Clear();
 
+            //List<Patient> result = new List<Patient>;
+
             var result = _auc.Patients
                  .Where(O => O.Id == patient_id)
-                 .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record })
+                 .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record, Health_Progress = I.Health_Progress })
                  .ToList();
+
 
             var regestration_id = _auc.Patients.Include(o => o.Registration)
                 .Where(O => O.Id == patient_id)
                  .ToList();
             var mail = regestration_id[0].Registration.Email;
+            /*int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Doctor_Id = _auc.Staff
+                .Where(d => d.Registration_Id == Doctor_Reg_Id)
+                .Select(d => d.Id)
+                .Single();*/
+            //&& d => d.Staff_Id == Doctor_Id
+            var status = _auc.Follow_Ups
+                .Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id)
+                .Select(d => d.Status)
+                .Single();
+            //var status  
             ViewBag.data1 = result;
             ViewBag.data3 = mail;
+            ViewBag.status = status;
             return View();
         }
         public IActionResult Transfer()
@@ -160,12 +197,17 @@ namespace Ain_Shams_Hospital.Controllers
             foreach (var _P in Patients_FollowUps)
             {
                 patient.Add(_auc.Patients
-                    .Include(p => p.Transfer_Hospital)
-                    .Where(p => p.Id == _P.Patient_Id)
-                    .Single());
+                   .Include(p => p.Transfer_Hospital)
+                   .Where(p => p.Id == _P.Patient_Id)
+                   .Single());
+               
 
                 follow_up.Add(_auc.Follow_Ups_History
                 .Include(f => f.Follow_Up_Type)
+                .Where(f => f.Follow_Up_Id == _P.Id)
+                .Single());
+                follow_up.Add(_auc.Follow_Ups_History
+                .Include(f => f.Follow_Up)
                 .Where(f => f.Follow_Up_Id == _P.Id)
                 .Single());
 
@@ -175,7 +217,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             //HttpContext.Session.SetComplexData("MainViewList", patient_join_follow_up);
 
-            var searchString = TempData["SearchItem"]?.ToString();
+            var searchString = TempData["SearchItem"] == null ? null : TempData["SearchItem"].ToString();
             if (searchString != null)
             {
                 ViewBag.follow_ups = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up.Where(s => s.Item1.Id.ToString().Contains(searchString) || s.Item1.Name.Contains(searchString)
