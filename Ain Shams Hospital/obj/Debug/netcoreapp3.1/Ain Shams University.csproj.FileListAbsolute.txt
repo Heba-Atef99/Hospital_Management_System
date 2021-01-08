@@ -177,7 +177,6 @@ E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Registration\Patient.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\FollowedDoctors.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_PatientLayout.cshtml.g.cs
-E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Services22.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Services.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Home\Donation.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Home\saveDonation.cshtml.g.cs
@@ -185,3 +184,5 @@ E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\BabyDoctor.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\EyesDoctor.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\savepay.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\offlinepay.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\package-lock.json

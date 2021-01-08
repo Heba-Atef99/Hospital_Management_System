@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="~/css/Home.css" rel="stylesheet" />
     <link href="~/css/Patient.css" rel="stylesheet" />
+    <!-- timepicker -->
+    <link href="~/lib/time-picker-bootstrap/timepicker.css" rel="stylesheet" />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <!-- timepicker -->
+    <script src="~/lib/time-picker-bootstrap/timepicker.js"></script>
+
 </head>
 <body>
     <header>
@@ -34,7 +41,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Patient" asp-action="FollowedDoctors">Followed Doctors</a>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -57,9 +64,13 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/time-picker-bootstrap/timepicker.js"></script>
     <script src="~/js/Patient.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

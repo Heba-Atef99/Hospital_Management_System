@@ -6,11 +6,11 @@
 }
 
 <div class="container">
-    <h1>laboratory</h1>
+    <h1 class="text-center">laboratory</h1>
     <hr />
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-10"style="margin:auto;">
             <form asp-action="LabSpecialist">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
@@ -19,9 +19,18 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Date" class="control-label"></label>
-                    <input asp-for="Date" id="dateInput" class="form-control" type="datetime-local" />
-                    <span asp-validation-for="Date" class="text-danger"></span>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label asp-for="Date" class="control-label"></label>
+                            <input asp-for="Date" class="form-control" id="ExpiryDate" type="date" />
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Hour" class=" control-label"></label>
+                            <input asp-for="Hour" class="form-control example" type="text" />
+                            <span asp-validation-for="Hour" class="text-danger"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label asp-for="MedicalRecord" for="record">Please Enter Your Medical Record</label>

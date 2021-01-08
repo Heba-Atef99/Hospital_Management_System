@@ -12,13 +12,24 @@ $(document).ready(function () {
 
     //date time cannot submit with date before today
 
-    var elem = document.getElementById("dateInput");
+ /*   var elem = document.getElementById("dateInput");
     var iso = new Date().toISOString();          // Gets today's date
     var minDate = iso.substring(0, iso.length - 8);
     elem.min = minDate;
+*/
 
-   
-    
+    $(".example").timepicker({
+        
+        hourStep:1,    
+        minStep: 30,
+        timeStep: 60,
+        minTime: "9:00",
+        maxTime: "16:00",
+        selectSize: 5,
+       
+    });
+
+
 });
 
 window.onload = function () {

@@ -13,6 +13,8 @@ namespace Ain_Shams_University.ViewModels
         [Required]
         [DataType(DataType.DateTime)]
         public string Date { get; set; }
+        [Required]
+        public string Hour { get; set; }
         public string MedicalRecord { get; set; }
         [Key]
         public int Id { get; set; }

@@ -53,7 +53,7 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.SaveChanges();
 
             Follow_Up_History fuph = new Follow_Up_History();
-            fuph.Date = bd.Date;
+            fuph.Date = bd.Date + "T" + bd.Hour;
             fuph.Follow_Up_Type_Id = bd.Id;            ////Done
             fuph.Follow_Up_Id = fup.Id;
 
@@ -114,7 +114,7 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.SaveChanges();
 
             Follow_Up_History fuph = new Follow_Up_History();
-            fuph.Date = doc.Date;
+            fuph.Date = doc.Date+"T"+doc.Hour;
             fuph.Follow_Up_Type_Id = 2;
             fuph.Follow_Up_Id = fup.Id;
 
@@ -155,7 +155,7 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.SaveChanges();
 
             Follow_Up_History fuph = new Follow_Up_History();
-            fuph.Date = bd.Date;
+            fuph.Date = bd.Date + "T" + bd.Hour;
             fuph.Follow_Up_Type_Id = 1;
             fuph.Follow_Up_Id = fup.Id;
 
@@ -176,8 +176,6 @@ namespace Ain_Shams_Hospital.Controllers
             return RedirectToAction("Payment", "Patient");
 
         }
-
-
         public IActionResult FollowedDoctors()
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
