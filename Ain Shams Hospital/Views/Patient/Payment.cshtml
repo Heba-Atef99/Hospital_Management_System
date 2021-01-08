@@ -18,62 +18,61 @@
         </div>
         <form asp-action="Payment">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-                <label for="PaymentAmount">Payment amount</label>
-                <div class="amount-placeholder">
-                    <span>$</span>
-                    <span>@ViewBag.massage</span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="CardNumber">Card Number</label>
-                    <input asp-for="CardNumber" id="CreditCardNumber" class="null card-image form-control" type="text">
-                    <span asp-validation-for="CardNumber" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="CardHolderName">Name on card</label>
-                    <input asp-for="CardHolderName" id="NameOnCard" class="form-control" type="text" maxlength="255">
-                    <span asp-validation-for="CardHolderName" class="text-danger"></span>
-                </div>
-                <div class="expiry-date-group form-group">
-                    <label asp-for="ExpDate">Expiry Date</label>
-                    <input asp-for="ExpDate" id="ExpiryDate" class="form-control" type="date">
-                    <span asp-validation-for="ExpDate" class="text-danger"></span>
-                </div>
+
+            <label for="PaymentAmount">Payment amount</label>
+            <div class="amount-placeholder">
+                <span>$</span>
+                <span>@ViewBag.massage</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardNumber">Card Number</label>
+                <input asp-for="CardNumber" id="CreditCardNumber" class="null card-image form-control" type="text">
+                <span asp-validation-for="CardNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardHolderName">Name on card</label>
+                <input asp-for="CardHolderName" id="NameOnCard" class="form-control" type="text" maxlength="255">
+                <span asp-validation-for="CardHolderName" class="text-danger"></span>
+            </div>
+            <div class="expiry-date-group form-group">
+                <label asp-for="ExpDate">Expiry Date</label>
+                <input asp-for="ExpDate" id="ExpiryDate" class="form-control" type="date">
+                <span asp-validation-for="ExpDate" class="text-danger"></span>
+            </div>
 
 
 
-                <div class="security-code-group form-group">
+            <div class="security-code-group form-group">
 
-                    <div class="input-container">
-                        <label asp-for="CVcode" for="SecurityCode">Security Code</label>
-                        <input asp-for="CVcode" id="SecurityCode" class="form-control" type="text">
-                        <i id="cvc" class="fa fa-question-circle"></i>
-                    </div>
-                    <div class="cvc-preview-container two-card hide">
-                        <div class="amex-cvc-preview"></div>
-                        <div class="visa-mc-dis-cvc-preview"></div>
-                    </div>
+                <div class="input-container">
+                    <label asp-for="CVcode" for="SecurityCode">Security Code</label>
+                    <input asp-for="CVcode" id="SecurityCode" class="form-control" type="text">
+                    <i id="cvc" class="fa fa-question-circle"></i>
                 </div>
-                <div class="zip-code-group form-group">
-                    <div class="input-container">
-                        <label asp-for="ZipCode" for="ZIPCode">ZIP/Postal code</label>
-                        <input asp-for="ZipCode" id="ZIPCode" class="form-control" type="text">
-                        <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."><i class="fa fa-question-circle"></i></a>
-                    </div>
+                <div class="cvc-preview-container two-card hide">
+                    <div class="amex-cvc-preview"></div>
+                    <div class="visa-mc-dis-cvc-preview"></div>
                 </div>
-                <input id="PayButton" asp-action="Payment" role="button" class="btn btn-block btn-success submit-button" type="submit">
-                    
-                
+            </div>
+            <div class="zip-code-group form-group">
+                <div class="input-container">
+                    <label asp-for="ZipCode" for="ZIPCode">ZIP/Postal code</label>
+                    <input asp-for="ZipCode" id="ZIPCode" class="form-control" type="text">
+                    <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."><i class="fa fa-question-circle"></i></a>
+                </div>
+            </div>
+            <div class="accept-policy">
+                <input href="Patient/savepay" value="$@ViewBag.massage" class="btn btn-block btn-success submit-button" type="submit">
+            </div>
+
         </form>
+        <div class="card card-body">
+            <input class="btn btn-block btn-success submit-button" href="/Home" role="button" value="Back"> 
+        </div>
     </div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
 
-    <div>
-        <a asp-action="Home">Back</a>
-    </div>
 </div>
 
-
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

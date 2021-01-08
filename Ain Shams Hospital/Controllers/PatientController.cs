@@ -94,7 +94,7 @@ namespace Ain_Shams_Hospital.Controllers
             s1 = (from s in _HDB.Staff select s).Where(f => f.Specialization_Id == Doctor_sp_Id).ToList();
             s1.Insert(0, new Staff { Id = 0, Name = "--select your doctor--" });
             ViewBag.massege = s1;
-            HttpContext.Session.SetInt32("choose_test", (int)obj.Id);
+           // HttpContext.Session.SetInt32("choose_test", (int)obj.Id);
             return View();
         }
         [HttpPost]
@@ -122,7 +122,10 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
             HttpContext.Session.SetInt32("choose_test", 2);
+
             return RedirectToAction("Payment", "Patient");
+           
+
         }
 
         public IActionResult Surgeon()
@@ -181,15 +184,26 @@ namespace Ain_Shams_Hospital.Controllers
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
 
             var ids = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Staff_Id).ToList();
-            List<Staff> s1 = new List<Staff>();
-            s1.Insert(0, new Staff { Id = 0, Name = "--show your doctor--" });
-            foreach (var i in ids)
+
+            var id_folup = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Id).SingleOrDefault();
+            var Dat = _HDB.Follow_Ups_History.Where(i => i.Id == id_folup).Select(a => a.Date).SingleOrDefault();
+
+            if (Dat == null)
             {
-                /*s1 = (from s in _HDB.Staff select s).Where(o => o.Id == i).ToList();*/
-                s1.Add(_HDB.Staff.Where(o => o.Id == i).SingleOrDefault());
+                return RedirectToAction("Doctor", "Patient");
             }
-            ViewBag.massege2 = s1.Distinct();
-            return View();
+            else
+            {
+                List<Staff> s1 = new List<Staff>();
+                s1.Insert(0, new Staff { Id = 0, Name = "--show your doctor--" });
+                foreach (var i in ids)
+                {
+                    /*s1 = (from s in _HDB.Staff select s).Where(o => o.Id == i).ToList();*/
+                    s1.Add(_HDB.Staff.Where(o => o.Id == i).SingleOrDefault());
+                }
+                ViewBag.massege2 = s1.Distinct();
+                return View();
+            }
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -235,29 +249,28 @@ namespace Ain_Shams_Hospital.Controllers
             return View();
         }
         
-        public IActionResult Payment()
+        public ActionResult offlinepay()
         {
-            int test_Id = (int)HttpContext.Session.GetInt32("choose_test");
-            int pay = _HDB.Follow_Ups_Types.Where(i => i.Id == test_Id).Select(l => l.Price).SingleOrDefault();
-            ViewBag.massage = pay;
+            int test_Id2 = (int)HttpContext.Session.GetInt32("choose_test");
+            int pay2 = _HDB.Follow_Ups_Types.Where(i1 => i1.Id == test_Id2).Select(l1 => l1.Price).SingleOrDefault();
+            ViewBag.massage = pay2;
             return View();
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Payment(PaymentVM p)
+        [HttpGet]
+        public IActionResult Payment()
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
 
             int test_Id = (int)HttpContext.Session.GetInt32("choose_test");
             int pay = _HDB.Follow_Ups_Types.Where(i => i.Id == test_Id).Select(l => l.Price).SingleOrDefault();
+            ViewBag.massage = pay;
 
             Payment pa = new Payment();
             pa.Patient_Id = Patient_Id;
             pa.Online = true;
             pa.Money = pay;
             pa.Follow_Up_Type_Id = test_Id;
-            pa.Date = p.ExpDate;
             if (pa.Money == pay)
             {
                 pa.Payed = true;
@@ -270,11 +283,23 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.SaveChanges();
 
 
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Payment(PaymentVM p)
+        {
+            Payment pa = new Payment();
+            pa.Date = p.ExpDate;
+            _HDB.Add(pa);
+            _HDB.SaveChanges();
+
+
             return RedirectToAction("savepay", "Patient") ;
         }
         public ActionResult savepay()
         {
             return View();
         }
+         
     }
 }

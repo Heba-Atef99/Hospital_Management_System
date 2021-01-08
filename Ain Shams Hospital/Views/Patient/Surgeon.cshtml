@@ -28,8 +28,11 @@
 What is each medicine for?
 What is the dose?"></textarea>
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="pay"  class="btn btn-primary" />
+                <div class="card card-body">
+                    <input type="submit" value="PayOnline" class="btn btn-primary" />
+                </div>
+                <div class="card card-body">
+                    <input asp-action="offlinepay" asp-controller="Patient" type="submit" value="PayOffline" class="btn btn-primary" />
                 </div>
             </form>
         </div>

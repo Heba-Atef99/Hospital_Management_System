@@ -1,0 +1,18 @@
+﻿@model Ain_Shams_University.ViewModels.PaymentVM
+
+@{
+    ViewData["Tital"] = "offlinepay";
+    Layout = "_PatientLayout";
+
+}
+<div class="container">
+    <form asp-action="offlinepay">
+        <h1 class="text-decoration-none">Your Request Is Submitted Sucssesfully</h1>
+        <h2>The cost = @ViewBag.massage $</h2>
+        <h3>Thanks For Choosing Our Hospital</h3>
+    </form>
+
+    <div>
+        <a asp-action="Home">Back</a>
+    </div>
+</div>
