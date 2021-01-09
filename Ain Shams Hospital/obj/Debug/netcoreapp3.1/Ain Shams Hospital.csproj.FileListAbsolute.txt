@@ -481,3 +481,4 @@ D:\software project\gitHub\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\View
 D:\software project\gitHub\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Patient\savepay.cshtml.g.cs
 D:\software project\gitHub\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Home\Save_Donation.cshtml.g.cs
 D:\software project\gitHub\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Patient\offlinepay.cshtml.g.cs
+D:\software project\gitHub\Ain Shams Hospital\obj\Debug\netcoreapp3.1\Razor\Views\Patient\DateEdit.cshtml.g.cs

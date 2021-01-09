@@ -183,12 +183,12 @@ namespace Ain_Shams_Hospital.Controllers
 
             var ids = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Staff_Id).ToList();
 
-            var id_folup = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Id).SingleOrDefault();
-            var Dat = _HDB.Follow_Ups_History.Where(i => i.Id == id_folup).Select(a => a.Date).SingleOrDefault();
+            var id_folup = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Id).FirstOrDefault();
+            var Dat = _HDB.Follow_Ups_History.Where(i => i.Id == id_folup).Select(a => a.Date).FirstOrDefault();
 
             if (Dat == null)
             {
-                return RedirectToAction("Doctor", "Patient");
+                return RedirectToAction("DateEdit", "Patient");
             }
             else
             {
@@ -210,7 +210,20 @@ namespace Ain_Shams_Hospital.Controllers
             HttpContext.Session.SetInt32("sel_Id", (int)fc.Id);
             return RedirectToAction("DoctorSchedules", "Patient");
         }
-
+        public IActionResult DateEdit()//for patient transfer
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DateEdit(DateEditePTVM pt)
+        {
+            Follow_Up_History fh = new Follow_Up_History();
+            fh.Date = pt.DateEdite;
+            _HDB.Follow_Ups_History.Update(fh);
+            _HDB.SaveChanges();
+            return View();
+        }
         public IActionResult DoctorSchedules()
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
