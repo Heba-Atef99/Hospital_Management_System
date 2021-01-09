@@ -13,6 +13,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Ain_Shams_Hospital.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -82,6 +83,8 @@ namespace Ain_Shams_Hospital.Controllers
             Registration r = new Registration();
             r.Email = obj.Email;
             r.Password = BCrypt.Net.BCrypt.HashPassword(obj.Password);
+            string email = obj.Name;
+            
 
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == r.Email);
             if (EmailExist)
@@ -94,6 +97,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             else
             {
+               
                 _auc.Add(r);
                 _auc.SaveChanges();
                 Patient P = new Patient();
@@ -103,8 +107,11 @@ namespace Ain_Shams_Hospital.Controllers
 
                 _auc.Add(P);
                 _auc.SaveChanges();
-                return Redirect("/Registration/Patient");
+                return Redirect("/Patient/Home");
             }
+             
+
+
         }
 
         [HttpGet]
@@ -151,7 +158,9 @@ namespace Ain_Shams_Hospital.Controllers
                 _auc.Add(S);
                 _auc.SaveChanges();
 
-                TempData["User_Reg_Id"] = S.Registration_Id;
+                //TempData["User_Reg_Id"] = S.Registration_Id;
+                HttpContext.Session.SetInt32("User_Reg_Id", (int)S.Registration_Id);
+
 
                 switch (_Index)
                 {
@@ -162,8 +171,7 @@ namespace Ain_Shams_Hospital.Controllers
                         return Redirect("/Doctor/Home");
 
                     case 2:
-                        //go to manager
-                        return Redirect("/Manager/ManagerHome");
+                    //go to manager
 
                     case 3:
                     //go to lap
@@ -206,33 +214,42 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(RegistrationStaffVM objc)
         {
+   
+            string email = objc.Email;
+           
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == objc.Email);
             if (EmailExist)
             {
                 var Data = _auc.Registrations.Where(f => f.Email == objc.Email).Select(s => new { s.Password, s.Id }).ToList();
                 if (BCrypt.Net.BCrypt.Verify(objc.Password, Data[0].Password))
                 {
-                    var SID = _auc.Staff.Where(F => F.Registration_Id == Data[0].Id).Select(S => S.Specialization_Id).Single();
+                    Registration R = new Registration();
+                    var SID = _auc.Staff.Where(F => F.Registration_Id == Data[0].Id).Select(S => S.Specialization_Id).SingleOrDefault();
+                    var PID = _auc.Registrations.Where(F => F.Email == R.Email).Select(S => S.Id).SingleOrDefault();
+                    var Patient= _auc.Patients.ToList().Any(u => u.Registration_Id == PID);
                     var code = _auc.Specializations
                             .Where(s => s.Id == SID)
                             .Select(s => s.Code)
-                            .Single();
-
+                            .SingleOrDefault();
+                    if (code == null)
+                    {
+                        HttpContext.Session.SetInt32("User_Reg_Id", Data[0].Id);
+                        return Redirect("/Patient/Home");
+                    }
                     int _Index = (int)code[0] - 48;
 
-                    TempData["User_Reg_Id"] = Data[0].Id;
+                    //TempData["User_Reg_Id"] = Data[0].Id;
+                    HttpContext.Session.SetInt32("User_Reg_Id", Data[0].Id);
 
                     switch (_Index)
                     {
                         case 0:
                         //go to patient
-
                         case 1:
                             return Redirect("/Doctor/Home");
 
                         case 2:
-                            //go to manager
-                            return Redirect("/Manager/ManagerHome");
+                        //go to manager
 
                         case 3:
                         //go to lap
