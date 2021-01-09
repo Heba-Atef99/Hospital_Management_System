@@ -90,7 +90,7 @@ namespace Ain_Shams_Hospital.Controllers
             patient.Medical_Record = patient.Medical_Record + " " + obj.Medical_Record;
             if (obj.Health_Progress != 0)
                 patient.Health_Progress = obj.Health_Progress;
-            if (obj.Status!="Pending")
+            if (obj.Status!=null)
                 follow_Up.Status = obj.Status;
             //_auc.Add(patient);
             _auc.SaveChanges();
