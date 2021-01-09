@@ -10,6 +10,10 @@ namespace AinShamsHospital.ViewModels
     {
         [Required]
         public string PatientName { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        public string Todaydate { get; set; }
         public List<int> isactive { get; set; }
+
     }
 }

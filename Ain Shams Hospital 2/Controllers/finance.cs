@@ -29,11 +29,12 @@ namespace AinShamsHospital.Controllers
         [HttpPost]
         public IActionResult Billresult(payed m)
         {
-          
+            string Date=HttpContext.Session.GetString("Today");
             foreach (var mn in m.isactive)
             {
                 var payed = _asu.Payments.Where(f => f.Id == mn).Single();
                 payed.Payed = true;
+                payed.Date = Date;
                 _asu.SaveChanges();
                 ViewBag.d = "done";
             }
@@ -79,7 +80,7 @@ namespace AinShamsHospital.Controllers
                  }
                  ViewBag.Total = total;
            
-                HttpContext.Session.SetString("END", m.PatientName);
+                HttpContext.Session.SetString("Today", m.Todaydate);
                 return View();
             
                 // return Redirect("/finance/Billresult");
