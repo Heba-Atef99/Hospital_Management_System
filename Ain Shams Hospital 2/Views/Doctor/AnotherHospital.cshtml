@@ -26,16 +26,14 @@
                     <span asp-validation-for="HospitalId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="submit" class="btn btn-primary" />
+                    <input type="submit" value="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to transfer this patient?')" />
                 </div>
             </form>
         </div>
     
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

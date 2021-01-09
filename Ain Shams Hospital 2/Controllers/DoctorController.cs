@@ -301,10 +301,13 @@ namespace Ain_Shams_Hospital.Controllers
         {
             //Patient r = new Patient();
             int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
-            //var patient_id = 1;
+            //var patient_id = 2;
             Patient patient;
             patient = _auc.Patients
                        .Where(i => i.Id == patient_id).FirstOrDefault();
+            Follow_Up follow;
+            follow = _auc.Follow_Ups.FirstOrDefault(s => s.Patient_Id == patient_id);
+            follow.Status = ("Finish");
             //r.Id = 1;
 
             //var HID = _auc.Transfer_Hospitals.Where(f => f.Name == obj.HospitalName).Select(s => s.Id).Single();
@@ -321,11 +324,117 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpGet]
         public IActionResult AnotherDepartment()
         {
+
             var OtherDep = _auc.Specializations.Where(j => j.Code.Substring(0, 1) == "1")
                 .Select(s => new Specialization { Name = s.Name, Id = s.Id }).ToList();
             ViewBag.OtherDep = OtherDep;
             var OtherDoc = _auc.Staff.Select(n => new Staff { Name = n.Name, Specialization_Id = n.Specialization_Id, Id = n.Id }).ToList();
             ViewBag.OtherDoc = OtherDoc;
+            var followUpTypes = _auc.Follow_Ups_Types.ToList();
+            ViewBag.types = followUpTypes;
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AnotherDepartment(TransferAnotherDepVM obj)
+        {
+            Follow_Up v = new Follow_Up();
+            //var patient_id = 2;
+            int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
+            var m = _auc.Follow_Ups.Where(i => i.Patient_Id == patient_id).Select(c => c.Id).Single();
+            var entity = _auc.Follow_Ups.FirstOrDefault(s => s.Id == m);
+            var followHistory = _auc.Follow_Ups_History.FirstOrDefault(n => n.Follow_Up_Id == m);
+            if (entity != null)
+            {
+                entity.Staff_Id = obj.StaffId;
+                entity.Status = "pending";
+                followHistory.Follow_Up_Type_Id = obj.FollowTypeId;
+                followHistory.Date = null;
+                _auc.Entry(entity).State = EntityState.Modified;
+                _auc.Entry(followHistory).State = EntityState.Modified;
+                _auc.SaveChanges();
+            }
+            //v.Patient_Id= obj.
+
+            //Patient patient;
+            //patient = _auc.Patients
+            //           .Where(i => i.Id == patient_id).FirstOrDefault();
+            //Follow_Up followUp;
+            //followUp = _auc.Follow_Ups
+            //    .Where(i => i.Patient_Id == patient_id).FirstOrDefault();
+
+            //followUp.Staff_Id = obj.StaffId;
+            //followUp.Status = "pending";
+            //_auc.SaveChanges();
+            var OtherDep = _auc.Specializations.Where(j => j.Code.Substring(0, 1) == "1")
+                .Select(s => new Specialization { Name = s.Name, Id = s.Id }).ToList();
+            ViewBag.OtherDep = OtherDep;
+            var OtherDoc = _auc.Staff.Select(n => new Staff { Name = n.Name, Specialization_Id = n.Specialization_Id, Id = n.Id }).ToList();
+            ViewBag.OtherDoc = OtherDoc;
+            var followUpTypes = _auc.Follow_Ups_Types.ToList();
+            ViewBag.types = followUpTypes;
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Schedule()
+        {
+            //var staff_id = 6;
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Profile()
+        {
+            int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Doctor_Id = _auc.Staff
+                .Where(d => d.Registration_Id == Doctor_Reg_Id)
+                .Select(d => d.Id)
+                .Single();
+            var info = _auc.Staff.Where(o => o.Id == Doctor_Id)
+                .Select(n => new Staff { Name = n.Name, Phone = n.Phone, Starting_Day = n.Starting_Day }).ToList();
+            ViewBag.info = info;
+            var y = _auc.Staff.Where(o => o.Id == Doctor_Id).Select(s => s.Specialization_Id).Single();
+            var x = _auc.Specializations.Where(i => i.Id == y).Select(i => new Specialization { Name = i.Name }).ToList();
+            ViewBag.specialization = x;
+            // to cut the first name
+            var name = _auc.Staff.Where(o => o.Id == Doctor_Id)
+                .Select(n => n.Name).Single();
+            int index = name.IndexOf(@" ");
+            ViewBag.firstName = name.Substring(0, index);
+            var email = _auc.Registrations.Where(i => i.Id == Doctor_Reg_Id).Select(i => i.Email).Single();
+            ViewBag.email = email;
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Profile(ProfileVM obj)
+        {
+            Staff v = new Staff();
+            int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Doctor_Id = _auc.Staff
+                .Where(d => d.Registration_Id == Doctor_Reg_Id)
+                .Select(d => d.Id)
+                .Single();
+            var entity = _auc.Staff.FirstOrDefault(s => s.Id == Doctor_Id);
+            var emaildoctor = _auc.Registrations.FirstOrDefault(f => f.Id == Doctor_Reg_Id);
+            if (entity != null)
+            {
+                entity.Name = obj.Name;
+                entity.Phone = obj.Phone;
+                entity.Starting_Day = obj.startDay;
+                emaildoctor.Email = obj.email;
+                _auc.Entry(entity).State = EntityState.Modified;
+                _auc.Entry(emaildoctor).State = EntityState.Modified;
+                _auc.SaveChanges();
+            }
+            //
+            var info = _auc.Staff.Where(o => o.Id == Doctor_Id)
+                .Select(n => new Staff { Name = n.Name, Phone = n.Phone, Starting_Day = n.Starting_Day }).ToList();
+            ViewBag.info = info;
+            var y = _auc.Staff.Where(o => o.Id == Doctor_Id).Select(s => s.Specialization_Id).Single();
+            var x = _auc.Specializations.Where(i => i.Id == y).Select(i => new Specialization { Name = i.Name }).ToList();
+            ViewBag.specialization = x;
+            var email = _auc.Registrations.Where(i => i.Id == Doctor_Reg_Id).Select(i => i.Email).Single();
+            ViewBag.email = email;
             return View();
         }
     }

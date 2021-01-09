@@ -9,5 +9,7 @@ namespace Ain_Shams_Hospital.ViewModels.DoctorVM
     {
         public int SpecializationId { get; set; }
         public int StaffId { get; set; }
+        public int FollowTypeId { get; set; }
+        
     }
 }

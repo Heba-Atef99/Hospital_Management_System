@@ -1,9 +1,10 @@
 ﻿@model Ain_Shams_Hospital.ViewModels.DoctorVM.TransferAnotherDepVM
-<!--
+
 @{
     //ViewData["Title"] = "AnotherDepartment";
     var AnotherDep = ViewBag.OtherDep;
     var AnotherDoc = ViewBag.OtherDoc;
+    var types = ViewBag.types;
 }
 
 <h1>Transfer this patient to:</h1>
@@ -28,18 +29,33 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label">Doctor:</label>
-                <select class="form-control"  >
+                <label asp-for="StaffId" class="control-label">Doctor:</label>
+                <select asp-for="StaffId" class="form-control">
 
                     <option selected disabled hidden></option>
                     @foreach (var c in AnotherDoc)
                     {
-                        <option class="hide" id="s-@c.Specialization_Id"  value="@c.Id"> @c.Name</option>
+                        <option class="hide" id="s-@c.Specialization_Id" value="@c.Id"> @c.Name</option>
                     }
 
 
                 </select>
-                <span asp-validation-for="SpecializationId" class="text-danger"></span>
+                <span asp-validation-for="StaffId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="FollowTypeId" class="control-label">Follow Up Type:</label>
+                <select asp-for="FollowTypeId" class="form-control">
+
+                    <option selected disabled hidden></option>
+                    @foreach (var c in types)
+                    {
+                        <option value="@c.Id"> @c.Name</option>
+                    }
+
+
+                </select>
+                <span asp-validation-for="FollowTypeId" class="text-danger"></span>
             </div>
             <hr />
             <div class="form-group">
@@ -59,7 +75,7 @@
         display: none;
     }
     */
-
+    
 </style>
 <script>
     var y = document.querySelectorAll(".hide");
@@ -75,14 +91,10 @@
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "inline";
             //x[i].style.background - color: red;
-        }
+        }    
     }
 </script>
-<div><a href="#">content</a>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-    -->
