@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Ain_Shams_Hospital.ViewModels;
 
+
 namespace Ain_Shams_Hospital.Controllers
 {
     public class PatientController : Controller
@@ -40,7 +41,7 @@ namespace Ain_Shams_Hospital.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult LabSpecialist(labSpecialistVM bd)
+        public IActionResult LabSpecialist(labSpecialistVM bd ,string Payment,string offlinepay)
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
@@ -61,13 +62,16 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
             HttpContext.Session.SetInt32("choose_test", (int)bd.Id);
-            bool ofon = _HDB.Payments.Where(o => o.Patient_Id == Patient_Id).Select(i => i.Online).FirstOrDefault();
-            if (ofon) 
+            // bool ofon = _HDB.Payments.Where(o => o.Patient_Id == Patient_Id).Select(i => i.Online).FirstOrDefault();
+            if (Payment == "PayOnline")
             {
                 return RedirectToAction("Payment", "Patient");
 
             }
-            return RedirectToAction("offlinepay", "Patient");
+            else //if (offlinepay == "offlinepay")
+            {
+                return RedirectToAction("offlinepay", "Patient");
+            }
         }
         public IActionResult SelectDoctor()
         {
@@ -105,7 +109,7 @@ namespace Ain_Shams_Hospital.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Doctor(DoctorVM doc)
+        public IActionResult Doctor(DoctorVM doc, string Payment, string offlinepay)
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
@@ -129,13 +133,15 @@ namespace Ain_Shams_Hospital.Controllers
             ViewBag.message = "Your Time has been recorded";
             HttpContext.Session.SetInt32("choose_test", 2);
 
-            bool ofon = _HDB.Payments.Where(o => o.Patient_Id == Patient_Id).Select(i => i.Online).FirstOrDefault();
-            if (ofon)
+            if (Payment == "PayOnline")
             {
                 return RedirectToAction("Payment", "Patient");
 
             }
-            return RedirectToAction("offlinepay", "Patient");
+            else //if (offlinepay == "offlinepay")
+            {
+                return RedirectToAction("offlinepay", "Patient");
+            }
 
 
         }
@@ -152,7 +158,7 @@ namespace Ain_Shams_Hospital.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Surgeon(SurgeonVM bd)
+        public IActionResult Surgeon(SurgeonVM bd, string Payment, string offlinepay)
         {
 
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
@@ -175,13 +181,15 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.SaveChanges();
             ViewBag.message = "Your Time has been recorded";
             HttpContext.Session.SetInt32("choose_test", 1);
-            bool ofon = _HDB.Payments.Where(o => o.Patient_Id == Patient_Id).Select(i => i.Online).FirstOrDefault();
-            if (ofon)
+            if (Payment == "PayOnline")
             {
                 return RedirectToAction("Payment", "Patient");
 
             }
-            return RedirectToAction("offlinepay", "Patient");
+            else //if (offlinepay == "offlinepay")
+            {
+                return RedirectToAction("offlinepay", "Patient");
+            }
         }
         public IActionResult services()
         {
@@ -287,15 +295,10 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpGet]
         public IActionResult offlinepay()
         {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult offlinepay(offlinepay po)
-        {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
 
-            int test_Id = (int)HttpContext.Session.GetInt32("choose_test");
+            var test_Id =(int)HttpContext.Session.GetInt32("choose_test");
             int pay = _HDB.Follow_Ups_Types.Where(i => i.Id == test_Id).Select(l => l.Price).SingleOrDefault();
             ViewBag.massage = pay;
 
@@ -312,6 +315,12 @@ namespace Ain_Shams_Hospital.Controllers
             _HDB.SaveChanges();
 
 
+            return View();
+        }
+        [HttpPost]
+        public IActionResult offlinepay(offlinepay po)
+        {
+            
             return View();
         }
         [HttpGet]
