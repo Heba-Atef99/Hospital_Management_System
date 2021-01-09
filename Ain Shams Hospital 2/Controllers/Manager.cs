@@ -115,12 +115,12 @@ namespace Ain_Shams_Hospital.Controllers
 
         }
         [HttpGet]
-        public IActionResult DeleteSpicialization()
+        public IActionResult DeleteSpcialization()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult DeleteSpicialization(AddSpecialization vm)
+        public IActionResult DeleteSpecialization(AddSpecialization vm)
         {
             var NameExist = _auc.Specializations.ToList().Any(u => u.Name == vm.Specialization);
             if (NameExist)
@@ -139,6 +139,36 @@ namespace Ain_Shams_Hospital.Controllers
             else
             {
                 ViewBag.fail = "This Specialization doesn't exist";
+                return View();
+            }
+
+
+        }
+        [HttpGet]
+        public IActionResult Deleteprice()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Deleteprice(AddPrice vm)
+        {
+            var NameExist = _auc.Follow_Ups_Types.ToList().Any(u => u.Name == vm.ServiceName);
+            if (NameExist)
+            {
+
+                var serviceName = _auc.Follow_Ups_Types.Where(f => f.Name == vm.ServiceName)
+                   .Select(s => s.Id).Single();
+
+                var model = _auc.Follow_Ups_Types.Find(serviceName);
+                _auc.Remove(model);
+
+                _auc.SaveChanges();
+                ViewBag.Success = "This service is deleted successfully";
+                return View();
+            }
+            else
+            {
+                ViewBag.fail = "This Service doesn't exist";
                 return View();
             }
 
@@ -214,20 +244,52 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult AddHospital(AddHospital obj)
         {
             Transfer_Hospital b = new Transfer_Hospital();
-            
+
             b.Name = obj.Hospital;
-          
+
             var NameExist = _auc.Transfer_Hospitals.ToList().Any(u => u.Name == b.Name);
-           
+
             if (NameExist)
             {
                 ViewBag.Fail = "This Hospital is already available.";
                 return View();
             }
-           
+
             else
             {
                 var name = b.Name;
+
+                _auc.Add(b);
+                _auc.SaveChanges();
+                ViewBag.Success = "Hospital is added successfully";
+
+                return View();
+            }
+        }
+        [HttpGet]
+        public IActionResult AddPrice()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddPrice(AddPrice obj)
+        {
+            Follow_Up_Type b = new Follow_Up_Type();
+            
+            b.Name = obj.ServiceName;
+          
+            var NameExist = _auc.Follow_Ups_Types.ToList().Any(u => u.Name == b.Name);
+           
+            if (NameExist)
+            {
+                ViewBag.Fail = "This Service is already exist.";
+                return View();
+            }
+           
+            else
+            {
+
+                b.Price = obj.ServicePrice;
             
                     _auc.Add(b);
                     _auc.SaveChanges();

@@ -1,0 +1,38 @@
+﻿@model AinShamsHospital.ViewModels.AddPrice
+
+@{
+    ViewData["Title"] = "AddPrice";
+}
+
+<h1>AddPrice</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddPrice">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ServiceName" class="control-label"></label>
+                <input asp-for="ServiceName" class="form-control" />
+                <span asp-validation-for="ServiceName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServicePrice" class="control-label"></label>
+                <input asp-for="ServicePrice" class="form-control" />
+                <span asp-validation-for="ServicePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Price" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<h6 style="color:#229130">@ViewBag.Success</h6>
+<h6 style="color:#ff0000">@ViewBag.Fail</h6>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

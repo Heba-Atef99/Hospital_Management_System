@@ -1,24 +1,25 @@
-﻿@model AinShamsHospital.ViewModels.AddHospital
+﻿@model AinShamsHospital.ViewModels.AddPrice
 
 @{
-    ViewData["Title"] = "AddHospital";
+    ViewData["Title"] = "Deleteprice";
 }
 
-<h1>AddHospital</h1>
+<h1>Deleteprice</h1>
 
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddHospital">
+        <form asp-action="Deleteprice">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Hospital" class="control-label"></label>
-                <input asp-for="Hospital" class="form-control" />
-                <span asp-validation-for="Hospital" class="text-danger"></span>
+                <label asp-for="ServiceName" class="control-label"></label>
+                <input asp-for="ServiceName" class="form-control" />
+                <span asp-validation-for="ServiceName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Add Hospital" class="btn btn-primary" />
+                <input type="submit" value="Delete Service" class="btn btn-primary" />
             </div>
         </form>
     </div>
