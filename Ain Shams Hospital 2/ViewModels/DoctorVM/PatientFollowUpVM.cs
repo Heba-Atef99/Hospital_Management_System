@@ -11,7 +11,5 @@ namespace Ain_Shams_Hospital.ViewModels.DoctorVM
         
 
         public string Medical_Record { get; set; }
-        public int Health_Progress { get; set; }
-        public string Status { get; set; }
     }
 }
