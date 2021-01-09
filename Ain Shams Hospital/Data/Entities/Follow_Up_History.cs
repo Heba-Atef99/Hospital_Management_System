@@ -10,6 +10,7 @@ namespace Ain_Shams_Hospital.Data.Entities
    
     public class Follow_Up_History
     {
+     
         public int Id { get; set; }
         public int? Follow_Up_Id { get; set; }
         [ForeignKey("Follow_Up_Id")]

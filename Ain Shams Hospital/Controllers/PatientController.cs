@@ -182,12 +182,15 @@ namespace Ain_Shams_Hospital.Controllers
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
 
             var ids = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Staff_Id).ToList();
-
+            /*var x = _HDB.Follow_Ups_History.Where(f => f.Date == "").ToList();*/
             var id_folup = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Id).FirstOrDefault();
-            var Dat = _HDB.Follow_Ups_History.Where(i => i.Id == id_folup).Select(a => a.Date).FirstOrDefault();
-
-            if (Dat == null)
+            var fuph_id = _HDB.Follow_Ups_History.Where(i => i.Follow_Up_Id == id_folup).Select(a => a.Id).FirstOrDefault(); ;
+            var Dat = _HDB.Follow_Ups_History.Where(i => i.Follow_Up_Id== id_folup).Select(a => a.Date).FirstOrDefault();
+            HttpContext.Session.SetInt32("Followup_Id", id_folup);
+            HttpContext.Session.SetInt32("Fuph_Id", fuph_id);
+            if (Dat == "")
             {
+                
                 return RedirectToAction("DateEdit", "Patient");
             }
             else
@@ -196,7 +199,7 @@ namespace Ain_Shams_Hospital.Controllers
                 s1.Insert(0, new Staff { Id = 0, Name = "--show your doctor--" });
                 foreach (var i in ids)
                 {
-                    /*s1 = (from s in _HDB.Staff select s).Where(o => o.Id == i).ToList();*/
+                    s1 = (from s in _HDB.Staff select s).Where(o => o.Id == i).ToList();
                     s1.Add(_HDB.Staff.Where(o => o.Id == i).SingleOrDefault());
                 }
                 ViewBag.massege2 = s1.Distinct();
@@ -218,8 +221,10 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DateEdit(DateEditePTVM pt)
         {
-            Follow_Up_History fh = new Follow_Up_History();
-            fh.Date = pt.DateEdite;
+            int fup_Id = (int)HttpContext.Session.GetInt32("Followup_Id");
+            int fuph_Id = (int)HttpContext.Session.GetInt32("Fuph_Id");
+            Follow_Up_History fh = new Follow_Up_History { Follow_Up_Id=fup_Id, Date=pt.DateEdite+"T"+pt.Hour,Id=fuph_Id};
+            /*fh.Date = pt.DateEdite;*/
             _HDB.Follow_Ups_History.Update(fh);
             _HDB.SaveChanges();
             return View();

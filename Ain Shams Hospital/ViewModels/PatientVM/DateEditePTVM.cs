@@ -11,6 +11,7 @@ namespace Ain_Shams_University.ViewModels
         [Key]
         public int Id { get; set; }
         [DataType(DataType.Date)]
-        public String DateEdite { get; set; }
+        public string DateEdite { get; set; }
+        public string Hour { get; set; }
     }
 }
