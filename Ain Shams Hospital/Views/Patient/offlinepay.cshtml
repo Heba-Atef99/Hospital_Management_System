@@ -5,14 +5,14 @@
     Layout = "_PatientLayout";
 
 }
-<div class="container">
-    <form asp-action="offlinepay">
-        <h1 class="text-decoration-none">Your Request Is Submitted Sucssesfully</h1>
+<div class="container mt-5 mb-5 text-center">
+    <form asp-action="offlinepay" class="mt-5">
+        <h1 class="text-decoration-none" style="color:red">Your Request Is Submitted Sucssesfully</h1>
         <h2>The cost = @ViewBag.massage $</h2>
         <h3>Thanks For Choosing Our Hospital</h3>
     </form>
 
-    <div>
+    <div class="mt-5">
         <a asp-action="Home">Back</a>
     </div>
 </div>

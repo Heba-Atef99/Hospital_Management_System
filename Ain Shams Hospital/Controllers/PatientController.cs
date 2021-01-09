@@ -212,10 +212,14 @@ namespace Ain_Shams_Hospital.Controllers
             /*var id_folup = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Id).FirstOrDefault();*/
             var fuph_id = _HDB.Follow_Ups_History.Where(i => i.Date == "").Select(a => a.Id).FirstOrDefault();
             var id_folup = _HDB.Follow_Ups_History.Where(y => y.Date == "" && y.Id == fuph_id).Select(a => a.Follow_Up_Id).SingleOrDefault();
-            var Dat = _HDB.Follow_Ups_History.Where(i => i.Follow_Up_Id== id_folup).Select(a => a.Date).FirstOrDefault();
-            
+            var Dat = _HDB.Follow_Ups_History.Where(i => i.Follow_Up_Id == id_folup).Select(a => a.Date).FirstOrDefault();
+            /*comment*/
+            var staff_Id = _HDB.Follow_Ups.Where(a => a.Id == id_folup).Select(d => d.Staff_Id).SingleOrDefault();
+
             if (Dat == "")
             {
+
+                HttpContext.Session.SetInt32("st_ID", (int)staff_Id);
                 HttpContext.Session.SetInt32("Followup_Id", (int)id_folup);
                 HttpContext.Session.SetInt32("Fuph_Id", fuph_id);
                 return RedirectToAction("DateEdit", "Patient");
@@ -242,6 +246,10 @@ namespace Ain_Shams_Hospital.Controllers
         }
         public IActionResult DateEdit()//for patient transfer
         {
+            int staff_Id = (int)HttpContext.Session.GetInt32("st_ID");
+            var docname = _HDB.Staff.Where(e => e.Id == staff_Id).Select(p => p.Name).SingleOrDefault();
+
+            ViewBag.doc = docname;
             return View();
         }
         [HttpPost]
@@ -250,11 +258,11 @@ namespace Ain_Shams_Hospital.Controllers
         {
             int fup_Id = (int)HttpContext.Session.GetInt32("Followup_Id");
             int fuph_Id = (int)HttpContext.Session.GetInt32("Fuph_Id");
-            Follow_Up_History fh = new Follow_Up_History { Follow_Up_Id=fup_Id, Date=pt.DateEdite+"T"+pt.Hour,Id=fuph_Id};
+            Follow_Up_History fh = new Follow_Up_History { Follow_Up_Id = fup_Id, Date = pt.DateEdite + "T" + pt.Hour, Id = fuph_Id };
             /*fh.Date = pt.DateEdite;*/
             _HDB.Follow_Ups_History.Update(fh);
             _HDB.SaveChanges();
-            return View();
+            return RedirectToAction("FollowedDoctors", "Patient");
         }
         public IActionResult DoctorSchedules()
         {
