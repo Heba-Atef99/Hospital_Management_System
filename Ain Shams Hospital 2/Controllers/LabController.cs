@@ -54,10 +54,12 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpPost]
         public IActionResult BloodBank(BloodBankVM bb)
         {
-            if (bb.Add != 0)
+            if (bb.Add != null)
             {
-                Blood_Unit bloodUnit = _auc.Blood_Units.Where(b => b.Id == bb.Add).FirstOrDefault();
-                bloodUnit.Amount += bb.Amount;
+                string[] ids = bb.Add.Split(",");
+                var index = Int16.Parse(ids[1]) - 1;
+                Blood_Unit bloodUnit = _auc.Blood_Units.Where(b => b.Id == Int16.Parse(ids[0])).FirstOrDefault();
+                bloodUnit.Amount += bb.Amount[Int16.Parse(ids[1]) - 1];
                 _auc.SaveChanges();
             }
 
@@ -194,7 +196,7 @@ namespace Ain_Shams_Hospital.Controllers
             follow_Up = _auc.Follow_Ups.Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id).FirstOrDefault();
             patient = _auc.Patients.Where(i => i.Id == patient_id).FirstOrDefault();
           
-            if (obj.Status != null)
+            if (obj.Status != "binding")
                 follow_Up.Status = obj.Status;
             //_auc.Add(patient);
             _auc.SaveChanges();
