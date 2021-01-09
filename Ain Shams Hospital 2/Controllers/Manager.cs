@@ -132,6 +132,8 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpPost]
         public IActionResult ManagerEdit(ManagerEdit obj)
         {
+            var names = _auc.Follow_Ups_Types.ToList();
+            ViewBag.editname = names;
             Follow_Up_Type v = new Follow_Up_Type();
             v.Name = obj.Name;
             v.Price = obj.Price;
@@ -140,7 +142,7 @@ namespace Ain_Shams_Hospital.Controllers
             {
                 var m = _auc.Follow_Ups_Types.Where(i => i.Name == obj.Name).Select(c => c.Id).Single();
                 //code from internet
-                
+               
                 var entityItem = _auc.Follow_Ups_Types.FirstOrDefault(s => s.Id == m);
                 if (entityItem != null)
                 {
@@ -167,7 +169,45 @@ namespace Ain_Shams_Hospital.Controllers
             ViewBag.C1 = s;
             return View();
         }
+        public IActionResult ViewHospital()
+        {
+            var s = _auc.Transfer_Hospitals.Select(s => new Transfer_Hospital { Name = s.Name }).ToList();
+
+            ViewBag.C1 = s;
+            return View();
+        }
         [HttpGet]
+        public IActionResult AddHospital()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddHospital(AddHospital obj)
+        {
+            Transfer_Hospital b = new Transfer_Hospital();
+            
+            b.Name = obj.Hospital;
+          
+            var NameExist = _auc.Transfer_Hospitals.ToList().Any(u => u.Name == b.Name);
+           
+            if (NameExist)
+            {
+                ViewBag.Fail = "This Hospital is already available.";
+                return View();
+            }
+           
+            else
+            {
+                var name = b.Name;
+            
+                    _auc.Add(b);
+                    _auc.SaveChanges();
+                    ViewBag.Success = "Hospital is added successfully";
+
+                return View();
+            }
+        }
+            [HttpGet]
         public IActionResult AddSpecialization()
         {
             return View();
