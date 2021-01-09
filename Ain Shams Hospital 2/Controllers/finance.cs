@@ -42,6 +42,40 @@ namespace AinShamsHospital.Controllers
            
         }
         [HttpGet]
+        public IActionResult Stateview()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Stateview(mainVM m)
+        {
+            var ID = _asu.Follow_Ups_Types.Where(f => f.Name == m.Room_Id).Select(s => s.Id).Single();
+            var h = _asu.Payments.Include(o=>o.Patient).Include(p => p.Follow_Up_Type)
+                .Where(f => (f.Follow_Up_Type_Id == ID && f.Payed==true))
+              .ToList();
+            ViewBag.D = h;
+            ViewBag.R = m.Room_Id;
+            return View();
+        }
+        [HttpGet]
+        public IActionResult State()
+        {
+            var Type = _asu.Follow_Ups_Types.ToList();
+            ViewBag.type = Type;
+           
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Homepage()
+        {
+            var Type = _asu.Follow_Ups_Types.ToList();
+            ViewBag.type = Type;
+
+            return View();
+        }
+
+        [HttpGet]
         public IActionResult Bill()
         {
          
@@ -55,18 +89,19 @@ namespace AinShamsHospital.Controllers
              Payment P = new Payment();
             
              var NameExist = _asu.Patients.ToList().Any(u => u.Name == m.PatientName);
-
-             if (NameExist)
+          
+            //var NameExistReservation = _asu.Patients.ToList().Any(u => u.Name == m.PatientName);
+            if (NameExist)
              {
-                 var patientid = _asu.Patients
-                 .Where(i => i.Name == m.PatientName)
-                 .Select(m => m.Id)
-                 .Single();
+                var patientid = _asu.Patients
+              .Where(i => i.Name == m.PatientName)
+              .Select(m => m.Id)
+              .Single();
 
-                 // TempData["patientbill"]
+                // TempData["patientbill"]
 
 
-                 var patientbill = _asu.Payments.Include(p => p.Patient).Include(f => f.Follow_Up_Type)
+                var patientbill = _asu.Payments.Include(p => p.Patient).Include(f => f.Follow_Up_Type)
                .Where(i => (i.Patient_Id == patientid) && (i.Payed == false))
                .ToList();
 
@@ -92,8 +127,7 @@ namespace AinShamsHospital.Controllers
                  return View();
             }
 
-            return View();
-            //return Redirect("/finance/Billresult");
+       
         }
 
     }

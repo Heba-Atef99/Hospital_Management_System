@@ -2,33 +2,32 @@
 @{
     Layout = "~/Views/Front_Layout.cshtml";
 }
-<style>
-    table td {
-        border: solid 1px black;
-    }
-</style>
-<div class="table">
 
-    <table>
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
         <tr>
-            <th>Room</th>
-            <th>name</th>
-            <th>Start</th>
-            <th>end</th>
-        </tr>
+            <th scope="col">Room</th>
+            <th scope="col">Name</th>
+            <th scope="col">start</th>
+            <th scope="col">End</th>
 
+        </tr>
+    </thead>
+    <tbody>
         @foreach (var x in ViewBag.D1)
 
         {
 
-            <tr>
-                <td>@ViewBag.Roomnumber</td>
+        <tr>
+            <th scope="row">@ViewBag.Roomnumber</th>
+           
+            
 
-                <td>@x.Patient.Name</td>
-                <td>@x.Start_Hour</td>
-                <td>@x.End_Hour</td>
-            </tr>
+            <td>@x.Patient.Name</td>
+            <td>@x.Start_Hour</td>
+            <td>@x.End_Hour</td>
+        </tr>
         }
+    </tbody>
 
-    </table>
-</div>
+</table>
