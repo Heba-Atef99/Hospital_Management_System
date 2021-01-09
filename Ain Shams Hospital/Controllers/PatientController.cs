@@ -187,11 +187,11 @@ namespace Ain_Shams_Hospital.Controllers
             var fuph_id = _HDB.Follow_Ups_History.Where(i => i.Date == "").Select(a => a.Id).FirstOrDefault();
             var id_folup = _HDB.Follow_Ups_History.Where(y => y.Date == "" && y.Id == fuph_id).Select(a => a.Follow_Up_Id).SingleOrDefault();
             var Dat = _HDB.Follow_Ups_History.Where(i => i.Follow_Up_Id== id_folup).Select(a => a.Date).FirstOrDefault();
-            HttpContext.Session.SetInt32("Followup_Id", (int)id_folup);
-            HttpContext.Session.SetInt32("Fuph_Id", fuph_id);
+            
             if (Dat == "")
             {
-                
+                HttpContext.Session.SetInt32("Followup_Id", (int)id_folup);
+                HttpContext.Session.SetInt32("Fuph_Id", fuph_id);
                 return RedirectToAction("DateEdit", "Patient");
             }
             else
@@ -200,7 +200,7 @@ namespace Ain_Shams_Hospital.Controllers
                 s1.Insert(0, new Staff { Id = 0, Name = "--show your doctor--" });
                 foreach (var i in ids)
                 {
-                    s1 = (from s in _HDB.Staff select s).Where(o => o.Id == i).ToList();
+                    /*s1 = (from s in _HDB.Staff select s).Where(o => o.Id == i).ToList();*/
                     s1.Add(_HDB.Staff.Where(o => o.Id == i).SingleOrDefault());
                 }
                 ViewBag.massege2 = s1.Distinct();
