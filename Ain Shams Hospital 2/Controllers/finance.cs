@@ -53,74 +53,36 @@ namespace AinShamsHospital.Controllers
             var ID = _asu.Follow_Ups_Types.Where(f => f.Name == m.Room_Id).Select(s => s.Id).Single();
             String from = HttpContext.Session.GetString("FIRST");
             String to = HttpContext.Session.GetString("LAST");
+
             var h = _asu.Payments.Include(o=>o.Patient).Include(p => p.Follow_Up_Type)
                 .Where(f => (f.Follow_Up_Type_Id == ID && f.Payed==true))
               .ToList();
+           DateTime start = DateTime.Parse(from);
+            DateTime end = DateTime.Parse(to);
+            List<Payment> payment = new List<Payment>();
+            // if (from!=null && to != null)
+            //{
+            var total = 0;
+            foreach (var V in h)
+            {
+ 
+                DateTime date = DateTime.Parse(V.Date);
+                
+                if (date >= start && date <= end)
+                {
+                    total = total + V.Money;
+                    payment.Add(V);
+                }
+                
+            }
+
             
-            if (from!=null && to != null)
-            {
-                var total = 0;
-                foreach (var V in h)
-                {
-                    DateTime start = DateTime.Parse(from);
-                    DateTime end = DateTime.Parse(to);
-                    DateTime date = DateTime.Parse(V.Date);
-                    if(date>=start&& date <= end)
-                    {
-                        total = total + V.Money;
-                        ViewBag.D = h;
-                        ViewBag.R = m.Room_Id;
-                        ViewBag.t = total;
-                       
-                    }
-
-                }
-                return View();
-            }
-            else if(from!=null && to == null)
-            {
-                var total = 0;
-                foreach (var V in h)
-                {
-                    DateTime start = DateTime.Parse(from);
-                    DateTime date = DateTime.Parse(V.Date);
-                    if (date >= start)
-                    {
-                        total = total + V.Money;
-                        ViewBag.D = h;
-                        ViewBag.R = m.Room_Id;
-                        ViewBag.t = total;
-                       
-                    }
-
-                }
-                return View();
-            }
-            else if (to != null && from == null)
-            {
-                var total = 0;
-                foreach (var V in h)
-                {
-                    DateTime end = DateTime.Parse(to);
-                    DateTime date = DateTime.Parse(V.Date);
-                    if (date <= end)
-                    {
-                        total = total + V.Money;
-                        ViewBag.D = h;
-                        ViewBag.R = m.Room_Id;
-                        ViewBag.t = total;
-                       
-                    }
-
-                }
-                return View();
-            }
-            else
-            {
-                ViewBag.D = h;
-                ViewBag.R = m.Room_Id;
-                return View();
-            }
+            ViewBag.R = m.Room_Id;
+            ViewBag.t = total;
+            // ViewBag.D = h;
+            ViewBag.list = payment;
+            return View();
+        
             
         }
         [HttpGet]
@@ -134,6 +96,8 @@ namespace AinShamsHospital.Controllers
         [HttpPost]
         public IActionResult State(FinanceInterval obj)
         {
+            var Type = _asu.Follow_Ups_Types.ToList();
+            ViewBag.type = Type;
             HttpContext.Session.SetString("FIRST", obj.From);
             HttpContext.Session.SetString("LAST", obj.To);
 

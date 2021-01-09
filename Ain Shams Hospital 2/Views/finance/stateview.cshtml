@@ -15,20 +15,21 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var x in ViewBag.D)
+        @foreach (var x in ViewBag.List)
 
         {
 
-            <tr>
-                <th scope="row">@ViewBag.R</th>
+        <tr>
+            <th scope="row">@ViewBag.R</th>
 
 
 
-                <td>@x.Patient.Name</td>
-                <td>@x.Money</td>
-                <td>@x.Date</td>
-            </tr>
+            <td>@x.Patient.Name</td>
+            <td>@x.Money</td>
+             <td>@x.Date</td>
+        </tr>
         }
+       
         <tr>
             <td>@ViewBag.t</td>
         </tr>
