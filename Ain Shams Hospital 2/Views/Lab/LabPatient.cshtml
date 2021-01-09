@@ -2,9 +2,10 @@
 @model Ain_Shams_Hospital.ViewModels.LabVM.LabMainVM
 @{
     var patientData = ViewBag.data1;
+    ViewData["Title"] = "Laboratory";
 }
 
-@section scripts{
+@section Scripts{
 
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 
@@ -15,59 +16,29 @@
     @foreach (var p in patientData)
     {
         <div class="card card-body">
-
-            <h1>Patient personal informations </h1>
+            <h1 class="text-center text-success">Patient personal informations </h1>
             <hr />
-            <h3>name :@p.Name</h3>
-
+            <h4>Name: @p.Name</h4>
             <hr />
-            <h3>phone :@p.Phone</h3>
+            <h4>Phone: @p.Phone</h4>
             <hr />
-            <h3>mail :@ViewBag.data3</h3>
+            <h4>Email: @ViewBag.data3</h4>
             <hr />
-            <h3>status :@ViewBag.status</h3>
+            <h4>Status: @ViewBag.status</h4>
         </div>
-
-
-
+        <br>
         <form asp-action="LabPatient" method="post">
             <div asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
-                <label name="Status" for="status">Add Status:</label>
-                <br>
-                <select id="status" name="Status">
-                    <option value="binding">binding</option>
-                    <option value="inprograss">inprograss</option>
-                    <option value="finish">finish</option>
+                <label name="Status" for="status" class="text-success h3 mr-5">Add Status:</label>
 
-
+                <select id="status" name="Status" class="border rounded mr-3 h6">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Finished">Finished</option>
                 </select>
-            </div>
-
-            <div class="form-group">
                 <input type="submit" value="edit Status" class="btn btn-primary" />
-
             </div>
         </form>
-
     }
 </div>
-@section LabScripts{
-
-    <script>
-        function ShowNewRow() {
-            document.getElementById("new").style.display = "contents";
-            document.getElementById("Add").style.display = "none";
-        }
-            /*function ConfirmDelete() {
-            var confirm = prompt("If you want to delete, type Delete");
-            if (confirm == "Delete") {
-
-            }
-            else {
-                alert("Wrong word!");
-            }
-        }
-        document.deleteForm.submit(ConfirmDelete);*/
-    </script>
-}

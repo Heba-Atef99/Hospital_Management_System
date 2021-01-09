@@ -6,12 +6,29 @@
 <!-- Cards Section -->
 <form asp-action="Main" id="doctor-main">
     <div class="row form-group no-color">
-        <label class="control-label col-1" name="Search_Item">Search:</label> 
-        <input class="form-control col-3" name="Search_Item" type="text"/>
-        <input type="submit" value="Go" class="ml-2 btn btn-success d-inline" /> 
+        <div class="col-6 text-center">
+            <label class="control-label h5" name="Search_Item">Search:</label>
+            <input class="border rounded" name="Search_Item" type="text" />
+            <input name="search" type="submit" value="Go" class="ml-2 btn btn-success d-inline" />
+        </div>
+        <div class="col-6 text-center">
+            <select id="sort" asp-for="Sort_Item" class="border rounded mr-3 h6">
+                <option selected disabled>Sort By:</option>
+                <option value="Date">Date</option>
+                <option value="Status">Status</option>
+                <option value="Follow_Up">Follow Up</option>
+                <option value="Transfered">Recently Transfered</option>
+            </select>
+            <select id="order" asp-for="Order_Item" class="border rounded mr-3 h6">
+                <option selected disabled>Order:</option>
+                <option value="DSC">Descending</option>
+                <option value="ASC">Ascending</option>
+            </select>
+            <input name="sort" type="submit" value="Sort" class="ml-2 btn btn-success d-inline" />
+        </div>
     </div>
-    
-    <div class="row">
+
+    <div class="row mt-5">
         @foreach (var fp in follow_up)
         {
             <div class="card col-md-3 mx-2 mb-3 p-0">
@@ -20,11 +37,12 @@
                     <div class="card-text">
                         <h6>Name: @fp.Item1.Name</h6>
                         <h6>Follow Up: @fp.Item2.Follow_Up_Type.Name</h6>
+                        <h6>Status: @fp.Item2.Follow_Up.Status</h6>
                         @if (fp.Item2.Date != null)
                         {
                             <h6>Date: @fp.Item2.Date</h6>
                         }
-                        else if(fp.Item1.Hospital_Id == null)
+                        else if (fp.Item1.Hospital_Id == null)
                         {
                             <h6 class="text-danger">Recently Transfered to You</h6>
                         }
@@ -41,7 +59,7 @@
                 </div>
             </div>
         }
-        
+
     </div>
     <!--<div class="card-body text-center">
         <h2 class="text-center">If you need to trasfer to emergency. </h2>
@@ -49,3 +67,10 @@
         <a class="btn btn-dark w-auto text-center" href="Emergency" role="button">Emergency</a>
     </div>-->
 </form>
+
+@section scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

@@ -1,5 +1,7 @@
 ﻿@model Ain_Shams_Hospital.ViewModels.LabVM.BloodBankVM
-
+@{
+    ViewData["Title"] = "Blood Bank";
+}
 <div class="col-md-6 mx-auto">
     <h1>Blood_Unit</h1>
     <br />
@@ -42,7 +44,7 @@
                         <input asp-for="NewType" class="col" type="text" placeholder="Type" />
                     </td>
                     <td>
-                        <input asp-for="NewAmount" class="col" type="number" placeholder="Amount"/>
+                        <input asp-for="NewAmount" class="col" type="number" placeholder="Amount" />
                     </td>
                     <td>
                         <button name="NewAdd" value="1" type="submit" class="btn btn-success">Add</button>
@@ -54,22 +56,18 @@
     </form>
 </div>
 
-@section LabScripts{
+@section Styles{
+    <link href="~/css/doctor.css" rel="stylesheet" />
+}
+
+@section Scripts{
 
     <script>
         function ShowNewRow() {
-                document.getElementById("new").style.display = "contents";
-                document.getElementById("Add").style.display = "none";
+            document.getElementById("new").style.display = "contents";
+            document.getElementById("Add").style.display = "none";
         }
-        /*function ConfirmDelete() {
-            var confirm = prompt("If you want to delete, type Delete");
-            if (confirm == "Delete") {
-
-            }
-            else {
-                alert("Wrong word!");
-            }
-        }
-        document.deleteForm.submit(ConfirmDelete);*/
     </script>
+    <script href="~/js/doctor.js"></script>
+
 }

@@ -2,7 +2,10 @@
 @model Ain_Shams_Hospital.ViewModels.LabVM.LabMainVM
 @{
     var follow_up = ViewBag.follow_ups;
+    ViewData["Title"] = "Laboratory";
+
 }
+
 <!-- Cards Section -->
 <form asp-action="LabMain" id="doctor-main">
     <div class="row form-group no-color">
@@ -28,24 +31,12 @@
             </div>
         }
     </div>
-
 </form>
-@section LabScripts{
 
-    <script>
-        function ShowNewRow() {
-                document.getElementById("new").style.display = "contents";
-                document.getElementById("Add").style.display = "none";
-        }
-        /*function ConfirmDelete() {
-            var confirm = prompt("If you want to delete, type Delete");
-            if (confirm == "Delete") {
+@section Styles{
+    <link href="~/css/doctor.css" rel="stylesheet" />
+}
 
-            }
-            else {
-                alert("Wrong word!");
-            }
-        }
-        document.deleteForm.submit(ConfirmDelete);*/
-    </script>
+@section Scripts{
+    <script href="~/js/doctor.js"></script>
 }

@@ -1,4 +1,4 @@
-body{
+body#doctor{
     background-color: darkgrey;
     position:relative;
     padding-bottom: 30px;
@@ -33,6 +33,10 @@ body{
     position: fixed;
     bottom: 0;
     width: -webkit-fill-available;
+}
+
+.border-top-dark {
+    border-top: 1px solid rgba(0,0,0,.5);
 }
 
     /*.footer {
