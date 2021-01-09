@@ -114,7 +114,36 @@ namespace Ain_Shams_Hospital.Controllers
 
 
         }
+        [HttpGet]
+        public IActionResult DeleteSpicialization()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult DeleteSpicialization(AddSpecialization vm)
+        {
+            var NameExist = _auc.Specializations.ToList().Any(u => u.Name == vm.Specialization);
+            if (NameExist)
+            {
+                
+                var SpecializationName = _auc.Specializations.Where(f => f.Name == vm.Specialization)
+                   .Select(s => s.Id).Single();
+               
+                var model = _auc.Specializations.Find(SpecializationName);
+                _auc.Remove(model);
+              
+                _auc.SaveChanges();
+                ViewBag.Success = "Specialization code is deleted successfully";
+                return View();
+            }
+            else
+            {
+                ViewBag.fail = "This Specialization doesn't exist";
+                return View();
+            }
 
+
+        }
         public IActionResult ViewPrices()
         {
             var s = _auc.Follow_Ups_Types.Select(s => new Follow_Up_Type { Name = s.Name, Price = s.Price }).ToList();
