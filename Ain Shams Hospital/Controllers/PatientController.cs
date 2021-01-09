@@ -183,10 +183,11 @@ namespace Ain_Shams_Hospital.Controllers
 
             var ids = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Staff_Id).ToList();
             /*var x = _HDB.Follow_Ups_History.Where(f => f.Date == "").ToList();*/
-            var id_folup = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Id).FirstOrDefault();
-            var fuph_id = _HDB.Follow_Ups_History.Where(i => i.Follow_Up_Id == id_folup).Select(a => a.Id).FirstOrDefault(); ;
+            /*var id_folup = _HDB.Follow_Ups.Where(o => o.Patient_Id == Patient_Id).Select(s => s.Id).FirstOrDefault();*/
+            var fuph_id = _HDB.Follow_Ups_History.Where(i => i.Date == "").Select(a => a.Id).FirstOrDefault();
+            var id_folup = _HDB.Follow_Ups_History.Where(y => y.Date == "" && y.Id == fuph_id).Select(a => a.Follow_Up_Id).SingleOrDefault();
             var Dat = _HDB.Follow_Ups_History.Where(i => i.Follow_Up_Id== id_folup).Select(a => a.Date).FirstOrDefault();
-            HttpContext.Session.SetInt32("Followup_Id", id_folup);
+            HttpContext.Session.SetInt32("Followup_Id", (int)id_folup);
             HttpContext.Session.SetInt32("Fuph_Id", fuph_id);
             if (Dat == "")
             {
