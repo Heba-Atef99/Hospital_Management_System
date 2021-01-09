@@ -13,6 +13,10 @@ namespace HospitalManagementSystem.Data
 {
     public class HospitalDbContext:DbContext
     {
+        public HospitalDbContext()
+        {
+        }
+
         public HospitalDbContext(DbContextOptions<HospitalDbContext> options) : base(options)
         {
 

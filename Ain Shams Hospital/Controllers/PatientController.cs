@@ -45,7 +45,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
-
+            
             Follow_Up fup = new Follow_Up();
             fup.Patient_Id = Patient_Id;
             fup.Status = "Pending";
@@ -214,7 +214,7 @@ namespace Ain_Shams_Hospital.Controllers
             var id_folup = _HDB.Follow_Ups_History.Where(y => y.Date == "" && y.Id == fuph_id).Select(a => a.Follow_Up_Id).SingleOrDefault();
             var Dat = _HDB.Follow_Ups_History.Where(i => i.Follow_Up_Id == id_folup).Select(a => a.Date).FirstOrDefault();
             /*comment*/
-            var staff_Id = _HDB.Follow_Ups.Where(a => a.Id == id_folup).Select(d => d.Staff_Id).SingleOrDefault();
+            var staff_Id = _HDB.Follow_Ups.Where(a => a.Id == id_folup&&a.Patient_Id==Patient_Id).Select(d => d.Staff_Id).SingleOrDefault();
 
             if (Dat == "")
             {

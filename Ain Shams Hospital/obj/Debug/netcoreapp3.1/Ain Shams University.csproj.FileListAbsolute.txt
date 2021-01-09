@@ -188,3 +188,4 @@ E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.
 E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\package-lock.json
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\DateEdit.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Services22.cshtml.g.cs
+E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Profile\UserProfile.cshtml.g.cs
