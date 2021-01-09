@@ -70,7 +70,7 @@ namespace Ain_Shams_Hospital.Controllers
             var model = _asu.Facility_Reservations.Find(x);
             _asu.Remove(model);
             _asu.SaveChanges();
-            ViewBag.UserMessage3 = "Patient transfered successfully";
+            ViewBag.UserMessage3 = "Patient is transferred successfully";
 
             return View();
         }
@@ -156,18 +156,18 @@ namespace Ain_Shams_Hospital.Controllers
                     _asu.SaveChanges();
 
 
-                    ViewBag.UserMessage4 = "Cancelation finished successfully";
+                    ViewBag.UserMessage4 = "Reservation is cancelled successfully";
                     return View();
                 }
                 else {
-                    ViewBag.UserMessage5 = "This patient donot have reservation";
+                    ViewBag.UserMessage5 = "This patient doesn't have a reservation";
                      return View()  ;
                      }
               
             }
             else
             {
-                ViewBag.UserMessage5 = "This patient isnot in our hospital ";
+                ViewBag.UserMessage5 = "This patient isn't in our hospital ";
                 return View();
             }
 
@@ -254,7 +254,7 @@ namespace Ain_Shams_Hospital.Controllers
                 y = 0;
             }
            
-                ViewBag.UserMessage = "this room is not available";
+                ViewBag.UserMessage = "This room is not available";
                 return View();
         }
 
@@ -377,25 +377,81 @@ namespace Ain_Shams_Hospital.Controllers
             }
             
         }
+        public IActionResult RoomInfo()
+        {
+            return View();
+        }
+        public IActionResult Check()
+        {
+            return View();
+        }
+        /* public IActionResult Roomreservation(RoomReservationVM ob)
+         {
+             Hospital_Facility H = new Hospital_Facility();
+             Facility_Reservation FR = new Facility_Reservation();
+             //Patient p = new Patient();
+             //var x = H.Available;
 
-            /* public IActionResult Roomreservation(RoomReservationVM ob)
+             var NamePexist = _asu.Patients.ToList().Any(f => f.Name == ob.PatientName);
+             TempData["Staff_Id"] = _asu.Staff.Where(f => f.Name == ob.DoctorName).Select(s => s.Id).Single();
+             var NameSexist = _asu.Staff.ToList().Any(F => F.Name == ob.DoctorName);
+             var Availabilty = _asu.Hospital_Facilities.Where(f => f.Type == ob.Room).Select(s => s.Available).Single();
+             var HID = _asu.Hospital_Facilities.Where(f => f.Type == ob.Room).Select(s => s.Id).Single();
+             var availableroom = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id == HID)
+                 .Select(s => new { date = s.End_Hour, date1 = s.Start_Hour }).ToList();
+             bool av; //flag
+
+             var ROOMNAME = TempData["roomname"];
+             if (availableroom == null)
              {
-                 Hospital_Facility H = new Hospital_Facility();
-                 Facility_Reservation FR = new Facility_Reservation();
-                 //Patient p = new Patient();
-                 //var x = H.Available;
+                 if (NamePexist)
+                 {
+                     TempData["Patient_Id"] = _asu.Patients.Where(f => f.Name == ob.PatientName).Select(s => s.Id).Single();
+                     if (NameSexist)
+                     {
+                         TempData["Staff_Id"] = _asu.Staff.Where(f => f.Name == ob.DoctorName).Select(s => s.Id).Single();
+                         FR.Start_Hour = ob.From;
+                         FR.End_Hour = ob.To;
+                         FR.Hospital_Facility_Id = HID;
+                         FR.Patient_Id = (int)TempData["Patient_Id"];
+                         FR.Staff_Id = (int)TempData["Staff_Id"];
+                         _asu.Add(FR);
+                         _asu.SaveChanges();
 
-                 var NamePexist = _asu.Patients.ToList().Any(f => f.Name == ob.PatientName);
-                 TempData["Staff_Id"] = _asu.Staff.Where(f => f.Name == ob.DoctorName).Select(s => s.Id).Single();
-                 var NameSexist = _asu.Staff.ToList().Any(F => F.Name == ob.DoctorName);
-                 var Availabilty = _asu.Hospital_Facilities.Where(f => f.Type == ob.Room).Select(s => s.Available).Single();
-                 var HID = _asu.Hospital_Facilities.Where(f => f.Type == ob.Room).Select(s => s.Id).Single();
-                 var availableroom = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id == HID)
-                     .Select(s => new { date = s.End_Hour, date1 = s.Start_Hour }).ToList();
-                 bool av; //flag
+                         return Redirect("/Front_desk/SRoomreservation");
+                     }
+                     else
+                     {
+                         return Redirect("/Front_desk/MESSAGE");
+                     }
+                 }
+                 else
+                 {
+                     return Redirect("/Front_desk/PatientMESSAGE");
+                 }
+             }
+             else
+             {
 
-                 var ROOMNAME = TempData["roomname"];
-                 if (availableroom == null)
+                 foreach (var V in availableroom)
+                 {
+                     DateTime parse1 = DateTime.Parse(ob.From);
+                     DateTime parse2 = DateTime.Parse(ob.To);
+                     DateTime parse3 = DateTime.Parse(V.date);
+                     DateTime parse4 = DateTime.Parse(V.date1);
+                     if ((parse1 > parse3) || (parse2 < parse4))
+                     {
+                         av = true;
+                     }
+                     else
+                     {
+                         av = false;
+                         ViewBag.UserMessage = "This room is Not available";
+                         return View();
+                         //return Redirect("/Front_desk/Roomavailabilty");
+                     }
+                 }
+                 if (av = true)
                  {
                      if (NamePexist)
                      {
@@ -426,61 +482,12 @@ namespace Ain_Shams_Hospital.Controllers
                  else
                  {
 
-                     foreach (var V in availableroom)
-                     {
-                         DateTime parse1 = DateTime.Parse(ob.From);
-                         DateTime parse2 = DateTime.Parse(ob.To);
-                         DateTime parse3 = DateTime.Parse(V.date);
-                         DateTime parse4 = DateTime.Parse(V.date1);
-                         if ((parse1 > parse3) || (parse2 < parse4))
-                         {
-                             av = true;
-                         }
-                         else
-                         {
-                             av = false;
-                             ViewBag.UserMessage = "This room is Not available";
-                             return View();
-                             //return Redirect("/Front_desk/Roomavailabilty");
-                         }
-                     }
-                     if (av = true)
-                     {
-                         if (NamePexist)
-                         {
-                             TempData["Patient_Id"] = _asu.Patients.Where(f => f.Name == ob.PatientName).Select(s => s.Id).Single();
-                             if (NameSexist)
-                             {
-                                 TempData["Staff_Id"] = _asu.Staff.Where(f => f.Name == ob.DoctorName).Select(s => s.Id).Single();
-                                 FR.Start_Hour = ob.From;
-                                 FR.End_Hour = ob.To;
-                                 FR.Hospital_Facility_Id = HID;
-                                 FR.Patient_Id = (int)TempData["Patient_Id"];
-                                 FR.Staff_Id = (int)TempData["Staff_Id"];
-                                 _asu.Add(FR);
-                                 _asu.SaveChanges();
-
-                                 return Redirect("/Front_desk/SRoomreservation");
-                             }
-                             else
-                             {
-                                 return Redirect("/Front_desk/MESSAGE");
-                             }
-                         }
-                         else
-                         {
-                             return Redirect("/Front_desk/PatientMESSAGE");
-                         }
-                     }
-                     else
-                     {
-
-                         return Redirect("/Front_desk/Roomavailabilty");
-                     }
+                     return Redirect("/Front_desk/Roomavailabilty");
                  }
+             }
 
-             }*/
-            public IActionResult NotAvailable()
+         }*/
+        public IActionResult NotAvailable()
         {
             return View();
         }

@@ -3,14 +3,14 @@
     Layout = "~/Views/Front_Layout.cshtml";
 }
 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered">
+
     <thead class="thead-dark">
         <tr>
-            <th scope="col">Room</th>
-            <th scope="col">Name</th>
-            <th scope="col">start</th>
-            <th scope="col">End</th>
-
+            <th>Room</th>
+            <th>Name</th>
+            <th>Start</th>
+            <th>End</th>
         </tr>
     </thead>
     <tbody>
@@ -18,16 +18,14 @@
 
         {
 
-        <tr>
-            <th scope="row">@ViewBag.Roomnumber</th>
-           
-            
+            <tr>
+                <td>@ViewBag.Roomnumber</td>
 
-            <td>@x.Patient.Name</td>
-            <td>@x.Start_Hour</td>
-            <td>@x.End_Hour</td>
-        </tr>
+                <td>@x.Patient.Name</td>
+                <td>@x.Start_Hour</td>
+                <td>@x.End_Hour</td>
+            </tr>
         }
-    </tbody>
 
+    </tbody>
 </table>

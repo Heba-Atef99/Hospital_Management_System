@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Check";
+    Layout = "~/Views/Front_Layout.cshtml";
+}
+
+<link href="~/css/Front.css" rel="stylesheet" />
+<div class="row text-center">
+    <div class="card-group p-5">
+
+        <div class="col-lg-4 col-sm-12 offset-2 ">
+            <a asp-action="checkavalabilty" asp-controller="Front_desk" role="button">
+                <div class="card shadow mt-3">
+
+                    <img class="card-img-top frontimg" src="~/images/hospital room.jpg" alt="Room">
+                    <div class="card-body">
+                        <h5 class="card-title">Room</h5>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-lg-4 col-sm-12">
+            <a asp-action="SRoomreservation" asp-controller="Front_desk">
+                <div class="card shadow mt-3">
+
+                    <img class="card-img-top frontimg" src="~/images/surgery room.jpg" alt="Surgery Room">
+                    <div class="card-body">
+                        <h5 class="card-title">Surgery Room</h5>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+
+</div>
+

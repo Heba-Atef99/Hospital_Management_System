@@ -3,7 +3,7 @@
 *@
 @{ Layout = "~/Views/Front_Layout.cshtml";
 }
-<h2>Surgery Rooms reservation</h2>
+
 <form asp-action="Event">
     <div class="row">
 
@@ -11,7 +11,7 @@
         {
             <div class="card col-md-3 mx-2 mb-3 p-0">
                 <div class="card-body">
-                    <h4 class="card-title text-danger"> @fp.Type Reservation </h4>
+                    <h4 class="card-title text-danger"> @fp.Type  </h4>
                     <button name="Room_Id" value="@fp.Type" type="submit" class="stretched-link"></button>
                 </div>
             </div>
