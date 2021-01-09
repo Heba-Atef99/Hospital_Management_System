@@ -24,7 +24,8 @@ namespace Ain_Shams_University.Controllers
         public IActionResult UserProfile()
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
-            return View(_HDB.Registrations.Find(Patient_Reg_Id));
+            int patiant_Id = _HDB.Patients.Where(o => o.Registration_Id == Patient_Reg_Id).Select(i => i.Id).SingleOrDefault();
+            return View(_HDB.Patients.Find(patiant_Id));
         }
     }
 }
