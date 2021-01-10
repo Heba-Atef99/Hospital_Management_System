@@ -101,6 +101,9 @@ namespace Ain_Shams_Hospital.Controllers
                 _auc.SaveChanges();
                 return Redirect("/Registration/Login");
             }
+             
+
+
         }
 
         [HttpGet]
@@ -159,21 +162,21 @@ namespace Ain_Shams_Hospital.Controllers
                     //go to patient
 
                     case 1:
-                        return Redirect("/Doctor/Main");
+                        return Redirect("/Doctor/Home");
 
                     case 2:
-                    //go to manager
+                        return Redirect("/Manager/Home");
 
                     case 3:
-                        //go to lap
+                    //go to lap
                         HttpContext.Session.SetInt32("SpecifyLab", (int)code[1] - 48);
                         return Redirect("/Lab/Index");
 
                     case 4:
-                    //go to finance
+                        return Redirect("/finance/homepage");
 
                     case 5:
-                        return Redirect("/Front_desk/Roomreservation");
+                        return Redirect("/Front_desk/Homepage");
 
                     default:
                         return Redirect("/Registration/Staff");
@@ -226,26 +229,24 @@ namespace Ain_Shams_Hospital.Controllers
                     //TempData["User_Reg_Id"] = Data[0].Id;
                     HttpContext.Session.SetInt32("User_Reg_Id", Data[0].Id);
 
-
                     switch (_Index)
                     {
                         case 1:
-                            return Redirect("/Doctor/Main");
+                            return Redirect("/Doctor/Home");
 
                         case 2:
-                        //go to manager
+                            return Redirect("/Manager/Home");
 
                         case 3:
-                            //go to lap
+                        //go to lap
                             HttpContext.Session.SetInt32("SpecifyLab", (int)code[1] - 48);
                             return Redirect("/Lab/Index");
 
                         case 4:
-                        //go to finance
-
+                            return Redirect("/finance/homepage");
 
                         case 5:
-                            return Redirect("/Front_desk/Roomreservation");
+                            return Redirect("/Front_desk/Homepage");
 
                         default:
                             return Redirect("/Registration/Staff");

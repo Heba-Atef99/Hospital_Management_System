@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "page";
+    Layout = "~/Views/Finance_Layout.cshtml";
+
+}
+<link href="~/css/finance.css" rel="stylesheet" />
+<link href="~/css/Front.css" rel="stylesheet" />
+<link href="~/css/Frontdesk.css" rel="stylesheet" />
+<body style="background-color:azure">
+
+        
+        
+                @*<h3 class="tittle-wthree text-center mb-lg-5 mb-4" style="color:darkblue">
+                    Welcome @ViewBag.User
+                </h3>*@
+    <br/>
+                <div class=" bord col-md-4 offset-4 col-sm-4 " style="background:#808080; border-style:solid;border-radius:20px">
+                    <h3 style="color:#ffffff" class="text-center">Welcome User @ViewBag.User</h3>
+                </div>
+
+            
+   <br/>
+    <div class="row">
+        <div class="col-md-4 offset-1 col-sm-4">
+            <a href="~/finance/state">
+                <div class="ccontainer">
+                    <img src="~/images/download (1).jpg" alt="Avatar" class="cimage" />
+                    <div class="overlay">
+                        <div class="ctext">Statistics</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 offset-1 col-sm-4">
+            <a href="~/finance/Bill">
+                <div class="ccontainer">
+
+                    <img src="~/images/Finance-Bill-660.jpg" alt="Avatar" class="cimage" />
+                    <div class="overlay">
+                        <div class="ctext">Patient Bill</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+   <br/>
+    
+    <div class="col-md-10 offset-1 col-sm-4">
+        <h3 style="font-family:'Courier New'">A good financial plan is a road map to success.</h3>
+    </div>
+   
+        <img src="~/images/finance.jpg" id="goodfinance" />
+  
+   
+</body>
