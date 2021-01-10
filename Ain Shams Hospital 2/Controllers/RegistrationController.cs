@@ -58,15 +58,6 @@ namespace Ain_Shams_Hospital.Controllers
 
 
         }
-        public IActionResult Patient()
-        {
-            return View();
-        }
-        public IActionResult Staff()
-        {
-            return View();
-        }
-
         public IActionResult About()
         {
             return View();
@@ -108,7 +99,7 @@ namespace Ain_Shams_Hospital.Controllers
 
                 _auc.Add(P);
                 _auc.SaveChanges();
-                return Redirect("/Patient/Home");
+                return Redirect("/Registration/Login");
             }
         }
 
@@ -178,7 +169,6 @@ namespace Ain_Shams_Hospital.Controllers
                         HttpContext.Session.SetInt32("SpecifyLab", (int)code[1] - 48);
                         return Redirect("/Lab/Index");
 
-
                     case 4:
                     //go to finance
 
@@ -188,7 +178,6 @@ namespace Ain_Shams_Hospital.Controllers
                     default:
                         return Redirect("/Registration/Staff");
                 }
-
             }
         }
 
@@ -197,10 +186,6 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-        public IActionResult Loggin()
-        {
-            return View();
         }
         public IActionResult NotLog()
         {

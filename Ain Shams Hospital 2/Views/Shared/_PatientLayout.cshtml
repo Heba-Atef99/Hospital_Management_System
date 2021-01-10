@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Project</title>
+    <title>Patient</title>
+    <link rel="icon" href="~/logo.png">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="~/css/Home.css" rel="stylesheet" />
     <link href="~/css/Patient.css" rel="stylesheet" />
@@ -50,7 +51,9 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-sm-column">
                         <li class="nav-item">
-                            <a class="navbar-brand " asp-area="" asp-controller="Registration" asp-action="Login" style="margin-right:30px; margin-top: 5px; color:#ff0000;font-weight:bold" >Logout</a>
+                            <form asp-controller="Registration" asp-action="Logout">
+                                <button name="logout" type="submit" value="out" class="btn btn-dark">Log out</button>
+                            </form>
                         </li>
                     </ul>
                 </div>

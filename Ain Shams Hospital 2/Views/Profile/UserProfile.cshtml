@@ -42,6 +42,6 @@
         
 </div>
 <div class="container mt-5">
-    @Html.ActionLink("Edit& Details", "Edit", new { id = Model.Id }) |  <a href="/Patient/Home">Back to List</a> 
+    @Html.ActionLink("Edit& Details", "Edit", new { id = Model.Id }) |  <a asp-controller="Patient" asp-action="Home">Back to List</a> 
     
 </div>
