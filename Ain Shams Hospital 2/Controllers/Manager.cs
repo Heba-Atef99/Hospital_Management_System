@@ -208,7 +208,7 @@ namespace Ain_Shams_Hospital.Controllers
 
         }
         [HttpGet]
-        public IActionResult DeleteSpcialization()
+        public IActionResult DeleteSpecialization()
         {
             return View();
         }

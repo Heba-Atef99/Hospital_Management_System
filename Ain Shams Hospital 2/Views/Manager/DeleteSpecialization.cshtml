@@ -3,25 +3,23 @@
 @{
     ViewData["Title"] = "DeleteSpecialization";
 }
-@{
-    Layout = "~/Views/Manager_Layout.cshtml";
-}
-<h1>DeleteSpicialization</h1>
+
+<h1>DeleteSpecialization</h1>
 
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="DeleteSpicialization">
+        <form asp-action="DeleteSpecialization">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Specialization" class="control-label"></label>
                 <input asp-for="Specialization" class="form-control" />
                 <span asp-validation-for="Specialization" class="text-danger"></span>
             </div>
-
+       
             <div class="form-group">
-                <input type="submit" value="Delete Specialization" class="btn btn-primary" />
+                <input type="submit" value="Delete Spicialization" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -29,7 +27,7 @@
 <h6 style="color:#229130">@ViewBag.Success</h6>
 <h6 style="color:#ff0000">@ViewBag.Fail</h6>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="ViewSpecializations">Back to Specialization List</a>
 </div>
 
 @section Scripts {
