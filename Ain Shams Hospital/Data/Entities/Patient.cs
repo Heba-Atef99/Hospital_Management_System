@@ -23,6 +23,7 @@ namespace Ain_Shams_Hospital.Data.Entities
 		public string Medical_Record { get; set; }
 		//Statistics
 		public int Health_Progress { get; set; }
+		public string Image { set; get; }
 
 	}
 }
