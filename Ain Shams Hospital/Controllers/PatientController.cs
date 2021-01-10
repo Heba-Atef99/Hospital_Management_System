@@ -33,7 +33,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
 
             List<Follow_Up_Type> s1 = new List<Follow_Up_Type>();
-            s1 = (from s in _HDB.Follow_Ups_Types select s).ToList();
+            s1 = (from s in _HDB.Follow_Ups_Types select s).Where(n => n.Id >= 3 && n.Id <= 10).ToList();
             s1.Insert(0, new Follow_Up_Type { Id = 0, Name = "--Select Your Test--" });
             ViewBag.massege = s1;
             return View();
