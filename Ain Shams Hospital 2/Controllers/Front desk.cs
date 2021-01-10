@@ -377,7 +377,9 @@ namespace Ain_Shams_Hospital.Controllers
             }
             else
             {
-                return Redirect("/Front_desk/PatientMESSAGE");
+                ViewBag.UserMessage3 = "This doctor is not from the staff.";
+                return View();
+                //return Redirect("/Front_desk/PatientMESSAGE");
             }
             
         }
@@ -545,13 +547,19 @@ namespace Ain_Shams_Hospital.Controllers
                     }
                     else
                     {
-                        return Redirect("/Front_desk/NotAvailable");
+                        ViewBag.Not = "This patient is not in our hospital.";
+                        return View();
+                        //return Redirect("/Front_desk/NotAvailable");
                     }
                     //}
                 }
-                return Redirect("/Front_desk/NotAvailable");
+                ViewBag.Not = "This patient is not in our hospital.";
+                return View();
+                //return Redirect("/Front_desk/NotAvailable");
             }
-            return Redirect("/Front_desk/NotAvailable");
+            ViewBag.Not = "This patient is not in our hospital.";
+            return View();
+            //return Redirect("/Front_desk/NotAvailable");
         }
         public IActionResult SearchResult()
         {

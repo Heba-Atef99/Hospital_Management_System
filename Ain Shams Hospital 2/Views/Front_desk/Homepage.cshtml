@@ -7,18 +7,21 @@
     Layout = "~/Views/Front_Layout.cshtml";
 }
 <link href="~/css/Front.css" rel="stylesheet" />
-<div class="row" style="background-image: url('file:///D:\Manager\wwwroot\images\frontdesk.jpg');">
-   <div class=" bord col-md-4 offset-4 col-sm-4 " style="background:#808080; border-style:solid;border-radius:20px">
-       <h3 style="color:#ffffff" class="text-center">Welcome User @*@ViewBag.User*@</h3>
-   </div>
-</div>
-<br/>
-<div class=" bord col-md-6 offset-3 col-sm-4 " style="background:#7793d4;border-style:solid;border-color:#090c3d;border-radius:20px">
-    <h3 style="color:rgb(255, 255, 255)" class="text-center">Good luck with your work today!</h3>
-</div>
+<section style="background: url('file:///D:\Manager\wwwroot\images\frontdesk.jpg');">
+
+    <div class=" bord col-md-4 offset-4 col-sm-4 " style="background:#808080; border-style:solid;border-radius:20px">
+        <h3 style="color:#ffffff" class="text-center">Welcome @ViewBag.User</h3>
+    </div>
+    <br />
+    <div class=" bord col-md-6 offset-3 col-sm-4 " style="background:#7793d4;border-style:solid;border-color:#090c3d;border-radius:20px">
+        <h3 style="color:rgb(255, 255, 255)" class="text-center">Good luck with your work today!</h3>
+    </div>
+    @*<img src="~/images/frontdesk.jpg" />*@
+</section>
+
 <h3 style="color:#555555"> Let's get started!</h3>
 <div class="row" style="background-color:#cbdaff;border-radius:10px">
-    <div class="col-md-4 offset-1 col-sm-4">
+    <div class="col-md-4 offset-1 col-sm-4" style="padding:25px 0 25px 0">
         <a href="~/Front_desk/Check">
             <div class="ccontainer">
                 <img src="~/images/room.jpg" alt="Avatar" class="cimage" />
@@ -28,7 +31,7 @@
             </div>
         </a>
     </div>
-    <div class="col-md-4 offset-1 col-sm-4" >
+    <div class="col-md-4 offset-1 col-sm-4" style="padding:25px 0 25px 0">
         <a href="~/Front_desk/Search">
             <div class="ccontainer">
 

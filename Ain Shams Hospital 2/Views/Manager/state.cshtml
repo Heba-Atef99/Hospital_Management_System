@@ -1,5 +1,6 @@
 ﻿@model AinShamsHospital.ViewModels.FinanceInterval
 @{
+    Layout = "~/Views/Manager_Layout.cshtml";
 }
 <form asp-action="state">
     <div class="form-group">
@@ -13,7 +14,7 @@
         <span asp-validation-for="To" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
+        <input type="submit" value="Set Date" class="btn btn-primary" />
     </div>
 </form>
 <a class="btn btn-info btn-lg btn-block" href="/Manager/stateview1" role="button">Total income</a>

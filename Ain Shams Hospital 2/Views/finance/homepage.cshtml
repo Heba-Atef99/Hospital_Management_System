@@ -10,23 +10,26 @@
 <link href="~/css/Front.css" rel="stylesheet" />
 <link href="~/css/Frontdesk.css" rel="stylesheet" />
 <body style="background-color:azure">
-    <div class="col-md-4 offset-1 col-sm-4">
-        <a href="~/finance/Bill">
-            <div class="ccontainer">
-                <h3 class="tittle-wthree text-center mb-lg-5 mb-4" style="color:darkblue">
-                    Welcome @ViewBag.User
-                </h3>
 
-            </div>
-        </a>
-    </div>
+        
+        
+                @*<h3 class="tittle-wthree text-center mb-lg-5 mb-4" style="color:darkblue">
+                    Welcome @ViewBag.User
+                </h3>*@
+    <br/>
+                <div class=" bord col-md-4 offset-4 col-sm-4 " style="background:#808080; border-style:solid;border-radius:20px">
+                    <h3 style="color:#ffffff" class="text-center">Welcome User @ViewBag.User</h3>
+                </div>
+
+            
+   <br/>
     <div class="row">
         <div class="col-md-4 offset-1 col-sm-4">
             <a href="~/finance/state">
                 <div class="ccontainer">
                     <img src="~/images/download (1).jpg" alt="Avatar" class="cimage" />
                     <div class="overlay">
-                        <div class="ctext">statistics</div>
+                        <div class="ctext">Statistics</div>
                     </div>
                 </div>
             </a>
@@ -45,18 +48,13 @@
 
     </div>
 
-    <div class="inner-sec-w3ls py-md-5 py-4">
-
-        <div class="row mt-lg-5 mt-4">
-            <div class="col-md-4 about-img">
-                <h3>A good financial plan is a road map to success.</h3>
-                <img src="~/images/download.jpg" alt="" class="img1" />
-
-            </div>
-
-        </div>
+   <br/>
+    
+    <div class="col-md-10 offset-1 col-sm-4">
+        <h3 style="font-family:'Courier New'">A good financial plan is a road map to success.</h3>
     </div>
-
-
-    </div>
+   
+        <img src="~/images/finance.jpg" id="goodfinance" />
+  
+   
 </body>

@@ -144,9 +144,11 @@ namespace AinShamsHospital.Controllers
         [HttpGet]
         public IActionResult Homepage()
         {
-            var Type = _asu.Follow_Ups_Types.ToList();
-            ViewBag.type = Type;
-
+            //var Type = _asu.Follow_Ups_Types.ToList();
+            //ViewBag.type = Type;
+            int Staff_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            string Staff_Name = _asu.Staff.Where(f => f.Registration_Id == Staff_Reg_Id).Select(h => h.Name).SingleOrDefault();
+            ViewBag.User = Staff_Name;
             return View();
         }
 

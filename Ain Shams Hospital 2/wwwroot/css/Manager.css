@@ -70,8 +70,3 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-.frontup {
-    background-image: url('\wwwroot\images\frontdesk.jpg');
-    background-size:cover;
-    background-repeat:no-repeat;
-}

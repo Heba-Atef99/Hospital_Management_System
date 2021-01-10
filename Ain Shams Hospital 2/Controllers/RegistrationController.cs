@@ -171,13 +171,13 @@ namespace Ain_Shams_Hospital.Controllers
                         return Redirect("/Doctor/Home");
 
                     case 2:
-                    //go to manager
+                        return Redirect("/Manager/Home");
 
                     case 3:
                     //go to lap
 
                     case 4:
-                    //go to finance
+                        return Redirect("/finance/homepage");
 
                     case 5:
                         return Redirect("/Front_desk/Homepage");
@@ -249,13 +249,13 @@ namespace Ain_Shams_Hospital.Controllers
                             return Redirect("/Doctor/Home");
 
                         case 2:
-                        //go to manager
+                            return Redirect("/Manager/Home");
 
                         case 3:
                         //go to lap
 
                         case 4:
-                        //go to finance
+                            return Redirect("/finance/homepage");
 
 
                         case 5:

@@ -1,5 +1,8 @@
 ﻿@model AinShamsHospital.ViewModels.FinanceInterval
 @{
+    Layout = "~/Views/Finance_Layout.cshtml";
+
+}
 }
 <form asp-action="state">
     <div class="form-group">
@@ -13,28 +16,28 @@
         <span asp-validation-for="To" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
+        <input type="submit" value="Set Date" class="btn btn-primary" />
     </div>
-    </form>
+</form>
 <section>
     <a class="btn btn-info btn-lg btn-block" href="/finance/stateview1" role="button">Total income</a>
     <hr />
 </section>
-    <section class="container">
-        <form asp-action="stateview">
-            
-            <div class="row">
+<section class="container">
+    <form asp-action="stateview">
 
-                @foreach (var fp in ViewBag.type)
-                {
-                    <div class="card col-md-3 mx-2 mb-3 p-0">
-                        <div class="card-body">
-                            <h4 class="card-title text-danger"> @fp.Name </h4>
-                            <button name="Room_Id" value="@fp.Name" type="submit" class="stretched-link"></button>
-                        </div>
+        <div class="row">
+
+            @foreach (var fp in ViewBag.type)
+            {
+                <div class="card col-md-3 mx-2 mb-3 p-0">
+                    <div class="card-body">
+                        <h4 class="card-title text-danger"> @fp.Name </h4>
+                        <button name="Room_Id" value="@fp.Name" type="submit" class="stretched-link"></button>
                     </div>
-                }
-            </div>
+                </div>
+            }
+        </div>
 
-        </form>
-    </section>
+    </form>
+</section>
