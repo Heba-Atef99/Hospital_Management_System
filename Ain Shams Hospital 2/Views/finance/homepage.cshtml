@@ -2,4 +2,61 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "page";
+    Layout = "~/Views/Finance_Layout.cshtml";
+
 }
+<link href="~/css/finance.css" rel="stylesheet" />
+<link href="~/css/Front.css" rel="stylesheet" />
+<link href="~/css/Frontdesk.css" rel="stylesheet" />
+<body style="background-color:azure">
+    <div class="col-md-4 offset-1 col-sm-4">
+        <a href="~/finance/Bill">
+            <div class="ccontainer">
+                <h3 class="tittle-wthree text-center mb-lg-5 mb-4" style="color:darkblue">
+                    Welcome @ViewBag.User
+                </h3>
+
+            </div>
+        </a>
+    </div>
+    <div class="row">
+        <div class="col-md-4 offset-1 col-sm-4">
+            <a href="~/finance/state">
+                <div class="ccontainer">
+                    <img src="~/images/download (1).jpg" alt="Avatar" class="cimage" />
+                    <div class="overlay">
+                        <div class="ctext">statistics</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 offset-1 col-sm-4">
+            <a href="~/finance/Bill">
+                <div class="ccontainer">
+
+                    <img src="~/images/Finance-Bill-660.jpg" alt="Avatar" class="cimage" />
+                    <div class="overlay">
+                        <div class="ctext">Patient Bill</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="inner-sec-w3ls py-md-5 py-4">
+
+        <div class="row mt-lg-5 mt-4">
+            <div class="col-md-4 about-img">
+                <h3>A good financial plan is a road map to success.</h3>
+                <img src="~/images/download.jpg" alt="" class="img1" />
+
+            </div>
+
+        </div>
+    </div>
+
+
+    </div>
+</body>
