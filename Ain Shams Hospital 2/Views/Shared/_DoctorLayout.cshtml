@@ -1,5 +1,8 @@
 ﻿@model Ain_Shams_Hospital.ViewModels.LogoutVM
+@{ 
+    var controller = @ViewContext.RouteData.Values["Controller"].ToString();
 
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +29,14 @@
         </div>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Doctor" asp-action="Main">Home</a>
-
+                @if (controller == "Doctor")
+                {
+                    <a class="navbar-brand" asp-area="" asp-controller="Doctor" asp-action="Main">Home</a>
+                }
+                @if (controller == "Lab")
+                {
+                    <a class="navbar-brand" asp-area="" asp-controller="Lab" asp-action="Index">Home</a>
+                }
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
