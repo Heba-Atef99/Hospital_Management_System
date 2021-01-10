@@ -49,7 +49,7 @@ namespace Ain_Shams_University.Controllers
             {
                 _HDB.Entry(pa).State = EntityState.Modified;
                 _HDB.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("UserProfile");
             }
             return View(pa);
         }
