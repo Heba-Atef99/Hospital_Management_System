@@ -10,5 +10,8 @@ namespace Ain_Shams_Hospital.ViewModels.LabVM
         public int P_Id { get; set; }
         public string Status { get; set; }
         public string Search_Item { get; set; }
+        public string Sort_Item { get; set; }
+        public string Order_Item { get; set; }
+
     }
 }

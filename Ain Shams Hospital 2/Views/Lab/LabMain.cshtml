@@ -9,9 +9,25 @@
 <!-- Cards Section -->
 <form asp-action="LabMain" id="doctor-main">
     <div class="row form-group no-color">
-        <label class="control-label col-1" name="Search_Item">Search:</label>
-        <input class="form-control col-3" name="Search_Item" type="text" />
-        <input type="submit" value="Go" class="ml-2 btn btn-success d-inline" />
+        <div class="col-6 text-center">
+            <label class="control-label h5" name="Search_Item">Search:</label>
+            <input class="border rounded" name="Search_Item" type="text" />
+            <input name="search" type="submit" value="Go" class="ml-2 btn btn-success d-inline" />
+        </div>
+        <div class="col-6 text-center">
+            <select id="sort" asp-for="Sort_Item" class="border rounded mr-3 h6">
+                <option selected disabled>Sort By:</option>
+                <option value="Date">Date</option>
+                <option value="Status">Status</option>
+                <option value="Follow_Up">Follow Up</option>
+            </select>
+            <select id="order" asp-for="Order_Item" class="border rounded mr-3 h6">
+                <option selected disabled>Order:</option>
+                <option value="DSC">Descending</option>
+                <option value="ASC">Ascending</option>
+            </select>
+            <input name="sort" type="submit" value="Sort" class="ml-2 btn btn-success d-inline" />
+        </div>
     </div>
 
     <div class="row">

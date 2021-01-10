@@ -4,8 +4,9 @@ using Ain_Shams_Hospital.ViewModels.DoctorVM;
 using HospitalManagementSystem.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,24 +14,8 @@ using System.Threading.Tasks;
 
 namespace Ain_Shams_Hospital.Controllers
 {
-    /*public static class SessionExtensions
-    {
-        public static T GetComplexData<T>(this ISession session, string key)
-        {
-            var data = session.GetString(key);
-            if (data == null)
-            {
-                return default(T);
-            }
-            return JsonConvert.DeserializeObject<T>(data);
-        }
-
-        public static void SetComplexData(this ISession session, string key, object value)
-        {
-            session.SetString(key, JsonConvert.SerializeObject(value));
-        }
-    }*/
-
+   
+    [CheckXActionFilterAttribute]
     public class DoctorController : Controller
     {
         private readonly HospitalDbContext _auc;
@@ -38,9 +23,7 @@ namespace Ain_Shams_Hospital.Controllers
         public DoctorController(HospitalDbContext auc)
         {
             _auc = auc;
-            //_repository = repository;
         }
-
 
         [HttpGet]
         public IActionResult PatientFollowUp()
@@ -82,7 +65,6 @@ namespace Ain_Shams_Hospital.Controllers
                 .Where(d => d.Registration_Id == Doctor_Reg_Id)
                 .Select(d => d.Id)
                 .Single();
-            //TempData["p_id"] = patient_id;
             Patient patient;
             Follow_Up follow_Up;
             follow_Up = _auc.Follow_Ups.Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id).FirstOrDefault();
@@ -90,13 +72,10 @@ namespace Ain_Shams_Hospital.Controllers
             patient.Medical_Record = patient.Medical_Record + " " + obj.Medical_Record;
             if (obj.Health_Progress != 0)
                 patient.Health_Progress = obj.Health_Progress;
-            if (obj.Status!=null)
+            if (obj.Status!= null)
                 follow_Up.Status = obj.Status;
-            //_auc.Add(patient);
             _auc.SaveChanges();
             ModelState.Clear();
-
-            //List<Patient> result = new List<Patient>;
 
             var result = _auc.Patients
                  .Where(O => O.Id == patient_id)
@@ -108,17 +87,10 @@ namespace Ain_Shams_Hospital.Controllers
                 .Where(O => O.Id == patient_id)
                  .ToList();
             var mail = regestration_id[0].Registration.Email;
-            /*int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
-            int Doctor_Id = _auc.Staff
-                .Where(d => d.Registration_Id == Doctor_Reg_Id)
-                .Select(d => d.Id)
-                .Single();*/
-            //&& d => d.Staff_Id == Doctor_Id
             var status = _auc.Follow_Ups
                 .Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id)
                 .Select(d => d.Status)
                 .Single();
-            //var status  
             ViewBag.data1 = result;
             ViewBag.data3 = mail;
             ViewBag.status = status;
@@ -126,9 +98,9 @@ namespace Ain_Shams_Hospital.Controllers
         }
         public IActionResult Transfer()
         {
-            
             return View();
         }
+
         [HttpGet]
         public IActionResult Emergency()
         {
@@ -154,7 +126,6 @@ namespace Ain_Shams_Hospital.Controllers
                 return Redirect("/Doctor/PatientFollowUp");
             }
 
-            //HttpContext.Session.SetString("SearchItem", m.Search_Item);
             if (!string.IsNullOrEmpty(search))
             {
                 TempData["SearchItem"] = m.Search_Item;
@@ -166,28 +137,15 @@ namespace Ain_Shams_Hospital.Controllers
                 TempData["OrderItem"] = m.Order_Item;
             }
 
-            /*
-            List<Tuple<Patient, Follow_Up_History>> MainView = HttpContext.Session.GetComplexData<List<Tuple<Patient, Follow_Up_History>>>("MainViewList");
-            var searchString = m.Search_Item;
-            if (searchString == null)
-            {
-                ViewBag.follow_ups = MainView;
-                return View();
-            }
-
-            ViewBag.follow_ups = (List<Tuple<Patient, Follow_Up_History>>)MainView.Where(s => s.Item1.Id.ToString().Contains(searchString) || s.Item1.Name.Contains(searchString) 
-            || s.Item2.Follow_Up_Type.Name.Contains(searchString))
-                .ToList();
-            this.ModelState.Clear();
-            m.Search_Item = null;*/
             return Redirect("/Doctor/Main");
-            //return View();
         }
 
         [HttpGet]
         public IActionResult Main()
         {
             int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            if(Doctor_Reg_Id == 0) return Redirect("/Home/Index");
+
             int Doctor_Id = _auc.Staff
                 .Where(d => d.Registration_Id == Doctor_Reg_Id)
                 .Select(d => d.Id)
@@ -288,6 +246,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             return View();
         }
+
         [HttpGet]
         public IActionResult AnotherHospital()
         {
@@ -354,18 +313,6 @@ namespace Ain_Shams_Hospital.Controllers
                 _auc.Entry(followHistory).State = EntityState.Modified;
                 _auc.SaveChanges();
             }
-            //v.Patient_Id= obj.
-
-            //Patient patient;
-            //patient = _auc.Patients
-            //           .Where(i => i.Id == patient_id).FirstOrDefault();
-            //Follow_Up followUp;
-            //followUp = _auc.Follow_Ups
-            //    .Where(i => i.Patient_Id == patient_id).FirstOrDefault();
-
-            //followUp.Staff_Id = obj.StaffId;
-            //followUp.Status = "pending";
-            //_auc.SaveChanges();
             var OtherDep = _auc.Specializations.Where(j => j.Code.Substring(0, 1) == "1")
                 .Select(s => new Specialization { Name = s.Name, Id = s.Id }).ToList();
             ViewBag.OtherDep = OtherDep;
@@ -378,7 +325,6 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpGet]
         public IActionResult Schedule()
         {
-            //var staff_id = 6;
             return View();
         }
         [HttpGet]

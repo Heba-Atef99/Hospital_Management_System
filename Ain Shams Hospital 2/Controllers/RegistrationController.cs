@@ -265,5 +265,12 @@ namespace Ain_Shams_Hospital.Controllers
             }
             return Redirect("/Registration/NotLog");
         }
+        [HttpPost]
+        public IActionResult Logout(LogoutVM L)
+        {
+            if(L != null) HttpContext.Session.SetInt32("User_Reg_Id", 0);
+            return Redirect("/Home/Index");
+        }
+
     }
 }

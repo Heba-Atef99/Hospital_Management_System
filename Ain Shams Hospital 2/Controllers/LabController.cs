@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 
 namespace Ain_Shams_Hospital.Controllers
 {
+    [CheckXActionFilterAttribute]
+
     public class LabController : Controller
     {
         private readonly HospitalDbContext _auc;
@@ -83,7 +85,7 @@ namespace Ain_Shams_Hospital.Controllers
             return Redirect("/Lab/BloodBank");
         }
         [HttpPost]
-        public IActionResult LabMain(LabMainVM m)
+        public IActionResult LabMain(LabMainVM m, string sort, string search)
         {
             if (m.P_Id != 0)
             {
@@ -91,11 +93,19 @@ namespace Ain_Shams_Hospital.Controllers
                 return Redirect("/Lab/LabPatient");
             }
 
-            //HttpContext.Session.SetString("SearchItem", m.Search_Item);
 
-            TempData["SearchItem"] = m.Search_Item;
+            if (!string.IsNullOrEmpty(search))
+            {
+                TempData["SearchItem"] = m.Search_Item;
 
-            
+            }
+            if (!string.IsNullOrEmpty(sort))
+            {
+                TempData["SortItem"] = m.Sort_Item;
+                TempData["OrderItem"] = m.Order_Item;
+            }
+
+
             return Redirect("/Lab/LabMain");
            
         }
@@ -134,8 +144,6 @@ namespace Ain_Shams_Hospital.Controllers
                 ++i;
             }
 
-            //HttpContext.Session.SetComplexData("MainViewList", patient_join_follow_up);
-
             var searchString = TempData["SearchItem"]?.ToString();
             if (searchString != null)
             {
@@ -145,6 +153,48 @@ namespace Ain_Shams_Hospital.Controllers
                     s.Item2.Follow_Up_Type.Name.Contains(searchString))
                     .ToList();
                 return View();
+            }
+
+            patient_join_follow_up = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up.
+                        OrderByDescending(s => s.Item2.Date).ToList();
+
+            var sortString = TempData["SortItem"]?.ToString();
+            if (sortString != null)
+            {
+                var orderString = TempData["OrderItem"] == null ? "DSC" : TempData["OrderItem"].ToString();
+                switch ((sortString, orderString))
+                {
+                    case ("Date", "DSC"):
+                        patient_join_follow_up = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up
+                            .OrderByDescending(s => s.Item2.Date)
+                            .ToList();
+                        break;
+                    case ("Date", "ASC"):
+                        patient_join_follow_up = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up
+                            .OrderBy(s => s.Item2.Date)
+                            .ToList();
+                        break;
+                    case ("Status", "DSC"):
+                        patient_join_follow_up = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up
+                            .OrderByDescending(s => s.Item2.Follow_Up.Status)
+                            .ToList();
+                        break;
+                    case ("Status", "ASC"):
+                        patient_join_follow_up = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up
+                            .OrderBy(s => s.Item2.Follow_Up.Status)
+                            .ToList();
+                        break;
+                    case ("Follow_Up", "DSC"):
+                        patient_join_follow_up = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up
+                            .OrderByDescending(s => s.Item2.Follow_Up_Type.Name)
+                            .ToList();
+                        break;
+                    case ("Follow_Up", "ASC"):
+                        patient_join_follow_up = (List<Tuple<Patient, Follow_Up_History>>)patient_join_follow_up
+                            .OrderBy(s => s.Item2.Follow_Up_Type.Name)
+                            .ToList();
+                        break;
+                }
             }
             ViewBag.follow_ups = patient_join_follow_up;
 
@@ -198,11 +248,9 @@ namespace Ain_Shams_Hospital.Controllers
           
             if (obj.Status != "binding")
                 follow_Up.Status = obj.Status;
-            //_auc.Add(patient);
             _auc.SaveChanges();
             ModelState.Clear();
 
-            //List<Patient> result = new List<Patient>;
 
             var result = _auc.Patients
                  .Where(O => O.Id == patient_id)
@@ -214,12 +262,6 @@ namespace Ain_Shams_Hospital.Controllers
                 .Where(O => O.Id == patient_id)
                  .ToList();
             var mail = regestration_id[0].Registration.Email;
-            /*int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
-            int Doctor_Id = _auc.Staff
-                .Where(d => d.Registration_Id == Doctor_Reg_Id)
-                .Select(d => d.Id)
-                .Single();*/
-            //&& d => d.Staff_Id == Doctor_Id
             var status = _auc.Follow_Ups
                 .Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id)
                 .Select(d => d.Status)

@@ -37,7 +37,6 @@
         <div class="col">
             <div class="box">
                 <img src="~/images/5a5ea5033865b.image.jpg" id="main" />
-                @*<img src="~/images/we care about your health.PNG" id="main"/>*@
             </div>
         </div>
     </div>
@@ -49,17 +48,9 @@
         <div class="col-md-4 offset-4">
             <h6 class="text-center">We are happy to serve you. </h6>
             <form class="card card-body">
-                @*<label>Email or Username:</label>
-                <input class="form-control" placeholder="Email or Username" />
-                <br />
-                <label>Password:</label>
-                <input type="password" placeholder="Password" class="form-control" />
-                <br />*@
-                @*<input class="btn btn-dark w-auto text-center" type="submit" value="" />*@
-                <a class="btn btn-dark w-auto text-center" href="Registration/login" role="button">Login</a>
+                <a class="btn btn-dark w-auto text-center"  asp-controller="Registration" asp-action="Login" role="button">Login</a>
                 <hr />
-                @*<input class="btn btn-success" type="submit" value="Create New Account" />*@
-                <a class="btn btn-success" href="Registration/Activation" role="button">Create New Account</a>
+                <a class="btn btn-success"  asp-controller="Registration" asp-action="Logout" role="button">Create New Account</a>
             </form>
         </div>
     </div>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -20,6 +21,7 @@ namespace Ain_Shams_Hospital.Controllers
 
         public IActionResult Index()
         {
+            HttpContext.Session.SetInt32("User_Reg_Id", 0);
             return View();
         }
 
