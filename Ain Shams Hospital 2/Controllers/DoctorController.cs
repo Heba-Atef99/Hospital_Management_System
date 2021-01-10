@@ -266,7 +266,7 @@ namespace Ain_Shams_Hospital.Controllers
                        .Where(i => i.Id == patient_id).FirstOrDefault();
             Follow_Up follow;
             follow = _auc.Follow_Ups.FirstOrDefault(s => s.Patient_Id == patient_id);
-            follow.Status = ("Finish");
+            follow.Status = ("Transfered");
             //r.Id = 1;
 
             //var HID = _auc.Transfer_Hospitals.Where(f => f.Name == obj.HospitalName).Select(s => s.Id).Single();
@@ -277,8 +277,9 @@ namespace Ain_Shams_Hospital.Controllers
 
             //_auc.Add(r);
 
+            return Redirect("/Doctor/Main");
 
-            return View();
+            //return View();
         }
         [HttpGet]
         public IActionResult AnotherDepartment()
@@ -306,7 +307,7 @@ namespace Ain_Shams_Hospital.Controllers
             if (entity != null)
             {
                 entity.Staff_Id = obj.StaffId;
-                entity.Status = "pending";
+                entity.Status = "Pending";
                 followHistory.Follow_Up_Type_Id = obj.FollowTypeId;
                 followHistory.Date = null;
                 _auc.Entry(entity).State = EntityState.Modified;
@@ -320,7 +321,8 @@ namespace Ain_Shams_Hospital.Controllers
             ViewBag.OtherDoc = OtherDoc;
             var followUpTypes = _auc.Follow_Ups_Types.ToList();
             ViewBag.types = followUpTypes;
-            return View();
+            //return View();
+            return Redirect("/Doctor/Main");
         }
         [HttpGet]
         public IActionResult Schedule()
@@ -341,7 +343,7 @@ namespace Ain_Shams_Hospital.Controllers
                     //.Select(n=>new Follow_Up_History {Date=n.Date,Follow_Up_Type_Id=n.Follow_Up_Type_Id })
                     .Single());
             }
-            listDates = listDates.OrderByDescending(s => s.Date).ToList();
+            listDates = listDates.OrderBy(s => s.Date).ToList();
             ViewBag.schedule = listDates;
             return View();
         }
