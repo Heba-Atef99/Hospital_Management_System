@@ -41,9 +41,47 @@ namespace AinShamsHospital.Controllers
             return View();
            
         }
+        
+        public IActionResult Statechart()
+        {
+
+            return View();
+        }
+       
+        public IActionResult Stateview1()
+        {
+            String from = HttpContext.Session.GetString("FIRST");
+            String to = HttpContext.Session.GetString("LAST");
+            var h = _asu.Payments.Include(o => o.Patient).Include(p => p.Follow_Up_Type)
+               .Where(f => f.Payed == true).ToList();
+            DateTime start = DateTime.Parse(from);
+            DateTime end = DateTime.Parse(to);
+            List<Payment> payment1 = new List<Payment>();
+            var total = 0;
+            foreach (var V in h)
+            {
+
+                DateTime date = DateTime.Parse(V.Date);
+
+                if (date >= start && date <= end)
+                {
+                    total = total + V.Money;
+
+                    payment1.Add(V);
+                }
+
+            }
+           // ViewBag.R = m.Room_Id;
+            ViewBag.t = total;
+            // ViewBag.D = h;
+            ViewBag.list1 = payment1;
+         
+            return View();
+        }
         [HttpGet]
         public IActionResult Stateview()
         {
+
 
             return View();
         }
