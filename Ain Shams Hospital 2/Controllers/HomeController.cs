@@ -12,8 +12,6 @@ using Ain_Shams_Hospital.Data.Entities;
 using HospitalManagementSystem.Data;
 using Microsoft.AspNetCore.Http;
 
-using Microsoft.AspNetCore.Http;
-
 namespace Ain_Shams_Hospital.Controllers
 {
     public class HomeController : Controller

@@ -96,7 +96,7 @@ namespace Ain_Shams_Hospital.Controllers
             }
 
             else
-            {
+            { 
                 _auc.Add(r);
                 _auc.SaveChanges();
                 Patient P = new Patient
@@ -108,7 +108,7 @@ namespace Ain_Shams_Hospital.Controllers
 
                 _auc.Add(P);
                 _auc.SaveChanges();
-                return Redirect("/Registration/Patient");
+                return Redirect("/Patient/Home");
             }
         }
 
@@ -233,7 +233,8 @@ namespace Ain_Shams_Hospital.Controllers
                             .SingleOrDefault();
                     if (code == null)
                     {
-                        return Redirect("/Registration/Patient");
+                        HttpContext.Session.SetInt32("User_Reg_Id", Data[0].Id);
+                        return Redirect("/Patient/Home");
                     }
                     int _Index = (int)code[0] - 48;
 
