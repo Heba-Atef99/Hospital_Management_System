@@ -180,7 +180,7 @@ namespace Ain_Shams_Hospital.Controllers
                     //go to finance
 
                     case 5:
-                        return Redirect("/Front_desk/main");
+                        return Redirect("/Front_desk/Homepage");
 
                     default:
                         return Redirect("/Registration/Staff");
@@ -259,7 +259,7 @@ namespace Ain_Shams_Hospital.Controllers
 
 
                         case 5:
-                            return Redirect("/Front_desk/main");
+                            return Redirect("/Front_desk/Homepage");
 
                         default:
                             return Redirect("/Registration/Staff");

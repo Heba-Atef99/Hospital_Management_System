@@ -35,9 +35,9 @@ namespace Ain_Shams_Hospital.Controllers
         
         public IActionResult Homepage()
         {
-            //int Staff_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
-            //string Staff_Name = _asu.Staff.Where(f => f.Registration_Id == Staff_Reg_Id).Select(h => h.Name).SingleOrDefault();
-            //ViewBag.User = Staff_Name;
+            int Staff_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            string Staff_Name = _asu.Staff.Where(f => f.Registration_Id == Staff_Reg_Id).Select(h => h.Name).SingleOrDefault();
+            ViewBag.User = Staff_Name;
             return View();
         }
        
@@ -506,44 +506,50 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult Search(SearchVm ob)
         {
             Facility_Reservation FR = new Facility_Reservation();
-            var ID = _asu.Patients.Where(f => f.Name == ob.patientName).Select(s => s.Id).Single();
-            var NamePexist = _asu.Facility_Reservations.ToList().Any(f => f.Patient_Id == ID);
-            if (NamePexist)
+            var Nameexist = _asu.Patients.ToList().Any(f => f.Name == ob.patientName);
+            if (Nameexist)
             {
+                var ID = _asu.Patients.Where(f => f.Name == ob.patientName).Select(s => s.Id).Single();
+                var NamePexist = _asu.Facility_Reservations.ToList().Any(f => f.Patient_Id == ID);
+                if (NamePexist)
+                {
 
-                /*
-                                var Startavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
-                                    .Select(s => s.Start_Hour).Single();
-                                var Endavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
-                                  .Select(s => s.End_Hour).Single();
-               
-                var Endavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
-                                .Select(s =>new { s.End_Hour ,s.Start_Hour}).ToList();
-                DateTime parse1 = DateTime.Parse(Startavailable);
-                DateTime parse2 = DateTime.Parse(Endavailable);
- */
-                var Endavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
-                                          .Select(s => new { dates = s.Start_Hour, dateE = s.End_Hour, name = s.Id })
-                                          .OrderByDescending(w => w.dateE).FirstOrDefault();
-                                          //.ToList();
-                //foreach (var V in Endavailable)
-                //{
+                    /*
+                                    var Startavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
+                                        .Select(s => s.Start_Hour).Single();
+                                    var Endavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
+                                      .Select(s => s.End_Hour).Single();
+
+                    var Endavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
+                                    .Select(s =>new { s.End_Hour ,s.Start_Hour}).ToList();
+                    DateTime parse1 = DateTime.Parse(Startavailable);
+                    DateTime parse2 = DateTime.Parse(Endavailable);
+     */
+                    var Endavailable = _asu.Facility_Reservations.Where(f => f.Patient_Id == ID)
+                                              .Select(s => new { dates = s.Start_Hour, dateE = s.End_Hour, name = s.Id })
+                                              .OrderByDescending(w => w.dateE).FirstOrDefault();
+                    //.ToList();
+                    //foreach (var V in Endavailable)
+                    //{
                     DateTime parse3 = DateTime.Parse(Endavailable.dates);
                     DateTime parse4 = DateTime.Parse(Endavailable.dateE);
                     //int i = V.name;
-                    if ((parse3<= ob.Today && ob.Today <= parse4))
+                    if ((parse3 <= ob.Today && ob.Today <= parse4))
                     {
                         var roomnumber = _asu.Facility_Reservations
-                        .Where(F => F.Id==Endavailable.name )
+                        .Where(F => F.Id == Endavailable.name)
                         .Select(s => s.Hospital_Facility_Id).Single();
                         TempData["room"] = _asu.Hospital_Facilities.Where(t => t.Id == roomnumber)
                             .Select(S => S.Type).Single();
                         return Redirect("/Front_desk/Searchresult");
                     }
-                    else {
+                    else
+                    {
                         return Redirect("/Front_desk/NotAvailable");
                     }
-                //}
+                    //}
+                }
+                return Redirect("/Front_desk/NotAvailable");
             }
             return Redirect("/Front_desk/NotAvailable");
         }
