@@ -4,54 +4,56 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1 class="text-center text-danger"  >Your Health Progress</h1>
+<h1 class="text-center" style="color:#ff0000"  >Edit & Detailes Page</h1>
 <hr />
 <div class="row">
     <div class="col-md-10" style="margin:auto;">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group" style="display:none;">
-                @Html.LabelFor(model => model.Id, new { @class = "control-label" })
-                <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Id, new { @class = "form-control", @readonly = "readonly" })
-                </div>
+            <h2 class="text-center" style="color:#0708bc">You Can Edit Your Information</h2>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label" style="color:#0026ff"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group" style="display:none;">
-                @Html.LabelFor(model => model.Registration_Id, new { @class = "control-label" })
-                <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Registration_Id, new { @class = "form-control", @readonly = "readonly" })
-                </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label" style="color:#0026ff"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
-            <div class="form-group" style="display:none;">
-                @Html.LabelFor(model => model.Hospital_Id, new { @class = "control-label" })
-                <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Hospital_Id, new { @class = "form-control", @readonly = "readonly" })
-                </div>
+            <div class="form-group">
+                <label asp-for="Medical_Record" class="control-label" style="color:#0026ff"></label>
+                <input asp-for="Medical_Record" class="form-control" />
+                <span asp-validation-for="Medical_Record" class="text-danger"></span>
             </div>
+            <h3 class="text-center" style="color:#257ec8" >Some Details about You</h3>
             <div class="form-group">
                 @Html.LabelFor(model => model.Health_Progress, new { @class = "control-label" })
                 <div class="col-md-10">
-                @Html.TextBoxFor(model => model.Health_Progress, new { @class = "form-control", @readonly = "readonly" })
-                </div>
-                <h2 class="text-center" style="color:#0708bc">Edit Your Information</h2>
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label" style="color:#0026ff"></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Phone" class="control-label" style="color:#0026ff"></label>
-                    <input asp-for="Phone" class="form-control" />
-                    <span asp-validation-for="Phone" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Medical_Record" class="control-label"style="color:#0026ff"></label>
-                    <input asp-for="Medical_Record" class="form-control" />
-                    <span asp-validation-for="Medical_Record" class="text-danger"></span>
+                    @Html.TextBoxFor(model => model.Health_Progress, new { @class = "form-control", @readonly = "readonly" })
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                 @Html.LabelFor(model => model.Hospital_Id, new { @class = "control-label" })
+                <h6 style="font:10px ;font-size:small;color:#797373" >"If You are Transfered to Another Hospital This Id will change"</h6>
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Hospital_Id, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="form-group" style="display:none">
+                @Html.LabelFor(model => model.Id, new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Id, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="form-group" style="display:none">
+                @Html.LabelFor(model => model.Registration_Id, new { @class = "control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.Registration_Id, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="SaveChanges" class="btn btn-primary" />
             </div>
         </form>
     </div>

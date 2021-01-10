@@ -189,15 +189,3 @@ E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\DateEdit.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\Services22.cshtml.g.cs
 E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Profile\UserProfile.cshtml.g.cs
-E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\Grpc.Core.dll
-E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\Grpc.Core.Api.dll
-E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
-E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
-E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
-E:\Software Project\My Local Project\Ain Shams University\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
-E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\BabyDoctor22.cshtml.g.cs
-E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\BabyDoctor33.cshtml.g.cs
-E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Patient\FollowDoctorsDep.cshtml.g.cs
-E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Edit.cshtml.g.cs
-E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Create.cshtml.g.cs
-E:\Software Project\My Local Project\Ain Shams University\obj\Debug\netcoreapp3.1\Razor\Views\Profile\Index.cshtml.g.cs
