@@ -14,7 +14,6 @@ using System.Data.SqlClient;
 using Ain_Shams_Hospital.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using AinShamsHospital.ViewModels;
-using Microsoft.AspNetCore.Http;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -82,98 +81,6 @@ namespace Ain_Shams_Hospital.Controllers
         }
         public IActionResult NotExist()
         {
-            return View();
-        }
-        [HttpGet]
-        public IActionResult Stateview()
-        {
-
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Stateview(mainVM m)
-        {
-            var ID = _auc.Follow_Ups_Types.Where(f => f.Name == m.Room_Id).Select(s => s.Id).Single();
-            String from = HttpContext.Session.GetString("FIRST");
-            String to = HttpContext.Session.GetString("LAST");
-
-            var h = _auc.Payments.Include(o => o.Patient).Include(p => p.Follow_Up_Type)
-                .Where(f => (f.Follow_Up_Type_Id == ID && f.Payed == true))
-              .ToList();
-            DateTime start = DateTime.Parse(from);
-            DateTime end = DateTime.Parse(to);
-            List<Payment> payment = new List<Payment>();
-            // if (from!=null && to != null)
-            //{
-            var total = 0;
-            foreach (var V in h)
-            {
-
-                DateTime date = DateTime.Parse(V.Date);
-
-                if (date >= start && date <= end)
-                {
-                    total = total + V.Money;
-                    payment.Add(V);
-                }
-
-            }
-
-
-            ViewBag.R = m.Room_Id;
-            ViewBag.t = total;
-            // ViewBag.D = h;
-            ViewBag.list = payment;
-            return View();
-
-
-        }
-        public IActionResult Stateview1()
-        {
-            String from = HttpContext.Session.GetString("FIRST");
-            String to = HttpContext.Session.GetString("LAST");
-            var h = _auc.Payments.Include(o => o.Patient).Include(p => p.Follow_Up_Type)
-               .Where(f => f.Payed == true).ToList();
-            DateTime start = DateTime.Parse(from);
-            DateTime end = DateTime.Parse(to);
-            List<Payment> payment1 = new List<Payment>();
-            var total = 0;
-            foreach (var V in h)
-            {
-
-                DateTime date = DateTime.Parse(V.Date);
-
-                if (date >= start && date <= end)
-                {
-                    total = total + V.Money;
-
-                    payment1.Add(V);
-                }
-
-            }
-            // ViewBag.R = m.Room_Id;
-            ViewBag.t = total;
-            // ViewBag.D = h;
-            ViewBag.list1 = payment1;
-
-            return View();
-        }
-        [HttpGet]
-        public IActionResult State()
-        {
-            var Type = _auc.Follow_Ups_Types.ToList();
-            ViewBag.type = Type;
-
-            return View();
-        }
-        [HttpPost]
-        public IActionResult State(FinanceInterval obj)
-        {
-            var Type = _auc.Follow_Ups_Types.ToList();
-            ViewBag.type = Type;
-            HttpContext.Session.SetString("FIRST", obj.From);
-            HttpContext.Session.SetString("LAST", obj.To);
-
             return View();
         }
         [HttpGet]
@@ -278,9 +185,7 @@ namespace Ain_Shams_Hospital.Controllers
 
         [HttpGet]
         public IActionResult ManagerEdit()
-        {
-            var names = _auc.Follow_Ups_Types.ToList();
-            ViewBag.editname = names;
+        { 
             return View();
         }
         [HttpPost]
@@ -346,7 +251,7 @@ namespace Ain_Shams_Hospital.Controllers
 
             if (NameExist)
             {
-                ViewBag.Fail = "This Hospital is already available.";
+                ViewBag.Fail = "This Hospital already exists.";
                 return View();
             }
 
@@ -377,7 +282,7 @@ namespace Ain_Shams_Hospital.Controllers
            
             if (NameExist)
             {
-                ViewBag.Fail = "This Service is already exist.";
+                ViewBag.Fail = "This service already exists.";
                 return View();
             }
            
@@ -388,7 +293,7 @@ namespace Ain_Shams_Hospital.Controllers
             
                     _auc.Add(b);
                     _auc.SaveChanges();
-                    ViewBag.Success = "Hospital is added successfully";
+                    ViewBag.Success = "Service is added successfully";
 
                 return View();
             }
@@ -434,6 +339,10 @@ namespace Ain_Shams_Hospital.Controllers
                 return View();
             }
             
+        }
+        public IActionResult Home()
+        {
+            return View();
         }
 
         /*public IActionResult Exist()

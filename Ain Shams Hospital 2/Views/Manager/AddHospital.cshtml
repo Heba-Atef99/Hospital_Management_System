@@ -2,9 +2,11 @@
 
 @{
     ViewData["Title"] = "AddHospital";
+    Layout = "~/Views/Manager_Layout.cshtml";
+
 }
 
-<h1>AddHospital</h1>
+
 
 
 <hr />
@@ -26,8 +28,9 @@
 <h6 style="color:#229130">@ViewBag.Success</h6>
 <h6 style="color:#ff0000">@ViewBag.Fail</h6>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="ViewHospital"> Back to Hospital List</a>
 </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
