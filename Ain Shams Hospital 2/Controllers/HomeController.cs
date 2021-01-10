@@ -7,11 +7,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Ain_Shams_Hospital.ViewModels;
-using Ain_Shams_University.ViewModels;
 using Ain_Shams_Hospital.Data.Entities;
 using HospitalManagementSystem.Data;
 using Microsoft.AspNetCore.Http;
 
+using Microsoft.AspNetCore.Http;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -33,6 +33,7 @@ namespace Ain_Shams_Hospital.Controllers
 
         public IActionResult Index()
         {
+            HttpContext.Session.SetInt32("User_Reg_Id", 0);
             return View();
         }
 

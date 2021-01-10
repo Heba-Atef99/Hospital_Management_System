@@ -13,6 +13,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using Ain_Shams_Hospital.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 namespace Ain_Shams_Hospital.Controllers
 {
@@ -79,9 +80,11 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult RegistrationPatient(RegistrationPatientVM obj)
         {
-            Registration r = new Registration();
-            r.Email = obj.Email;
-            r.Password = BCrypt.Net.BCrypt.HashPassword(obj.Password);
+            Registration r = new Registration
+            {
+                Email = obj.Email,
+                Password = BCrypt.Net.BCrypt.HashPassword(obj.Password)
+            };
 
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == r.Email);
             if (EmailExist)
@@ -96,10 +99,12 @@ namespace Ain_Shams_Hospital.Controllers
             {
                 _auc.Add(r);
                 _auc.SaveChanges();
-                Patient P = new Patient();
-                P.Name = obj.Name;
-                P.Phone = obj.Phone;
-                P.Registration_Id = r.Id;
+                Patient P = new Patient
+                {
+                    Name = obj.Name,
+                    Phone = obj.Phone,
+                    Registration_Id = r.Id
+                };
 
                 _auc.Add(P);
                 _auc.SaveChanges();
@@ -116,9 +121,11 @@ namespace Ain_Shams_Hospital.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RegistrationStaff(RegistrationStaffVM objc)
         {
-            Registration R = new Registration();
-            R.Email = objc.Email;
-            R.Password = BCrypt.Net.BCrypt.HashPassword(objc.Password);
+            Registration R = new Registration
+            {
+                Email = objc.Email,
+                Password = BCrypt.Net.BCrypt.HashPassword(objc.Password)
+            };
             var EmailExist = _auc.Registrations.ToList().Any(u => u.Email == R.Email);
             if (EmailExist)
             {
@@ -132,13 +139,14 @@ namespace Ain_Shams_Hospital.Controllers
             {
                 _auc.Add(R);
                 _auc.SaveChanges();
-                Staff S = new Staff();
-                S.Name = objc.Name;
-                S.Phone = objc.Phone;
-                S.Starting_Day = objc.Starting_Day;
-                S.Registration_Id = R.Id;
-
-                S.Specialization_Id = (int)TempData["Specialization_Id"];
+                Staff S = new Staff
+                {
+                    Name = objc.Name,
+                    Phone = objc.Phone,
+                    Starting_Day = objc.Starting_Day,
+                    Registration_Id = R.Id,
+                    Specialization_Id = (int)TempData["Specialization_Id"]
+                };
 
                 //recently added
                 var code = _auc.Specializations
@@ -151,7 +159,8 @@ namespace Ain_Shams_Hospital.Controllers
                 _auc.Add(S);
                 _auc.SaveChanges();
 
-                TempData["User_Reg_Id"] = S.Registration_Id;
+                //TempData["User_Reg_Id"] = S.Registration_Id;
+                HttpContext.Session.SetInt32("User_Reg_Id", (int)S.Registration_Id);
 
                 switch (_Index)
                 {
@@ -159,13 +168,16 @@ namespace Ain_Shams_Hospital.Controllers
                     //go to patient
 
                     case 1:
-                        return Redirect("/Doctor/Home");
+                        return Redirect("/Doctor/Main");
 
                     case 2:
                     //go to manager
 
                     case 3:
-                    //go to lap
+                        //go to lap
+                        HttpContext.Session.SetInt32("SpecifyLab", (int)code[1] - 48);
+                        return Redirect("/Lab/Index");
+
 
                     case 4:
                     //go to finance
@@ -225,18 +237,22 @@ namespace Ain_Shams_Hospital.Controllers
                     }
                     int _Index = (int)code[0] - 48;
 
-                    TempData["User_Reg_Id"] = Data[0].Id;
+                    //TempData["User_Reg_Id"] = Data[0].Id;
+                    HttpContext.Session.SetInt32("User_Reg_Id", Data[0].Id);
+
 
                     switch (_Index)
                     {
                         case 1:
-                            return Redirect("/Doctor/Home");
+                            return Redirect("/Doctor/Main");
 
                         case 2:
                         //go to manager
 
                         case 3:
-                        //go to lap
+                            //go to lap
+                            HttpContext.Session.SetInt32("SpecifyLab", (int)code[1] - 48);
+                            return Redirect("/Lab/Index");
 
                         case 4:
                         //go to finance
@@ -252,5 +268,12 @@ namespace Ain_Shams_Hospital.Controllers
             }
             return Redirect("/Registration/NotLog");
         }
+        [HttpPost]
+        public IActionResult Logout(LogoutVM L)
+        {
+            if(L != null) HttpContext.Session.SetInt32("User_Reg_Id", 0);
+            return Redirect("/Home/Index");
+        }
+
     }
 }
