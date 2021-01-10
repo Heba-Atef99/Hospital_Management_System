@@ -325,6 +325,24 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpGet]
         public IActionResult Schedule()
         {
+            int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int Doctor_Id = _auc.Staff
+                .Where(d => d.Registration_Id == Doctor_Reg_Id)
+                .Select(d => d.Id)
+                .Single();
+            var followList = _auc.Follow_Ups.Where(s => s.Staff_Id == Doctor_Id)
+                .Select(n =>n.Id).ToList();
+            List<Follow_Up_History> listDates = new List<Follow_Up_History>();
+            foreach(var p in followList)
+            {
+                listDates.Add(_auc.Follow_Ups_History
+                    .Include(s=>s.Follow_Up_Type)
+                    .Where(s => s.Follow_Up_Id == p)
+                    //.Select(n=>new Follow_Up_History {Date=n.Date,Follow_Up_Type_Id=n.Follow_Up_Type_Id })
+                    .Single());
+            }
+            listDates = listDates.OrderByDescending(s => s.Date).ToList();
+            ViewBag.schedule = listDates;
             return View();
         }
         [HttpGet]

@@ -1,0 +1,23 @@
+﻿
+@{
+    //ViewData["Title"] = "Schedule";
+    var schedule = ViewBag.schedule;
+}
+
+<h1>Schedule</h1>
+<div class="text-center col-md-6">
+    <table class="table-bordered">
+        <tr>
+            <td> Date</td>
+            <td> Follow Up </td>
+        </tr>
+        @foreach (var n in schedule)
+        {
+            <tr>
+                <td> @n.Date</td>
+                <td> @n.Follow_Up_Type.Name</td>
+            </tr>
+        }
+        </table>
+    
+</div>
