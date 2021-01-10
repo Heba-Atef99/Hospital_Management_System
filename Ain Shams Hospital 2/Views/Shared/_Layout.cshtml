@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="~/css/Home.css" rel="stylesheet" />
+    @if(controller == "Patient"){
+        <link href="~/css/Patient.css" rel="stylesheet" />
+    }
     @RenderSection("Styles", required: false)
     <!--removed the patient css-->
 
@@ -63,14 +66,10 @@
         </nav>
 
     </header>
-<<<<<<< HEAD
     @*<div id="watermarkcont">
           <img id="watermark"src="~/Images/ASH B.png" />
         </div>*@
     <div class="container-fluid">
-=======
-    <div class="container">
->>>>>>> doctor
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
