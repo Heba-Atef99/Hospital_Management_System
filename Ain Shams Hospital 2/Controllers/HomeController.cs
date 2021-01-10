@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Ain_Shams_Hospital.ViewModels;
+using Ain_Shams_University.ViewModels;
 using Ain_Shams_Hospital.Data.Entities;
 using HospitalManagementSystem.Data;
 using Microsoft.AspNetCore.Http;
