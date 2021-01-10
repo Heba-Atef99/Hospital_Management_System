@@ -32,11 +32,15 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
+        
         public IActionResult Homepage()
         {
+            //int Staff_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            //string Staff_Name = _asu.Staff.Where(f => f.Registration_Id == Staff_Reg_Id).Select(h => h.Name).SingleOrDefault();
+            //ViewBag.User = Staff_Name;
             return View();
         }
-
+       
         [HttpGet]
         public IActionResult Delete()
         {
