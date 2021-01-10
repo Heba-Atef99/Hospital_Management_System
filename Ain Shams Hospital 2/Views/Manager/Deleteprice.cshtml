@@ -2,12 +2,11 @@
 
 @{
     ViewData["Title"] = "Deleteprice";
+    Layout = "~/Views/Manager_Layout.cshtml";
 }
 
-<h1>Deleteprice</h1>
 
 
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Deleteprice">
@@ -27,7 +26,7 @@
 <h6 style="color:#229130">@ViewBag.Success</h6>
 <h6 style="color:#ff0000">@ViewBag.Fail</h6>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="ViewPrices">Back to Service List</a>
 </div>
 
 @section Scripts {
