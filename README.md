@@ -67,7 +67,7 @@ patient have many features :-
 6. he can pay online or offline.
 
 
-### If you are Doctor
+#### If you are Doctor
 
 Regestration >> login >> Doctor page.
 
@@ -77,14 +77,14 @@ Regestration >> login >> Doctor page.
 4. Transfer patient to another doctor or another hospital.
 5. Collect statistics regarding his patients.
 
-### If you are Front-Desk..
+#### If you are Front-Desk..
 
 1. Check availability of rooms/beds.
 2. Allocate room/bed to a patient.
 3. Transform a patient from one ward to another.
 4. Other Services
 
-### Donation
+#### Donation
 
 you can donat to our hospital and supporting us by this form[link](https://localhost:44359/Home/Donation)
 
