@@ -54,41 +54,43 @@ and some Packages , you can download them from here :-
 * [Doctor](#if-you-are-Doctor)
 * [Front-Desk](#if-you-are-front-desk)
 
-### If you are patient.. 
+#### If you are patient.. 
 
-Regestration >> login >> patient page.
+> Regestration >> login >> patient page.
 
-patient have many features :-
-1. have an own profile that he can edite it.
-2. have a followed Doctors list and see his schedules.
-3. he can view different services offered by the hospital. 
-4. he can book with any doctor from any department.
-5. He can book any required tests through the site.
-6. he can pay online or offline.
+> patient have many features :-
+> 1. have an own profile that he can edite it.
+> 2. have a followed Doctors list and see his schedules.
+> 3. he can view different services offered by the hospital. 
+> 4. he can book with any doctor from any department.
+> 5. He can book any required tests through the site.
+> 6. he can pay online or offline.
 
 
 #### If you are Doctor
 
-Regestration >> login >> Doctor page.
+> Regestration >> login >> Doctor page.
 
-1. Add their professional information.
-2. Add/edit their schedules.
-3. Find their patients and view/edit/add their medical records.
-4. Transfer patient to another doctor or another hospital.
-5. Collect statistics regarding his patients.
+> 1. Add their professional information.
+> 2. Add/edit their schedules.
+> 3. Find their patients and view/edit/add their medical records.
+> 4. Transfer patient to another doctor or another hospital.
+> 5. Collect statistics regarding his patients.
 
 #### If you are Front-Desk..
 
-1. Check availability of rooms/beds.
-2. Allocate room/bed to a patient.
-3. Transform a patient from one ward to another.
-4. Other Services
+> Regestration >> login >> Doctor page.
+
+> 1. Check availability of rooms/beds.
+> 2. Allocate room/bed to a patient.
+> 3. Transform a patient from one ward to another.
+> 4. Other Services
 
 #### Donation
 
-you can donat to our hospital and supporting us by this form[link](https://localhost:44359/Home/Donation)
+> you can donat to our hospital and supporting us by this form >>[link](https://localhost:44359/Home/Donation)
 
 ## Sources
 
-This site we used to learn the programming language Asp.net core Mvc [pluralsight](https://www.pluralsight.com/product/skills?utm_term=&aid=7010a000002LZ5aAAG&promo=&utm_source=branded&utm_medium=digital_paid_search_google&utm_campaign=XYZ_EMEA_Brand_E&utm_content=&gclid=CjwKCAiAi_D_BRApEiwASslbJ5k_uQ3dLDGo8P3FI9k4gZ97Op_P2QeFmPjeoO6Sff10pPYIxMTSrBoCTrwQAvD_BwE)
+This site we used to learn the programming language Asp.net core Mvc >> [pluralsight](https://www.pluralsight.com/product/skills?utm_term=&aid=7010a000002LZ5aAAG&promo=&utm_source=branded&utm_medium=digital_paid_search_google&utm_campaign=XYZ_EMEA_Brand_E&utm_content=&gclid=CjwKCAiAi_D_BRApEiwASslbJ5k_uQ3dLDGo8P3FI9k4gZ97Op_P2QeFmPjeoO6Sff10pPYIxMTSrBoCTrwQAvD_BwE)
 
