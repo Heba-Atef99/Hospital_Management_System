@@ -5,9 +5,9 @@ CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams
 <img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350">
 
 
-[Ain Shams Hospital](https://github.com/Heba-Atef99/Hospital_Management_System)
-![Visual Studio Marketplace Release Date](https://img.shields.io/visual-studio-marketplace/release-date/https://visualstudio.microsoft.com/vs/?style=for-the-badge)
-![WordPress Theme Last Updated](https://img.shields.io/wordpress/theme/last-updated/11?style=plastic)
+[Ain Shams Hospital](https://github.com/Heba-Atef99/Hospital_Management_System) 
+
+![Mozilla Add-on](https://img.shields.io/amo/stars/rate?style=flat-square)
 # Ain Shams Hospital
 Our project is a hospital site that can be used by all segments of society.
 
