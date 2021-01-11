@@ -1,17 +1,17 @@
-﻿@model Ain_Shams_University.ViewModels.labSpecialistVM
+﻿@model Ain_Shams_University.ViewModels.LabVM
 
 @{
-    ViewData["Title"] = "labSpecialist";
+    ViewData["Title"] = "Lab";
     Layout = "_PatientLayout";
 }
 
 <div class="container">
-    <h1 class="text-center">laboratory</h1>
+    <h1 class="text-center">Lab</h1>
     <hr />
 
     <div class="row">
-        <div class="col-md-10"style="margin:auto;">
-            <form asp-action="LabSpecialist">
+        <div class="col-md-10" style="margin:auto;">
+            <form asp-action="Lab">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="Id" for="doctors">Choose Your Test</label>
@@ -39,10 +39,10 @@ What is each medicine for?
 What is the dose?"></textarea>
                 </div>
                 <div class="card card-body">
-                    <input name="Payment" type="submit"  value="PayOnline" class="btn btn-primary" />
+                    <input name="Payment" type="submit" value="PayOnline" class="btn btn-primary" />
                     <input name="offlinepay" type="submit" value="PayOffline" class="btn btn-primary" />
                 </div>
-               
+
             </form>
         </div>
     </div>
@@ -55,4 +55,3 @@ What is the dose?"></textarea>
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }
 </div>
-
