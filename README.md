@@ -11,12 +11,12 @@ CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams
 # Ain Shams Hospital
 Our project is a hospital site that can be used by all segments of society.
 
-##Table of Contants
+## Table of Contants
 
-..* General Information
-..* Introduction
-..* Technologies
-..* SetUp
-..* Features
-..* Status
+1. General Information
+2. Introduction
+3. Technologies
+4. SetUp
+5. Features
+6. Status
 
