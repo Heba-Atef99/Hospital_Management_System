@@ -19,4 +19,14 @@ Our project is a hospital site that can be used by all segments of society.
 4. SetUp
 5. Features
 6. Status
+ 
+## General Information
 
+This site is a hospital, which is used by the doctor, the patient and front-desk officer.
+
+## Introduction
+
+Our Hospital is providing medical and Surgical treatment and nursing care for any ill or injured people.
+Our patient has many health and psychological services.
+Our hospital has many medical departments that make the patient do not need anything.
+As we have many services through the site that make the patient not need to go anywhere, especially in light of those epidemics that could expose the patient to danger
