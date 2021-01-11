@@ -14,12 +14,12 @@ Our project is a hospital site that can be used by all segments of society.
 ## Table of Contants
 
 1. [General Information](#general-information)
-2. Introduction
-3. Technologies
-4. SetUp
-5. Examples of use
-6. Features
-7. Project status 
+2. [Introduction](#introduction)
+3. [Technologies](#technolgies)
+4. [SetUp](#setup)
+5. [Examples of use](#examples-of-use)
+6. [Features](#features)
+7. [Project status](#project-status) 
  
 ## General Information
 
