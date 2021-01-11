@@ -12,6 +12,7 @@ using Ain_Shams_Hospital.ViewModels;
 
 namespace Ain_Shams_Hospital.Controllers
 {
+    [CheckXActionFilterAttribute]
     public class PatientController : Controller
     {
         private readonly HospitalDbContext _HDB;

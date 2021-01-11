@@ -13,6 +13,7 @@ using WebApplication10.ViewModels;
 
 namespace Ain_Shams_Hospital.Controllers
 {
+    [CheckXActionFilterAttribute]
     public class Front_deskController : Controller
     {
         private readonly HospitalDbContext _asu;

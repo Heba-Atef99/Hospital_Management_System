@@ -1,4 +1,5 @@
-﻿using Ain_Shams_Hospital.Data.Entities;
+﻿using Ain_Shams_Hospital.Controllers;
+using Ain_Shams_Hospital.Data.Entities;
 using AinShamsHospital.ViewModels;
 using HospitalManagementSystem.Data;
 using Microsoft.AspNetCore.Http;
@@ -11,8 +12,10 @@ using System.Threading.Tasks;
 
 namespace AinShamsHospital.Controllers
 {
+    [CheckXActionFilterAttribute]
     public class finance : Controller
     {
+        
         private readonly HospitalDbContext _asu;
         public finance(HospitalDbContext asu)
         {

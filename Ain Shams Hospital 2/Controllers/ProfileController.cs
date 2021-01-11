@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Ain_Shams_Hospital.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using Ain_Shams_Hospital.Controllers;
 
 namespace Ain_Shams_University.Controllers
 {
+    [CheckXActionFilterAttribute]
     public class ProfileController : Controller
     {
         private readonly HospitalDbContext _HDB;

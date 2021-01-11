@@ -28,6 +28,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <ul class="nav nav-tabs">
+
                     <li class="nav-item ">
                         <a href="/Manager/Home" class="nav-link ">Main</a>
                     </li>
@@ -49,10 +50,19 @@
                     <li class="nav-item">
                         <a href="/Manager/ViewHospital" class="nav-link ">Add Hospital</a>
                     </li>
+                   
                 </ul>
-                
+
             </div>
-            
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-sm-column">
+                    <li class="nav-item">
+                        <form asp-controller="Registration" asp-action="Logout">
+                            <button name="logout" type="submit" value="out" class="btn btn-dark">Log out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
         </nav>
 
     </header>

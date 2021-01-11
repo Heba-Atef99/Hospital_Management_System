@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Ain_Shams_Hospital.Controllers
 {
+    [CheckXActionFilterAttribute]
     public class Manager : Controller
     {
 
@@ -45,16 +46,16 @@ namespace Ain_Shams_Hospital.Controllers
                 .Single();
                 TempData["member1"] = _auc.Staff
               .Where(i => i.Name == m.Name)
-              .Select(m => m.Phone)
+              .Select(s => s.Phone)
               .Single();
                 TempData["member2"] = _auc.Staff
               .Where(i => i.Name == m.Name)
-              .Select(m => m.Starting_Day)
+              .Select(s => s.Starting_Day)
               .Single();
-                var x = _auc.Staff.Where(i => i.Name == m.Name).Select(m => m.Specialization_Id).Single();
+                var x = _auc.Staff.Where(i => i.Name == m.Name).Select(s => s.Specialization_Id).Single();
                 TempData["member3"] = _auc.Specializations
            .Where(i => i.Id == x)
-           .Select(m => m.Name)
+           .Select(s => s.Name)
            .Single();
                 var regestration_id = _auc.Staff.
             Where(i => i.Name == m.Name)
@@ -77,7 +78,8 @@ namespace Ain_Shams_Hospital.Controllers
             else
             {
                 ViewBag.NameDoesntExist = "Staff Member Doesn't Exist";
-                return Redirect("/Manager/NotExist");
+                return View();
+                //return Redirect("/Manager/NotExist");
             }
         }
         public IActionResult NotExist()

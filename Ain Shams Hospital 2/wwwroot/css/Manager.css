@@ -12,7 +12,9 @@
     font-weight: bolder;
     font-size: 30px;
 }
-
+#goodmanager {
+    max-height: 600px;
+}
 .card-img-top:hover {
     transform: scale(1.1);
 }

@@ -28,7 +28,11 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <div>
+
                     <ul class="nav nav-tabs ">
+
+
+
                         <li class="nav-item ">
                             <a href="/Front_desk/Homepage" class="nav-link ">Main</a>
                         </li>
@@ -44,12 +48,22 @@
                         <li class="nav-item">
                             <a href="/Front_desk/Check" class="nav-link ">Check Availability/Reserve Room</a>
                         </li>
+                       
                     </ul>
-                    </div>
-
                 </div>
 
-</nav>
+            </div>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-sm-column">
+                    <li class="nav-item">
+                        <form asp-controller="Registration" asp-action="Logout">
+                            <button name="logout" type="submit" value="out" class="btn btn-dark">Log out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
 
     </header>
     @*<div id="watermarkcont">

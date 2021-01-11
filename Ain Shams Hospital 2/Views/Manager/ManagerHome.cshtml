@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "ManagerHome";
     Layout = "~/Views/Manager_Layout.cshtml";
-    }
+}
 
 @section Scripts {
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
@@ -29,24 +29,24 @@
     </div>
 </div>
 
-
+<h6 style="color:#ff0000">@ViewBag.NameDoesntExist</h6>
 
 <div class="card">
-        <div class="card-header">
-            <h3>Staff Personal Information </h3>
-        </div>
-       
+    <div class="card-header">
+        <h3>Staff Personal Information </h3>
+    </div>
 
-        <div class="card-body">
-            <h4>Name:</h4><h6>@ViewBag.DD1</h6>
-            <hr/>
-            <h4>Phone:</h4><h6>@ViewBag.DD2</h6>
-            <hr/>
-            <h4>Starting Day:</h4><h6>@ViewBag.DD3</h6>
-            <hr/>
-            <h4>Specialization:</h4><h6>@ViewBag.DD4</h6>
-            <hr/>
-           <h4>Email:</h4><h6>@ViewBag.DD5</h6>
-        </div>
+
+    <div class="card-body">
+        <h4>Name:</h4><h6>@ViewBag.DD1</h6>
+        <hr />
+        <h4>Phone:</h4><h6>@ViewBag.DD2</h6>
+        <hr />
+        <h4>Starting Day:</h4><h6>@ViewBag.DD3</h6>
+        <hr />
+        <h4>Specialization:</h4><h6>@ViewBag.DD4</h6>
+        <hr />
+        <h4>Email:</h4><h6>@ViewBag.DD5</h6>
+    </div>
 </div>
 
