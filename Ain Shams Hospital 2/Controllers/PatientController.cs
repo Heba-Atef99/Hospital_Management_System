@@ -30,27 +30,71 @@ namespace Ain_Shams_Hospital.Controllers
             return View();
         }
 
-        public IActionResult LabSpecialist()
+        public IActionResult SelectLab()
         {
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            ViewBag.patientname = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Name).SingleOrDefault();
 
-            List<Follow_Up_Type> s1 = new List<Follow_Up_Type>();
-            s1 = (from s in _HDB.Follow_Ups_Types select s).Where(n => n.Id >= 3 && n.Id <= 10).ToList();
-            s1.Insert(0, new Follow_Up_Type { Id = 0, Name = "--Select Your Test--" });
+
+            List<Specialization> s1 = new List<Specialization>();
+            s1 = (from s in _HDB.Specializations select s).Where(n => n.Id <= 23 && n.Id >= 21).ToList();
+            s1.Insert(0, new Specialization { Id = 0, Name = "--select your Lab--" });
+
             ViewBag.massege = s1;
-            return View();
 
+            return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult LabSpecialist(labSpecialistVM bd ,string Payment,string offlinepay)
+        public IActionResult SelectLab(SelectLabVM sd)
+        {
+            HttpContext.Session.SetInt32("Sp_Id", (int)sd.Id);
+            return RedirectToAction("Lab", "Patient");
+        }
+
+
+
+        public IActionResult Lab(Specialization obj)
+        {
+
+            int sp_Id = (int)HttpContext.Session.GetInt32("Sp_Id");
+
+            List<Follow_Up_Type> s1 = new List<Follow_Up_Type>();
+            if (sp_Id == 22)
+            {
+                s1 = (from s in _HDB.Follow_Ups_Types select s).Where(e => e.Id >= 3 && e.Id <= 10).ToList();
+            }
+            else if (sp_Id == 23)
+            {
+                s1 = (from s in _HDB.Follow_Ups_Types select s).Where(e => e.Id >= 19).ToList();
+            }
+            else if (sp_Id == 21)
+            {
+                s1 = (from s in _HDB.Follow_Ups_Types select s).Where(e => e.Id >= 11 && e.Id <= 18).ToList();
+                
+            }
+            s1.Insert(0, new Follow_Up_Type { Id = 0, Name = "--Select Your Test--" });
+            ViewBag.massege = s1;
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Lab(LabVM bd, string Payment, string offlinepay)
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
-            
+            int sp_Id = (int)HttpContext.Session.GetInt32("Sp_Id");
+
+            int staff_id = _HDB.Staff.Where(w => w.Specialization_Id == sp_Id).Select(e => e.Id).SingleOrDefault();
+            Patient p;
+            p = _HDB.Patients.FirstOrDefault(s => s.Id == Patient_Id);
+            p.Medical_Record = bd.MedicalRecord;
+            _HDB.Update(p);
+            _HDB.SaveChanges();
             Follow_Up fup = new Follow_Up();
             fup.Patient_Id = Patient_Id;
             fup.Status = "Pending";
-            fup.Staff_Id = 13;
+            fup.Staff_Id = staff_id;
             _HDB.Add(fup);
             _HDB.SaveChanges();
 
@@ -73,7 +117,10 @@ namespace Ain_Shams_Hospital.Controllers
             {
                 return RedirectToAction("offlinepay", "Patient");
             }
+
+
         }
+
         public IActionResult SelectDoctor()
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
@@ -114,7 +161,6 @@ namespace Ain_Shams_Hospital.Controllers
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
-
 
             Follow_Up fup = new Follow_Up();
             fup.Patient_Id = Patient_Id;

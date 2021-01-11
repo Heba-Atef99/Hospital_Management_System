@@ -4,14 +4,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ain_Shams_Hospital.ViewModels 
+namespace Ain_Shams_University.ViewModels
 {
-    public class DoctorSchedule///for Doctor schedule
+    public class SelectLabVM
     {
-       
+        [Required(ErrorMessage = "Please select")]
+        public string LabSpecialization { get; set; }
+
         [Key]
         public int Id { get; set; }
         public int Name { get; set; }
-        public int Disabled { get; set; }
     }
 }
