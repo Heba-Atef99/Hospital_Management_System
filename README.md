@@ -39,5 +39,13 @@ As we have many services through the site that make the patient not need to go a
 3. SQL for Database. 
 
 ## SetUp
+To run this project; you nead to install Visual studio 2019
+and some packages :-
+1. [BCrypt.Net-Next](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
+2. [Microsoft.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/5.0.1?_src=template)
+3. [Microsoft.EntityFrameworkCore.Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/5.0.1?_src=template)
+4. [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/5.0.1?_src=template)
+5. [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/5.0.1?_src=template)
+6. [Microsoft.VisualStudio.Web.CodeGeneration.Design](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4?_src=template)
 
 
