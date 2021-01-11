@@ -29,7 +29,10 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult PatientFollowUp()
         {
             // int patient_id =(int) TempData["p_id"];
-            int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
+            int Follow_up_Id = (int)HttpContext.Session.GetInt32("Follow_up_Id");
+            int patient_id = (int)_auc.Follow_Ups.Where(d => d.Id == Follow_up_Id)
+                                            .Select(d => d.Patient_Id)
+                                            .Single();
             var result = _auc.Patients
                 .Where(O => O.Id == patient_id)
                 .Select(I => new Patient { Name = I.Name, Phone = I.Phone, Medical_Record = I.Medical_Record, Health_Progress = I.Health_Progress })
@@ -46,7 +49,7 @@ namespace Ain_Shams_Hospital.Controllers
                 .Single();
             //&& d => d.Staff_Id == Doctor_Id
             var status = _auc.Follow_Ups
-                .Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id)
+                .Where(d => d.Id == Follow_up_Id)
                 .Select(d => d.Status)
                 .Single();
             //var status  
@@ -59,7 +62,10 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpPost]
         public IActionResult PatientFollowUp(PatientFollowUpVM obj)
         {
-            int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
+            int Follow_up_Id = (int)HttpContext.Session.GetInt32("Follow_up_Id");
+            int patient_id = (int)_auc.Follow_Ups.Where(d => d.Id == Follow_up_Id)
+                                            .Select(d => d.Patient_Id)
+                                            .Single();
             int Doctor_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Doctor_Id = _auc.Staff
                 .Where(d => d.Registration_Id == Doctor_Reg_Id)
@@ -67,7 +73,7 @@ namespace Ain_Shams_Hospital.Controllers
                 .Single();
             Patient patient;
             Follow_Up follow_Up;
-            follow_Up = _auc.Follow_Ups.Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id).FirstOrDefault();
+            follow_Up = _auc.Follow_Ups.Where(d => d.Id == Follow_up_Id).FirstOrDefault();
             patient = _auc.Patients.Where(i => i.Id == patient_id).FirstOrDefault();
             patient.Medical_Record = patient.Medical_Record + " " + obj.Medical_Record;
             if (obj.Health_Progress != 0)
@@ -88,7 +94,7 @@ namespace Ain_Shams_Hospital.Controllers
                  .ToList();
             var mail = regestration_id[0].Registration.Email;
             var status = _auc.Follow_Ups
-                .Where(d => d.Patient_Id == patient_id && d.Staff_Id == Doctor_Id)
+                .Where(d =>  d.Id == Follow_up_Id)
                 .Select(d => d.Status)
                 .Single();
             ViewBag.data1 = result;
@@ -122,7 +128,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             if (m.P_Id != 0)
             {
-                HttpContext.Session.SetInt32("Patient_Id", m.P_Id);
+                HttpContext.Session.SetInt32("Follow_up_Id", m.P_Id);
                 return Redirect("/Doctor/PatientFollowUp");
             }
 
@@ -259,7 +265,10 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult AnotherHospital(TransferAnotherHospitalVM obj)
         {
             //Patient r = new Patient();
-            int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
+            int Follow_up_Id = (int)HttpContext.Session.GetInt32("Follow_up_Id");
+            int patient_id = (int)_auc.Follow_Ups.Where(d => d.Id == Follow_up_Id)
+                                            .Select(d => d.Patient_Id)
+                                            .Single();
             //var patient_id = 2;
             Patient patient;
             patient = _auc.Patients
@@ -300,7 +309,10 @@ namespace Ain_Shams_Hospital.Controllers
         {
             Follow_Up v = new Follow_Up();
             //var patient_id = 2;
-            int patient_id = (int)HttpContext.Session.GetInt32("Patient_Id");
+            int Follow_up_Id = (int)HttpContext.Session.GetInt32("Follow_up_Id");
+            int patient_id = (int)_auc.Follow_Ups.Where(d => d.Id == Follow_up_Id)
+                                            .Select(d => d.Patient_Id)
+                                            .Single();
             var m = _auc.Follow_Ups.Where(i => i.Patient_Id == patient_id).Select(c => c.Id).Single();
             var entity = _auc.Follow_Ups.FirstOrDefault(s => s.Id == m);
             var followHistory = _auc.Follow_Ups_History.FirstOrDefault(n => n.Follow_Up_Id == m);
