@@ -9,9 +9,14 @@ CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams
 
 
 # Ain Shams Hospital
+Our project is a hospital site that can be used by all segments of society.
 
-1. Our project is a hospital site that can be used by all segments of society.
-2. We are use Asp.net core Mvc of c# language for back.
-3. And HTML and CSS for front and JavaScript.
-4. SQL for Database. 
+## Table of Contants
+
+1. General Information
+2. Introduction
+3. Technologies
+4. SetUp
+5. Features
+6. Status
 
