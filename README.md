@@ -18,7 +18,7 @@ Our project is a hospital site that can be used by all segments of society.
 3. [Technologies](#technolgies)
 4. [SetUp](#setup)
 5. [Features](#features)
-6. [Project status](#project-status) 
+6. [Sources](#Sources) 
  
 ## General Information
 
@@ -84,9 +84,11 @@ Regestration >> login >> Doctor page.
 3. Transform a patient from one ward to another.
 4. Other Services
 
-###Donation
+### Donation
 
-[you can donat to our hospital and supporting us by this form](https://localhost:44359/Home/Donation)
+you can donat to our hospital and supporting us by this form[link](https://localhost:44359/Home/Donation)
 
+## Sources
 
+This site we used to learn the programming language Asp.net core Mvc [pluralsight](https://www.pluralsight.com/product/skills?utm_term=&aid=7010a000002LZ5aAAG&promo=&utm_source=branded&utm_medium=digital_paid_search_google&utm_campaign=XYZ_EMEA_Brand_E&utm_content=&gclid=CjwKCAiAi_D_BRApEiwASslbJ5k_uQ3dLDGo8P3FI9k4gZ97Op_P2QeFmPjeoO6Sff10pPYIxMTSrBoCTrwQAvD_BwE)
 
