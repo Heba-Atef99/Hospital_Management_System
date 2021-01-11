@@ -34,13 +34,14 @@ As we have many services through the site that make the patient not need to go a
 
 ## Technologies
 
-1. We are use Asp.net core Mvc of c# language for back.
+1. We use Asp.net core Mvc of c# language for back.
 2. And HTML and CSS for front and JavaScript.
 3. SQL for Database. 
 
 ## SetUp
-To run this project; you nead to install Visual studio 2019
-and some packages :-
+
+To run this project, you nead to install Visual studio 2019
+and some Packages , you can download them from here :-
 1. [BCrypt.Net-Next](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
 2. [Microsoft.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/5.0.1?_src=template)
 3. [Microsoft.EntityFrameworkCore.Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/5.0.1?_src=template)
@@ -48,4 +49,41 @@ and some packages :-
 5. [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/5.0.1?_src=template)
 6. [Microsoft.VisualStudio.Web.CodeGeneration.Design](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4?_src=template)
 
+## Examples of use
+
+## Features
+
+* [Patient](#if-you-are-patient)
+* [Doctor](#if-you-are-Doctor)
+* [Front-Desk](#if-you-are-front-desk)
+
+### If you are patient.. 
+
+Regestration >> login >> patient page.
+
+patient have many features :-
+1. have an own profile that he can edite it.
+2. have a followed Doctors list and see his schedules.
+3. he can view different services offered by the hospital. 
+4. he can book with any doctor from any department.
+5. He can book any required tests through the site.
+6. he can pay online or offline.
+
+
+### If you are Doctor
+
+Regestration >> login >> Doctor page.
+
+1. Add their professional information.
+2. Add/edit their schedules.
+3. Find their patients and view/edit/add their medical records.
+4. Transfer patient to another doctor or another hospital.
+5. Collect statistics regarding his patients.
+
+### If you are Front-Desk..
+
+1. Check availability of rooms/beds.
+2. Allocate room/bed to a patient.
+3. Transform a patient from one ward to another.
+4. Other Services
 
