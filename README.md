@@ -17,9 +17,8 @@ Our project is a hospital site that can be used by all segments of society.
 2. [Introduction](#introduction)
 3. [Technologies](#technolgies)
 4. [SetUp](#setup)
-5. [Examples of use](#examples-of-use)
-6. [Features](#features)
-7. [Project status](#project-status) 
+5. [Features](#features)
+6. [Project status](#project-status) 
  
 ## General Information
 
@@ -48,8 +47,6 @@ and some Packages , you can download them from here :-
 4. [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/5.0.1?_src=template)
 5. [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/5.0.1?_src=template)
 6. [Microsoft.VisualStudio.Web.CodeGeneration.Design](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4?_src=template)
-
-## Examples of use
 
 ## Features
 
@@ -86,4 +83,10 @@ Regestration >> login >> Doctor page.
 2. Allocate room/bed to a patient.
 3. Transform a patient from one ward to another.
 4. Other Services
+
+###Donation
+
+[you can donat to our hospital and supporting us by this form](https://localhost:44359/Home/Donation)
+
+
 
