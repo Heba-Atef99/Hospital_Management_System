@@ -1,18 +1,20 @@
 # Hospital_Management_System
 CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Students ,Where Students Could Apply Software Engineering concepts on a real life project that can help any Hospital. 
 
+
 <div align="center">
 <img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350">
-<div>
+
 
 [Ain Shams Hospital](https://github.com/Heba-Atef99/Hospital_Management_System) 
 
 ![Mozilla Add-on](https://img.shields.io/amo/stars/rate?style=flat-square)
-![Rating](https://img.shields.io/open-vsx/stars/rate?style=flat-square)
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+</div>
 # Ain Shams Hospital
 Our project is a hospital site that can be used by all segments of society.
 
-## Table of Contants
+## Table of Contents
 
 1. [General Information](#general-information)
 2. [Introduction](#introduction)
@@ -34,13 +36,13 @@ As we have many services through the site that make the patient not need to go a
 
 ## Technologies
 
-1. We use Asp.net core Mvc of c# language for back.
-2. And HTML and CSS for front and JavaScript.
+1. We use c# language And Asp.net core Mvc for Back End.
+2. And HTML, CSS and JavaScript for Front End .
 3. SQL for Database. 
 
 ## SetUp
 
-To run this project, you nead to install Visual studio 2019
+To run this project, you need to install Visual studio 2019
 and some Packages , you can download them from here :-
 1. [BCrypt.Net-Next(4.0.2)](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
 2. [Microsoft.EntityFrameworkCore(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/5.0.1?_src=template)
@@ -57,15 +59,17 @@ and some Packages , you can download them from here :-
 
 #### If you are patient.. 
 
-> Regestration >> login >> patient page.
+> Registration >> login >> patient page.
 
 > patient have many features :-
-> 1. have an own profile that he can edite it.
-> 2. have a followed Doctors list and see his schedules.
+> 1. have his own profile that he can edit it.
+> 2. have his followed Doctors list and see Their schedules.
 > 3. he can view different services offered by the hospital. 
 > 4. he can book with any doctor from any department.
 > 5. He can book any required tests through the site.
 > 6. he can pay online or offline.
+> 7. he can view his profile and edit it.
+> 7. he can book a surgery online. 
 
 
 #### If you are Doctor
