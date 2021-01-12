@@ -12,6 +12,8 @@ CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Stud
 
 Our project is a hospital site that can be used by all segments of society and can help patients to book and Doctors to do their Job.
 </div>
+
+
 ## Table of Contents
 
 1. [General Information](#general-information)
@@ -40,10 +42,13 @@ As we have many services through the site that make the patient not need to go a
 
 ## SetUp
 
- TO RUN THIS PROJECT YOU NEED TO :
- First: YOU NEED TO INSTALL VISUAL STUDIO COMMUNITY From here >>[link](https://visualstudio.microsoft.com/vs/community/)
- Second: Create New Project And Insert Our Folders .
- Third: INSTALL PACKAGES FROM HERE:
+TO RUN THIS PROJECT YOU NEED TO :
+### First:
+YOU NEED TO INSTALL VISUAL STUDIO COMMUNITY From here >>[link](https://visualstudio.microsoft.com/vs/community/)
+### Second:
+Create New Project And Insert Our Folders .
+### Third:
+INSTALL PACKAGES FROM HERE:
 
 1. [BCrypt.Net-Next(4.0.2)](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
 2. [Microsoft.EntityFrameworkCore(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/5.0.1?_src=template)
