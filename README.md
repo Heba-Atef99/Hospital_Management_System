@@ -4,9 +4,9 @@ CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Stud
 
 
 <div align="center">
-<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350">
-
-
+<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350">  
+  
+  
 ![GitHub language count](https://img.shields.io/github/languages/count/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
 ![GitHub contributors](https://img.shields.io/github/contributors/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
 ![GitHub top language](https://img.shields.io/github/languages/top/Heba-Atef99/Hospital_Management_System?color=%2300)
