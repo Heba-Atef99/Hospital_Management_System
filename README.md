@@ -67,35 +67,41 @@ INSTALL PACKAGES FROM HERE:
 
 > Registration >> login >> patient page.
 
-> patient have many features :-
-> 1. have his own profile that he can edit it.
+> patient has many features :-
+> 1. Register On The System.
 > 2. have his followed Doctors list .
 > 3. See his Doctor's Schedule.
-> 4. he can book with any doctor from any department.
+> 4. he can book an appointment with any doctor from any department.
 > 5. He can book any required tests through the site.
 > 6. he can pay online or offline.
 > 7. he can book a surgery online. 
 > 8. he can view different services offered by the hospital. 
+> 9. View his own profile and he can edit it.
 
 
 #### If you are Doctor
 
 > Regestration >> login >> Doctor page.
 
-> 1. Add their professional information.
+> Doctor has many features :-
+> 1. Register On The System.
 > 2. Add/edit their schedules.
 > 3. Find their patients and view/edit/add their medical records.
 > 4. Transfer patient to another doctor or another hospital.
 > 5. Collect statistics regarding his patients.
+> 6. Add their professional information.
 
 #### If you are Front-Desk..
 
 > Regestration >> login >> Doctor page.
 
-> 1. Check availability of rooms/beds.
+> Front-Desk has many features :-
+> 1. Register On The System.
 > 2. Allocate room/bed to a patient.
 > 3. Transform a patient from one ward to another.
-> 4. Other Services
+> 4. Check availability of rooms/beds.
+> 5. Other Services
+
 
 #### Donation
 
