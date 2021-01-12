@@ -1,5 +1,5 @@
 # Hospital_Management_System
-CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Students ,Where Students Could Apply Software Engineering concepts on a real life project that can help any Hospital. 
+CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Students ,Where Students Could Apply Software Engineering concepts on a real life project that can help any Hospital. Our Website can help patient to book Online appointments and tests,help Doctors do their Job and manage their records and help front desk . 
 
 
 
@@ -58,7 +58,9 @@ TO RUN THIS PROJECT YOU NEED TO :
 
 * [Patient](#if-you-are-patient)
 * [Doctor](#if-you-are-Doctor)
+* [Lab](#if-you-are-Lab)
 * [Front-Desk](#if-you-are-front-desk)
+* [Donation](#Donation)
 
 #### If you are patient.. 
 
