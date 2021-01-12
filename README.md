@@ -43,11 +43,11 @@ As we have many services through the site that make the patient not need to go a
 ## SetUp
 
 TO RUN THIS PROJECT YOU NEED TO :
-### First:
+##### First:
 YOU NEED TO INSTALL VISUAL STUDIO COMMUNITY From here >>[link](https://visualstudio.microsoft.com/vs/community/)
-### Second:
+##### Second:
 Create New Project And Insert Our Folders .
-### Third:
+##### Third:
 INSTALL PACKAGES FROM HERE:
 
 1. [BCrypt.Net-Next(4.0.2)](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
@@ -77,7 +77,8 @@ INSTALL PACKAGES FROM HERE:
 > 7. he can book a surgery online. 
 > 8. he can view different services offered by the hospital. 
 > 9. View his own profile and he can edit it.
-> 10. he can add his medical record.
+> 10. show his progress Details.
+> 11. he can add his medical record.
 
 
 #### If you are Doctor
