@@ -69,13 +69,13 @@ INSTALL PACKAGES FROM HERE:
 
 > patient have many features :-
 > 1. have his own profile that he can edit it.
-> 2. have his followed Doctors list and see Their schedules.
-> 3. he can view different services offered by the hospital. 
+> 2. have his followed Doctors list .
+> 3. See his Doctor's Schedule.
 > 4. he can book with any doctor from any department.
 > 5. He can book any required tests through the site.
 > 6. he can pay online or offline.
-> 7. he can view his profile and edit it.
 > 7. he can book a surgery online. 
+> 8. he can view different services offered by the hospital. 
 
 
 #### If you are Doctor
@@ -99,9 +99,9 @@ INSTALL PACKAGES FROM HERE:
 
 #### Donation
 
-> you can donat to our hospital and supporting us by this form >>[link](https://localhost:44359/Home/Donation)
+> you can donate to our hospital to support us and help our patients to recover.
 
 ## Sources
 
-We used This site to learn the programming language c# & Asp.net core Mvc >> [pluralsight](https://www.pluralsight.com/product/skills?utm_term=&aid=7010a000002LZ5aAAG&promo=&utm_source=branded&utm_medium=digital_paid_search_google&utm_campaign=XYZ_EMEA_Brand_E&utm_content=&gclid=CjwKCAiAi_D_BRApEiwASslbJ5k_uQ3dLDGo8P3FI9k4gZ97Op_P2QeFmPjeoO6Sff10pPYIxMTSrBoCTrwQAvD_BwE)
+We used [pluralsight](https://www.pluralsight.com/product/skills?utm_term=&aid=7010a000002LZ5aAAG&promo=&utm_source=branded&utm_medium=digital_paid_search_google&utm_campaign=XYZ_EMEA_Brand_E&utm_content=&gclid=CjwKCAiAi_D_BRApEiwASslbJ5k_uQ3dLDGo8P3FI9k4gZ97Op_P2QeFmPjeoO6Sff10pPYIxMTSrBoCTrwQAvD_BwE) to learn the programming language c# & Asp.net core Mvc .
 
