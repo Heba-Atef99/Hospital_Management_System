@@ -31,11 +31,17 @@ namespace Ain_Shams_University.Controllers
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int patiant_Id = _HDB.Patients.Where(o => o.Registration_Id == Patient_Reg_Id).Select(i => i.Id).SingleOrDefault();
+
             return View(_HDB.Patients.Find(patiant_Id));
         }
 
         public IActionResult Edit(int id =0)
         {
+            int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
+            int patiant_Id = _HDB.Patients.Where(o => o.Registration_Id == Patient_Reg_Id).Select(i => i.Id).SingleOrDefault();
+            ViewBag.pr = _HDB.Patients.Where(p => p.Id == patiant_Id).Select(d => d.Health_Progress).SingleOrDefault();
+            var hospital_id = _HDB.Patients.Where(p => p.Id == patiant_Id).Select(d => d.Hospital_Id).SingleOrDefault();
+            ViewBag.hos = _HDB.Transfer_Hospitals.Where(e => e.Id == hospital_id).Select(r => r.Name).SingleOrDefault();
             Patient pa = _HDB.Patients.Find(id);
             if (pa == null)
             {

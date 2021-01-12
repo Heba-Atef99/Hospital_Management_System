@@ -305,10 +305,14 @@ namespace Ain_Shams_Hospital.Controllers
         {
             int fup_Id = (int)HttpContext.Session.GetInt32("Followup_Id");
             int fuph_Id = (int)HttpContext.Session.GetInt32("Fuph_Id");
-            Follow_Up_History fh = new Follow_Up_History { Follow_Up_Id = fup_Id, Date = pt.DateEdite + "T" + pt.Hour, Id = fuph_Id };
-            /*fh.Date = pt.DateEdite;*/
-            _HDB.Follow_Ups_History.Update(fh);
+
+            Follow_Up_History p;
+            p = _HDB.Follow_Ups_History.FirstOrDefault(s => s.Id == fuph_Id);
+            p.Date = pt.DateEdite + "T" + pt.Hour;
+            _HDB.Update(p);
             _HDB.SaveChanges();
+
+            
             return RedirectToAction("FollowedDoctors", "Patient");
         }
         public IActionResult DoctorSchedules()
