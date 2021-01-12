@@ -162,6 +162,12 @@ namespace Ain_Shams_Hospital.Controllers
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
 
+            Patient p;
+            p = _HDB.Patients.FirstOrDefault(s => s.Id == Patient_Id);
+            p.Medical_Record = doc.MedicalRecord;
+            _HDB.Update(p);
+            _HDB.SaveChanges();
+
             Follow_Up fup = new Follow_Up();
             fup.Patient_Id = Patient_Id;
             fup.Staff_Id = doc.Id;
@@ -211,6 +217,12 @@ namespace Ain_Shams_Hospital.Controllers
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
             int Patient_Id = _HDB.Patients.Where(f => f.Registration_Id == Patient_Reg_Id).Select(h => h.Id).SingleOrDefault();
 
+            Patient p;
+            p = _HDB.Patients.FirstOrDefault(s => s.Id == Patient_Id);
+            p.Medical_Record = bd.MedicalRecord;
+            _HDB.Update(p);
+            _HDB.SaveChanges();
+
             Follow_Up fup = new Follow_Up();
             fup.Patient_Id = Patient_Id;
             fup.Staff_Id = bd.Id;
@@ -242,13 +254,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Services(servicesVM s)
-        {
-            return RedirectToAction("Payment", "Patient");
 
-        }
         public IActionResult FollowedDoctors()
         {
             int Patient_Reg_Id = (int)HttpContext.Session.GetInt32("User_Reg_Id");
