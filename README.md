@@ -59,7 +59,8 @@ TO RUN THIS PROJECT YOU NEED TO :
 5. [Microsoft.AspNetCore.Session(2.2.0)](https://www.nuget.org/packages/Microsoft.AspNetCore.Session/)
 6. [Microsoft.VisualStudio.Web.CodeGeneration.Design(3.1.4)](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4?_src=template)
 
-##### Fourth: you need to write this command in the terminal   dotnet ef database update   to create the Hospital DB Database
+##### Fourth: you need to write this command in the terminal to create the Hospital DB Database 
+` dotnet ef database update  `
 ##### Fifth: you need to publish our database HospitalDb.dacpac file in the Final_DB Folder by right click on the created Hospital DB in SQL Server Object Explorer then Publish Data_tier Application
 
 
