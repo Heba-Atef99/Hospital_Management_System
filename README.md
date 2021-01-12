@@ -1,13 +1,14 @@
 # Hospital_Management_System
-CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams 
+CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Students ,Where Students Could Apply Software Engineering concepts on a real life project that can help any Hospital. 
 
-
+<div align="center">
 <img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350">
-
+<div>
 
 [Ain Shams Hospital](https://github.com/Heba-Atef99/Hospital_Management_System) 
 
 ![Mozilla Add-on](https://img.shields.io/amo/stars/rate?style=flat-square)
+![Rating](https://img.shields.io/open-vsx/stars/rate?style=flat-square)
 # Ain Shams Hospital
 Our project is a hospital site that can be used by all segments of society.
 
@@ -41,12 +42,12 @@ As we have many services through the site that make the patient not need to go a
 
 To run this project, you nead to install Visual studio 2019
 and some Packages , you can download them from here :-
-1. [BCrypt.Net-Next](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
-2. [Microsoft.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/5.0.1?_src=template)
-3. [Microsoft.EntityFrameworkCore.Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/5.0.1?_src=template)
-4. [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/5.0.1?_src=template)
-5. [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/5.0.1?_src=template)
-6. [Microsoft.VisualStudio.Web.CodeGeneration.Design](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4?_src=template)
+1. [BCrypt.Net-Next(4.0.2)](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
+2. [Microsoft.EntityFrameworkCore(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/5.0.1?_src=template)
+3. [Microsoft.EntityFrameworkCore.Design(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/5.0.1?_src=template)
+4. [Microsoft.EntityFrameworkCore.SqlServer(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/5.0.1?_src=template)
+5. [Microsoft.AspNetCore.Session(2.2.0)](https://www.nuget.org/packages/Microsoft.AspNetCore.Session/)
+6. [Microsoft.VisualStudio.Web.CodeGeneration.Design(3.1.4)](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4?_src=template)
 
 ## Features
 
@@ -92,5 +93,5 @@ and some Packages , you can download them from here :-
 
 ## Sources
 
-This site we used to learn the programming language Asp.net core Mvc >> [pluralsight](https://www.pluralsight.com/product/skills?utm_term=&aid=7010a000002LZ5aAAG&promo=&utm_source=branded&utm_medium=digital_paid_search_google&utm_campaign=XYZ_EMEA_Brand_E&utm_content=&gclid=CjwKCAiAi_D_BRApEiwASslbJ5k_uQ3dLDGo8P3FI9k4gZ97Op_P2QeFmPjeoO6Sff10pPYIxMTSrBoCTrwQAvD_BwE)
+We used This site to learn the programming language c# & Asp.net core Mvc >> [pluralsight](https://www.pluralsight.com/product/skills?utm_term=&aid=7010a000002LZ5aAAG&promo=&utm_source=branded&utm_medium=digital_paid_search_google&utm_campaign=XYZ_EMEA_Brand_E&utm_content=&gclid=CjwKCAiAi_D_BRApEiwASslbJ5k_uQ3dLDGo8P3FI9k4gZ97Op_P2QeFmPjeoO6Sff10pPYIxMTSrBoCTrwQAvD_BwE)
 
