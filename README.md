@@ -4,9 +4,8 @@ CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Stud
 
 
 <div align="center">
-<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350">  
-&nbsp;
-&nbsp;
+<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350" >
+  
   
 ![GitHub language count](https://img.shields.io/github/languages/count/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
 ![GitHub contributors](https://img.shields.io/github/contributors/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
@@ -18,7 +17,7 @@ Our project is a hospital site that can be used by all segments of society and c
   
 ## Contribution
 
-<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/contribution.PNG" width="300" height="52" margin-bottom="40">
+<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/contribution.PNG" width="325" height="56" margin-bottom="40">
 
 ## Table of Contents
 
@@ -49,7 +48,7 @@ As we have many services through the site that make the patient not need to go a
 ## SetUp
 
 TO RUN THIS PROJECT YOU NEED TO :
-##### First: You Need To Install visual studio community From here >>[link](https://visualstudio.microsoft.com/vs/community/)
+##### First: You Need To Install visual studio community From here >>[link](https://visualstudio.microsoft.com/vs/community/) and you need to install asp packages
 ##### Second: Create New Project and choose asp.net core web application And Insert Our Folders On Your New Project Directory.
 ##### Third: INSTALL PACKAGES FROM HERE:
 
@@ -61,7 +60,7 @@ TO RUN THIS PROJECT YOU NEED TO :
 6. [Microsoft.VisualStudio.Web.CodeGeneration.Design(3.1.4)](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4?_src=template)
 
 ##### Fourth: you need to write this command in the terminal   dotnet ef database update   to create the Hospital DB Database
-##### Fifth: you need to publish our database attached file by right click on the created Hospital DB in SQL Server Object Explorer
+##### Fifth: you need to publish our database HospitalDb.dacpac file in the Final_DB Folder by right click on the created Hospital DB in SQL Server Object Explorer then Publish Data_tier Application
 
 
 ## Features
