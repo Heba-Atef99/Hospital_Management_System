@@ -193,6 +193,18 @@ namespace Ain_Shams_Hospital.Controllers
                    .Select(s => s.Id).Single();
                 var regestrationId = _auc.Staff.Where(f => f.Name == vm.StaffName)
                    .Select(s => s.Registration_Id).Single();
+                var followupid = _auc.Follow_Ups.Where(f => f.Staff_Id == StaffName)
+                   .Select(s => s.Id).ToList();
+                foreach (var x in followupid)
+                {
+                    var followuphistory = _auc.Follow_Ups_History.Where(f => f.Follow_Up_Id == x)
+                   .Select(s => s.Id).Single();
+                    var model2 = _auc.Follow_Ups_History.Find(followuphistory);
+                    _auc.Remove(model2);
+
+                    var model3 = _auc.Follow_Ups.Find(x);
+                    _auc.Remove(model3);
+                }
                 var model1 = _auc.Registrations.Find(regestrationId);
                 var model = _auc.Staff.Find(StaffName);
                 _auc.Remove(model);

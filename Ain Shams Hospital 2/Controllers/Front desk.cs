@@ -50,34 +50,53 @@ namespace Ain_Shams_Hospital.Controllers
         [HttpPost]
         public IActionResult Delete(delete vm,checkVM ch)
         {
-            Facility_Reservation FR = new Facility_Reservation();
-            var PatientName = _asu.Patients.Where(f => f.Name == vm.PatientName)
-               .Select(s => s.Id).Single();
-            //var RoomID = _asu.Facility_Reservations.Where(f => f.Patient_Id == PatientName)
-            //.OrderByDescending(d=>d);
-            var h = _asu.Facility_Reservations.Where(f => f.Patient_Id == PatientName)
-                .Select(s=>new Facility_Reservation{ Id=s.Id ,Staff_Id=s.Staff_Id})
-                .OrderByDescending(s=>s.Id)
-             .FirstOrDefault();
-            String ROOMName = HttpContext.Session.GetString("Roomname");
-            String start = HttpContext.Session.GetString("START");
-            String end = HttpContext.Session.GetString("END");
-            var HID = _asu.Hospital_Facilities.Where(f => f.Type == ROOMName).Select(s => s.Id).Single();
-            FR.Start_Hour = start;  //ob.From;
-            FR.End_Hour = end;
-            FR.Hospital_Facility_Id = HID;
-            //FR.Hospital_Facility_Id =no ;
-            FR.Patient_Id = PatientName;
-            FR.Staff_Id = h.Staff_Id;
-            _asu.Add(FR);
-            _asu.SaveChanges();
-            int x = h.Id;
-            var model = _asu.Facility_Reservations.Find(x);
-            _asu.Remove(model);
-            _asu.SaveChanges();
-            ViewBag.UserMessage3 = "Patient is transferred successfully";
+            var NameExist = _asu.Patients.ToList().Any(u => u.Name == vm.PatientName);
+            if (NameExist)
+            {
+                Facility_Reservation FR = new Facility_Reservation();
 
-            return View();
+                var PatientName = _asu.Patients.Where(f => f.Name == vm.PatientName)
+                   .Select(s => s.Id).Single();
+                var NameExistreservation = _asu.Facility_Reservations.ToList().Any(u => u.Patient_Id == PatientName);
+                //var RoomID = _asu.Facility_Reservations.Where(f => f.Patient_Id == PatientName)
+                //.OrderByDescending(d=>d);
+                if (NameExistreservation)
+                {
+                    var h = _asu.Facility_Reservations.Where(f => f.Patient_Id == PatientName)
+                        .Select(s => new Facility_Reservation { Id = s.Id, Staff_Id = s.Staff_Id })
+                        .OrderByDescending(s => s.Id)
+                     .FirstOrDefault();
+                    String ROOMName = HttpContext.Session.GetString("Roomname");
+                    String start = HttpContext.Session.GetString("START");
+                    String end = HttpContext.Session.GetString("END");
+                    var HID = _asu.Hospital_Facilities.Where(f => f.Type == ROOMName).Select(s => s.Id).Single();
+                    FR.Start_Hour = start;  //ob.From;
+                    FR.End_Hour = end;
+                    FR.Hospital_Facility_Id = HID;
+                    //FR.Hospital_Facility_Id =no ;
+                    FR.Patient_Id = PatientName;
+                    FR.Staff_Id = h.Staff_Id;
+                    _asu.Add(FR);
+                    _asu.SaveChanges();
+                    int x = h.Id;
+                    var model = _asu.Facility_Reservations.Find(x);
+                    _asu.Remove(model);
+                    _asu.SaveChanges();
+                    ViewBag.UserMessage3 = "Patient is transferred successfully";
+
+                    return View();
+                }
+                else
+                {
+                    ViewBag.fail = "This Patient doesnt have a reservation";
+                    return View();
+                }
+            }
+            else
+            {
+                ViewBag.fail = "This Patient doesnt have a reservation";
+                return View();
+            }
         }
         [HttpGet]
         public IActionResult Event()
