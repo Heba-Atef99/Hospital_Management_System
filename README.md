@@ -4,21 +4,20 @@ CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Stud
 
 
 <div align="center">
-<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350" margin-bottom="40">
-<br />
+<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350">
+
 
 ![GitHub language count](https://img.shields.io/github/languages/count/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
 ![GitHub contributors](https://img.shields.io/github/contributors/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
 ![GitHub top language](https://img.shields.io/github/languages/top/Heba-Atef99/Hospital_Management_System?color=%2300)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Heba-Atef99/Hospital_Management_System?color=%230000ff)
 
 
 Our project is a hospital site that can be used by all segments of society and can help patients to book and Doctors to do their Job.
-</div>
-
+</div>  
+  
 ## Contribution
 
-<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/contribution.PNG" width="280" height="50" margin-bottom="40">
+<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/contribution.PNG" width="300" height="52" margin-bottom="40">
 
 ## Table of Contents
 
