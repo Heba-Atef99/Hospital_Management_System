@@ -9,8 +9,7 @@ CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Stud
 [Ain Shams Hospital](https://github.com/Heba-Atef99/Hospital_Management_System) 
 
 ![Mozilla Add-on](https://img.shields.io/amo/stars/rate?style=flat-square)
-![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)
-## Ain Shams Hospital
+
 Our project is a hospital site that can be used by all segments of society and can help patients to book and Doctors to do their Job.
 </div>
 ## Table of Contents
@@ -41,10 +40,10 @@ As we have many services through the site that make the patient not need to go a
 
 ## SetUp
 
-### TO RUN THIS PROJECT YOU NEED TO :
-### First: YOU NEED TO INSTALL VISUAL STUDIO COMMUNITY From here >>[link](https://visualstudio.microsoft.com/vs/community/)
-### Second: Create New Project And Insert Our Folders .
-### Third: INSTALL PACKAGES FROM HERE:
+ TO RUN THIS PROJECT YOU NEED TO :
+ First: YOU NEED TO INSTALL VISUAL STUDIO COMMUNITY From here >>[link](https://visualstudio.microsoft.com/vs/community/)
+ Second: Create New Project And Insert Our Folders .
+ Third: INSTALL PACKAGES FROM HERE:
 
 1. [BCrypt.Net-Next(4.0.2)](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
 2. [Microsoft.EntityFrameworkCore(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/5.0.1?_src=template)
