@@ -4,15 +4,21 @@ CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Stud
 
 
 <div align="center">
-<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350">
+<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350" margin-bottom="40">
 
 
+![GitHub language count](https://img.shields.io/github/languages/count/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
+![GitHub contributors](https://img.shields.io/github/contributors/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
+![GitHub top language](https://img.shields.io/github/languages/top/Heba-Atef99/Hospital_Management_System?color=%2300)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/Heba-Atef99/Hospital_Management_System?color=%230000ff)
 
-![Mozilla Add-on](https://img.shields.io/amo/stars/rate?style=flat-square)
 
 Our project is a hospital site that can be used by all segments of society and can help patients to book and Doctors to do their Job.
 </div>
 
+## Contribution
+
+<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/contribution.PNG" width="350" height="100" margin-bottom="40">
 
 ## Table of Contents
 
@@ -44,7 +50,7 @@ As we have many services through the site that make the patient not need to go a
 
 TO RUN THIS PROJECT YOU NEED TO :
 ##### First: You Need To Install visual studio community From here >>[link](https://visualstudio.microsoft.com/vs/community/)
-##### Second: Create New Project And Insert Our Folders .
+##### Second: Create New Project and choose asp.net core web application And Insert Our Folders On Your New Project Directory.
 ##### Third: INSTALL PACKAGES FROM HERE:
 
 1. [BCrypt.Net-Next(4.0.2)](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
@@ -53,6 +59,10 @@ TO RUN THIS PROJECT YOU NEED TO :
 4. [Microsoft.EntityFrameworkCore.SqlServer(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/5.0.1?_src=template)
 5. [Microsoft.AspNetCore.Session(2.2.0)](https://www.nuget.org/packages/Microsoft.AspNetCore.Session/)
 6. [Microsoft.VisualStudio.Web.CodeGeneration.Design(3.1.4)](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4?_src=template)
+
+##### Fourth: you need to write this command in the terminal   dotnet ef database update   to create the Hospital DB Database
+##### Fifth: you need to publish our database attached file by right click on the created Hospital DB in SQL Server Object Explorer
+
 
 ## Features
 
