@@ -2,11 +2,11 @@
 CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Students ,Where Students Could Apply Software Engineering concepts on a real life project that can help any Hospital. 
 
 
+
 <div align="center">
 <img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350">
 
 
-[Ain Shams Hospital](https://github.com/Heba-Atef99/Hospital_Management_System) 
 
 ![Mozilla Add-on](https://img.shields.io/amo/stars/rate?style=flat-square)
 
@@ -43,12 +43,9 @@ As we have many services through the site that make the patient not need to go a
 ## SetUp
 
 TO RUN THIS PROJECT YOU NEED TO :
-##### First:
-YOU NEED TO INSTALL VISUAL STUDIO COMMUNITY From here >>[link](https://visualstudio.microsoft.com/vs/community/)
-##### Second:
-Create New Project And Insert Our Folders .
-##### Third:
-INSTALL PACKAGES FROM HERE:
+##### First: You Need To Install visual studio community From here >>[link](https://visualstudio.microsoft.com/vs/community/)
+##### Second: Create New Project And Insert Our Folders .
+##### Third: INSTALL PACKAGES FROM HERE:
 
 1. [BCrypt.Net-Next(4.0.2)](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
 2. [Microsoft.EntityFrameworkCore(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/5.0.1?_src=template)
@@ -69,16 +66,18 @@ INSTALL PACKAGES FROM HERE:
 
 > patient has many features :-
 > 1. Register On The System.
-> 2. have his followed Doctors list .
+> 2. View his followed Doctors list .
 > 3. See his Doctor's Schedule.
 > 4. he can book an appointment with any doctor from any department.
 > 5. He can book any required tests through the site.
-> 6. he can pay online or offline.
-> 7. he can book a surgery online. 
+> 6. he can pay online using Valid Credit Card.
+> 7. he can pay Offline and see the total cost.
 > 8. he can view different services offered by the hospital. 
-> 9. View his own profile and he can edit it.
+> 9. View his profile and he can edit it.
 > 10. show his progress Details.
-> 11. he can add his medical record.
+> 11. show his Hospital Details.
+> 12. he can add his medical record.
+> 13. he can book a surgery online. 
 
 
 #### If you are Doctor
@@ -93,6 +92,8 @@ INSTALL PACKAGES FROM HERE:
 > 5. Collect statistics regarding his patients.
 > 6. Add their professional information.
 > 7. For Emergency : Show beds and blood units.
+> 8. Search For Patients.
+> 9. Sort by Date and Status.  
 
 #### If you are Lab
 
@@ -126,5 +127,5 @@ INSTALL PACKAGES FROM HERE:
 
 ## Sources
 
-We used [pluralsight](https://www.pluralsight.com/product/skills?utm_term=&aid=7010a000002LZ5aAAG&promo=&utm_source=branded&utm_medium=digital_paid_search_google&utm_campaign=XYZ_EMEA_Brand_E&utm_content=&gclid=CjwKCAiAi_D_BRApEiwASslbJ5k_uQ3dLDGo8P3FI9k4gZ97Op_P2QeFmPjeoO6Sff10pPYIxMTSrBoCTrwQAvD_BwE) to learn the programming language c# & Asp.net core Mvc .
+We used [pluralsight](https://www.pluralsight.com/product/skills?utm_term=&aid=7010a000002LZ5aAAG&promo=&utm_source=branded&utm_medium=digital_paid_search_google&utm_campaign=XYZ_EMEA_Brand_E&utm_content=&gclid=CjwKCAiAi_D_BRApEiwASslbJ5k_uQ3dLDGo8P3FI9k4gZ97Op_P2QeFmPjeoO6Sff10pPYIxMTSrBoCTrwQAvD_BwE) to learn c# & Asp.net core Mvc .
 
