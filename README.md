@@ -77,6 +77,7 @@ INSTALL PACKAGES FROM HERE:
 > 7. he can book a surgery online. 
 > 8. he can view different services offered by the hospital. 
 > 9. View his own profile and he can edit it.
+> 10. he can add his medical record.
 
 
 #### If you are Doctor
@@ -86,7 +87,20 @@ INSTALL PACKAGES FROM HERE:
 > Doctor has many features :-
 > 1. Register On The System.
 > 2. Add/edit their schedules.
-> 3. Find their patients and view/edit/add their medical records.
+> 3. Find their patients and view/edit/add their medical records , health progress and status.
+> 4. Transfer patient to another doctor or another hospital.
+> 5. Collect statistics regarding his patients.
+> 6. Add their professional information.
+> 7. For Emergency : Show beds and blood units.
+
+#### If you are Lab
+
+> Regestration >> login >> Doctor page.
+
+> Doctor has many features :-
+> 1. Register On The System.
+> 2. Add/edit their schedules.
+> 3. Find their patients and view/edit/add their medical records , health progress and status.
 > 4. Transfer patient to another doctor or another hospital.
 > 5. Collect statistics regarding his patients.
 > 6. Add their professional information.
@@ -100,7 +114,9 @@ INSTALL PACKAGES FROM HERE:
 > 2. Allocate room/bed to a patient.
 > 3. Transform a patient from one ward to another.
 > 4. Check availability of rooms/beds.
-> 5. Other Services
+> 5. Search for patient room.
+> 6. Cancel The Surgery.
+> 7. Show All rooms information.
 
 
 #### Donation
