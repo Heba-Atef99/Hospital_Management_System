@@ -61,8 +61,7 @@ TO RUN THIS PROJECT YOU NEED TO :
 
 ##### Fourth: you need to write the following command in your terminal to create the HospitalDB Database 
 ``` 
-        dotnet ef database update  
-
+   dotnet ef database update  
 ```
 ##### Fifth: you need to publish our database HospitalDb.dacpac file in the Final_DB Folder by right click on the created Hospital DB in SQL Server Object Explorer then Publish Data_tier Application and choose our database file
 
