@@ -313,7 +313,7 @@ namespace Ain_Shams_Hospital.Controllers
             int patient_id = (int)_auc.Follow_Ups.Where(d => d.Id == Follow_up_Id)
                                             .Select(d => d.Patient_Id)
                                             .Single();
-            var m = _auc.Follow_Ups.Where(i => i.Patient_Id == patient_id).Select(c => c.Id).Single();
+            var m = Follow_up_Id;
             var entity = _auc.Follow_Ups.FirstOrDefault(s => s.Id == m);
             var followHistory = _auc.Follow_Ups_History.FirstOrDefault(n => n.Follow_Up_Id == m);
             if (entity != null)
