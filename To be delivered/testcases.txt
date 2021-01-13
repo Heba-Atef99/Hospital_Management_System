@@ -24,12 +24,18 @@ Testing For Doctor:
 
 _________________________________________________________________________________
 
-Testing For Lab: 
+Testing For Blood bank lab: 
 
-1)Register as a lab specialist and change patient status  
-2)Sort Patients By Date ascending 
-3) Search for a certain patient 
-4) add blood units  
+1) Update the amount of any blood type
+2) Add new blood unit
+3) Delete blood unit  
+
+_________________________________________________________________________________
+Testing For Radiology Lab and lab:  
+
+1)Register as a lab specialist and update lab request's status  
+2) Sort requests by (date - status - follow up type) (ascending or descending)
+3) Search for a certain request
 
 _________________________________________________________________________________
 
