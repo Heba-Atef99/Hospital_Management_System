@@ -1,0 +1,49 @@
+﻿@page
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>Blood_Unit</h1>
+        <br />
+        <table class="table bg-light">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Type : </th>
+                    <th>Amount : </th>
+                </tr>
+            </thead>
+
+            @foreach (var p in ViewBag.Blood_Units)
+            {
+                <tr>
+
+                    <th>@p.Type</th>
+                    <th>@p.Amount</th>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h1>Emergency bed</h1>
+        <br />
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Type : </th>
+                    <th>Available : </th>
+                    <th>Start_Working : </th>
+                    <th>End_Working : </th>
+                </tr>
+            </thead>
+
+            @foreach (var n in ViewBag.Hospital_Facility)
+            {
+                <tr>
+                    <th>@n.Type</th>
+                    <th>@n.Available</th>
+                    <th>@n.Start_Working_Hour</th>
+                    <th>@n.End_Working_Hour</th>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

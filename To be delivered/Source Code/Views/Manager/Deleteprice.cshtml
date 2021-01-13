@@ -1,0 +1,34 @@
+﻿@model AinShamsHospital.ViewModels.AddPrice
+
+@{
+    ViewData["Title"] = "Deleteprice";
+    Layout = "~/Views/Manager_Layout.cshtml";
+}
+
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Deleteprice">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ServiceName" class="control-label"></label>
+                <input asp-for="ServiceName" class="form-control" />
+                <span asp-validation-for="ServiceName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Delete Service" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<h6 style="color:#229130">@ViewBag.Success</h6>
+<h6 style="color:#ff0000">@ViewBag.Fail</h6>
+<div>
+    <a asp-action="ViewPrices">Back to Service List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

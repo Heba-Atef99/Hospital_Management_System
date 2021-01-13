@@ -1,0 +1,44 @@
+﻿@model Ain_Shams_Hospital.ViewModels.DoctorVM.ProfileVM
+@{
+    //ViewData["Title"] = "Profile";
+    var info = ViewBag.info;
+    var specialization = ViewBag.specialization;
+    var firstName = ViewBag.firstName;
+    var email = ViewBag.email;
+
+}
+
+<h1>Profile</h1>
+
+<form asp-action="Profile" method="post">
+    <div class="row">
+
+        <div class="card col-md-6 mx-2 mb-3 p-0 border-primary">
+            <div class="card-body">
+
+                @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+                @foreach (var a in info)
+                {
+                    <h1 class="card-title text-center text-danger">Hi DR. @firstName </h1>
+                    <br />
+                    <h5> <label> Full name:</label> <input class="form-control" asp-for ="Name" value="@a.Name" /></h5>
+                    <h5> <label>Phone number:</label> <input class="form-control" asp-for="Phone" value="@a.Phone" /></h5>
+                    <h5> <label> You work in our hospital since:</label><input class="form-control" asp-for="startDay" value="@a.Starting_Day" /> </h5>
+                }
+                
+                    <h5> <label> Email:</label> <input class="form-control" asp-for="email" value="@email"/></h5>
+                
+                @foreach (var b in specialization)
+                {<h5> <label> Your specialization is:</label> @b.Name</h5>}
+
+
+            </div>
+            <div class="form-group text-center">
+                <p>If you want to save any changes to your personal data click on save changes</p>
+                <br />
+                <input type="submit" value="Save changes" class="btn btn-primary" />
+            </div>
+        </div>
+
+    </div>
+</form>

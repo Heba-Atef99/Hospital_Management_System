@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    Layout = "~/Views/Front_Layout.cshtml";
+}
+
+<section class="container">
+    <form asp-action="Event">
+        
+        <div class="row">
+
+            @foreach (var fp in ViewBag.h)
+            {
+                <div class="card col-md-3 mx-2 mb-3 p-0">
+                    <div class="card-body">
+                        <h4 class="card-title text-danger "> @fp.Type  </h4>
+                        <button name="Room_Id" value="@fp.Type" type="submit" class="stretched-link "></button>
+                    </div>
+                </div>
+            }
+        </div>
+       
+    </form>
+</section>

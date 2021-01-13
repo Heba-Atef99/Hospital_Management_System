@@ -1,0 +1,39 @@
+﻿@model Ain_Shams_University.ViewModels.SelectLabVM
+
+@{
+    ViewData["Title"] = "SelectLab";
+    Layout = "_PatientLayout";
+}
+
+<div class="container mt-5 text-center">
+
+    <h1 class="mt-5">Hello! <span style="font-size :34px;" class="text-danger">@ViewBag.patientname</span></h1>
+    <h2>Select Which Lab You Are Looking For</h2>
+
+
+    <hr />
+    <div class="row">
+        <div class="col-md-6" style="margin:auto;">
+            <form asp-action="SelectLab">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group mt-3 mb-5">
+                    <label asp-for="LabSpecialization" for="selectdoctors" class="mb-5">Choose A Lab Type</label>
+                    <select class="form-control" id="disablefirst" asp-for="Id" asp-items="@(new SelectList(@ViewBag.massege ,"Id","Name"))">
+                    </select>
+                </div>
+
+                <div class="form-group mt-5">
+                    <input type="submit" value="Next" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Home">Back</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+</div>

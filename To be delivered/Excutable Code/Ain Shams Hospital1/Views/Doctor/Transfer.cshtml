@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{ ViewBag.Title = "Transfer";
+}
+
+@*<h2 class="text-center"> Transfer this patient to:</h2>*@
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4">
+              <h2 class="text-center">Transfer this patient to: </h2>
+              <form class="card card-body">
+                  
+                  @*<input class="btn btn-dark w-auto text-center" type="submit" value="" />*@
+                  <a class="btn btn-success" href="AnotherDepartment" role="button">Another department</a>
+                  <hr />
+                  @*<input class="btn btn-success" type="submit" value="Create New Account" />*@
+                  <a class="btn btn-success" href="AnotherHospital" role="button">Another hospital</a>
+              </form>
+          </div>
+      </div>
+  </div>
