@@ -64,12 +64,12 @@
             <div class="accept-policy">
                 <input href="Patient/savepay" value="$@ViewBag.massage" class="btn btn-block btn-success submit-button" type="submit">
             </div>
-
+            <div class="accept-policy">
+                <a asp-action="Home">Back</a>
+            </div>
         </form>
-        <div class="card card-body">
-            <input class="btn btn-block btn-success submit-button" href="/Home" role="button" value="Back"> 
-        </div>
     </div>
+    
     @section Scripts {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     }
