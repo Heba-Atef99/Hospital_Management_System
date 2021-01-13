@@ -63,7 +63,9 @@ TO RUN THIS PROJECT YOU NEED TO :
 ``` 
    dotnet ef database update  
 ```
-##### Fifth: you need to publish our database HospitalDb.dacpac file in the Final_DB Folder by right click on the created Hospital DB in SQL Server Object Explorer then Publish Data_tier Application and choose our database file
+##### Fifth: you need to publish our database HospitalDb.dacpac file in the Database Folder 
+click on view >> open Sql Server Object Explorer >> open (localdb)\ProjectsV13 >> open Databases >>
+by right click on the created HospitalDb >> Publish Data_tier Application >> choose our database file (Hospital_Db.dacpac)
 
 
 ## Features
