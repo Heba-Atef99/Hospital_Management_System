@@ -41,9 +41,29 @@ ________________________________________________________________________________
 
 Testing For Front-Desk:
 
-1) Show the bill of the patient in finance 
-2) Finance collects the outcome for the hospital during a certain period. 
-3) View front desk profile 
-4) The manager added hospital 
-5) Login as  a front desk and reserve a room for a patient 
+1) Login as  a front desk 
+2)Check available room &surgery room
+3) reserve a room &surgery room for a patient and see that each room table is updated 
+4)Transfer patient from one room to another if in the hospital any availabl room 
+5) search for patient room number if he is in the hospital
+6)cancel surgery reservation 
+_________________________________________________________________________________
 
+Testing For Finance:
+1)Login as  a finance employee
+2) collects the total income for the hospital during a certain period. 
+3) show the income for each service during a certain period.
+4) Show the bill of the patient   
+_________________________________________________________________________________
+
+Testing For Manager:
+1)Login as  the hospital manager
+2)The manager added Specilization and see that new specilization is added in Specilization table
+3)The manager added service and see that that new service is added in services table
+4)The manager delete Specilization and see that specilization is removed from the Specilization table
+5)The manager delete service and see that service is removed from the services table
+6)The manager edit service price and see that that the price of the service is edited in services table
+7) The manager added hospital and see that that new hospital is added in the hospitals table
+8) See the total income for the hospital during a certain period. 
+9) show the income for each service during a certain period.
+10)The manager search for a staff member and see it's information
