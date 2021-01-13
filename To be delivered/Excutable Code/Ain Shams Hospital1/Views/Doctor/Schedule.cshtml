@@ -1,0 +1,32 @@
+﻿
+@{
+    //ViewData["Title"] = "Schedule";
+    var schedule = ViewBag.schedule;
+}
+
+<h1>My schedule</h1>
+<div class=" container-fluid text-center col-md-6 ">
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <td> <b>Date</b></td>
+            <td> <b>Follow Up </b></td>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var n in schedule)
+            {
+                <tr>
+                    <td> @n.Date</td>
+                    <td> @n.Follow_Up_Type.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+</div>
+<style>
+    .table{
+        background-color:white
+    }
+</style>

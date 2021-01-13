@@ -1,0 +1,58 @@
+﻿
+@model Ain_Shams_Hospital.ViewModels.LabVM.LabMainVM
+@{
+    var follow_up = ViewBag.follow_ups;
+    ViewData["Title"] = "Laboratory";
+
+}
+
+<!-- Cards Section -->
+<form asp-action="LabMain" id="doctor-main">
+    <div class="row form-group no-color">
+        <div class="col-6 text-center">
+            <label class="control-label h5" name="Search_Item">Search:</label>
+            <input class="border rounded" name="Search_Item" type="text" />
+            <input name="search" type="submit" value="Go" class="ml-2 btn btn-success d-inline" />
+        </div>
+        <div class="col-6 text-center">
+            <select id="sort" asp-for="Sort_Item" class="border rounded mr-3 h6">
+                <option selected disabled>Sort By:</option>
+                <option value="Date">Date</option>
+                <option value="Status">Status</option>
+                <option value="Follow_Up">Follow Up</option>
+            </select>
+            <select id="order" asp-for="Order_Item" class="border rounded mr-3 h6">
+                <option selected disabled>Order:</option>
+                <option value="DSC">Descending</option>
+                <option value="ASC">Ascending</option>
+            </select>
+            <input name="sort" type="submit" value="Sort" class="ml-2 btn btn-success d-inline" />
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var fp in follow_up)
+        {
+            <div class="card col-md-3 mx-2 mb-3 p-0">
+                <div class="card-body">
+                    <h4 class="card-title text-danger">Patient No. @fp.Item1.Id </h4>
+                    <div class="card-text">
+                        <h6>Name: @fp.Item1.Name</h6>
+                        <h6>Follow Up: @fp.Item2.Follow_Up_Type.Name</h6>
+                        <h6>Date: @fp.Item2.Date</h6>
+                        <h6>Status: @fp.Item2.Follow_Up.Status</h6>
+                    </div>
+                    <button name="P_Id" value="@fp.Item2.Follow_Up.Id" type="submit" class="stretched-link"></button>
+                </div>
+            </div>
+        }
+    </div>
+</form>
+
+@section Styles{
+    <link href="~/css/doctor.css" rel="stylesheet" />
+}
+
+@section Scripts{
+    <script href="~/js/doctor.js"></script>
+}
