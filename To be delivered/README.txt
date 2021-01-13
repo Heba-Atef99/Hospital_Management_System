@@ -1,32 +1,14 @@
 # Hospital_Management_System
 CSE 321: Software Engineering Project for 3rd Year CSE Ain Shams University Students ,Where Students Could Apply Software Engineering concepts on a real life project that can help any Hospital. Our Website can help patient to book Online appointments and tests,help Doctors do their Job and manage their records and help front desk . 
-
-
-
-<div align="center">
-<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/ASH%202B.png" width="350" height="350" >  
-    
-    
-![GitHub language count](https://img.shields.io/github/languages/count/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
-![GitHub contributors](https://img.shields.io/github/contributors/Heba-Atef99/Hospital_Management_System?color=%2300&logo=GitHub)
-![GitHub top language](https://img.shields.io/github/languages/top/Heba-Atef99/Hospital_Management_System?color=%2300)
-
-
-Our project is a hospital site that can be used by all segments of society and can help patients to book and Doctors to do their Job.
-</div>  
   
-## Contribution
-
-<img src="https://github.com/Heba-Atef99/Hospital_Management_System/blob/main/images/contribution.PNG" width="325" height="56" margin-bottom="40">
-
 ## Table of Contents
 
-1. [General Information](#general-information)
-2. [Introduction](#introduction)
-3. [Technologies](#technolgies)
-4. [SetUp](#setup)
-5. [Features](#features)
-6. [Sources](#Sources) 
+1. [General Information]
+2. [Introduction]
+3. [Technologies]
+4. [SetUp]
+5. [Features]
+6. [Sources] 
  
 ## General Information
 
@@ -48,16 +30,27 @@ As we have many services through the site that make the patient not need to go a
 ## SetUp
 
 TO RUN THIS PROJECT YOU NEED TO :
-##### First: You Need To Install visual studio community From here >>[link](https://visualstudio.microsoft.com/vs/community/) and you need to install asp packages
-##### Second: Create New Project and choose asp.net core web application And Insert Our Folders On Your New Project Directory.
-##### Third: INSTALL PACKAGES FROM HERE:
 
-1. [BCrypt.Net-Next(4.0.2)](https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
+##### First: You Need To Install visual studio community From here >>[link](https://visualstudio.microsoft.com/vs/community/) and you need to install asp.net core packages
+
+##### Second: Create New Project and choose asp.net core web application And Insert Our Folders On Your New Project Directory.
+
+##### Third: INSTALL PACKAGES FROM HERE:
+1. [BCrypt.Net-Next(4.0.2)]
+(https://www.nuget.org/packages/BCrypt.Net-Next/4.0.2?_src=template)
+
 2. [Microsoft.EntityFrameworkCore(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/5.0.1?_src=template)
-3. [Microsoft.EntityFrameworkCore.Design(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/5.0.1?_src=template)
+3. [Microsoft.EntityFrameworkCore.Design(5.0.1)]
+(https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/5.0.1?_src=template)
+
 4. [Microsoft.EntityFrameworkCore.SqlServer(5.0.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/5.0.1?_src=template)
-5. [Microsoft.AspNetCore.Session(2.2.0)](https://www.nuget.org/packages/Microsoft.AspNetCore.Session/)
+
+5. [Microsoft.AspNetCore.Session(2.2.0)]
+(https://www.nuget.org/packages/Microsoft.AspNetCore.Session/)
+
 6. [Microsoft.VisualStudio.Web.CodeGeneration.Design(3.1.4)](https://www.nuget.org/packages/Microsoft.VisualStudio.Web.CodeGeneration.Design/3.1.4?_src=template)
+
+or you can install them by right click on the .sln file in visual studio >> choose manage NuGet packages >> click on Browse >> search by the mentioned packages and install them.
 
 ##### Fourth: you need to write the following command in your terminal to create the HospitalDB Database 
 ``` 
