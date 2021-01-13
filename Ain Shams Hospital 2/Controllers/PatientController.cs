@@ -66,11 +66,11 @@ namespace Ain_Shams_Hospital.Controllers
             }
             else if (sp_Id == 23)
             {
-                s1 = (from s in _HDB.Follow_Ups_Types select s).Where(e => e.Id >= 19).ToList();
+                s1 = (from s in _HDB.Follow_Ups_Types select s).Where(e => e.Id >= 16 &&e.Id <=20).ToList();
             }
             else if (sp_Id == 21)
             {
-                s1 = (from s in _HDB.Follow_Ups_Types select s).Where(e => e.Id >= 11 && e.Id <= 18).ToList();
+                s1 = (from s in _HDB.Follow_Ups_Types select s).Where(e => e.Id >= 11 && e.Id <= 15).ToList();
                 
             }
             s1.Insert(0, new Follow_Up_Type { Id = 0, Name = "--Select Your Test--" });
@@ -426,7 +426,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return RedirectToAction("savepay", "Patient") ;
         }
-        public ActionResult savepay()
+        public IActionResult savepay()
         {
             return View();
         }
