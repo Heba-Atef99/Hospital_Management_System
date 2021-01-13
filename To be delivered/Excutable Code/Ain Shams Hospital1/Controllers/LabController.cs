@@ -252,7 +252,7 @@ namespace Ain_Shams_Hospital.Controllers
             follow_Up = _auc.Follow_Ups.Where(d => d.Id == Follow_up_Id).FirstOrDefault();
             patient = _auc.Patients.Where(i => i.Id == patient_id).FirstOrDefault();
           
-            if (obj.Status != "binding")
+            if (obj.Status != "Pending")
                 follow_Up.Status = obj.Status;
             _auc.SaveChanges();
             ModelState.Clear();
