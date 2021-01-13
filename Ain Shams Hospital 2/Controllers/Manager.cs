@@ -98,35 +98,41 @@ namespace Ain_Shams_Hospital.Controllers
             var ID = _auc.Follow_Ups_Types.Where(f => f.Name == m.Room_Id).Select(s => s.Id).Single();
             String from = HttpContext.Session.GetString("FIRST");
             String to = HttpContext.Session.GetString("LAST");
-
-            var h = _auc.Payments.Include(o => o.Patient).Include(p => p.Follow_Up_Type)
+            if (from != null && to != null)
+            {
+                var h = _auc.Payments.Include(o => o.Patient).Include(p => p.Follow_Up_Type)
                 .Where(f => (f.Follow_Up_Type_Id == ID && f.Payed == true))
               .ToList();
-            DateTime start = DateTime.Parse(from);
-            DateTime end = DateTime.Parse(to);
-            List<Payment> payment = new List<Payment>();
-            // if (from!=null && to != null)
-            //{
-            var total = 0;
-            foreach (var V in h)
-            {
+                DateTime start = DateTime.Parse(from);
+                DateTime end = DateTime.Parse(to);
+                List<Payment> payment = new List<Payment>();
 
-                DateTime date = DateTime.Parse(V.Date);
-
-                if (date >= start && date <= end)
+                var total = 0;
+                foreach (var V in h)
                 {
-                    total = total + V.Money;
-                    payment.Add(V);
+
+                    DateTime date = DateTime.Parse(V.Date);
+
+                    if (date >= start && date <= end)
+                    {
+                        total = total + V.Money;
+                        payment.Add(V);
+                    }
+
                 }
 
+
+                ViewBag.R = m.Room_Id;
+                ViewBag.t = total;
+                // ViewBag.D = h;
+                ViewBag.list = payment;
+                return View();
             }
-
-
-            ViewBag.R = m.Room_Id;
-            ViewBag.t = total;
-            // ViewBag.D = h;
-            ViewBag.list = payment;
-            return View();
+            else 
+            {
+              
+                return Redirect("/Manager/Error");
+            }
 
 
         }
@@ -134,33 +140,46 @@ namespace Ain_Shams_Hospital.Controllers
         {
             String from = HttpContext.Session.GetString("FIRST");
             String to = HttpContext.Session.GetString("LAST");
-            var h = _auc.Payments.Include(o => o.Patient).Include(p => p.Follow_Up_Type)
-               .Where(f => f.Payed == true).ToList();
-            DateTime start = DateTime.Parse(from);
-            DateTime end = DateTime.Parse(to);
-            List<Payment> payment1 = new List<Payment>();
-            var total = 0;
-            foreach (var V in h)
+            if (from != null && to != null)
             {
-
-                DateTime date = DateTime.Parse(V.Date);
-
-                if (date >= start && date <= end)
+                var h = _auc.Payments.Include(o => o.Patient).Include(p => p.Follow_Up_Type)
+                   .Where(f => f.Payed == true).ToList();
+                DateTime start = DateTime.Parse(from);
+                DateTime end = DateTime.Parse(to);
+                List<Payment> payment1 = new List<Payment>();
+                var total = 0;
+                foreach (var V in h)
                 {
-                    total = total + V.Money;
 
-                    payment1.Add(V);
+                    DateTime date = DateTime.Parse(V.Date);
+
+                    if (date >= start && date <= end)
+                    {
+                        total = total + V.Money;
+
+                        payment1.Add(V);
+                    }
+
                 }
+                // ViewBag.R = m.Room_Id;
+                ViewBag.t = total;
+                // ViewBag.D = h;
+                ViewBag.list1 = payment1;
 
+                return View();
             }
-            // ViewBag.R = m.Room_Id;
-            ViewBag.t = total;
-            // ViewBag.D = h;
-            ViewBag.list1 = payment1;
-
-            return View();
+            else 
+            {
+               
+                return Redirect("/Manager/Error");
+            }
         }
-        [HttpGet]
+        public IActionResult Error()
+        {
+            ViewBag.fail = "You have to enter the dates From and To first";
+            return View(); 
+        }
+            [HttpGet]
         public IActionResult State()
         {
             var Type = _auc.Follow_Ups_Types.ToList();
@@ -306,6 +325,7 @@ namespace Ain_Shams_Hospital.Controllers
             var NameExist = _auc.Follow_Ups_Types.ToList().Any(u => u.Name == v.Name);
             if (NameExist)
             {
+
                 var m = _auc.Follow_Ups_Types.Where(i => i.Name == obj.Name).Select(c => c.Id).Single();
                 //code from internet
                

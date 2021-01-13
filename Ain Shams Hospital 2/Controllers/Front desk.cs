@@ -227,7 +227,7 @@ namespace Ain_Shams_Hospital.Controllers
         public IActionResult checkavalabilty(checkVM ch)
         {
             String SURGERYROOMName = HttpContext.Session.GetString("SRoomname");
-            ViewBag.surgeryroom = SURGERYROOMName;
+           
             var NameRexist = _asu.Hospital_Facilities.Where(f => f.Type.Substring(0, 4) == "Room")
                    .Select(s => new Hospital_Facility { Type = s.Type })
                    .ToList();
@@ -269,7 +269,7 @@ namespace Ain_Shams_Hospital.Controllers
                     var roomname = _asu.Hospital_Facilities.Where(f => f.Id == HID).Select(s => s.Type).Single();
 
                     ViewBag.Roomname = roomname;
-
+                    ViewBag.surgeryroom = SURGERYROOMName;
                     HttpContext.Session.SetString("Roomname", roomname);
                     HttpContext.Session.SetString("START", ch.From);
                     HttpContext.Session.SetString("END", ch.To);
@@ -414,108 +414,7 @@ namespace Ain_Shams_Hospital.Controllers
         {
             return View();
         }
-        /* public IActionResult Roomreservation(RoomReservationVM ob)
-         {
-             Hospital_Facility H = new Hospital_Facility();
-             Facility_Reservation FR = new Facility_Reservation();
-             //Patient p = new Patient();
-             //var x = H.Available;
-
-             var NamePexist = _asu.Patients.ToList().Any(f => f.Name == ob.PatientName);
-             TempData["Staff_Id"] = _asu.Staff.Where(f => f.Name == ob.DoctorName).Select(s => s.Id).Single();
-             var NameSexist = _asu.Staff.ToList().Any(F => F.Name == ob.DoctorName);
-             var Availabilty = _asu.Hospital_Facilities.Where(f => f.Type == ob.Room).Select(s => s.Available).Single();
-             var HID = _asu.Hospital_Facilities.Where(f => f.Type == ob.Room).Select(s => s.Id).Single();
-             var availableroom = _asu.Facility_Reservations.Where(f => f.Hospital_Facility_Id == HID)
-                 .Select(s => new { date = s.End_Hour, date1 = s.Start_Hour }).ToList();
-             bool av; //flag
-
-             var ROOMNAME = TempData["roomname"];
-             if (availableroom == null)
-             {
-                 if (NamePexist)
-                 {
-                     TempData["Patient_Id"] = _asu.Patients.Where(f => f.Name == ob.PatientName).Select(s => s.Id).Single();
-                     if (NameSexist)
-                     {
-                         TempData["Staff_Id"] = _asu.Staff.Where(f => f.Name == ob.DoctorName).Select(s => s.Id).Single();
-                         FR.Start_Hour = ob.From;
-                         FR.End_Hour = ob.To;
-                         FR.Hospital_Facility_Id = HID;
-                         FR.Patient_Id = (int)TempData["Patient_Id"];
-                         FR.Staff_Id = (int)TempData["Staff_Id"];
-                         _asu.Add(FR);
-                         _asu.SaveChanges();
-
-                         return Redirect("/Front_desk/SRoomreservation");
-                     }
-                     else
-                     {
-                         return Redirect("/Front_desk/MESSAGE");
-                     }
-                 }
-                 else
-                 {
-                     return Redirect("/Front_desk/PatientMESSAGE");
-                 }
-             }
-             else
-             {
-
-                 foreach (var V in availableroom)
-                 {
-                     DateTime parse1 = DateTime.Parse(ob.From);
-                     DateTime parse2 = DateTime.Parse(ob.To);
-                     DateTime parse3 = DateTime.Parse(V.date);
-                     DateTime parse4 = DateTime.Parse(V.date1);
-                     if ((parse1 > parse3) || (parse2 < parse4))
-                     {
-                         av = true;
-                     }
-                     else
-                     {
-                         av = false;
-                         ViewBag.UserMessage = "This room is Not available";
-                         return View();
-                         //return Redirect("/Front_desk/Roomavailabilty");
-                     }
-                 }
-                 if (av = true)
-                 {
-                     if (NamePexist)
-                     {
-                         TempData["Patient_Id"] = _asu.Patients.Where(f => f.Name == ob.PatientName).Select(s => s.Id).Single();
-                         if (NameSexist)
-                         {
-                             TempData["Staff_Id"] = _asu.Staff.Where(f => f.Name == ob.DoctorName).Select(s => s.Id).Single();
-                             FR.Start_Hour = ob.From;
-                             FR.End_Hour = ob.To;
-                             FR.Hospital_Facility_Id = HID;
-                             FR.Patient_Id = (int)TempData["Patient_Id"];
-                             FR.Staff_Id = (int)TempData["Staff_Id"];
-                             _asu.Add(FR);
-                             _asu.SaveChanges();
-
-                             return Redirect("/Front_desk/SRoomreservation");
-                         }
-                         else
-                         {
-                             return Redirect("/Front_desk/MESSAGE");
-                         }
-                     }
-                     else
-                     {
-                         return Redirect("/Front_desk/PatientMESSAGE");
-                     }
-                 }
-                 else
-                 {
-
-                     return Redirect("/Front_desk/Roomavailabilty");
-                 }
-             }
-
-         }*/
+        
         public IActionResult NotAvailable()
         {
             return View();
