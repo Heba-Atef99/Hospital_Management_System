@@ -1,0 +1,43 @@
+Test cases: 
+________________________________________________________________________________
+
+Testing for Patient:
+
+1) Sign up as patient. 
+2) Enter wrong email format and password not matching during sign up. 
+3) Login with the wrong email or password. 
+4) Add appointment with a certain doctor and see that the doctor is added in followed doctor list and choose to pay offline. 
+5) See Your Doctor’s Schedule 
+6) choose another doctor in another specialization and choose to pay online 
+7) Patient adds appointment in lab. 
+8) View Patient Profile and edit it then see the changes 
+_________________________________________________________________________________
+
+Testing For Doctor: 
+
+1)Patient adds appointment with doctor and check that the appointment added in the doctor schedule. 
+2) Doctor checks the medical record and update information of another patient. 
+3) Doctor transfer patient to another doctor/hospital and see the result in patient's page. 
+4)show Doctor Schedule 
+5) show Doctor Profile 
+6) View Emergency Beds  
+
+_________________________________________________________________________________
+
+Testing For Lab: 
+
+1)Register as a lab specialist and change patient status  
+2)Sort Patients By Date ascending 
+3) Search for a certain patient 
+4) add blood units  
+
+_________________________________________________________________________________
+
+Testing For Front-Desk:
+
+1) Show the bill of the patient in finance 
+2) Finance collects the outcome for the hospital during a certain period. 
+3) View front desk profile 
+4) The manager added hospital 
+5) Login as  a front desk and reserve a room for a patient 
+
