@@ -15,12 +15,17 @@ ________________________________________________________________________________
 
 Testing For Doctor: 
 
-1)Patient adds appointment with doctor and check that the appointment added in the doctor schedule. 
-2) Doctor checks the medical record and update information of another patient. 
-3) Doctor transfer patient to another doctor/hospital and see the result in patient's page. 
-4)show Doctor Schedule 
-5) show Doctor Profile 
-6) View Emergency Beds  
+1) Doctor views all the patients following with him/her
+2) When a patient adds appointment with doctor, the appointment added in the doctor main page. 
+3) Doctor checks the medical record and update medical information of the patient.
+4) Doctor views the patient's contact information 
+4) Doctor transfer patient to another doctor/hospital and see the result in the main page. 
+5) Show Doctor Schedule with all the work that he/she has
+6) Show Doctor Profile and update the data
+7) View Emergency Beds  for emergency
+8) View blood units available for emergency
+9) Sort patients by (date - status - follow up type) (ascending or descending)
+10) Search for a certain patient 
 
 _________________________________________________________________________________
 
