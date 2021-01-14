@@ -1,0 +1,68 @@
+Test cases: 
+________________________________________________________________________________
+
+Testing for Patient:
+
+1) Sign up as patient. 
+2) Enter wrong email format and password not matching during sign up. 
+3) Login with the wrong email or password. 
+4) Add appointment with a certain doctor and see that the doctor is added in followed doctor list and choose to pay offline. 
+5) See Your Doctor’s Schedule 
+6) choose another doctor in another specialization and choose to pay online 
+7) Patient adds appointment in lab. 
+8) View Patient Profile and edit it then see the changes 
+_________________________________________________________________________________
+
+Testing For Doctor: 
+
+1)Patient adds appointment with doctor and check that the appointment added in the doctor schedule. 
+2) Doctor checks the medical record and update information of another patient. 
+3) Doctor transfer patient to another doctor/hospital and see the result in patient's page. 
+4)show Doctor Schedule 
+5) show Doctor Profile 
+6) View Emergency Beds  
+
+_________________________________________________________________________________
+
+Testing For Blood bank lab: 
+
+1) Update the amount of any blood type
+2) Add new blood unit
+3) Delete blood unit  
+
+_________________________________________________________________________________
+Testing For Radiology Lab and lab:  
+
+1)Register as a lab specialist and update lab request's status  
+2) Sort requests by (date - status - follow up type) (ascending or descending)
+3) Search for a certain request
+
+_________________________________________________________________________________
+
+Testing For Front-Desk:
+
+1) Login as  a front desk 
+2)Check available room &surgery room
+3) reserve a room &surgery room for a patient and see that each room table is updated 
+4)Transfer patient from one room to another if in the hospital any availabl room 
+5) search for patient room number if he is in the hospital
+6)cancel surgery reservation 
+_________________________________________________________________________________
+
+Testing For Finance:
+1) Show the bill of the patient 
+1) collects the total income for the hospital during a certain period. 
+3) show the income for each service during a certain period.
+  
+_________________________________________________________________________________
+
+Testing For Manager:
+1)The manager added Specilization and see that new specilization is added in Specilization table
+2)The manager added service and see that that new service is added in services table
+3)The manager delete Specilization and see that specilization is removed from the Specilization table
+4)The manager delete service and see that service is removed from the services table
+5)The manager edit service price and see that that the price of the service is edited in services table
+6) The manager added hospital and see that that new hospital is added in the hospitals table
+7) See the total income for the hospital during a certain period. 
+8) show the income for each service during a certain period.
+9)The manager search for a staff member and see it's information
